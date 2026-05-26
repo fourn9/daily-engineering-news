@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🔨 エンジニアリング・モーニングブリーフ</title>
+  <style>
+    /* ── デザイントークン ────────────────────────────────
+       落ち着いたインク基調 + 控えめなアンバーのアクセント。
+       紫グラデや Inter 等のありがち AI 風を避け、
+       システムフォントで読みやすさを優先する。 */
+    :root {
+      --bg:        #fbfaf7;
+      --surface:   #ffffff;
+      --border:    #e6e2d9;
+      --text:      #23272e;
+      --text-soft: #5b6470;
+      --accent:    #b06a2c;  /* くすんだアンバー（朝・鍛冶のトーン） */
+      --accent-bg: #f4ece0;
+      --shadow:    0 1px 2px rgba(35, 39, 46, .06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:        #15171a;
+        --surface:   #1d2024;
+        --border:    #2b2f35;
+        --text:      #e4e6e8;
+        --text-soft: #99a0a8;
+        --accent:    #d8a25e;
+        --accent-bg: #2a2620;
+        --shadow:    0 1px 2px rgba(0, 0, 0, .35);
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+                   "Hiragino Sans", "Yu Gothic", "Meiryo", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.15rem 4rem;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      line-height: 1.35;
+      margin: 0 0 .6rem;
+      letter-spacing: .01em;
+      /* 長いタイトルでも狭い画面で溢れさせない */
+      overflow-wrap: anywhere;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: .82rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    /* ── ブリーフ一覧 ──────────────────────────────────── */
+    ul.briefs {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    ul.briefs li { margin: 0; }
+
+    ul.briefs a {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      padding: .85rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color .15s ease, transform .15s ease;
+    }
+    ul.briefs a:hover,
+    ul.briefs a:focus-visible {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    ul.briefs a::before {
+      content: "›";
+      color: var(--accent);
+      font-size: 1.2rem;
+      line-height: 1;
+      margin-left: auto;
+      order: 2;
+    }
+
+    .date-jp { font-weight: 600; }
+
+    .date-iso {
+      font-family: "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: .8rem;
+      color: var(--text-soft);
+      background: var(--accent-bg);
+      padding: .1rem .45rem;
+      border-radius: 5px;
+      white-space: nowrap;
+    }
+
+    .empty {
+      color: var(--text-soft);
+      font-size: .95rem;
+      padding: 1rem 0;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-soft);
+      font-size: .82rem;
+    }
+
+    @media (max-width: 480px) {
+      .wrap { padding: 1.5rem 1rem 3rem; }
+      h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+      <p class="lead">
+        ソフトウェアエンジニアリングの動向を、毎朝ひとつのブリーフにまとめて蓄積しています。
+        その日の主要トピックを短時間で把握できることを目指したアーカイブです。
+      </p>
+    </header>
+
+    <main>
+      <h2>過去のブリーフ</h2>
+      <!-- 新しい日付ほど上に来るよう、この ul の先頭に <li> を追記していく -->
+      <ul class="briefs">
+        <!-- INSERT-NEXT-BRIEF-HERE: 新規ブリーフはこの行の直下に追加する -->
+        <li>
+          <a href="./2026-05-26/">
+            <span class="date-jp">2026年05月26日(火)</span>
+            <span class="date-iso">2026-05-26</span>
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      毎朝更新 · GitHub Pages で公開
+    </footer>
+  </div>
+</body>
+</html>
