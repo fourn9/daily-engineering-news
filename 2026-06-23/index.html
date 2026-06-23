@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026年06月23日(火) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+  <style>
+    :root {
+      --bg:        #fbfaf7;
+      --surface:   #ffffff;
+      --border:    #e6e2d9;
+      --text:      #23272e;
+      --text-soft: #5b6470;
+      --accent:    #b06a2c;
+      --accent-bg: #f4ece0;
+      --note-bg:   #f8f4ec;
+      --note-bd:   #d8b27c;
+      --shadow:    0 1px 2px rgba(35, 39, 46, .06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:        #15171a;
+        --surface:   #1d2024;
+        --border:    #2b2f35;
+        --text:      #e4e6e8;
+        --text-soft: #99a0a8;
+        --accent:    #d8a25e;
+        --accent-bg: #2a2620;
+        --note-bg:   #211d17;
+        --note-bd:   #8a6535;
+        --shadow:    0 1px 2px rgba(0, 0, 0, .35);
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+                   "Hiragino Sans", "Yu Gothic", "Meiryo", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 2rem 1.15rem 4rem; }
+    .back {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: .9rem;
+    }
+    .back:hover { text-decoration: underline; }
+    .date-iso {
+      font-family: "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: .82rem;
+      color: var(--text-soft);
+      background: var(--accent-bg);
+      padding: .15rem .5rem;
+      border-radius: 5px;
+    }
+    h1 {
+      font-size: 1.55rem;
+      margin: .8rem 0 1.8rem;
+      letter-spacing: .01em;
+      overflow-wrap: anywhere;
+    }
+    h2 {
+      font-size: 1.05rem;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    h3 {
+      font-size: 1rem;
+      margin: 1.6rem 0 .5rem;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+    h3 a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+    h3 a:hover { color: var(--accent); }
+    p { margin: .4rem 0 .8rem; overflow-wrap: anywhere; }
+    .meta {
+      font-size: .8rem;
+      color: var(--text-soft);
+      margin-bottom: .35rem;
+    }
+    .tag {
+      display: inline-block;
+      background: var(--accent-bg);
+      color: var(--accent);
+      padding: .05rem .45rem;
+      border-radius: 4px;
+      font-size: .72rem;
+      margin-right: .35rem;
+      vertical-align: middle;
+    }
+    .note {
+      background: var(--note-bg);
+      border-left: 3px solid var(--note-bd);
+      padding: .6rem .85rem;
+      border-radius: 4px;
+      font-size: .92rem;
+      color: var(--text-soft);
+      margin: .55rem 0 1.1rem;
+    }
+    .note::before {
+      content: "💡 ";
+      margin-right: .15rem;
+    }
+    .highlight {
+      background: var(--accent-bg);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      margin: 1.2rem 0 2rem;
+      border: 1px solid var(--border);
+    }
+    .highlight h2 {
+      margin-top: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+      font-size: 1rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .highlight p { margin: .4rem 0; }
+    footer {
+      margin-top: 3.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-soft);
+      font-size: .82rem;
+    }
+    footer p { margin: .35rem 0; }
+    .caveat {
+      background: var(--note-bg);
+      border-left: 3px solid var(--note-bd);
+      padding: .6rem .85rem;
+      border-radius: 4px;
+      font-size: .83rem;
+      color: var(--text-soft);
+      margin-top: 1rem;
+    }
+    @media (max-width: 480px) {
+      .wrap { padding: 1.5rem 1rem 3rem; }
+      h1 { font-size: 1.35rem; }
+      h2 { font-size: 1rem; }
+      h3 { font-size: .98rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 一覧へ戻る</a>
+    <p><span class="date-iso">2026-06-23</span></p>
+    <h1>🔨 エンジニアリング・モーニングブリーフ — 2026年06月23日(火)</h1>
+
+    <div class="highlight">
+      <h2>🎯 今日のハイライト</h2>
+      <p><strong>「AIエージェント時代に既存のGitホスティングが詰まる」というテーマが今週ついに表面化。</strong>GitLab <em>Project Switch</em>・Cursor <em>Origin</em>・Zed <em>DeltaDB</em> がいずれも「AIエージェントが大量に生成・push するコードに耐えうる新世代のGit互換バックエンド」を発表し、GitHub と正面から衝突する構図になりました。コードレビューや CI/CD のボトルネックが「人」から「インフラ」へ移ったことを示す象徴的な動きです。</p>
+      <p>もう1つは <strong>Apple Container 1.0</strong> 正式リリース。macOS 上で Linux コンテナを軽量VMで動かす Apple 純正ツール（Apple silicon 最適化、OCI 互換）が WWDC で 1.0 となり、Docker Desktop に依存しないネイティブ開発環境がついに現実的な選択肢になります。Mac 中心の開発チームのインフラ構成見直しのきっかけになる可能性があります。</p>
+    </div>
+
+    <h2>🤖 AI / LLM モデル & プラットフォーム更新</h2>
+
+    <h3><a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic Claude Fable 5、本日(6/23)よりサブスクリプション無償提供を終了しクレジット課金へ</a></h3>
+    <p class="meta"><span class="tag">🔥話題</span><span class="tag">🆕モデル</span>Anthropic · 2026-06-23</p>
+    <p>6/9 にリリースされた最上位「Mythos クラス」モデル Fable 5 は、Pro/Max/Team/Enterprise の各プランで6/9〜6/22 まで追加費用なしで提供されていましたが、本日からは usage credits 経由のアクセスのみとなります。Claude Code を含む実運用での月次予算インパクトを再見積もりするタイミングです。</p>
+    <div class="note">Anthropic が新設した <strong>Mythos クラス</strong>は Opus の上に位置づけられる最上位ティアで、Fable 5 はそのうち一般公開された方の系統。同等の能力で安全分類器を外した <em>Mythos 5</em> は Project Glasswing 経由の限定提供にとどまるなど、「能力 × 安全装置」を別商品として切り分ける構成は他社にはない特徴です。</div>
+
+    <h3><a href="https://openai.com/news/" target="_blank" rel="noopener">OpenAI GPT-5.5 Instant / GPT-5.3-Codex と "Daybreak" セキュリティ取り組み</a></h3>
+    <p class="meta"><span class="tag">🆕モデル</span>OpenAI · 2026-06</p>
+    <p>GPT-5.5 Instant はトーンと根拠提示を改善し「助言を求める質問」での品質を強化、GPT-5.3-Codex は Codex と GPT-5 の訓練系統を統合して約25%高速化し汎用コーディング・エージェントとして再定位。並行して Container セッション課金が 20分単位 → 5分単位(分課金)に変更され、短時間タスクの実コストが下がりました。</p>
+    <div class="note">"Daybreak" は OpenAI が信頼できる防御側に提供している脆弱性発見・修正支援プログラム。"既知の脆弱パターンを大量コードに当てて自動 PR を生成する" 方向で、AI による <strong>セキュリティの非対称性</strong>（攻撃側より防御側を有利にできるか）を実証しようとする取り組みとして要注目です。</div>
+
+    <h3><a href="https://deepmind.google/" target="_blank" rel="noopener">Google Gemini 3.5 Flash が GA、Managed Agents が API でパブリックプレビュー</a></h3>
+    <p class="meta"><span class="tag">🆕モデル</span>Google DeepMind · 2026-06</p>
+    <p>Gemini 3.5 Flash は「長時間タスク向けエージェント / コーディング特化」モデルとして 3.1 Pro を主要ベンチで上回り GA。同時に Gemini API の <strong>Managed Agents</strong> がプレビュー開始し、Google ホストの隔離 Linux サンドボックス内で stateful な自律エージェントを直接走らせられるようになりました。Ultra プランは $250→$200、新設の Developer ティアは $100/月。</p>
+    <div class="note">Managed Agents は <strong>「LLM 呼び出し」ではなく「エージェントランタイム」を API として売る</strong>方向の最初期事例。これまで自前で sandbox / tool exec / state を組み立てていた開発者の負担を Google 側に移します。MCP や AWS Bedrock AgentCore、Anthropic の Claude Agent SDK と直接競合する設計です。</div>
+
+    <h2>🛠 AI開発ツール / エージェント</h2>
+
+    <h3><a href="https://stripe.com/blog/can-ai-agents-build-real-stripe-integrations" target="_blank" rel="noopener">Stripe、実 API 連携を題材にした AI エージェント・ベンチマークを公開</a></h3>
+    <p class="meta"><span class="tag">📐設計論</span><span class="tag">🔬論文</span>Stripe Engineering · 2026-06</p>
+    <p>「実プロダクション相当の Stripe 連携を agent に最初から作らせる」ベンチマーク。フルコードベース、シェル、ブラウザ操作、ドキュメント検索を組み合わせる必要があり、Claude Opus 4.5 がフルスタック統合タスクで平均92%、OpenAI GPT-5.2 が問題セット系で平均73%。最良ランは平均 63 ターン回しているのが象徴的です。</p>
+    <div class="note">これまでの SWE-bench 系ベンチマークが「コードを直す/書く」に閉じていたのに対し、Stripe のものは <strong>パッケージ更新・DB 状態管理・ブラウザでの最終検証まで含めた「engineer 1人ぶんの仕事」</strong> を評価軸にしている点が新しい。自社で agent を本番投入する前の「現実的に任せられる範囲」の判断材料として使えます。</div>
+
+    <h3><a href="https://thenewstack.io/cursor-origin-github-disruption/" target="_blank" rel="noopener">Cursor "Origin" / GitLab "Project Switch" / Zed "DeltaDB" — AIエージェント向けGit再構築レース</a></h3>
+    <p class="meta"><span class="tag">🔥話題</span><span class="tag">📐設計論</span>The New Stack · 2026-06</p>
+    <p>3社が同時期に「GitHub は AI エージェントが量産するコミット/PR量に耐えられない」という前提で次世代 Git 互換バックエンドを発表。GitLab の Project Switch は分散アーキテクチャでエージェントタスクを最大 50倍、書き込みを 17倍 高速化、トークン使用量も半減を謳います。GitHub にロックインされている組織にとっては数年スパンの選定見直しトリガになる可能性。</p>
+    <div class="note">本質的な技術論点は <strong>「Git のオブジェクトモデル（blob/tree/commit/ref）を 1コミット=1ファイルツリー前提のまま分散化するか、エージェントのインクリメンタル編集を一級市民として扱える別のデータモデルに置き換えるか」</strong>。Zed の DeltaDB はそれを CRDT 寄りに振る発想で、Notion/Figma 的な共同編集モデルを開発者ツールに持ち込もうとしています。</div>
+
+    <h3><a href="https://aws.amazon.com/blogs/aws/proactively-reduce-tech-debt-autonomously-with-aws-transform-continuous-modernization-preview/" target="_blank" rel="noopener">AWS Transform — Continuous Modernization プレビュー開始（自律的なリポジトリ常時スキャン）</a></h3>
+    <p class="meta"><span class="tag">🆕新機能</span>AWS · 2026-06-22</p>
+    <p>既存パイプライン(CodePipeline/Jenkins/GitHub Actions/GitLab)に常駐し、リポジトリを設定済みベースラインに対して継続的にスキャン → 自動 PR を生成して技術的負債を返済し続ける agentic サービス。AWS Transform 全体ではすでに BMW/Experian など顧客で 160万時間以上の手作業削減を実証済みとされ、"裏で常に動く SRE 的 agent" の実装事例として参照価値があります。</p>
+    <div class="note">"AI agent がコードを書きまくる" 時代における <strong>カウンター系の自動化</strong>。生成量だけが増えると技術的負債も等比で増えるので、同じくエージェントで返済を回す。CI を gate にする旧来モデルから「常時掃除」モデルへの移行という設計トレンドが分かる事例です。</div>
+
+    <h3><a href="https://www.totalum.app/blog/claude-code-skills-totalum" target="_blank" rel="noopener">Claude Code Skills / MCP / Subagents の使い分け（2026版整理）</a></h3>
+    <p class="meta"><span class="tag">📐設計論</span>Totalum Blog 等 · 2026-06</p>
+    <p>2026年現在の実務指針:「外部システムへの<em>アクセス</em>は MCP、<em>手順知識</em>は Skill、<em>大きなコンテキスト分離</em>は Subagent」。MCP は GitHub/Postgres/Linear/Sentry のように外部システムごとに1個ピン留めし、その上で薄い Skill を書いて手順をオーケストレーションするのが定着しつつあるパターンです。</p>
+    <div class="note"><strong>Skill は使うまで約100トークンしか食わない</strong>のがポイント。50個入れていても呼ばれない限りコストはほぼゼロなので、"とりあえず詰める" が許容されます。MCP（capability）/Skill（knowledge）/Subagent（context window 分離）という3軸で整理しておくと、社内エージェントの拡張時に迷いません。</div>
+
+    <h2>📐 アーキテクチャ / 設計</h2>
+
+    <h3><a href="https://netflixtechblog.com/" target="_blank" rel="noopener">Netflix、Envoy ベースの "zero-config service mesh" を全面展開</a></h3>
+    <p class="meta"><span class="tag">📐設計論</span>Netflix TechBlog · 2026</p>
+    <p>アプリ層のライブラリではなく Envoy プロキシ群でレジリエンス・ルーティング・observability を統一する「ゼロ設定」サービスメッシュへ移行。マイクロサービス全体のトラフィック管理を中央集権化しつつ、各サービスは特別なクライアントを持たない方向です。Linkerd/Istio 系の議論が「サイドカーの粒度」へ収束していく中での1事例として読み解くと位置づけがクリア。</p>
+    <div class="note"><strong>"zero-config"</strong> の肝は、コントロールプレーン側がサービスのメタデータ（依存関係・SLO・トラフィックポリシー）を勝手に発見してデフォルトを当てる点。アプリ開発者が yaml を書かなくてもリトライ/タイムアウト/サーキットブレーカが効く状態を作る思想で、自社が <strong>50サービス未満なら過剰</strong>、200超なら真剣に検討すべき領域です。</div>
+
+    <h3><a href="https://www.uber.com/us/en/blog/engineering/" target="_blank" rel="noopener">Uber Engineering、6月の3本（Cart Assistant / Data Abstraction Layer / File Semantic Analyzer）</a></h3>
+    <p class="meta"><span class="tag">📐設計論</span>Uber Engineering · 2026-06</p>
+    <p>(1) Uber Eats の「Cart Assistant」: 買い物全体を担う agentic UX(6/16) / (2) データ統合のための <strong>Data Abstraction Layer</strong> でプロダクト連携を簡素化(6/11) / (3) AI で社外送信ファイルを分類して機密漏洩を防ぐ <strong>File Semantic Analyzer</strong>(6/4)。3本とも "LLM をプロダクト機能ではなくインフラ部品として使う" 系の事例です。</p>
+    <div class="note">File Semantic Analyzer は <strong>DLP（Data Loss Prevention）を AI で再発明</strong>している例。従来は正規表現とハッシュベースで「機密かどうか」を判定していた領域に、LLM が "このスプレッドシートはユーザの内部ID表だから外部送信ブロック" のような意味的判断を持ち込む。自社のセキュリティ運用でも数年内に同様の置換が起きる可能性が高い領域です。</div>
+
+    <h3><a href="https://martinfowler.com/bliki/ArchitectureDecisionRecord.html" target="_blank" rel="noopener">Martin Fowler — bliki: Architecture Decision Record（再注目）</a></h3>
+    <p class="meta"><span class="tag">📐設計論</span>martinfowler.com</p>
+    <p>「ADR は数ページの短い文書で、決定・文脈・重大な影響だけを書く。決定が変わったら ADR は <em>修正せず</em> 新しい ADR にリンクさせる」というシンプルなルール。AI エージェントによりコード変更速度が増す中、"なぜそうなっているか" を後で追える ADR の運用価値が再評価されており、Thoughtworks Radar 等でも継続的に Adopt 推奨されています。</p>
+    <div class="note">ADR の<strong>本質は「議事録」ではなく「ロックイン宣言」</strong>。RDB を Postgres に決めた・認証を OIDC で統一した、のような「後から覆すと高い決定」だけを記録するのがコツで、些末な選択まで書き始めると形骸化する。AI agent が PR を量産する時代では、ADR が "agent に守らせる制約集" としても機能し始めています。</div>
+
+    <h2>🌐 言語 / フレームワーク / ランタイム</h2>
+
+    <h3><a href="https://github.com/apple/container" target="_blank" rel="noopener">Apple Container 1.0 — macOS ネイティブの Linux コンテナ環境</a></h3>
+    <p class="meta"><span class="tag">🆕新リリース</span><span class="tag">🛠OSS</span>Apple · 2026-06-09</p>
+    <p>Apple silicon 最適化、Swift 製、各コンテナが軽量VMで分離、OCI 互換で Docker Hub からのイメージ取得も可能。さらに <strong>Container Machine</strong>（macOS 上の永続Linux環境、WSL 相当）が同時提供されました。30K+ Stars、Apache 2.0。Docker Desktop ライセンス問題を回避しつつ Mac 開発者の標準環境を Apple 側に取り戻す動き。</p>
+    <div class="note">Apple silicon 上ではこれまで Docker Desktop / OrbStack / colima が QEMU や Virtualization.framework を抽象化してきましたが、Apple 純正で <strong>VM 起動オーバーヘッドが秒未満</strong>、`docker run` 感覚で使えるのが新規性。エンタープライズで Docker Desktop 有償化の影響を受けている組織にとって、移行検討の現実的な選択肢になりました。</div>
+
+    <h3><a href="https://blog.cloudflare.com/voidzero-joins-cloudflare/" target="_blank" rel="noopener">Cloudflare が VoidZero（Vite / Vitest / Rolldown / Oxc）を買収</a></h3>
+    <p class="meta"><span class="tag">🔥話題</span>Cloudflare · 2026-06-04</p>
+    <p>JavaScript ツールチェーン主要4製品（バンドラ Rolldown、リンタ Oxc など）の Voidzero 社が Cloudflare 傘下に。Vite エコシステムへ $1M を継続コミットし、製品はオープンソース・ベンダ非依存のまま維持と明言。Cloudflare 側は「AI が書いたコードを 1クリックで edge にデプロイ」する垂直統合スタックを狙います。</p>
+    <div class="note">エコシステム視点では <strong>"Vercel × Next.js" に対する "Cloudflare × Vite" の対抗軸</strong>が成立したのが大きい。Vite は React/Vue/Svelte いずれにも中立な分、フレームワーク選定とホスティング選定のロックインを外したい組織にとって戦略的価値が上がります。Cloudflare の Workers/D1/R2 と組んだ「AI 生成コードのデフォルト land」がどう作られるかが今後の見どころ。</div>
+
+    <h3><a href="https://nextjs.org/" target="_blank" rel="noopener">Next.js 16.2 系 — AI-ready create-next-app / Agent DevTools(実験的) / browser log forwarding</a></h3>
+    <p class="meta"><span class="tag">🆕新リリース</span>Vercel · 2026-06</p>
+    <p>16.2 系の改善は AI エージェントによるアプリ生成・運用を意識した内容に寄り、`create-next-app` が agent friendly に、ブラウザログをサーバ側に転送、dev サーバが lockfile を扱うようになり、実験的 Agent DevTools を導入。Turbopack デフォルト化（16.0）以降の "AI 開発前提" 化が続いています。</p>
+    <div class="note">"AI-ready" とは具体的には <strong>エージェントがブラウザ操作の結果を観測しやすくする</strong>仕掛け（ブラウザログのサーバ転送など）。これまで agent はビルド出力やテスト結果しか見えなかったのが、ランタイムでのコンソールエラーまで自然に拾えるようになり、UI のバグ自動修正の精度が上がる前提条件が整いつつあります。</div>
+
+    <h2>🗄️ データベース / データ基盤</h2>
+
+    <h3><a href="https://duckdb.org/news/" target="_blank" rel="noopener">DuckDB 1.5.4 リリース、pg_duckdb は Azure HorizonDB プレビューに同梱</a></h3>
+    <p class="meta"><span class="tag">🆕新リリース</span>DuckDB · 2026-06-17</p>
+    <p>DuckDB 1.5.4 はバグ修正と機能改善が中心。注目は pg_duckdb 拡張で、PostgreSQL の OLTP 上に DuckDB の OLAP 速度を載せられる組み合わせが Azure マネージド PostgreSQL（HorizonDB）の標準拡張群（約75本）に入りました。OLAP 専用 DWH を持たない中小規模では選択肢が大きく変わります。</p>
+    <div class="note">これまで PostgreSQL 上で分析クエリを速くする選択肢は Citus (シャーディング) か外部DWH(Snowflake/BigQuery)転送が中心でしたが、pg_duckdb は <strong>同じ Postgres 接続から DuckDB エンジンに直接クエリを流せる</strong>のが新しい。データ移動コストとデータ重複を持たずに済むため、analytics の "とりあえず Postgres でいい" 領域が広がります。</div>
+
+    <h2>☁️ クラウド / インフラ動向（Publickey まとめ抜粋）</h2>
+
+    <h3><a href="https://www.publickey1.jp/" target="_blank" rel="noopener">直近2週間の主要動向まとめ</a></h3>
+    <p class="meta"><span class="tag">📰総覧</span>Publickey · 2026-06</p>
+    <ul>
+      <li><strong>6/23 — GitHub:</strong> 雑な PR を抑制するため、ユーザごとに PR 提出数の上限を設定できる機能を発表。AI agent からの大量 PR 流入を運用側で絞れるようになります。</li>
+      <li><strong>6/22 — AWS Continuum:</strong> コード / インフラ設定 / ビジネスコンテキストを横断して脆弱性を理解する新サービスを発表。</li>
+      <li><strong>6/18 — AWS FinOps Agent</strong> パブリックプレビュー: AI による AWS コスト問題の自動特定。</li>
+      <li><strong>6/15 — Gartner 予測:</strong> 2027年には AI エージェントでコーディングしているチームの 65% が IDE を必須としなくなる、と予測。</li>
+      <li><strong>6/10 — Cloudflare AI Gateway:</strong> 従業員別・アプリ別の AI 利用上限設定が可能に。</li>
+      <li><strong>6/9 — Ubuntu Workshop:</strong> サンドボックス化された開発環境を1コマンドで立ち上げる新機能。</li>
+      <li><strong>6/8 — Azure Linux 4.0</strong> パブリックプレビュー（WSL でも利用可）。</li>
+    </ul>
+    <div class="note">この2週間で各社が一斉に <strong>"AI agent の運用を前提とした統治機能"</strong>（PR 上限・per-employee 上限・自動コスト検出）を出してきたのが象徴的。"AI を使うか" から "AI を使い倒した時の財務/セキュリティ統制をどう作るか" にフェーズが移った週として記録しておく価値があります。</div>
+
+    <h2>🔐 セキュリティ</h2>
+
+    <h3><a href="https://www.zerodayinitiative.com/blog/2026/6/9/the-june-2026-security-update-review" target="_blank" rel="noopener">Microsoft 6月 Patch Tuesday — 206脆弱性、3つのゼロデイ、37のCritical</a></h3>
+    <p class="meta"><span class="tag">⚠セキュリティ</span>ZDI · 2026-06-09</p>
+    <p>Windows Kernel の CVE-2026-45657 と CVE-2026-47291 はいずれも CVSS 9.8、ユーザ操作不要の リモートRCE。Exchange Online の CVE-2026-48579（CVSS 9.1）は認証不要での情報漏洩。Office 4件（CVE-2026-45461等、CVSS 8.4）も Critical RCE で、社内 Windows/Exchange 運用がある組織は即時パッチ評価対象です。</p>
+    <div class="note">2026年は AI による脆弱性発見（fuzzing / 静的解析の自動化）が一段加速していて、Help Net Security は2026年通年の CVE 総数を <strong>約66,000件</strong>と予測。"パッチ運用がスケールしない" のが既に現実問題で、自動化(Patch as Code / 評価リング運用)の優先度が上がっています。</div>
+
+    <h2>🔬 注目論文 / 研究</h2>
+
+    <h3><a href="https://arxiv.org/abs/2606.19911" target="_blank" rel="noopener">Multi-Agent Transactive Memory (Carnegie Mellon × UC Berkeley)</a></h3>
+    <p class="meta"><span class="tag">🔬論文</span>arXiv:2606.19911 · 2026-06-18</p>
+    <p>「能力の異なる LLM agent を分散して動かす際に、agent 間の知識共有をどう組み立てるか」を扱った論文。検索エンジンが人間の生成物を整理してきたのと同じように、agent が生成した artefact を agent 集団間で再利用するための retrieval 基盤を提案。社内に多数の agent を抱える運用フェーズに入る際の参照価値があります。</p>
+    <div class="note"><strong>"Transactive Memory"</strong> は社会心理学の概念で、組織内で「誰が何を知っているかを知っている」状態のこと。これを agent 間で実装するという問題設定は、社内で 10〜100 個の agent を並走させる組織にとって直接的な設計テーマで、MCP の "tool catalog" を超える meta-layer 議論の出発点になります。</div>
+
+    <h2>🇯🇵 日本語コミュニティ動向</h2>
+
+    <h3><a href="https://www.publickey1.jp/" target="_blank" rel="noopener">Publickey — エンタープライズ AI / クラウド動向の継続観測</a></h3>
+    <p class="meta">Publickey · 2026-06</p>
+    <p>上記「クラウド / インフラ動向」セクションがそのまま日本のエンタープライズ向け要約として機能します。特に GitLab Project Switch、AWS Transform 系、Apple Container 1.0 はいずれも日本語で詳細記事が出ており、社内共有資料の原典として推奨。</p>
+    <div class="note">Publickey は <strong>「日本のエンプラ IT 部門が読んでいる」</strong>事実上の標準ソース。海外原典より早く日本語で読めるケースも多く、CTO/技術顧問が経営層へ説明する際に英語ソースのまま渡しにくい場合の翻訳ハブとして使えます。</div>
+
+    <footer>
+      <p><strong>📚 収集元</strong>: Anthropic News / OpenAI Blog / Google DeepMind / Netflix TechBlog / Uber Engineering / Stripe Engineering / Martin Fowler / AWS Architecture / ThoughtWorks Radar / The Pragmatic Engineer / InfoQ / arXiv (cs.AI) / Changelog / Publickey / Zenn / note</p>
+      <div class="caveat">
+        <strong>⚠ 取得方法の注記</strong>: 本日のセッションでは外部サイトへの直接 HTTP アクセス（<code>web_fetch</code> 経由）が egress ポリシーによって <strong>大半のドメインで 403</strong> となったため、各社一次ソースの内容は Web 検索エンジン経由のスナップショットで収集しました。要約は複数の二次ソースで裏取りしていますが、個別ニュースの最新性は各社公式ページ（リンク先）で再確認することを推奨します。Hacker News / arXiv 一覧 / Zenn / note 等のトップページは取得失敗のため、トレンド全体ではなく既知の主要トピックに絞った構成になっています。
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
