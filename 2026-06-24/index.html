@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026年06月24日(水) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+  <style>
+    :root {
+      --bg:        #fbfaf7;
+      --surface:   #ffffff;
+      --border:    #e6e2d9;
+      --text:      #23272e;
+      --text-soft: #5b6470;
+      --accent:    #b06a2c;
+      --accent-bg: #f4ece0;
+      --note-bg:   #f8f4ec;
+      --note-bd:   #d8b27c;
+      --shadow:    0 1px 2px rgba(35, 39, 46, .06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:        #15171a;
+        --surface:   #1d2024;
+        --border:    #2b2f35;
+        --text:      #e4e6e8;
+        --text-soft: #99a0a8;
+        --accent:    #d8a25e;
+        --accent-bg: #2a2620;
+        --note-bg:   #211d17;
+        --note-bd:   #8a6535;
+        --shadow:    0 1px 2px rgba(0, 0, 0, .35);
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+                   "Hiragino Sans", "Yu Gothic", "Meiryo", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 2rem 1.15rem 4rem; }
+    .back {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: .9rem;
+    }
+    .back:hover { text-decoration: underline; }
+    .date-iso {
+      font-family: "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: .82rem;
+      color: var(--text-soft);
+      background: var(--accent-bg);
+      padding: .15rem .5rem;
+      border-radius: 5px;
+    }
+    h1 {
+      font-size: 1.55rem;
+      margin: .8rem 0 1.8rem;
+      letter-spacing: .01em;
+      overflow-wrap: anywhere;
+    }
+    h2 {
+      font-size: 1.05rem;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    h3 {
+      font-size: 1rem;
+      margin: 1.6rem 0 .5rem;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+    h3 a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+    h3 a:hover { color: var(--accent); }
+    p { margin: .4rem 0 .8rem; overflow-wrap: anywhere; }
+    .meta {
+      font-size: .8rem;
+      color: var(--text-soft);
+      margin-bottom: .35rem;
+    }
+    .tag {
+      display: inline-block;
+      background: var(--accent-bg);
+      color: var(--accent);
+      padding: .05rem .45rem;
+      border-radius: 4px;
+      font-size: .72rem;
+      margin-right: .35rem;
+      vertical-align: middle;
+    }
+    .note {
+      background: var(--note-bg);
+      border-left: 3px solid var(--note-bd);
+      padding: .6rem .85rem;
+      border-radius: 4px;
+      font-size: .92rem;
+      color: var(--text-soft);
+      margin: .55rem 0 1.1rem;
+    }
+    .note::before {
+      content: "💡 ";
+      margin-right: .15rem;
+    }
+    .highlight {
+      background: var(--accent-bg);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      margin: 1.2rem 0 2rem;
+      border: 1px solid var(--border);
+    }
+    .highlight h2 {
+      margin-top: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+      font-size: 1rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .highlight p { margin: .4rem 0; }
+    footer {
+      margin-top: 3.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-soft);
+      font-size: .82rem;
+    }
+    footer p { margin: .35rem 0; }
+    .caveat {
+      background: var(--note-bg);
+      border-left: 3px solid var(--note-bd);
+      padding: .6rem .85rem;
+      border-radius: 4px;
+      font-size: .83rem;
+      color: var(--text-soft);
+      margin-top: 1rem;
+    }
+    @media (max-width: 480px) {
+      .wrap { padding: 1.5rem 1rem 3rem; }
+      h1 { font-size: 1.35rem; }
+      h2 { font-size: 1rem; }
+      h3 { font-size: .98rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 一覧へ戻る</a>
+    <p><span class="date-iso">2026-06-24</span></p>
+    <h1>🔨 エンジニアリング・モーニングブリーフ — 2026年06月24日(水)</h1>
+
+    <div class="highlight">
+      <h2>🎯 今日のハイライト</h2>
+      <p><strong>Anthropic が Slack に「@Claude」を常駐させる Claude Tag を発表。</strong>これまでの「個人 ⇔ Claude」型 UI から、「チャンネルの誰でも引き継げる multiplayer なエージェント」へと AI 利用の単位が再定義されました。Anthropic 社内では「プロダクト部門のコードの65%が内製 Claude Tag 由来」と公表しており、Slack を選んだ意図と相まって、<em>業務エージェントの導入単位がツール統合ではなくチームのコミュニケーション空間そのもの</em>になることを示唆します。</p>
+      <p>もう一つの注目は <strong>TypeScript 7.0 RC</strong>。コンパイラを TypeScript 自身から <strong>Go へ移植</strong>した tsgo がメインラインに合流し、VS Code（150万行）の型チェックが <strong>77.8秒 → 7.5秒</strong> と約10倍高速化。型検査ロジックは TS 6.0 と構造同等を保ち、ほぼ全プロジェクトで「lint と同じ感覚で型チェックを CI に挟める」段階に到達しました。RC は既に npm 公開、GA は約1か月後の予定です。</p>
+    </div>
+
+    <h2>🤖 AI / LLM プラットフォーム更新</h2>
+
+    <h3><a href="https://www.anthropic.com/news/introducing-claude-tag" target="_blank" rel="noopener">Anthropic Claude Tag — Slack 常駐の "multiplayer な @Claude"</a></h3>
+    <p class="meta"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span>Anthropic · 2026-06-23</p>
+    <p>チャンネル単位で1人の Claude が居続け、誰が @Claude しても同じ Claude が文脈を継承する設計。タスクは内部でステージ分割し、ツール経由で実行してスレッドに結果を返します。チャンネルの会話を読み続けることで「同じ説明を毎回繰り返さなくてよい」継続学習を持ち、Claude Enterprise / Team でβ提供、既存の Claude in Slack アプリは 30日間の移行期間を経て置き換えられます。</p>
+    <div class="note">従来の AI チャットは <strong>1ユーザー = 1セッション</strong> という前提で、同僚に作業を渡す手段がスレッドのスクショ共有しかありませんでした。Claude Tag は <strong>「エージェントをチャンネル所属の同僚として扱う」</strong>方向に振った設計で、Cursor/Devin が IDE を、Codex CLI がターミナルを取りに行ったのに対し、Anthropic は <em>Slack というチームの公的記憶</em>を取りに行ったかたちです。</div>
+
+    <h2>🛠 AIエージェント / 開発ツール</h2>
+
+    <h3><a href="https://github.blog/open-source/maintainers/how-pull-request-limits-are-cutting-down-the-noise/" target="_blank" rel="noopener">GitHub、書込権限のないユーザーの同時 PR 数に上限。Copilot などの AI 由来 PR もカウント対象</a></h3>
+    <p class="meta"><span class="tag">🔥話題</span>GitHub Blog · 2026-06-17</p>
+    <p>メンテナはリポジトリ単位で「write 権限なしユーザーが同時に開ける PR の上限」を設定可能に。上限に達したユーザーは既存 PR を close/merge しない限り新規 PR を出せません。Copilot などの AI エージェントが出した PR もカウント対象、Draft PR は除外、信頼できる外部コントリビューターは bypass list で除外可能。月次 mergeされる PR 数が 2023年1月の 2500万 → 直近 9000万 と3.6倍化した「AI による物量」への直接的な答えです。</p>
+    <div class="note">「AI スロップ PR」問題に対する <strong>レート制限という古典的な解</strong>。LLM ベースの自動分類で振り分けるのではなく、<em>権限境界 × カウンタ</em>という枯れた仕組みで誤検知ゼロ・運用容易を狙ったのが GitHub らしい判断です。自社の OSS プロジェクトでも段階的にオン → bypass list で例外管理、という流れが定石になりそうです。</div>
+
+    <h2>📐 アーキテクチャ / 設計（重点）</h2>
+
+    <h3><a href="https://netflixtechblog.com/from-silos-to-service-topology-why-netflix-built-a-real-time-service-map-0165ba13a7bc" target="_blank" rel="noopener">Netflix Service Topology — 数千マイクロサービスのリアルタイム依存グラフ</a></h3>
+    <p class="meta"><span class="tag">📐設計論</span>Netflix Tech Blog / InfoQ · 2026-06</p>
+    <p>3つの異種データソース（サービスメッシュ・呼出ログ・宣言メタデータ）を1本のクエリ可能なグラフに統合し、トラフィック変動に応じて準リアルタイムで更新。処理は Apache Pekko Streams + マルチリージョン Kafka、ストレージは内製の分散 KVS 上のグラフレイヤ。gRPC API でマルチホップ・可用性ティア・ビジネス領域でのフィルタが可能、サブ秒応答が必須要件。「日に何度もデプロイされる環境では静的依存図は使いものにならない」という反省から再設計されました。</p>
+    <div class="note"><strong>"依存グラフを別商品として独立させる"</strong> 設計が肝。サービスメッシュやトレーシング基盤に組み込むと「障害時に同じ基盤が落ちる」「クエリ性能が遅い」課題が出るため、Netflix は<em>用途専用のグラフ DB レイヤを別運用</em>しています。自社が数百サービス規模なら full Netflix 構成は過剰ですが、「誰が誰に依存しているかを on-call が即引ける」窓口を SoR から切り出す、というエッセンスはそのまま応用可能です。</div>
+
+    <h3><a href="https://www.uber.com/us/en/blog/modernizing-artifact-storage/" target="_blank" rel="noopener">Uber、Artifact Storage を SaaS 移行＋検証プロキシで egress を 99% 削減</a></h3>
+    <p class="meta"><span class="tag">📐設計論</span>Uber Engineering · 2026-06-04</p>
+    <p>Go / Java / Web / Android / iOS / Python のモノレポ＋数千の microrepos が依存物と成果物を扱う構成で、これまでは2拠点 × 5ノード × レプリカ3 の HA クラスタを自前運用。これを SaaS（Cloudsmith/Artifactory 系）に移し、エッジに <strong>検証プロキシ</strong>を挟むことで重複ダウンロードを排除、egress コストを 99% 超削減しつつプロキシ層で 99.99% の信頼性を確保しました。</p>
+    <div class="note"><strong>"自前 artifact store → SaaS + 検証プロキシ"</strong> という再構成は、ビルド時間が壊滅的に長い組織ほど効きます。要諦は <em>本体を SaaS に逃がしつつ、ホットパスはプロキシで内部キャッシュ化して egress と SLA を切り離す</em>こと。Bazel/Pants のリモートキャッシュや内部 npm/Maven proxy を運用している組織は、同じパターンで段階移行できます。</div>
+
+    <h3><a href="https://www.infoq.com/news/2026/06/architectural-decisions/" target="_blank" rel="noopener">InfoQ — 軽量 ADR と「アーキテクチャ・アドバイス・フォーラム」で意思決定を分散化</a></h3>
+    <p class="meta"><span class="tag">📐設計論</span>InfoQ · 2026-06</p>
+    <p>Andrew Harmel-Law らの主張する「Architecture Advice Process」を、軽量 ADR と週次のアドバイス・フォーラムが支える構造を整理。"アーキテクト承認制" を捨て、決める人＝影響を受ける人にし、第三者は助言だけする、という運用を ADR と組み合わせて回す手順を提示。マイクロサービスが <em>"自律のはずが distributed monolith になった"</em> 多くの組織の根本原因は意思決定設計にある、という指摘が背景です。</p>
+    <div class="note">昨日紹介した Martin Fowler の ADR は<strong>「決定の記録様式」</strong>の話でしたが、こちらは <strong>「誰がどう決めるかというプロセス」</strong>の話で対になる概念。両者は ADR テンプレに <em>"誰に相談したか" "なぜ反対意見を採用しなかったか"</em> の欄を加えて初めて噛み合う、と現場の実装者は強調しています。中規模以上で「全部アーキ承認」がボトルネックになっている組織で特に効きます。</div>
+
+    <h2>🌐 言語 / フレームワーク / ランタイム</h2>
+
+    <h3><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-rc/" target="_blank" rel="noopener">TypeScript 7.0 RC — Go 書き換えコンパイラがメインラインに合流、約10倍高速</a></h3>
+    <p class="meta"><span class="tag">🆕新リリース</span><span class="tag">🔥話題</span>Microsoft DevBlogs · 2026-06-18</p>
+    <p>TS 自身でブートストラップしていた tsc を1年かけて Go に移植した <strong>tsgo</strong> が、ついに 7.0 系として本流に合流。型検査ロジックは TS 6.0 と構造同等を保つよう「書き直し」ではなく「移植」されており、互換性は高い。VS Code リポジトリ（150万行 TS）で 77.8s → 7.5s、ネイティブコード速度 + 共有メモリ並列で 6.0 比約10倍。RC は npm で即提供開始、GA は約1か月後。</p>
+    <div class="note">これまで TS は「型検査と JS 出力で最も重い CI ステップ」になりがちで、巨大モノレポでは <em>tsc を諦めて esbuild + 部分型検査</em>に逃げていた組織が多くいました。tsgo の 10倍化で <strong>"型検査ステップを毎コミット回す"</strong> のが現実的になり、Turborepo / nx 系のキャッシュ戦略やプッシュ前 pre-commit の設計が見直されます。LSP 体感も改善します。</div>
+
+    <h2>🗄️ データベース / データ基盤</h2>
+
+    <h3><a href="https://supabase.com/blog/multigres-v0-1-alpha" target="_blank" rel="noopener">Multigres v0.1 alpha — "Postgres 用の Vitess" がα公開</a></h3>
+    <p class="meta"><span class="tag">🛠OSS</span><span class="tag">📐設計論</span>Supabase Blog · 2026-06-04</p>
+    <p>Vitess 共同創設者 Sugu Sougoumarane 主導で、YouTube/Slack を支えた Vitess の設計を Postgres に持ち込む新 OSS（Apache 2.0）。v0.1 はまだ <em>シングルシャード ＋ HA + コネクションプール ＋ K8s オペレータ</em>で、目玉のシャーディングはまだ。MultiGateway がクエリルーティング・scatter-gather を担い、MultiPooler がコネクションプールと PG インスタンスを協調させる構成です。</p>
+    <div class="note">Postgres のスケール手法は CitusData (Microsoft) の <em>外部拡張で透過分散</em>と pg_dog/pg_partman 系の <em>運用ツールで束ねる</em>派が長年並立してきました。Multigres は <strong>Vitess の "プロキシレイヤがプロトコル境界を握る" モデル</strong>を Postgres でもやる派で、protocol compat と pooling だけ先に出して採用を促し、シャーディングを後付けする出し方が戦略的。MySQL の Vitess 体験を持つチームには馴染みやすい設計です。</div>
+
+    <h2>🧠 物理AI / 基盤モデル</h2>
+
+    <h3><a href="https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai" target="_blank" rel="noopener">NVIDIA Cosmos 3 — オープンな "物理 AI" 用 omnimodal 基盤モデル</a></h3>
+    <p class="meta"><span class="tag">🆕新リリース</span>NVIDIA Newsroom · 2026-06-01</p>
+    <p>テキスト・画像・動画・環境音・行動を1モデルで扱う omnimodal 基盤モデル。<strong>Mixture-of-Transformers</strong> 構成で「推論用 transformer」と「生成専門 transformer」を分離し、物体相互作用・運動・時空間関係を理解した上で動画＋行動軌道を生成。Linux Foundation の OpenMDW-1.1 ライセンスで weights / 評価ベンチ / 合成データを公開。Agile Robots, Runway, Skild AI らと "Cosmos Coalition" を結成。</p>
+    <div class="note">"物理 AI" の <strong>合成データ生成エンジン</strong>がここで言う中核用途。実機のロボットを動かす学習データを集めるのは桁違いに高コストだったため、<em>物理的に妥当な動画を量産して policy 学習を回す</em>のがコスト構造を一変させます。LLM の基盤モデルが NLP のコモディティ化を進めたのと同じ役回りを、ロボティクスでやろうとしている立ち位置です。</div>
+
+    <h2>🔐 セキュリティ</h2>
+
+    <h3><a href="https://www.darkreading.com/application-security/cordyceps-malicious-pull-requests-developer-workflows" target="_blank" rel="noopener">"Cordyceps" — GitHub Actions ワークフローの構造的脆弱性クラス（Microsoft / Google / Apache 等で確認）</a></h3>
+    <p class="meta"><span class="tag">⚠セキュリティ</span><span class="tag">🔥話題</span>Dark Reading / Novee Security · 2026-06</p>
+    <p>Novee Security が命名した、GitHub Actions .yml の<strong>パターン的不備</strong>を突くサプライチェーン攻撃クラス。匿名 PR のコメントや本文を低権限ワークフローが <em>信頼入力として扱う</em>ことで artifact 改ざんやコード実行に至る。Novee の 3万リポジトリ走査で 654件が要疑い、300件超を実証で悪用可能と確認。Azure Sentinel では PR コメント 1つから「Azure Marketplace を経由した顧客環境への書込権」が取れる例も。</p>
+    <div class="note">単一の CVE ではなく <strong>「pull_request_target に書込権を与える」「PR の文字列を直接シェルに渡す」</strong>等の<em>"作法レベル"の問題</em>が組織横断で残存しているという話。自社の Actions 監査では、a) pull_request_target を使っている job の secrets スコープ、b) GITHUB_TOKEN に与えている permissions の狭め、c) 入力を直接 shell に補間していないか、の3点を機械的にチェックするのが最初の一手です。</div>
+
+    <h2>🔬 注目論文 / 研究</h2>
+
+    <h3><a href="https://deepmind.google/blog/securing-the-future-of-ai-agents/" target="_blank" rel="noopener">Google DeepMind — "AI Control Roadmap": 内部システムを高能力 AI から守るための枠組み</a></h3>
+    <p class="meta"><span class="tag">🔬論文</span>DeepMind Blog · 2026-06-18</p>
+    <p>能力は上がるが整合性が完璧でない AI を <em>社内に配備し始める</em>状況を前提に、Google が自社デプロイで採る「AI Control」設計の指針を公開。リスクモデル化・隔離境界・モニタリングの3層で、攻撃想定としては「逸脱する AI」と「侵入された AI」を区別。Anthropic の "Responsible Scaling Policy" や OpenAI の Preparedness Framework と並ぶ "事業者側" の安全枠組みです。</p>
+    <div class="note">"agentic safety" の議論が <strong>モデル安全（学習時の調整）</strong>から <strong>運用安全（デプロイ環境での封じ込め）</strong>に重心を移していることが象徴的。実務では、a) エージェントが触れる権限の最小化、b) ツール呼び出しの監査ログ、c) 想定外行動の検知・停止、を最低限の Control 要件として設計に組み込むのが現実解です。社内で MCP/Tool 連携を本番投入し始めた組織にとってチェックリスト代わりに使えます。</div>
+
+    <h3><a href="https://arxiv.org/abs/2606.18976" target="_blank" rel="noopener">CAPRA — マルチエージェント LLM でソフトウェアアーキテクチャ成果物に個別フィードバック</a></h3>
+    <p class="meta"><span class="tag">🔬論文</span>arXiv:2606.18976 · 2026-06-17</p>
+    <p>アーキテクチャ提案書・C4 図・ADR などの "deliverable" を対象に、専門役割を分担するマルチエージェント LLM がレビュー・指摘・代替案提示を行うシステム。レビュー観点ごと（保守性・スケーラビリティ・コスト等）に別エージェントを割り当て、最終 synthesizer がまとめる構成。教育環境での提出物自動採点と、企業内のアーキ提案ピアレビュー支援の両方を想定。</p>
+    <div class="note">アーキレビュー会議は「観点を持つシニアの時間」がボトルネックになりがち。CAPRA のような <strong>観点別エージェントが並列で読んでから synthesizer がまとめる構成</strong>は、最近のソフト工学で頻出パターンで、Stripe の AI ベンチ（昨日）や InfoQ のアドバイス・プロセス（上述）と問題意識が同じ系列です。"レビュー自動化" より先に "レビュー観点の明文化" を強いる副作用も期待できます。</div>
+
+    <h2>🌟 GitHub Trending / 注目 OSS</h2>
+
+    <h3><a href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">calesthio/OpenMontage — エージェンティック動画制作ワークフロー</a></h3>
+    <p class="meta"><span class="tag">🛠OSS</span><span class="tag">🔥話題</span>Python · ⭐ 約19,000 (今日 +3,703)</p>
+    <p>Cursor / Claude Code 等の AI コーディングアシスタントを「動画制作スタジオ」として使うための 12 パイプライン・52 ツール・500+ スキル群。プレーンテキストで指示すると YouTube / Reddit / HN / 学術ソースから取材しスクリプト・アセット生成・編集・最終合成まで一気通貫。ローカルモデル（WAN 2.1 / Hunyuan）対応。</p>
+    <div class="note">「コーディングエージェントの "skill" を別ドメインに転用する」具体例として面白い。AI コーディング IDE が <em>shell + ファイルシステム + tool use</em> を提供している以上、原理的に "テキストで指揮できる開発フロー" は何でも乗せられる、という主張を実装で示したもの。社内ナレッジ作業（資料生成・データ整形）にも同じパターンが応用できそうです。</div>
+
+    <h3><a href="https://github.com/google-labs-code/design.md" target="_blank" rel="noopener">google-labs-code/design.md — "コーディングエージェント向け" デザインシステム記述フォーマット</a></h3>
+    <p class="meta"><span class="tag">🛠OSS</span><span class="tag">📐設計論</span>TypeScript · ⭐ 約17,000 (今日 +504)</p>
+    <p>YAML front matter で機械可読なデザイントークンを、本文 Markdown で「なぜそうしたか」の根拠を記述する DESIGN.md 仕様。CLI（@google/design.md）は未解決参照・循環依存・無効値を検出する linter、Tailwind v3 設定への変換、agent 向けの決定的 JSON 出力モードを提供。</p>
+    <div class="note">いま LLM ベースの UI 生成は <em>"なんとなく整ったが既存ブランドとずれる"</em> が定型的な失敗。DESIGN.md は<strong>「機械が解釈できる値」＋「人間が読む理由」</strong>を1つのファイルに同居させることで、エージェントに <em>勝手に解釈させずに済むデザインソース</em>を持ち込みます。Figma Variables や Style Dictionary 系を AI 時代向けに再定義した位置づけです。</div>
+
+    <h2>🇯🇵 日本語コミュニティ動向</h2>
+
+    <h3><a href="https://www.publickey1.jp/blog/202606.html" target="_blank" rel="noopener">Publickey — TypeScript 7.0 RC / GitHub PR 制限 / GitLab Project Switch を相次いで日本語で詳報</a></h3>
+    <p class="meta">Publickey · 2026-06</p>
+    <p>6/24 の TypeScript 7.0 RC（Go 実装で 10倍高速）、6/23 の GitHub による「AI 由来の低品質 PR 抑止のためのユーザー単位 PR 数上限」、6/17 の GitLab "Project Switch" など、英語圏の発表をテックリード向けに日本語要約。"なぜこの仕様か" を含む解説で、英語一次情報を読みに行く前のスクリーニングに使えます。</p>
+    <div class="note">Publickey は <strong>英語一次情報 → 日本語要約</strong>のレイテンシが当日中で安定しており、Slack の社内チャンネル共有でほぼそのまま使えるのが強み。ニュース系より <em>「クラウド事業者と OSS 財団の発表」</em>に強い偏りがあるため、自分のキャッチアップ網にもう一段「研究系」と「フロントエンド系」のソースを足して補完するとよいです。</div>
+
+    <h3><a href="https://zenn.dev/neko3cs/articles/software-architecture-for-the-ai-era" target="_blank" rel="noopener">Zenn — AI 時代におけるソフトウェアアーキテクチャを考える</a></h3>
+    <p class="meta">Zenn · 2026-06</p>
+    <p>クラウド + IaC でアーキテクチャ設計の前提が一度ひっくり返った後、今度は AI コーディングを前提に置くと「純粋 MVC のような枯れた構造が逆に最適化される」という指摘。AI が生成したコードを人間が <strong>レビュー可能な単位</strong>で受け取るために、設計時から "AI に書かせやすい層構造" を選ぶ、という具体例を含みます。</p>
+    <div class="note">"AI に書かせる前提でアーキを選ぶ" は新しい着眼ですが、本質は <em>「読み手（=次に触る人/AI）にとって最小の認知負荷で済む構造を選ぶ」</em>という Clean Architecture と同じ原則の再解釈。Findy のようなプロダクトであれば、ドメインロジック層を agent friendly な粒度に整える＝SRE/オンコールの理解しやすさにも効く、と読むと現実的です。</div>
+
+    <h3><a href="https://zenn.dev/loglass/articles/a31edf89fc5456" target="_blank" rel="noopener">Zenn (ログラス) — 「図面」から「法則」へ、メタ視点で読み解くソフトウェアアーキテクチャ</a></h3>
+    <p class="meta">Zenn (ログラス) · 2026-06</p>
+    <p>アーキテクチャを「特定の図面」として教えるのではなく、<strong>制約 × トレードオフの法則</strong>として捉え直し、現場でパターン選定を判断する素地を作る、という教育/オンボーディング向けの記事。レイヤード / DDD / イベント駆動などの各論を別々に覚えるのではなく、「いつ何を捨てるか」という選び方の軸に並べ直しています。</p>
+    <div class="note">アーキ初学者の壁は <em>"パターンの名前は知っているが、なぜそれが今の状況に合うかが判断できない"</em> こと。本記事は <strong>"トレードオフを言語化してから図に落とす"</strong> 順番を提示しており、社内のアーキ研修・テックレビュー前の事前読書として使えます。ポエムに振れがちな話を、地に足のついた手順に落としている点で読み手の幅が広いです。</div>
+
+    <footer>
+      <p><strong>収集元</strong>: Hacker News <em>(取得失敗・WebSearch代替)</em> / GitHub Trending / Pragmatic Engineer <em>(取得失敗)</em> / Anthropic News <em>(取得失敗・WebSearch代替)</em> / OpenAI Blog <em>(取得失敗・WebSearch代替)</em> / Google DeepMind Blog <em>(取得失敗・WebSearch代替)</em> / Martin Fowler <em>(取得失敗・WebSearch代替)</em> / AWS Architecture Blog <em>(取得失敗・WebSearch代替)</em> / High Scalability <em>(WebSearch のみ)</em> / ThoughtWorks Technology Radar <em>(Vol.34 は4月公開のため本日の新規枠は無し)</em> / Netflix Tech Blog <em>(WebSearch代替)</em> / Uber Engineering Blog <em>(取得失敗・WebSearch代替)</em> / Stripe Engineering Blog <em>(本日は新規ピックなし)</em> / InfoQ <em>(取得失敗・WebSearch代替)</em> / arXiv cs.AI / Changelog <em>(本日は新規ピックなし)</em> / Zenn / note <em>(本日は新規ピックなし)</em> / Publickey</p>
+      <div class="caveat">本日は WebFetch がほとんどの英語メディアで 403 を返したため、WebSearch 経由のメタ情報＋一次 URL 直接参照で構成しています。各記事の本文要約はリンク先で必ず確認してください。</div>
+      <p>毎朝更新 · GitHub Pages で公開</p>
+    </footer>
+  </div>
+</body>
+</html>
