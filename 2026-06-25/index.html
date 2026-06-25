@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年06月25日(木) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 8px}
+.sum{margin:6px 0 0}
+.sup{background:var(--sup-bg);border-left:3px solid var(--sup-border);padding:10px 14px;border-radius:4px;margin-top:10px;font-size:.94rem;color:var(--fg)}
+.sup::before{content:"💡 ";font-weight:600}
+footer{margin-top:42px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;line-height:1.7}
+footer .fail{color:#b45309}
+@media (prefers-color-scheme: dark){footer .fail{color:#fbbf24}}
+@media (max-width:480px){
+  body{padding:14px 12px 40px;font-size:15.5px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.04rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+<a href="../" class="back">← 過去ブリーフ一覧へ</a>
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年06月25日(木)</div>
+</header>
+
+<div class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p><strong>OpenAIが自社初の推論専用ASIC「Jalapeño」をBroadcomと共同発表</strong>（6/24）。9ヶ月でテープアウトという異例の速度で開発され、2026年末からgigawatt級データセンターに展開する計画。LLMプロバイダにとって"GPU調達リスクと推論コスト"が事業の中核制約になる中、自社シリコンで縦軸の最適化を取り戻す動きが明確になった。</p>
+  <p>同時に<strong>AWSが Lambda MicroVMs を一般提供開始</strong>（6/23）。Firecracker基盤で最大8時間のステートフル実行を許す、ユーザー/AI生成コード向けの新サンドボックスプリミティブ。"AIエージェントが任意コードを安全に動かす場"が、いよいよプラットフォーム側の標準機能になり始めた。</p>
+</div>
+
+<h2>🤖 AI / LLM プラットフォーム</h2>
+
+<div class="art">
+  <h3><a href="https://openai.com/index/openai-broadcom-jalapeno-inference-chip/" target="_blank" rel="noopener">OpenAI and Broadcom unveil LLM-optimized inference chip</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">openai.com｜2026-06-24</div>
+  <p class="sum">OpenAIがBroadcomと共同設計した自社初の推論用ASIC「Jalapeño」を発表。設計開始からテープアウトまで9ヶ月という業界最短級の開発で、初期テストはGPT-5.3-Codex-Spark等のワークロードをラボの本番想定周波数で稼働。2026年末から段階的に展開し、複数世代のスタックを構築する計画。</p>
+  <div class="sup">推論ASICはLLM運用の「ワット当たり性能」を取り戻すための業界共通の動き（Google TPU、Amazon Trainium/Inferentia、Meta MTIAと同じ系譜）。重要なのは"OpenAIがNvidia依存と価格交渉力からどれだけ独立できるか"で、API料金やマージンに直接効くため、各クラウド/モデル提供者のスタック内製化レースが一気に表面化した1件と読める。</p>
+</div>
+
+<h2>🛠 AIエージェント / 開発インフラ</h2>
+
+<div class="art">
+  <h3><a href="https://aws.amazon.com/blogs/aws/run-isolated-sandboxes-with-full-lifecycle-control-aws-lambda-introduces-microvms/" target="_blank" rel="noopener">Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span></div>
+  <div class="src">aws.amazon.com｜2026-06-23</div>
+  <p class="sum">AWSがLambdaに新プリミティブ「MicroVMs」を追加。Firecracker上に最大8時間のステートフル実行環境を提供し、コンテナより強いVMレベル隔離をサブ秒起動で実現。コーディング環境・データ分析・脆弱性スキャナなど"ユーザー/AI生成コードを動かす場"を、自前のVM管理なしに作れる。</p>
+  <div class="sup">従来のLambda関数は「15分上限・ステートレス」で、AIエージェントの長時間ループや会話セッションには窮屈だった。MicroVMsは"Firecracker（軽量VM）の Lambda 側へのリパッケージ"で、E2BやFly Machinesといった先行サービスが切り拓いた"エージェント用サンドボックスSaaS"のレイヤを AWS が公式機能として吸収する形。AIエージェント基盤の自作判断に影響大。</p>
+</div>
+
+<h2>📐 アーキテクチャ / 設計（重点）</h2>
+
+<div class="art">
+  <h3><a href="https://netflixtechblog.com/uda-unified-data-architecture-6a6aee261d8d" target="_blank" rel="noopener">Model Once, Represent Everywhere: UDA (Unified Data Architecture) at Netflix</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">netflixtechblog.com｜2026年6月</div>
+  <p class="sum">Netflixが社内データ基盤のメタアーキテクチャ「UDA」を公開。RDF/SHACLベースのknowledge graphをハブに据え、ドメインモデルからGraphQL/Avro/Iceberg/Javaスキーマを自動派生。"actorsやmovies"といったビジネス用語でデータを探せるセルフサービス検索ツール Sphere をこの上に構築している。</p>
+  <div class="sup">大規模組織で必ず起きる「同じ概念に部署ごとの別スキーマが乱立する」問題への構造的回答。Data Mesh（分散所有モデル）やData Catalog（後付け検索）と違い、UDAは"スキーマを上位ドメインモデルから生成する"発想で、データプロデューサ側を矯正する。中小規模でも"単一ソースからAPI/DB/型を生成する"発想は適用でき、設計判断の参考価値が高い。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.uber.com/us/en/blog/apache-hudi-at-uber/" target="_blank" rel="noopener">Apache Hudi™ at Uber: Engineering for Trillion-Record-Scale Data Lake Operations</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">uber.com｜2026年6月</div>
+  <p class="sum">Uberがtrillion-record規模でApache Hudiを運用してきた工夫を解説。データレイクの一部をクラウドへ無停止移行し、PB級レプリケーションを分散Application Master化＋並列namenode呼び出しで90%高速化、5倍のレプリ容量を実現したと報告。</p>
+  <div class="sup">HudiはUberが社内基盤として開発・OSS化した「データレイクにACID/UPSERTを足す」フォーマットで、Apache Iceberg／Delta Lakeと並ぶlakehouseの3大選択肢。仕様の話ではなく"原開発元がhyperscaleでぶつかった運用課題"を共有している点が読みどころで、Iceberg採用検討中でも"テーブル/メタデータ無停止移行"の論点として参考になる。</p>
+</div>
+
+<h2>🔬 注目論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2606.10209" target="_blank" rel="noopener">Less Context, Better Agents: Efficient Context Engineering for Long-Horizon Tool-Using LLM Agents</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">arXiv:2606.10209｜2026-06-08</div>
+  <p class="sum">企業システムの饒舌なツール応答がエージェントの context overflow / stale-state エラー / 推論コスト増を招く問題を、MCP（Model Context Protocol）ツールとGPT-5系で実測。複数のcontext管理戦略を比較し、"渡す情報を絞る方が"精度・コストの両方で勝るケースが多いことをホテル経費ベンチで定量化。</p>
+  <div class="sup">「長コンテキストモデルなのだから全部突っ込めばよい」という素朴な発想を否定する流れに、MCPという文脈で具体的なベンチを与えた1本。MCPは外部ツール群を統一規格でエージェントに繋ぐ仕組みで、Claude/GPT/Gemini等が広く対応中。ツール応答の要約・トリミング・選択をどこに置くかは、エージェント設計の中心論点になりつつある。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2606.24429" target="_blank" rel="noopener">Detecting AI Coding Agents in Open Source: A Validated Multi-Method Census of 180 Million Repositories</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">arXiv:2606.24429｜2026-06-23</div>
+  <p class="sum">Claude Code・Codex等のAIコーディングエージェントの利用痕跡を、設定ファイル・コミットメッセージ・著者ID・botシグネチャの4手法を組み合わせて、World of Code（1.8億Gitリポジトリ）上で検出する初の体系的調査。OSSにおけるエージェント由来コード混入の実態調査の基盤を提供。</p>
+  <div class="sup">"AIが書いたコードが世界にどれだけ流通しているか"は、サプライチェーンセキュリティと教育/学習データの汚染問題の両方に直結する。検出器を公開し再現可能なベンチにした点に価値があり、自社の依存先OSSがAI生成中心になっているか測る運用ツールへの展開も期待できる。</p>
+</div>
+
+<h2>🌟 GitHub Trending / 注目 OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/apple/container" target="_blank" rel="noopener">apple/container</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">🔥話題</span></div>
+  <div class="src">⭐ 43,115 (+1,366 today) ｜ Swift</div>
+  <p class="sum">Mac上でLinuxコンテナを"軽量VMの集合"として走らせるApple純正ツール。OCI互換イメージのpull/push/runをサポートし、サブ秒起動と Apple silicon 向け最適化を売りに、macOS 26上の新しい仮想化機能を活用する。</p>
+  <div class="sup">Docker Desktop / colima / lima 等の代替ポジション。実装は同社のOSSパッケージ <code>Containerization</code>（Swift製）に依拠し、コンテナごとに専用VMを立てて vsock 経由のgRPCで初期化する設計。Apple silicon Mac＋macOS 26限定なので採用判断はチーム環境次第だが、ローカル開発のコンテナ周辺ツール選定では今後の主役候補。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/opendatalab/MinerU" target="_blank" rel="noopener">opendatalab/MinerU</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span></div>
+  <div class="src">⭐ 69,431 (+524 today) ｜ Python</div>
+  <p class="sum">PDF/Officeなどの文書群をLLMに食わせやすいmarkdown/JSONへ変換する抽出ツール。レイアウト解析・表・数式までカバーすることを狙う。</p>
+  <div class="sup">RAG（Retrieval-Augmented Generation: 検索でLLMにcontextを与える手法）の前処理として広く使われる領域。競合は Marker / LayoutLM / Unstructured.io 等で、社内ドキュメントを高品質にchunking → embeddingしたい時の選択肢。OCR＋構造化どちらも"OSSで十分使える"水準が来ている、と捉えるとよい。</p>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/2027ai65ide.html" target="_blank" rel="noopener">2027年までにAIエージェントでコーディングを行うチームの65％が、IDEが必要不可欠だとは考えなくなる。ガートナーの予想</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span></div>
+  <div class="src">publickey1.jp｜2026-06-15</div>
+  <p class="sum">ガートナーが「2027年までにAIエージェントでコーディングするチームの65%以上が、IDEを必要不可欠とは見なさなくなり、制御・ガバナンス・検証を自動化プラットフォームに移す」と予測。Claude CodeやAntigravity 2.0のようなIDE非依存ツールの台頭を裏付ける論。</p>
+  <div class="sup">VS Code/IntelliJなどは"人間がコードを編集する場"を前提に設計されてきた。エージェントが主な書き手になると、必要なのは編集UIではなく「タスク委任→検証→ガバナンス」の自動化基盤になる、という構造変化の指摘。テックリードとしては、近い将来の開発フロー設計（PR・CI・観測）でエディタ非依存を前提にした選定が問われ始める。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/yosugi/articles/llm-friendly-architecture" target="_blank" rel="noopener">AI時代のソフトウェアアーキテクチャ</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">zenn.dev / @yosugi</div>
+  <p class="sum">Claude Code / Codexが日常的にコード生成を担う前提で「LLMが文脈を取りやすい」アーキテクチャ指針を提案。コンテキスト量の最小化、純粋関数中心化、副作用の局所化、明示的なインタフェース宣言など、エージェントが誤らずに改修できるコードベース構造を論じる。</p>
+  <div class="sup">「人間の可読性」中心だったコード設計に、「LLMが正しく文脈を掴めるか」という新しい評価軸を組み込む議論。クリーンアーキテクチャや関数型志向の再評価とも繋がる。エージェント運用効率（成功率・トークン消費）を設計判断のKPIに含める動きは、今後の大規模リファクタ判断にも直結する考え方。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/neoai/articles/2b8ee68d99e545" target="_blank" rel="noopener">モジュラモノリスで急成長SaaSをスケール - マイクロサービスは"実装の詳細"</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">zenn.dev / NeoAI</div>
+  <p class="sum">DDDによる強い境界を持つモジュラモノリスを採用すれば、"マイクロサービスかモノリスか"の選択は実装詳細に降格でき、将来の切り出しを低コストで可能にできる、という運用知見の共有。急成長フェーズの実プロダクトで採った設計判断とトレードオフが言語化されている。</p>
+  <div class="sup">"最初からマイクロサービス"で失敗してきた業界経験への一つの解。Sam Newmanの「modular monolith → 必要部分だけ分離」進化型アーキの実装事例で、初期フェーズで境界（モジュール内/間の依存ルール、DBスキーマ、トランザクション境界）を厳格に運用できれば、後の分割コストは劇的に下がる。中規模SaaS立ち上げ期の設計判断テンプレとして直接参考になる。</p>
+</div>
+
+<footer>
+  収集元: Hacker News / GitHub Trending / Anthropic News / OpenAI Blog / Google DeepMind / The Pragmatic Engineer / Martin Fowler / AWS Architecture Blog / High Scalability / Thoughtworks Technology Radar / Netflix Tech Blog / Uber Engineering / Stripe Engineering / InfoQ / arXiv (cs.AI) / Changelog / Zenn / note / Publickey<br>
+  <span class="fail">取得失敗（403 / 一部代替で補完）: Hacker News フロントページ・各社公式ブログのトップページは WebFetch がブロックされたため、WebSearch + 公式ページ参照で代替。</span>
+</footer>
+
+</body>
+</html>
