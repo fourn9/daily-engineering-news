@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年06月26日(金) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 8px}
+.sum{margin:6px 0 0}
+.sup{background:var(--sup-bg);border-left:3px solid var(--sup-border);padding:10px 14px;border-radius:4px;margin-top:10px;font-size:.94rem;color:var(--fg)}
+.sup::before{content:"💡 ";font-weight:600}
+footer{margin-top:42px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;line-height:1.7}
+footer .fail{color:#b45309}
+@media (prefers-color-scheme: dark){footer .fail{color:#fbbf24}}
+@media (max-width:480px){
+  body{padding:14px 12px 40px;font-size:15.5px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.04rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+<a href="../" class="back">← 過去ブリーフ一覧へ</a>
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年06月26日(金)</div>
+</header>
+
+<div class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p><strong>OpenAIが次世代モデル「GPT-5.6 Sol / Terra / Luna」をプレビュー公開</strong>（6/25-26）。番号がモデル世代、Sol/Terra/Luna が"用途別の能力ティア"を表す新ネーミングに刷新し、Solは新設の <em>max reasoning</em> と複数サブエージェントで深堀りする <em>ultra mode</em> を搭載。米政府要請を受け初期は約20社の信頼パートナーに限定提供という異例の形での船出となった（Sol $5/$30 per 1M tok）。</p>
+  <p>同日、<strong>AnthropicがSlack上の Claude を全面刷新する「Claude Tag」を発表</strong>（6/23）。チャネル単位で記憶を共有する"マルチプレイヤーAI"で、Opus 4.8搭載・ambient mode（自発的通知）対応。社内では既に Anthropic 製品チームのコードの65% を担うとされ、"AIエージェントが組織のチャネルに常駐し、人間のメンバーと地続きに働く"という未来像が具体的なプロダクトになった。</p>
+</div>
+
+<h2>🤖 AI / LLMプラットフォーム</h2>
+
+<div class="art">
+  <h3><a href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">Previewing GPT-5.6 Sol: a next-generation model</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">openai.com｜2026-06-25</div>
+  <p class="sum">OpenAIが GPT-5.6 シリーズ（Sol / Terra / Luna）を発表。Solは難問向け（コーディング・サイバーセキュリティ・科学）の最強モデルで、新設の "max reasoning effort" と "ultra mode"（複数サブエージェントで並列推論）を実装。米政府との事前合意に基づき初期提供は約20の信頼パートナー限定、一般公開は数週間後の見込み。</p>
+  <div class="sup">"番号=世代、Sol/Terra/Luna=能力ティア（最上位/業務/日常）" という分離は、Anthropic の Opus/Sonnet/Haiku と同型の整理を一段進めた形。注目点は <em>ultra mode</em> で、これは"単一モデルが長く考える"を超えて"複数の自分自身を並列に走らせて統合する"発想 — 内部で workflow/agent をモデルが組む方向であり、APIユーザーがエージェントフレームワークを書く必要性が一段下がる可能性を示唆する。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.anthropic.com/news/introducing-claude-tag" target="_blank" rel="noopener">Introducing Claude Tag</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span></div>
+  <div class="src">anthropic.com｜2026-06-23</div>
+  <p class="sum">既存の "Claude in Slack" を置き換える新しいSlack統合「Claude Tag」をEnterprise/Team向けβ提供開始。チャネル単位で常駐する単一のClaudeに全員が @Claude で話しかける"マルチプレイヤー"設計で、Opus 4.8がチャネルの履歴を蓄積し、ambient modeでは自律的に通知も投げる。旧Slackアプリは8/3で廃止。Anthropic自身の製品チームではコードの65%が内部版 Claude Tag 経由で生成されているという。</p>
+  <div class="sup">これまでのAIアシスタントは"個人の隣にいる相棒"だったが、Claude Tagは"チャネル＝チームの共有プロセス"側にAIを置く設計。つまり「Slackチャネル」がエージェントの<em>state container</em>（記憶と権限のスコープ）として正式に位置づけられた点が新しい。テックリードとしては、PR botやインシデント運用ツールを"チャネル属性のエージェント"に置き換えていく流れが現実化するため、Slack権限・MCP接続・監査の設計を先回りで考える価値がある。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-claims-that-chinas-alibaba-illicitly-distilled-its-models-from-april-to-june-2026-says-effort-involved-25-000-fake-accounts-and-28-8-million-exchanges-on-claude" target="_blank" rel="noopener">Anthropic claims Alibaba illicitly distilled Claude — 25K fake accounts, 28.8M exchanges</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">tomshardware.com／anthropic letter to White House｜2026-06-24</div>
+  <p class="sum">Anthropicが Alibaba Qwen ラボに関連する組織による"Claude蒸留キャンペーン"をホワイトハウスに通報したと発表。2026年4/22〜6/5の間に約25,000の偽アカウントと2,880万件のやり取りを通じて、特にソフトウェアエンジニアリングとエージェント推論能力の抽出が狙われたという。LLMサービス側の不正検知・レート制御・利用規約執行を一段引き上げる契機となりそう。</p>
+  <div class="sup">"蒸留"はLLMの主要な学習圧縮手法で、教師モデル（ここではClaude）の出力を大量に収集してより小さい/同等のモデルを訓練する技法。これ自体は研究で広く使われるが、商用APIの規約は通常これを禁じる。今後はAPI事業者側でリクエスト指紋分析・反復クエリ検知・コホート単位のレート制御など、"モデルそのものを守るための運用層"の整備が業界標準化していく可能性が高い。</p>
+</div>
+
+<h2>🛠 AI開発ツール / エージェント</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/google-labs-code/design.md" target="_blank" rel="noopener">google-labs-code/design.md — A format spec for describing a visual identity to coding agents</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">🔥話題</span><span class="tag">📐設計論</span></div>
+  <div class="src">⭐ 21,053 (+2,319 today) ｜ TypeScript｜github.com/google-labs-code</div>
+  <p class="sum">Google Labs が公開した、デザインシステムをコーディングエージェントに渡すためのフォーマット仕様。YAMLフロントマター（機械可読のデザイントークン）＋ Markdown 本文（人間向けの設計意図・適用ルール）の2層構造で、エージェントの跨ぎ・セッション跨ぎでも一貫した視覚的アイデンティティを保てるよう設計。CLI兼lintツール <code>@google/design.md</code> も同時公開。</p>
+  <div class="sup">これまで Tailwind config / Figma tokens / Storybook など"場所がバラバラ"だった設計知識を、エージェントが読みやすい1ファイルに集約する試み。<code>AGENTS.md</code> や CLAUDE.md と並ぶ"エージェント向けプロジェクト規約ファイル"のジャンルに、デザイン系の標準が初めて加わった形と言える。社内デザインシステムを抱えるチームは、AIエージェントの一貫性を保つ運用ファイルとして導入を検討する価値あり。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/aws/agent-toolkit-for-aws" target="_blank" rel="noopener">aws/agent-toolkit-for-aws — Official MCP servers and skills for AWS</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">⭐ 1,320 (+238 today) ｜ Python｜github.com/aws</div>
+  <p class="sum">AWS公式のAIエージェント向け統合ツールキット。MCP サーバ群とスキルセットをまとめて提供し、Claude Code / Codex / Antigravity 等のエージェントから AWS リソースを安全に操作させるためのリファレンス実装の位置づけ。</p>
+  <div class="sup">MCP（Model Context Protocol）は Anthropic 発・各社対応の"外部ツールをLLMに繋ぐオープン規格"。これまで MCP サーバは個人開発や Cloudflare/Anthropic等が公開してきたが、AWSがオフィシャルで出した意味は大きい — エージェント経由のクラウド操作が"非公式SDKハック"から"ベンダー公式のサポート対象"に格上げされる流れで、エンタープライズで AI エージェント運用を稟議に通すハードルが下がる。</p>
+</div>
+
+<h2>📐 アーキテクチャ / 設計（重点）</h2>
+
+<div class="art">
+  <h3><a href="https://stripe.dev/blog/how-api-changes-flow-into-stripes-developer-products" target="_blank" rel="noopener">How API changes flow into Stripe's developer products</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">stripe.dev／Mikael Mello・Anna Mason｜2026-06-15</div>
+  <p class="sum">Stripeのエンジニアが内部APIに変更を加えてマージしたあと、ドキュメント・SDK・CLI・Workbench・Dashboard等の開発者向けプロダクト群へ"自動的に同期"されていく仕組みの解説。一つのAPI仕様変更がどの製品・どの言語のSDK・どのドキュメント章にどう反映されるか、依存関係をAPI仕様自体から派生させる発想を共有。</p>
+  <div class="sup">"自社の決済APIが事業の中心"な企業ならではの徹底ぶりだが、エッセンスは"単一の仕様（OpenAPI/protobuf等）から複数の派生物を生成する"= <strong>contract-first / spec-first 開発</strong>。社内の小さなAPIでも、SDK・モックサーバ・テスト・ドキュメントを"手で同期"していると変更時のコストが指数的に膨らむため、Stripeの設計はそのスケーラビリティ限界に対する一つの完成形。Netflix UDA（昨日紹介）と同様、"上流のモデルを正にして下流を生成する"系譜の好例。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.uber.com/us/en/blog/uber-cart-assistant/" target="_blank" rel="noopener">Cart Assistant: Agentic Grocery Shopping on Uber Eats</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">uber.com｜2026-06-16</div>
+  <p class="sum">Uber Eatsがエージェント型ショッピング機能「Cart Assistant」をリリース。テキスト・手書きリスト・レシピ画像から、店舗ごとの在庫・価格・ユーザー過去注文を踏まえてカートを自動構築する。複数の取り扱いチェーン（Albertsons, Aldi, Kroger, Safeway等）で展開済みで、ユーザーはカート完成後に銘柄スワップで微調整できる。</p>
+  <div class="sup">注目したいのは"AIに何を委ねて何を人に残すか"の設計判断。完全自動ではなく "AIが叩き台 → 人が差し替え" のループに収めることで、ハルシネーション（誤った商品選択）リスクと完了率を両立させている。事業システムでLLMエージェントを使うときの定石パターン（draft-and-edit）が、リアルなコマースでも採られている事例で、社内ツール（経費起票・タスク分解・要件抽出）の設計テンプレとしても応用できる。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://aws.amazon.com/blogs/security/introducing-aws-continuum-security-at-machine-speed/" target="_blank" rel="noopener">Introducing AWS Continuum: Security at machine speed</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">⚠セキュリティ</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">aws.amazon.com｜2026-06-17</div>
+  <p class="sum">AWSが新サービス「Continuum」を発表。コードだけでなくインフラ構成・IAM・ネットワーク・ビジネス優先度などのコンテキストを統合的に推論して脆弱性を扱う、マシンスピードの自律的セキュリティプラットフォーム。Discovery → Prioritization → Validation → Mitigation の4フェーズで動き、特定モデルに依存せず複数のフロンティアモデルを役割別に使い分ける設計。pen testing / code scanning / threat modeling もContinuum傘下に統合。</p>
+  <div class="sup">従来の SAST/DAST/SBOM ツールが「コード or 設定」を点で検査していたのに対し、Continuumは"コード・設定・ビジネスコンテキスト"を1つのエージェントループで貫通する設計が新しい。"<strong>モデル非依存</strong>"を売りにしている点も実務的に重要で、AWS が将来のフロンティアモデル切替に備える布石でもあるし、ユーザーにとっては"特定LLM依存ベンダーロックインの回避"という選定材料になる。SREチーム規模が小さい企業ほど、こうしたエージェント型セキュリティ層の採用判断は近い将来の課題になる。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/siromiya/articles/2026-06-03-01-claudecode-team-agents" target="_blank" rel="noopener">Claude Codeをチームで運用するためのCLAUDE.md設計とカスタムエージェント分担</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">zenn.dev／@siromiya｜2026-06-03</div>
+  <p class="sum">Claude Codeの導入直後にありがちな"ルールを詰め込みすぎて誰も守らない"失敗を避けるため、CLAUDE.mdを「リポジトリ直下」「サブディレクトリ」「ユーザーグローバル(~/.claude/CLAUDE.md)」の三層に分け、責務とスコープを切り分ける運用論を解説。さらにカスタムエージェント（subagent）でロール（reviewer / planner / runner等）を分担させる具体例を共有。</p>
+  <div class="sup">CLAUDE.mdは"プロジェクトの規約をLLMに与えるREADME的ファイル"で、書き方次第でエージェントの成功率が大きく変わる。三層構造は、コードベース全体ルール（直下）／領域固有のドメインルール（サブディレクトリ）／個人の好み（ホーム）という<em>関心の分離</em>を持ち込む発想で、複数人で同じリポジトリにエージェントを走らせる際の競合と"全員に効くつもりが誰も守らない"問題を構造的に防ぐ。チーム導入で詰まりやすい論点の実務知見として価値が高い。</p>
+</div>
+
+<h2>⚠ セキュリティ</h2>
+
+<div class="art">
+  <h3><a href="https://thehackernews.com/2026/06/new-linux-pedit-cow-exploit-enables.html" target="_blank" rel="noopener">New Linux pedit COW Exploit Enables Root Access by Poisoning Cached Binaries (CVE-2026-46331)</a></h3>
+  <div class="tags"><span class="tag">⚠セキュリティ</span><span class="tag">🔥話題</span></div>
+  <div class="src">thehackernews.com／Red Hat RHSB-2026-008｜2026-06-24</div>
+  <p class="sum">Linuxカーネル <code>net/sched</code> の <code>act_pedit</code>（パケット編集アクション）に out-of-bounds write の脆弱性。COW（copy-on-write）の検証が"書き込みオフセット確定前"に行われるため、共有ページキャッシュ上の <code>/bin/su</code> 等の setuid バイナリにペイロードを注入してroot奪取可能。v5.18〜v7.1-rc6 が影響、v7.1-rc7で修正。RHEL 8/9/10・AlmaLinux 8・Debian 13 等で実証済み。</p>
+  <div class="sup">"ディスクのファイルを改ざんしない（メモリ上のキャッシュを汚染するだけ）"ため、tripwire等のファイル整合性監視が無力になる点が極めて厄介。一時策として <code>act_pedit</code> モジュールのブロック、または unprivileged user namespaces の制限が有効。コンテナホストOSのカーネル更新運用（live patching を含む）の棚卸しを今週中にやる価値がある。</p>
+</div>
+
+<h2>🔬 注目論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2606.24775" target="_blank" rel="noopener">Are We Ready For An Agent-Native Memory System?</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">arXiv:2606.24775｜Wei Zhou et al.｜2026-06</div>
+  <p class="sum">エージェントの"memory"を、永続保存・取得・更新・統合・ライフサイクル管理を行う一種のDBMSと見なし、(1) 表現/保存 (2) 抽出 (3) 検索/ルーティング (4) 維持 の4モジュールに分解する分析フレームワークを提案。実験の結果、"あらゆるシナリオで支配的な単一アーキテクチャは存在しない"ことを示し、用途別の組合せ最適化が必要と結論。</p>
+  <div class="sup">"長期記憶を持つAIエージェント"はベクトルDB等の単純合成では足りないという業界共通の感覚に、初めて構造的なベンチを与えた1本。実装者にとっての意味は明確で、"Claude/GPTにメモリ持たせる"案件で何を作るかを"DBMSの設計判断"として扱えるようになる — 取り出し速度・更新コスト・整合性・ガベコレ等の馴染みの軸で比較可能になる。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2606.19135" target="_blank" rel="noopener">A Technical Taxonomy of LLM Agent Communication Protocols</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">arXiv:2606.19135｜2026-06</div>
+  <p class="sum">LLMエージェントが外部世界と話すためのプロトコル群（MCP・A2A・Function Calling・OpenAPI・各社独自API等）を、設計次元（同期/非同期、ステートフル/レス、認可モデル、伝送等）で整理した技術分類体系を提示。各プロトコルの違いと適性を整理し、選定基準とギャップを明らかにする。</p>
+  <div class="sup">"とりあえずMCPで全部繋げばいい"という直感に対する、まじめな比較軸の提示。MCPは"ローカル/単一ホスト寄り"、Agent-to-Agent（A2A）は"対等エージェント間"、関数呼び出しは"単一モデルから単発のツール"というように、用途で得意領域が違う。社内エージェント基盤をどのプロトコルで構築するかを判断する読み手にとって、選定資料として直接使える。</p>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/awsaws_contiuumai.html" target="_blank" rel="noopener">AWS、コードだけでなくインフラ構成とビジネスコンテキストも理解した上で脆弱性を推論する「AWS Continuum」発表。特定のAIモデルに依存せず</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">publickey1.jp｜2026-06-17</div>
+  <p class="sum">上記「AWS Continuum」発表（6/17）を日本語で詳述。"テレメトリ→ダッシュボード"型ではなく、コード/設定/ビジネス文脈/ドキュメントを統合してAIエージェントが推論し、対応まで自動化する設計を強調。AWS Security Agent の pen testing / code scanning が Continuum 配下に再編されたことや、STRIDE準拠の threat modeling もプレビュー追加されたことを伝える。</p>
+  <div class="sup">英語の公式blogだけでなく日本語ソースで詳しく読みたい人向けの参照。"特定のAIモデルに依存しない"を強調する点は、エンタープライズの稟議で"将来のモデル切替が効くか"を問われた時の根拠になる。Publickey経由で同様の AWS Transform（リポジトリスキャンによる技術的負債検出）など他の発表も把握すると、AWS の AI エージェント戦略の全体像が掴める。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/kairosai/articles/aa04d8a4c13003" target="_blank" rel="noopener">2026年6月、AIが「予約実行」する時代へ：ChatGPT/Claude/Geminiのスケジュール実行をコードで設計する</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">zenn.dev／@kairosai｜2026-06</div>
+  <p class="sum">OpenAI・Anthropic・Googleの3社が揃って"スケジュール実行型エージェント"を投入した状況を整理し、Anthropicの Managed Agents（cronセマンティクス／CLI・認証サービス連携／vault管理の環境変数）を中心に、スケジュール実行エージェントを「入力層・処理層・出力層」の3層で設計する考え方を提示。</p>
+  <div class="sup">"AIが手元で動く"フェーズから"勝手に時間が来たら走る"フェーズへ移行中。設計上の課題は cron job 設計と同じ（再実行/冪等性/失敗時のリカバリ/秘密情報の扱い/ログ）で、エンジニアにとって"既知の問題に新しい意思決定主体（LLM）が加わる"構図。社内の定常業務（PRレビュー・週次レポート・在庫アラート）へのAIエージェント常駐化を検討するときの設計テンプレに使える。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/awsaiaws_transform_continuous_modernization.html" target="_blank" rel="noopener">AWS、AIエージェントがリポジトリを自動スキャンして技術的負債を指摘してくれる「AWS Transform - continuous modernization」プレビュー公開</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span></div>
+  <div class="src">publickey1.jp｜2026-06</div>
+  <p class="sum">AWS Transform に "continuous modernization" モードがプレビュー追加。AIエージェントが対象リポジトリを定期的に走査し、レガシー依存・型不整合・廃止予定API利用などの"技術的負債"を継続的に検出して報告する。SonarQube 等の静的解析を"単発のCIジョブ"から"エージェントによる継続観測"に置き換える方向性。</p>
+  <div class="sup">従来のリンタや SonarQube は"事前に書かれたルール"でしか見つけられず、人間が判断すべき"設計的な負債"は拾えなかった。LLMベースのエージェントは"なぜこれが負債か"を文章で説明できるため、優先順位付け・チーム合意形成のコストを下げる効果が期待できる。Continuum (security) と並ぶ、AWS の "<strong>マシンスピードで内側を整える</strong>" 戦略の双子。</p>
+</div>
+
+<footer>
+  収集元: Hacker News / GitHub Trending / Anthropic News / OpenAI Blog / Google DeepMind / The Pragmatic Engineer / Martin Fowler / AWS Architecture Blog / High Scalability / Thoughtworks Technology Radar / Netflix Tech Blog / Uber Engineering / Stripe Engineering / InfoQ / arXiv (cs.AI) / Changelog / Zenn / note / Publickey<br>
+  <span class="fail">取得失敗: 多くの一次ソース（HN / Anthropic / OpenAI / DeepMind / Pragmatic Engineer / Martin Fowler / AWS Architecture / Netflix / Uber / Stripe / Thoughtworks 等）は WebFetch が 403 を返したため、WebSearch + 個別記事URL の照会で補完。</span>
+</footer>
+
+</body>
+</html>
