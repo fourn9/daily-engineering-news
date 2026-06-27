@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年06月27日(土) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 8px}
+.sum{margin:6px 0 0}
+.sup{background:var(--sup-bg);border-left:3px solid var(--sup-border);padding:10px 14px;border-radius:4px;margin-top:10px;font-size:.94rem;color:var(--fg)}
+.sup::before{content:"💡 ";font-weight:600}
+footer{margin-top:42px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;line-height:1.7}
+footer .fail{color:#b45309}
+@media (prefers-color-scheme: dark){footer .fail{color:#fbbf24}}
+@media (max-width:480px){
+  body{padding:14px 12px 40px;font-size:15.5px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.04rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+<a href="../" class="back">← 過去ブリーフ一覧へ</a>
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年06月27日(土)</div>
+</header>
+
+<div class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p><strong>米政府が Anthropic の最上位モデル Claude Mythos 5 のリリースを解禁</strong>（6/26）。6月上旬に "ジェイルブレイクで悪用され得る" との指摘を受けて輸出ブロックされていた Mythos / Fable 5 のうち、Mythos 5 が "信頼パートナー" 100社超に限定提供される形で復活。前日紹介の GPT-5.6 Sol も同様の政府ゲート方式での船出で、<em>"フロンティアモデルの提供は国家安全保障マターになった"</em> という新フェーズを象徴する1日になった。</p>
+  <p>同じ週には、<strong>TypeScript 7.0 RC が公開</strong>（6/18）。コンパイラを Go に移植する <em>Project Corsa</em> がついに本流に統合され、VS Code（150万行）のビルドが <strong>77秒 → 7.5秒</strong> に。型チェック・LSP応答速度ともに 10倍級の改善で、大規模 TS リポジトリの開発体験（特に CI とエディタ補完）が刷新される節目。</p>
+</div>
+
+<h2>🤖 AI / LLMプラットフォーム</h2>
+
+<div class="art">
+  <h3><a href="https://9to5mac.com/2026/06/26/anthropic-cleared-to-release-claude-mythos-5-to-over-100-us-institutions/" target="_blank" rel="noopener">Anthropic cleared to release Claude Mythos 5 to over 100 US institutions</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">9to5mac.com／CNBC／Semafor｜2026-06-26</div>
+  <p class="sum">米商務省 Lutnick 長官が Anthropic の最上位モデル Claude Mythos 5 について "適切な safeguards が備わった" として輸出ブロックを解除、100社超の信頼パートナーに限定提供されることが決定。6月上旬の輸出規制（jailbreak リスクへの懸念）以来止まっていた最強モデルが、Project Glasswing（米政府との協業枠組み）経由で再稼働する。一般公開の弟分 Fable 5 については本letterでは言及なし。</p>
+  <div class="sup">Mythos 5 = Anthropic の "safeguards を一部外した cyberdefender 向けの最強構成"、Fable 5 = 同じベースに保護を被せた一般向け版（昨日紹介の Sol が OpenAI の対応枠）。"米政府の事前認可が解禁条件" という運用が OpenAI / Anthropic 双方で標準化しつつあり、業務系AI採用の稟議では <em>"どの認可ティアのモデルを使うか"</em> がコンプラ要件として浮上する見立てが現実味を帯びる。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://deploymentsafety.openai.com/gpt-5-6-preview" target="_blank" rel="noopener">GPT-5.6 Preview System Card</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span></div>
+  <div class="src">OpenAI Deployment Safety Hub｜2026-06-26</div>
+  <p class="sum">昨日プレビュー発表された GPT-5.6 Sol の公式 System Card（PDF併設）が公開。コーディング / バイオ / サイバー領域での agentic 評価、新導入の <em>max reasoning effort</em> と複数サブエージェントを並走させる <em>ultra mode</em> の挙動、強化された "高リスク要請 / 反復的乱用" 防御テストの結果が記載されている。一般公開は数週間後の見込み。</p>
+  <div class="sup">"昨日の Sol プレビュー" の続報 — System Card は OpenAI が外部公開する <em>正式なリスク評価ドキュメント</em>で、企業導入時の compliance 説明資料として直接引用できる位置づけ。新登場の Deployment Safety Hub に集約されている点もポイントで、"モデルごとの安全文書をブログ記事に散在させていた" 時代からの一段の整理。社内のAIガバナンス文書を書く担当者は、Safety Hub URL をリンク先テンプレートに組み込んでおくと運用が楽になる。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://deepmind.google/blog/securing-the-future-of-ai-agents/" target="_blank" rel="noopener">Securing internal systems against increasingly capable and imperfectly aligned AI — AI Control Roadmap</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">deepmind.google／Rohin Shah & Four Flynn｜2026-06-18</div>
+  <p class="sum">Google DeepMind が "AI Control Roadmap" を公開。アラインメントが完全には信用できない前提で、内部システム上のエージェントを <strong>defense-in-depth</strong> で囲い込むためのフレームワーク。MITRE ATT&amp;CK を AIエージェント向けに翻案した脅威分類と、信頼可能な "supervisor" モデルがエージェントの推論・計画・実行を実時間で監視する 15レベルの統制スタックを提示。100万件超のコーディングタスク分析がベース。</p>
+  <div class="sup">"アラインメント努力を続ければ最終的に安全" という楽観論からの明確な転換 — エージェントを <em>"潜在的なインサイダー脅威"</em> として扱い、ネットワーク／権限／監査の従来手法で囲うべきという主張。社内で Claude Code / Codex などのコーディングエージェントを CI に常駐させる際、"プロセス分離・最小権限・ログの非改変" などSREの常識を AI 向けに適用するチェックリストとして直接参照できる。</p>
+</div>
+
+<h2>🔧 言語 / フレームワーク / ランタイム</h2>
+
+<div class="art">
+  <h3><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-rc/" target="_blank" rel="noopener">Announcing TypeScript 7.0 RC</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">devblogs.microsoft.com｜2026-06-18</div>
+  <p class="sum">TypeScript 7.0 のリリース候補が公開。コンパイラを Go に移植した <em>Project Corsa</em> が本流の <code>tsc</code> に統合され、型チェック / LSP 応答が概ね <strong>約10倍</strong> 高速化。VS Code（約150万行）のフルビルドは 77.8秒 → 7.5秒。挙動は port（書き直しではない）のため、型推論セマンティクスは従来と完全互換。安定版 GA は約1ヶ月後を予定。</p>
+  <div class="sup">速度向上の内訳は "ネイティブ化（V8/Node 起動オーバーヘッド除去）が半分、Go の並列処理が半分" — JS では原理的に不可能だった parallel な型チェックが可能になった点が本質。実務インパクトは大きく、CI の型チェック・GitHub Actions の secrets ロード待ち時間でほぼ消えていた "tsc 数十秒〜分" コストが激減することで、PR フィードバックループが速くなり、エディタの遅延も解消する。大型 TS リポジトリ（Notion / Slack / Vercel 等が早期採用）の体感は別物になる見込み。</p>
+</div>
+
+<h2>📐 アーキテクチャ / 設計（重点）</h2>
+
+<div class="art">
+  <h3><a href="https://www.uber.com/us/en/blog/data-abstraction-layer/" target="_blank" rel="noopener">Simplifying Data and Product Integrations with a Data Abstraction Layer</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">uber.com／Musgrave・Yang・Kumar｜2026-06-11</div>
+  <p class="sum">Uber 社内の "データ抽象化レイヤ（DAL）" の設計解説。プロダクション側のスキーマ進化と消費者側のクエリの間に DAL を挟むことで、生産者が破壊的変更を取り回せる一方、消費者は安定 API でアクセスし続けられる構造を作る。ads / 広告主レポート用途を最初のドッグフードに据えてドメイン非依存に汎用化した経緯と、ガバナンス / 互換性 / 性能トレードオフを示す。</p>
+  <div class="sup">昨日紹介した Stripe の "API変更が下流に自動同期" と同系譜の "<strong>上流モデルを正とし、下流を派生させる</strong>" 設計。Netflix の UDA、Uber のDAL、Stripe のAPI release process — いずれも "プロダクトが増えるほど SDK / dashboard / docs の手動同期で詰む" 構造的問題への各社流の解答。社内の中小規模 API でも、消費者が3つ以上ある時点で "抽象化レイヤを置く / 置かない" の意思決定をする価値がある（DALを置く判断軸として、後方互換コストと進化速度の天秤）。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://newsletter.pragmaticengineer.com/p/why-is-meta-destroying-its-engineering" target="_blank" rel="noopener">Why is Meta destroying its engineering organization?</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">📐設計論</span></div>
+  <div class="src">newsletter.pragmaticengineer.com／Gergely Orosz｜2026-06-16</div>
+  <p class="sum">Pragmatic Engineer の無料公開号。2026年4月以降の Meta で、Instagram の trust &amp; safety 40% を AI データラベリング業務に強制再配置し、5000人規模のラベラー部隊（OpenAI 全社規模超）を社内に抱える一方、オンコール体制が史上初めて崩れた組織変更を綿密に取材。"move-fast-and-break-things → move-fast-with-stable-infra" と進化させてきた 22年の文化がAI最優先の方針で短期的に毀損しているとの分析。</p>
+  <div class="sup">"AIで生産性が上がるから人を減らす" を真正面から実装した大企業の事例として、テックリード視点の学びが詰まっている記事。AI転換は組織構造（チーム編成・オンコール・ラダー）への副作用が大きいという "<em>技術導入は最終的に組織変更</em>" の典型例で、自社が同種の方針を打ち出す/受ける際の予測モデルとして読める。SRE / 信頼性に対するコスト計算が抜けると同じ失敗を再現する点が要注意。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://stripe.dev/blog/microservice-testing-with-apache-spark" target="_blank" rel="noopener">Scaling up your microservice testing with Apache Spark — Part 2</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">stripe.dev｜2026-06-08</div>
+  <p class="sum">Stripe の "本物の本番データを使ってマイクロサービスを再生テストする" 枠組みの Part 2。サービス内部のロジックが入力の long-tail に依存していて手作りモックでは表現できないケースを、Apache Spark で履歴トラフィックを再生する harness を構築することで覆う。"テスト用に二重実装を作らない" 設計思想がポイント。</p>
+  <div class="sup">"contract test だけでは捉えきれない振る舞いの依存性" を、上流の <em>イベントストリーム再生</em> で抑えに行く発想。決済のような副作用が重い領域ならではの設計だが、エッセンスは "<strong>本番ログを retain して、それをそのままテストの入力にできる経路を残す</strong>"。SRE / プラットフォーム側で観測データを保管する設計が、テスト戦略にも直結するという好例で、社内で観測基盤の保管期間ポリシーを議論する時の材料になる。</p>
+</div>
+
+<h2>☁️ インフラ / クラウド</h2>
+
+<div class="art">
+  <h3><a href="https://aws.amazon.com/blogs/aws/run-isolated-sandboxes-with-full-lifecycle-control-aws-lambda-introduces-microvms/" target="_blank" rel="noopener">Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span></div>
+  <div class="src">aws.amazon.com｜2026-06-22</div>
+  <p class="sum">AWS が Lambda 上に "ステートフルかつ隔離された実行サンドボックス" を提供する新プリミティブ <strong>Lambda MicroVMs</strong> を公開。Firecracker ベースで VM レベル分離、起動・サスペンド・レジュームを API 制御でき、アイドル中もメモリ / ディスク状態を最大 8時間保持。ユーザー / AI 生成コードの隔離実行、コードアシスタント、ゲームサーバ、データ分析等の用途を想定。東京リージョン含む 5リージョンで提供開始。</p>
+  <div class="sup">"Lambda = stateless で短命" が定説だった世界に、明示的に "状態を持つ短〜中時間の実行枠" が公式で登場した意味は大きい。これは <em>AIエージェント時代の必須プリミティブ</em>で、Claude Code / Codex のような "ユーザー入力から動くツール" を SaaS 側で安全に走らせる土台になる（kubernetes でユーザーごとに Pod を起こすコストやコールドスタートの問題を回避）。社内で "ユーザーが書いた SQL / Python / シェルを社内ホスト上で実行" 系の機能を考えているなら、自前で Firecracker を運用する必要が消えた選択肢として要評価。</p>
+</div>
+
+<h2>⚠ セキュリティ</h2>
+
+<div class="art">
+  <h3><a href="https://thehackernews.com/2026/06/cordyceps-cicd-flaws-expose-300-github.html" target="_blank" rel="noopener">Cordyceps CI/CD Flaws Expose 300+ GitHub Repositories to Supply-Chain Attacks</a></h3>
+  <div class="tags"><span class="tag">⚠セキュリティ</span><span class="tag">🔥話題</span></div>
+  <div class="src">thehackernews.com／Novee Security｜2026-06</div>
+  <p class="sum">Novee Security が公開した CI/CD 系の体系的脆弱性 "Cordyceps"。GitHub Actions のワークフロー設定における過剰権限、command injection、artifact poisoning、broken auth ロジック等を組み合わせ、<strong>未認証の外部攻撃者がPR経由で他者リポジトリの CI を乗っ取れる</strong> 攻撃チェーン群。約3万リポジトリを走査し、300以上で完全に実行可能な攻撃を確認。Microsoft / Google / Apache / Cloudflare / Python Software Foundation 等で修正済。<a href="https://novee.security/blog/cordyceps/" target="_blank" rel="noopener">Novee の元記事</a> も併読推奨。</p>
+  <div class="sup">"<code>pull_request_target</code> + <code>secrets</code> + 第三者からのコード実行" という GitHub Actions の古典的危険パターンが、AI が CI ファイルを生成することで <em>同じバグが大量再生産される</em> 構造になっている、という二次被害の指摘が要点。今日中にやる価値があるのは: (1) <code>pull_request_target</code> を使うworkflow を grep する (2) 外部PRに対する secrets 露出を再点検する (3) Claude Code / Codex に渡している ".github/workflows テンプレート" が安全側になっているかをレビューする。</p>
+</div>
+
+<h2>🔬 注目論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2606.13220" target="_blank" rel="noopener">LLM-as-an-Investigator: Evidence-First Reasoning for Robust Interactive Problem Diagnosis</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">arXiv:2606.13220｜2026-06-11</div>
+  <p class="sum">LLM が "ユーザーの曖昧な説明" にすぐ同調して結論を出してしまう <em>user-driven sycophancy</em> 問題に対し、(1) 初期記述の曖昧さを推定 → (2) 競合仮説を生成 → (3) 焦点を絞った確認質問 → (4) 回答ごとに仮説確率を更新 → (5) ある仮説が明確に優位になるまで継続、という Solution Investigator Agent を提案。機械 / 電気 / 油圧の技術フォーラム実問題でベンチを構築。</p>
+  <div class="sup">"良いエージェントが返す情報量 = ユーザーが書いた情報量" という直感に対する反証。<em>探偵モデル</em>でエージェントを構築すべし、という設計指針が新しい — Claude Code / Codex 等で "ユーザーが書いた要件を鵜呑みにする" 失敗パターン（ありがちな間違ったコードを書く）への直接的処方箋になる。社内Q&amp;A bot / インシデント診断 bot を作る人は、要件確認フェーズの設計テンプレとして読む価値あり。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2606.05608" target="_blank" rel="noopener">Agentic Software: How AI Agents Are Restructuring the Software Paradigm</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">arXiv:2606.05608｜Zhenfeng Cao｜2026-06-04</div>
+  <p class="sum">"コード = 意思決定ロジックの担い手" だった伝統的ソフトウェアと、"コード = LLM 駆動推論ループのための一時的ツール" となるエージェント型ソフトウェアを概念分離し、<strong>Agentic Engineering</strong> という新ディシプリンを定義する論考。歴史的に On-prem → SaaS → Agent-as-a-Service と進む中で "ユーザーから複雑性を引き剥がす" 構図が、agentic phase では意思決定そのものまで移譲する段階に来ているとする。</p>
+  <div class="sup">"AIで開発が変わる" 言説に対し、何がどう変わるのかを <em>研究の対象（コード→エージェント系）</em> / <em>制御モデル（人定義→LLM駆動）</em> / <em>人の役割（コード作者→意図のアーキテクト）</em> の3軸で整理しているのが特徴。SWE-bench Verified / EvoClaw / LangChain マルチエージェント研究の評価結果を引きながら、現時点での限界（信頼性・コスト・観測可能性）にも触れる。"テックリードとしてエンジニアの役割を再定義する" 議論の参照資料として直接使える。</p>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/simplex-chat/simplex-chat" target="_blank" rel="noopener">simplex-chat/simplex-chat</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">🔥話題</span></div>
+  <div class="src">⭐ 13,702 (+1,470 today)｜Haskell｜github.com/simplex-chat</div>
+  <p class="sum">"ユーザー識別子を持たない" という設計の P2P メッセージングプロトコル SimpleX。Signal / Matrix が phone number / DID にバインドされているのに対し、SimpleX は接続ごとにペアの一時識別子を生成し、グローバルアイデンティティをそもそも作らない設計を採る。今日急上昇。</p>
+  <div class="sup">"暗号化を強化する" 系のプロダクトは多いが、SimpleX は <em>"匿名性をプロトコル層で保証する"</em> 別ベクトル — メタデータ蓄積を構造的に不可能にする発想。最近の規制動向（Online Safety系の本人確認要求）への対抗軸として開発者コミュニティで注目され始めている文脈で、エンタープライズの社内コミュニケーション要件は逆方向だが、"匿名・耐検閲" を必要とするユースケース（内部通報チャネル等）の参考実装になる。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/topoteretes/cognee" target="_blank" rel="noopener">topoteretes/cognee — Open-source AI memory platform for agents</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📐設計論</span></div>
+  <div class="src">⭐ 23,909 (+808 today)｜Python｜github.com/topoteretes</div>
+  <p class="sum">エージェントに "セッション横断の長期メモリ" を持たせるためのオープンソースプラットフォーム。ベクトル埋め込み / グラフ推論 / 認知科学ベースのオントロジー生成を組み合わせ、文書を意味検索可能にしつつ関係性を時間とともに進化させていく。v1.0 では Postgres 単体でメモリ層全体を運用可能（複数DBを束ねる必要なし）。OTEL 連携で監査トレース、テナント分離も実装済み。</p>
+  <div class="sup">前日紹介した論文 "Are We Ready For An Agent-Native Memory System?" の "実装側" にあたるOSS。"Mem0 / LangMem / Letta" 等競合多数の中で、<em>Postgres 一本でフル機能</em>という運用簡素さが差別化要素。自社でClaude / GPT に長期記憶を持たせたいケースで、まず PoC 用に置く候補として有力。商用 SaaS（Cognee Cloud）も併設されているので、自前運用 vs マネージドの選択肢が両方ある。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/xbtlin/ai-berkshire" target="_blank" rel="noopener">xbtlin/ai-berkshire</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span></div>
+  <div class="src">⭐ 4,016 (+686 today)｜Python｜github.com/xbtlin</div>
+  <p class="sum">Claude Code を中核に置いたマルチエージェント型の投資リサーチフレームワーク。複数のエージェントロール（マクロ / セクター / 個別銘柄 / リスク等）を分担させ、企業財務 / 一次資料 / ニュースを横断的に推論させて投資メモを生成する。本日急伸。</p>
+  <div class="sup">注目すべきは "投資の中身" ではなく、<em>Claude Code をエージェント runtime として外部用途に転用する</em> パターン例として — sub-agents / Skills / MCP を組み合わせて投資という縦割りドメインで成果物を作るリファレンス実装になっている。社内の RFP分析 / 市場調査 / 競合比較レポートなど "複数ソース横断でメモを作る" 系の業務に応用しやすいテンプレ。</p>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/typescriptgo10typescript_70.html" target="_blank" rel="noopener">TypeScriptコンパイラをGo言語に移植することで10倍速にしたTypeScript 7.0リリース候補版が登場</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span></div>
+  <div class="src">publickey1.jp｜2026-06</div>
+  <p class="sum">上記 TypeScript 7.0 RC の日本語まとめ。Project Corsa の経緯（2025年3月の Native Previews 公開 → 同年中の beta → 今回 RC）と、Microsoft / Google / Notion / Slack / Vercel での社内採用フィードバック、LSP まで Go 化された点を整理。安定版 GA は約1ヶ月後の見込み。</p>
+  <div class="sup">英語の Microsoft DevBlog だけでなく日本語ソースで把握したい人向け参照。"なぜ Go なのか" について、本文中で作者 Hejlsberg が "Rust も検討したが既存 TS のセマンティクスを移植するには Go の GC ＋ goroutine が最適だった" と語っている点が日本語サマリで読みやすい — チームで採用判断する際の説明資料として使える。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/aws_lambda_microvms.html" target="_blank" rel="noopener">AWS Lambda MicroVMs登場。サーバレスの手軽さでステートフルかつ隔離された実行環境を提供</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span></div>
+  <div class="src">publickey1.jp｜2026-06-25</div>
+  <p class="sum">上記 AWS Lambda MicroVMs 発表（6/22）の日本語解説。Firecracker による VM 分離、最大 8時間の状態保持、API 制御によるサスペンド/レジューム、Dockerfile / S3 経由のイメージ管理、東京リージョン即時対応 — などのポイントを日本語で整理。</p>
+  <div class="sup">英語 AWS Blog は実装プリミティブ寄りの記述だが、Publickey 版は "なぜ今これが出たか" — つまり <em>ユーザー / AI 生成コードを安全に走らせる枠</em> としての位置づけがやや詳しめ。社内ベンダー選定の比較表に乗せる用途では Publickey 側を引用すると簡潔。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/muramasa0228/articles/2026-06-20-mcp-zenn-pipeline" target="_blank" rel="noopener">Claude Code と MCP で「記事を書く→Zenn公開→経歴に蓄積」を自動化した</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">zenn.dev／@muramasa0228｜2026-06-20</div>
+  <p class="sum">個人開発者が Claude Code + MCP を組み合わせ、"執筆 → Zenn 投稿 → 自分の経歴DBへ蓄積" を1コマンドで回すパイプラインを構築した実践記事。Zenn CLI MCP / GitHub MCP / Notion MCP を Claude Code の sub-agent に渡し、メタデータ抽出と自動タグ付けまで含めて自走させている。</p>
+  <div class="sup">"AIエージェントで業務フローを自動化" の <em>個人スケール版</em> として読める実装例。要点は MCP を介して "アカウント / 認証 / API key" を Claude Code に意識させずに済ませているところで、企業内でも同じパターン（複数 SaaS の MCP server を1つの Claude エージェントに束ねる）が応用しやすい。社内の "週報 → Slack 投稿 → ナレッジに蓄積" 系を考えているなら、自宅プロトタイプとして直接参考になる。</p>
+</div>
+
+<footer>
+  収集元: Hacker News <span class="fail">(取得失敗)</span> / GitHub Trending / Anthropic News <span class="fail">(取得失敗)</span> / OpenAI Blog <span class="fail">(取得失敗)</span> / Google DeepMind <span class="fail">(取得失敗)</span> / The Pragmatic Engineer <span class="fail">(取得失敗)</span> / Martin Fowler <span class="fail">(取得失敗)</span> / AWS Architecture Blog <span class="fail">(取得失敗)</span> / High Scalability <span class="fail">(取得失敗)</span> / Thoughtworks Technology Radar / Netflix Tech Blog / Uber Engineering / Stripe Engineering / InfoQ / arXiv (cs.AI) / Changelog / Zenn / note / Publickey<br>
+  <span class="fail">取得失敗注記: WebFetch が多くの一次ソースで 403 を返したため、WebSearch + 個別記事URLでの照会で補完。日付・URL は個別取得・検索結果で確認した範囲のもの。</span>
+</footer>
+
+</body>
+</html>
