@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年06月28日(日) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 8px}
+.sum{margin:6px 0 0}
+.sup{background:var(--sup-bg);border-left:3px solid var(--sup-border);padding:10px 14px;border-radius:4px;margin-top:10px;font-size:.94rem;color:var(--fg)}
+.sup::before{content:"💡 ";font-weight:600}
+footer{margin-top:42px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;line-height:1.7}
+footer .fail{color:#b45309}
+@media (prefers-color-scheme: dark){footer .fail{color:#fbbf24}}
+@media (max-width:480px){
+  body{padding:14px 12px 40px;font-size:15.5px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.04rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+<a href="../" class="back">← 過去ブリーフ一覧へ</a>
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年06月28日(日)</div>
+</header>
+
+<div class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p><strong>OpenAI が「Patch the Planet」を発表</strong>（Daybreak イニシアチブ／6/22）。GPT-5.5-Cyber と Trail of Bits の人手レビューを組み合わせ、cURL・Go・Python・Sigstore など重要 OSS の脆弱性発見〜パッチ作成〜デプロイまでを <em>メンテナの代わりに</em> 走らせる枠組みで、すでに数百件の問題を発見・数十件をマージ済み。AI を「攻撃ツール」ではなく「サプライチェーンの常時防衛装置」として位置づけ直す動きで、昨日の Cordyceps（GitHub Actions サプライチェーン攻撃）と対になる構図。</p>
+  <p>同じ週、<strong>Anthropic が「Claude Tag」を Slack 向け正式版として発表</strong>（6/23）。1対1のチャットではなく <em>チャンネル単位</em> でタスクを切り出し、AI が独立してサブタスクをこなして最終成果物を返す方式。Anthropic 社内ではプロダクトチームのコードの 65% が同社内版 Claude Tag 産だと開示しており、"AI = 個人の副操縦士" から "AI = チームメンバーの 1 つの ID" への単位の置き換えが進む。8/3 で旧 Slack 統合は終了、移行猶予 30 日。</p>
+</div>
+
+<h2>🤖 AI / LLM プラットフォーム</h2>
+
+<div class="art">
+  <h3><a href="https://www.anthropic.com/news/introducing-claude-tag" target="_blank" rel="noopener">Introducing Claude Tag</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🔥話題</span></div>
+  <div class="src">Anthropic News｜2026-06-23</div>
+  <p class="sum">Slack のチャンネルで <code>@Claude</code> をタグ付けすると、組織共通の AI が会話文脈ごとサブタスクに分解しながら自律実行→結果を Slack 上で返す新形態。"ambient" 機能でフォローアップや未解決スレッドの監視も担い、組織全体で <em>1 つの Claude アイデンティティ</em>を共有する設計。Anthropic 社内プロダクトコードの65%が同方式で書かれているとの明示は、Slack を IDE 化する流れの象徴。Enterprise/Team から段階提供、旧 Slack 統合は 8/3 廃止。</p>
+  <div class="sup">"単一の Claude ID をチーム全員で共有" という設計が新しい。従来の Slack ボット連携は1ユーザー1コンテキストで、メンバー間で AI に渡したい指示や履歴が分断されていた。Claude Tag は半端なタスクを別メンバーが引き継ぐ・スレッドの未解決を ambient で自動追跡する、といった <em>マルチプレイヤーAI</em> を前提に組まれており、Cowork / Code を Slack 側に拡張する位置づけ。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://openai.com/index/patch-the-planet/" target="_blank" rel="noopener">Patch the Planet: a Daybreak initiative to support open source maintainers</a></h3>
+  <div class="tags"><span class="tag">⚠セキュリティ</span><span class="tag">📐設計論</span></div>
+  <div class="src">OpenAI Blog｜2026-06-22</div>
+  <p class="sum">GPT-5.5-Cyber によるコード解析と Trail of Bits の専門家レビューを組み合わせて、cURL・Go・Python・Sigstore・pyca/cryptography など 30 以上の OSS プロジェクトに対して脆弱性の発見・検証・重大度評価・コーディネーティッドディスクロージャー・パッチ作成・テスト・展開までを <em>OpenAI 側が肩代わり</em>する取り組み。すでに数百件発見し数十件マージ済み。参加プロジェクトには ChatGPT Pro・Codex Security・API クレジットも提供される。</p>
+  <div class="sup">"AI による低品質 issue / PR の濫造" は OSS メンテナの大きな摩擦になっていた（昨日紹介の GitHub の PR 上限機能もそれが背景）。Patch the Planet はそれと真逆で、AI のスループット高い脆弱性発見能力を <em>人の検証フィルタを通してメンテナに届ける</em>のが要諦。「重要 OSS をどう守るか」という Log4Shell 以降の課題に対する、AI ラボ主導の答えのひとつ。Daybreak は OpenAI の防御サイバー専用ブランド。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/deepmind-a24-research-partnership/" target="_blank" rel="noopener">Google DeepMind and A24 announce first-of-its-kind research partnership</a></h3>
+  <div class="tags"><span class="tag">🤝提携</span></div>
+  <div class="src">Google Blog／TechCrunch｜2026-06-22</div>
+  <p class="sum">Google が A24 に 約7,500万ドルを投じ、DeepMind の研究者を A24 の制作ワークフローに常駐させて映像生成 / 編集系の AI ツールを共同開発する複数年契約。A24 のコンテンツライブラリは Google に渡らず、両社とも他社モデル・他社スタジオとの並行コラボが許容される非独占型。映画スタジオとの提携は DeepMind 初。</p>
+  <div class="sup">Veo / Imagen 系の動画生成モデルが "デモ可能" から "ハリウッドの実プロダクションパイプラインに耐える" 段階へ進めるかが本契約の試金石。エンタープライズで AI を入れるときの "現場ワークフローに研究者を埋め込んで磨く" 形は SaaS 系のプロダクト・パートナーシップでも有効な型で、自社で生成 AI を本気で運用するチームには示唆が多い（A24 側はファンの反発もあるため、両社のメッセージングの綱引きも観察対象）。</p>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+  <h3><a href="https://stripe.dev/blog/event-notification-handlers-thin-events" target="_blank" rel="noopener">Introducing a better way to process Stripe's thin events</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🛠ライブラリ</span></div>
+  <div class="src">Stripe Dev Blog｜2026-06-24</div>
+  <p class="sum">Stripe の Webhook が "thin events" 化（最低限の通知 + 必要時に API で詳細取得）したことを受け、各イベントの署名検証・配線・冪等性・型付けをライブラリ側でまとめてくれる <em>Event Notification Handlers</em> を公式 SDK に追加。開発者は <code>handler.on('payment_intent.succeeded', ...)</code> のような形でビジネスロジックだけを書け、設定ミスはコンパイル / 起動時に検出されるようになる。</p>
+  <div class="sup">"thin events" = ペイロードを軽くして配信レイテンシ / リトライ耐性を上げる Stripe の Webhook 第二世代。今回の SDK 追加は、Webhook 受信側で皆が手書きしていた boilerplate（署名検証→分岐→詳細取得→冪等チェック）を <em>「型安全な handler 登録」というフレームワーク的 API</em> で標準化するアプローチで、Express の middleware や AWS Lambda の Powertools と発想は同じ。自社で Webhook 系インテグレーションを書いている人は、同じ問題を抱えていないか棚卸しすると効用が見える。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.infoq.com/news/2026/06/postgresql-pg-durable/" target="_blank" rel="noopener">Microsoft Open-Sources PostgreSQL Extension for In-Database Durable Execution</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🛠OSS</span></div>
+  <div class="src">InfoQ／<a href="https://github.com/microsoft/pg_durable" target="_blank" rel="noopener">microsoft/pg_durable</a>｜2026-06</div>
+  <p class="sum">Microsoft が PostgreSQL の拡張 <code>pg_durable</code> を OSS 公開（PostgreSQL License）。SQL DSL で関数グラフを書くと、各ステップが PostgreSQL 内でチェックポイントされ、クラッシュ・リトライ・ファンアウト・recovery を DB だけで完結できる。外部のワークフローエンジン（Temporal、Airflow 等）を介さずに、長時間 / 失敗耐性のあるバッチ・パイプラインを書ける。基盤は Rust 製の <em>duroxide</em>。</p>
+  <div class="sup">これは昨年 QCon SF で発表された <strong>DBOS</strong>（"Postgres を orchestration 層にする"）の流れに、Microsoft が "Azure Database for PostgreSQL に組み込み可能な公式ルート" として乗ってきた形。Temporal / Airflow / Cadence など外部 orchestrator を選ぶか、DB に寄せて運用面を単純化するかは、近年のデータパイプライン設計の主戦場。pg_durable は "DB だけで durable な workflow が書ける" を OSS で示すことで、選択肢の天秤を傾けるリファレンス実装になる。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.uber.com/us/en/blog/high-throughput-processing/" target="_blank" rel="noopener">Building High Throughput Payment Account Processing</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">⚡スケール</span></div>
+  <div class="src">Uber Engineering Blog／InfoQ｜2026-06</div>
+  <p class="sum">マーケットプレイス事業者やフリート運営者の "ホットアカウント"（1秒あたり数十回の書き込み）を支えるため、Uber が決済元帳に <strong>250ms バッチング + Redis コーディネーション + 楽観的アトミック更新</strong>を実装。整合性と監査性を維持しつつ <em>1アカウントあたり 30+ 更新/秒</em> を実現し、従来 21-24 時間かかっていた精算パイプラインを数分に短縮。</p>
+  <div class="sup">"ホットキー問題" は OLTP DB のスケーラビリティ天井としてよく出てくる古典課題で、Cassandra のホットパーティション、Redis の single-key contention、決済系の hot account など領域は違っても本質は同じ。Uber の解は <em>少しだけ遅延させてバッチに化けさせる</em> という古典中の古典（Nagle 的発想）を、整合性が厳しい決済領域で楽観ロックと組み合わせて適用した点が学びどころ。自社で「特定の集計レコードだけ書き込みが詰まる」現象がある人にとってのテンプレ。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://engineering.grab.com/palana-part-1-secure-platform-for-ai-agents" target="_blank" rel="noopener">Palana (Part 1): Why Grab built a secure platform for autonomous AI Agents</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">Grab Engineering｜2026-06-19</div>
+  <p class="sum">Grab セキュリティチームが自社の AI エージェント実行基盤 <strong>Palana</strong>（K8s ネイティブ）を解説。各エージェントに専用 namespace / 永続ストレージ / 制御された ingress / Envoy + OPA + ext-authz による egress 監視 / Vault による短命クレデンシャル注入 / LLM 経路の集中ルーティング / Git アクセス制御 / 構造化監査ログ / kill switch、を一括提供。<em>"agent は混乱・侵害される前提"</em> で外側から policy を強制する設計。</p>
+  <div class="sup">類例として AWS の <a href="https://aws.amazon.com/blogs/aws/run-isolated-sandboxes-with-full-lifecycle-control-aws-lambda-introduces-microvms/" target="_blank" rel="noopener">Lambda MicroVMs</a> や Microsoft の MXC（Windows/WSL の OS レベル sandbox）も同じ問題意識——"信頼できないコードを LLM が動的生成して実行する時代に、隔離 + ネット経路の policy 制御をどこに置くか"——に対する答え。Palana は <strong>K8s 内側で完結させる</strong>のが特徴で、既に K8s 基盤を持つ社内エンジニアリングチームが内製で AI 実行基盤を作るなら参照価値が高い。Part 2 公開待ち。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.uber.com/us/en/blog/uber-cart-assistant/" target="_blank" rel="noopener">Cart Assistant: Agentic Grocery Shopping on Uber Eats</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🤖エージェント</span></div>
+  <div class="src">Uber Engineering Blog｜2026-06-16</div>
+  <p class="sum">テキストや写真からグロサリーのカートを自動生成する Cart Assistant の内部設計。単一プロンプトに任せず、<em>プランニング / 妥当性判定 / 数量選択 / 制約強制 / ガードレール / 評価</em>を分けた "マルチプロンプト state graph" として実装。各ステップが検査可能な中間出力を持つことで、ノイズの多い LLM 出力を pipeline として制御している。</p>
+  <div class="sup">"1 つの巨大プロンプト + 1 つの大規模 LLM" でやらせる "Vibe Agent" 的な作りは、品質と回帰検査が両立しない。Cart Assistant は <strong>機能分解→各ノードに専用評価器を当てる</strong>という古典的なソフトウェア工学手法を、LLM パイプラインに適用したリファレンス。Loop Engineering（後述）や Anthropic の sub-agent パターンとも問題意識は共通で、自社で "Chat だけで完結しないエージェント機能" を作るときの設計テンプレ。</p>
+</div>
+
+<h2>🔬 注目論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2606.05238" target="_blank" rel="noopener">DeployBench: Benchmarking LLM Agents for Research Artifact Deployment</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📊ベンチマーク</span></div>
+  <div class="src">arXiv:2606.05238｜2026-06</div>
+  <p class="sum">"研究成果物のデプロイ（≒ 研究コードをクラウドで実際に走らせる）" を 51 タスクで評価する新ベンチマーク。AI/ML、コンピュータシステム、科学計算の3領域をカバーし、4 つの SOTA LLM × OpenHands エージェントを評価したところ pass rate は 7.8%〜51.0% に留まり、コードを動かす能力と <em>環境を作って動かす能力</em> の落差を定量化。</p>
+  <div class="sup">SWE-Bench は "コードを書き直す" タスクで AI エージェントの腕試しの標準になったが、現実の "リポジトリを clone してきて動かす" はその外側の依存解決・GPU の確保・モデル重みの取得・CUDA バージョンの整合などが大半。DeployBench はその "最後の1マイル" を測る試みで、Devin/Cursor/Claude Code を社内で使う際の "再現性ある環境を組ませる能力" のリスクをデータで議論する材料になる。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2606.05001" target="_blank" rel="noopener">TeleSWEBench: A Commit-Driven Benchmark for Evaluating LLM-Powered Software Engineering in Telecommunications</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📊ベンチマーク</span></div>
+  <div class="src">arXiv:2606.05001｜2026-06</div>
+  <p class="sum">通信ドメイン特有のソフトウェア改修（OAM / O-RAN / 3GPP 仕様準拠など）に対する LLM の改修能力をコミット駆動で評価。テストケース判定だけでなく、ファイル単位で評価する <strong>TeleJudge</strong>（階層的 LLM-as-a-Judge）を併用し、テストが薄い領域でも文脈意味類似度から評価できるようにした点が方法論として面白い。</p>
+  <div class="sup">SWE-Bench がオープン Python リポジトリ中心で評価していたのに対し、<em>ドメイン固有のレガシー C/C++ 通信スタック</em> のような世界では unit test ベース判定だけでは過小評価/過大評価になる。LLM-as-a-Judge を階層化し、テスト判定とセマンティック類似度を <em>並列に</em> 採点する設計は、自社の「コード品質メトリクス薄い領域に AI 改修を入れたい」シナリオの評価軸として参考になる。</p>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/DeusData/codebase-memory-mcp" target="_blank" rel="noopener">DeusData/codebase-memory-mcp</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">🚀急上昇</span></div>
+  <div class="src">⭐ +2,162/day, +7,674/week｜C｜2026-06-28 trending</div>
+  <p class="sum">158 言語のリポジトリを永続的なナレッジグラフへ索引化し、サブミリ秒で AI エージェントから検索可能にする MCP サーバ。"中規模リポジトリは数ミリ秒で索引化される" と謳う高速性が売りで、Claude Code / Cursor / Codex から直接呼べる。</p>
+  <div class="sup">MCP（Model Context Protocol）= Anthropic 発の、LLM に外部ツール / リソースを統一インタフェースで繋ぐオープン規格。今までエージェントが repo の grep を都度走らせる方式だと大リポジトリで限界が来ていたが、"永続インデックス + サブミリ秒検索" 専門サーバを 1 プロセスで分離するこの形は、ローカルで動く Sourcegraph 的位置取り。Claude Code に "理解の速いコードベース記憶" を後付けする選択肢。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/google-labs-code/design.md" target="_blank" rel="noopener">google-labs-code/design.md</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📐設計論</span></div>
+  <div class="src">⭐ +6,014/week｜TypeScript｜2026-06 trending</div>
+  <p class="sum">Google Labs 発、デザインシステムを <em>AI エージェントが読みやすい構造化 Markdown</em> として表現するフォーマット仕様。色 / コンポーネント / トークンを Figma 風オブジェクトで記述し、エージェントが UI 生成時に <em>「このボタンには rounded.lg を使え」</em> のような根拠付きの判断ができることを目的に置く。</p>
+  <div class="sup">"AI が UI を作るのは早いが、デザインシステムをはみ出す" 問題への対案。AI コーディングが当たり前になった結果、UI レイヤーで <em>制約を機械可読にしておかないと品質が散らかる</em> 局面が増えている。design.md は Tailwind の token 概念 + Storybook のコンポーネントカタログを LLM 用に再パッケージしたもので、社内デザインシステム保有チームには検討価値あり。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/opendatalab/MinerU" target="_blank" rel="noopener">opendatalab/MinerU</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">🤖エージェント</span></div>
+  <div class="src">⭐ +426/day｜Python｜2026-06-28 trending</div>
+  <p class="sum">複雑な PDF / Office ドキュメントを <em>LLM 食わせ用の Markdown / JSON</em> に変換するパイプライン。レイアウト復元・表抽出・数式 LaTeX 化・図キャプション抽出までを担い、社内ナレッジを RAG / エージェントに流すときの前処理として急成長。</p>
+  <div class="sup">RAG（Retrieval-Augmented Generation）= 検索で持ってきた外部ドキュメントを LLM に読ませて回答させる構成で、品質はほぼ <em>「ドキュメントをどう前処理したか」</em> で決まる。PyMuPDF や Unstructured 単体では崩れがちな数式・表を保ったまま Markdown 化できる MinerU は、社内ナレッジ AI を組むときの前段 ETL のデファクト候補。</p>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/githubai_1.html" target="_blank" rel="noopener">GitHub、AIによる雑なプルリクエストを抑制へ。ユーザー当たりのプルリクエスト数の上限を設定できる新機能導入</a></h3>
+  <div class="tags"><span class="tag">⚠運用</span></div>
+  <div class="src">Publickey｜2026-06-23</div>
+  <p class="sum">GitHub が、書き込み権限のないユーザーが同時に出せる Pull Request 数の上限をリポジトリ単位で設定可能にした。生成 AI による低品質 PR の濫造（"AI slop"）が OSS メンテナを疲弊させていた状況への対応で、2 月の "PR の完全無効化 / コラボレータ限定" に続く第二弾。</p>
+  <div class="sup">本日のハイライト OpenAI "Patch the Planet"（AI を <em>メンテナの味方</em> として使う）と対をなす施策。AI による <em>"発火点"</em> と <em>"防御火力"</em>のどちらが上回るかが OSS の今後を左右する局面で、GitHub は前者の流入弁を絞り、OpenAI は後者を強化、というプラットフォーム側の役割分担が見え始めている。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/suwash/articles/loop-engineering_20260610" target="_blank" rel="noopener">Loop Engineering入門：AIコーディングエージェントを動かすシステムを設計する</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">Zenn｜2026-06-10</div>
+  <p class="sum">"プロンプトを書く" 単位ではなく "エージェントが回り続ける Loop システム" を設計対象とする方法論を整理する記事。発火条件・コンテキスト供給・ゲート・終了条件・観測 / アラート、までをコンポーネント分解して紹介しており、Claude Code / Cursor / Devin を業務に組み込む際の設計プリミティブが揃う。</p>
+  <div class="sup">"Prompt Engineering → Context Engineering → Loop Engineering" という抽象化レベルの上がり方は、Anthropic / Cognition Labs / LangChain も類似の整理を出している論点。読者プロファイル的に特に面白いのは、<em>エージェントの設計をソフトウェア設計と同じ語彙（責務分割・観測性・SLO）で議論する</em>ところ。Cart Assistant（前述）と並読すると、agentic system の設計パターンが立体的に見える。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/kairosai/articles/aa04d8a4c13003" target="_blank" rel="noopener">2026年6月、AIが「予約実行」する時代へ：ChatGPT/Claude/Geminiのスケジュール行をコードで設計する</a></h3>
+  <div class="tags"><span class="tag">🛠ツール</span></div>
+  <div class="src">Zenn｜2026-06</div>
+  <p class="sum">ChatGPT・Claude・Gemini の 3 社がそれぞれ "ユーザー指示の定期実行" 機能をリリースしたことを受け、<em>"AI を呼び出す" から "AI を定期実行で運用する"</em> へのシフトを設計観点で整理した記事。各社のスケジューラの違い（cron 表現か自然言語か、結果通知の経路、失敗時の動作）を比較。</p>
+  <div class="sup">本ブリーフ自身が "Claude Code の /loop で毎朝走る定期実行ジョブ" として作られているのと同じ流れ。AI を <em>状態を持つ常駐ワーカー</em> として扱う設計は、cron + GitHub Actions + 通知の組み合わせを LLM 側に内製化する方向で、運用観点ではむしろ "可観測性" "失敗時のリカバリ" のような従来 SRE の話題が前面に出てくる。読者プロファイル的に重なりが大きい一本。</p>
+</div>
+
+<footer>
+  <div>収集元: Hacker News / GitHub Trending / Anthropic News / OpenAI Blog / Google DeepMind / The Pragmatic Engineer / Martin Fowler / AWS Architecture / High Scalability / ThoughtWorks Radar / Netflix TechBlog / Uber Engineering / Stripe Dev / InfoQ / arXiv / Changelog / Zenn / note / Publickey</div>
+  <div style="margin-top:8px;" class="fail">※ 収集元のうち一部メディア（Hacker News、Anthropic、OpenAI、DeepMind、Pragmatic Engineer、Martin Fowler、AWS、Netflix、Uber、Stripe、InfoQ、Zenn、note、Publickey のトップページ）は WebFetch が プロキシ側で 403 ブロックされたため、WebSearch 経由で間接的に内容を把握し裏取りを行いました（個別記事 URL はすべて一次ソース）。</div>
+</footer>
+</body>
+</html>
