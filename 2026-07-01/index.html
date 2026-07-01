@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月01日(水) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 8px}
+.sum{margin:6px 0 0}
+.sup{background:var(--sup-bg);border-left:3px solid var(--sup-border);padding:10px 14px;border-radius:4px;margin-top:10px;font-size:.94rem;color:var(--fg)}
+.sup::before{content:"💡 ";font-weight:600}
+footer{margin-top:42px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;line-height:1.7}
+footer .fail{color:#b45309}
+@media (prefers-color-scheme: dark){footer .fail{color:#fbbf24}}
+@media (max-width:480px){
+  body{padding:14px 12px 40px;font-size:15.5px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.04rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+<a href="../" class="back">← 過去ブリーフ一覧へ</a>
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年07月01日(水)</div>
+</header>
+
+<div class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p><strong>Anthropic の Claude Fable 5 / Mythos 5 が「全世界」に復帰</strong>（7/1）。昨日紹介した "100 機関への限定解除" から一気に踏み込み、米商務省が輸出規制を <em>完全撤廃</em>。Fable 5 は 6/12 に緊急停止されてから 19 日ぶりに Claude.ai / Claude Code / API へ戻り、Stripe が公表した <em>「Fable 5 が 5,000 万行の Ruby コードベースを 1 日でマイグレーションした（人手なら2ヶ月超）」</em> という報告と合わせて、コード基盤の <strong>大規模改修が LLM ワンショットで済む</strong> 時代の入口が現実味を帯びてきた。</p>
+  <p>アーキテクチャ面では <strong>Anthropic が Claude Science を発表</strong>（6/30）。<em>「新モデルではなく、ワークフローで研究者に食い込む」</em>戦略で、60 以上の科学 DB と可視化・実行環境を <em>調整エージェント + 引用/計算を検証するレビュワーエージェント</em> で束ねる。エージェント設計としても "作業者と検証者を分ける" マルチエージェントの実運用リファレンスとして参考になる。</p>
+</div>
+
+<h2>🤖 AI / LLM プラットフォーム</h2>
+
+<div class="art">
+  <h3><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank" rel="noopener">Claude Fable 5 and Claude Mythos 5</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">続報</span><span class="tag">🆕再公開</span></div>
+  <div class="src">Anthropic Newsroom｜2026-07-01</div>
+  <p class="sum">昨日の "Mythos 5 を 100 機関に限定解除" 報道の続報。米商務省が輸出規制を撤廃したことを受け、Anthropic は <strong>Fable 5 を全世界へ再公開</strong>（7/1）、Mythos 5 も引き続き提供。6/9 リリース → 6/12 緊急停止 → 6/30 規制解除 → 7/1 再デプロイという 19 日間の "AI インフラ停止" を経て、<em>上書きされた safety classifier とレッドチーム再運用</em>を明示して復帰した。</p>
+  <div class="sup">今回の 19 日間の停止は "モデルが商用 API として無くなる" 事象を初めて多くの企業に体験させた。特に Stripe は Fable 5 で 5,000 万行の Ruby コードベースを 1 日でマイグレーションしたと公表しており、モデル API が <em>電気やクラウドと同じ "インフラ"</em> になった状況で、単一ベンダー依存のリスクをどう捌くか（同等モデルへの切り替え計画・SLO 契約書化）が実務課題として立ち上がる。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.anthropic.com/news/claude-science-ai-workbench" target="_blank" rel="noopener">Claude Science, an AI workbench for scientists</a></h3>
+  <div class="tags"><span class="tag">🆕新プロダクト</span><span class="tag">🤖エージェント</span></div>
+  <div class="src">Anthropic Newsroom｜2026-06-30</div>
+  <p class="sum">研究者向けに、<em>60+ 科学 DB へのクエリ・解析実行・可監査な成果物出力</em>を一つの環境で完結させる Claude Science を発表。<strong>調整エージェント → 専門サブエージェント群 → レビュワーエージェントが引用・計算を検証</strong>する3層構成で、3D タンパク構造やゲノムブラウザを含む artifact をレンダリング可能。既存の Opus 4.8 を裏で使う "モデルではなくワークフローの製品化"。Pro / Max / Team / Enterprise ユーザーにベータ提供。</p>
+  <div class="sup">同日 <strong>OpenAI は GeneBench-Pro</strong>（計算生物学のエージェント判断能力ベンチ、最上位モデルでも 31% 突破止まり）を出しており、両社が同じ "科学ドメイン" を狙う構図。Claude Science の設計上の勘所は <em>"実行エージェントとレビュワーエージェントを別プロセス化する"</em> 点で、これは LLM を業務に組み込むときの <em>プロンプトインジェクション対策</em>や <em>自己整合性チェック</em>の一般解として、専門領域を超えて応用できる（例：社内 SQL 実行系にも同じ2エージェント構成が使える）。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://openai.com/index/introducing-genebench-pro/" target="_blank" rel="noopener">Introducing GeneBench-Pro</a></h3>
+  <div class="tags"><span class="tag">🔬ベンチ</span><span class="tag">📊評価</span></div>
+  <div class="src">OpenAI Research｜2026-06-30</div>
+  <p class="sum">計算生物学向けに、"ノイズだらけの実データから適切な手法選択と結論導出まで" を測る 129 問のエージェント判断ベンチマーク。<strong>GPT-5.6 Sol Pro でも 31.5%、Sol は 28.7%、Claude Opus 4.8 は 16.0%</strong>。単純な事実想起ではなく、統計手法選択・データクリーニング・妥当性判断を含む研究者的ワークフロー全体を評価する。</p>
+  <div class="sup">"最新モデルでも 70% は失敗する" という数字は、"LLM が実務レベルの意思決定を任せられる段階か" を測るキャリブレーションとして便利。<em>タスク自体が難しいのか、モデルの限界か</em> を切り分ける外部ベンチとして、社内で自社ドメイン向けエージェントを評価する際の "上限が見えているか？" を判断する参照点になる。</p>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+  <h3><a href="https://stripe.dev/blog/how-api-changes-flow-into-stripes-developer-products" target="_blank" rel="noopener">How API changes flow into Stripe's developer products</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">⚙️API</span></div>
+  <div class="src">Stripe Dev Blog（Mikael Mello, Anna Mason）｜2026-06-15</div>
+  <p class="sum">Stripe の API が <em>PR がマージされた後どのように SDK / CLI / ドキュメント / MCP サーバへ伝搬するか</em> の内部プラットフォームを解説。10 言語超の SDK、Postman コレクション、CLI、Docs Reference、Stripe Agent Toolkit まで、単一の OpenAPI ライクな中間表現から自動生成する "API-first" プラットフォームの実装。互換性を保つルール、破壊的変更のバージョニング、内部レビュー体制を含めた <em>DX の "工場"</em> の内部を見せる。</p>
+  <div class="sup">"エンジニアリングは 10x になったが、SDK / Docs / Sample の同期がボトルネック" は多くのプロダクトで慢性課題。Stripe の解は <em>OpenAPI ではない自社の中間 IR（Intermediate Representation）</em> に集約して <em>1 変更 → N 成果物を全部生成</em> するアプローチ。自社で複数言語 SDK や CLI を配っている場合、<em>Docs / Client / Agent Tooling が別チームで書き直しているなら、この "工場" 化を検討する価値あり</em>。エージェント時代には Agent Toolkit / MCP サーバも "N の一つ" として同じパイプに乗せられる点が示唆的。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://stripe.dev/blog/from-hobby-to-real-world-integrating-hard-stuff-with-agents" target="_blank" rel="noopener">From hobby to real world: integrating the hard stuff with agents</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🤖エージェント</span></div>
+  <div class="src">Stripe Dev Blog（Anna Spysz）｜2026-06-16</div>
+  <p class="sum">エージェントで実サービス統合を組むときの "ハッピーパスでは見えない摩擦" ──認証情報の受け渡し、Webhook 検証、テスト / 本番切替、idempotency キーの管理──を、実例つきで解剖する現場記事。エージェントが転ぶ典型 7 パターンと、SaaS 提供側 / 統合側それぞれのレイヤで何を吸収すべきかを整理。</p>
+  <div class="sup">"AI で PoC は動くのに本番に載せると壊れる" は Anthropic の Building Reliable Agentic AI（昨日紹介）とも通じる論点で、本記事は <em>統合側 SaaS の当事者</em>の視点で書かれている点が価値。自社で MCP サーバ / Agent Toolkit を提供している場合の "設計チェックリスト" として使える。特に <em>idempotency キーをエージェントセッション ID にひも付ける</em>など具体パターンが明記されているのが実装ヒントになる。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://stripe.dev/blog/scaling-up-microservice-testing-with-apache-spark-part-2" target="_blank" rel="noopener">Scaling up your microservice testing with Apache Spark — Part 2</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🧪テスト</span></div>
+  <div class="src">Stripe Dev Blog（Vivek Yadav）｜2026-06-08</div>
+  <p class="sum">先週の Part 1（大規模マイクロサービスに対する Spark 並列でのリプレイ回帰テスト構想）の実装編。<em>本番トラフィックのキャプチャ → Spark ジョブでの再実行 → 差分検証</em>を、テスト対象サービスの "第二実装" を作らずに繰り返し可能にする harness の作り方。並列実行時の副作用制御（データストア分離・外部呼び出しのモック）、決定論的リプレイのためのタイムスタンプ扱いなど、具体的な設計判断を詳述。</p>
+  <div class="sup">"マイクロサービスのリファクタが怖い" のは本番相当のテストが打ちにくいから。従来解は <em>Contract Test（Pact 系）</em>や <em>Shadow Traffic</em> だが、Stripe 案は <em>"Spark を使うと N ホストに散らして高スループットで再実行できる"</em> のがミソ。数百 QPS のサービスなら overkill だが、決済 / 認証などクリティカル系の <em>「本番と同じ量のリクエストを流して差分だけ人が見る」</em>運用が必要な組織には、参考にできる並列テスト基盤の作り方。</p>
+</div>
+
+<h2>☁️ インフラ / クラウド / 開発ツール</h2>
+
+<div class="art">
+  <h3><a href="https://devblogs.microsoft.com/commandline/wsl-container-is-now-available-for-public-preview/" target="_blank" rel="noopener">WSL container is now available for public preview</a></h3>
+  <div class="tags"><span class="tag">🆕新機能</span><span class="tag">🔥話題</span></div>
+  <div class="src">Microsoft Command Line Blog｜2026-06-30</div>
+  <p class="sum">Docker Desktop / Rancher Desktop など <em>サードパーティ製ツールなしに Windows 上で Linux コンテナ</em>が扱えるようになる新機能 <strong>WSL Containers</strong> をパブリックプレビュー公開。CLI（<code>wslc.exe</code> / <code>container.exe</code>）は Docker コマンド互換で移行コストが低く、C / C++ / C# 向けの NuGet API パッケージも同時提供。各コンテナは軽量 Hyper-V VM の上で <em>プロセス単位で分離</em>される設計で、GPU パススルーも対応。GA は 2026 年秋を目指す。</p>
+  <div class="sup">"Windows 上での開発コンテナ" は Docker Desktop の商用ライセンス化以降、企業採用の頭痛の種だった。<em>WSL 2</em>（Windows Subsystem for Linux 2）は Windows 上に Linux カーネルを動かす MS 純正の互換層で、その上に "コンテナランタイム" が MS 公式で乗ることで、<em>ライセンス問題 / 起動速度 / GPU 対応</em>という Docker Desktop 移行検討時の主要ネックが同時に解ける可能性がある。開発機コンテナ戦略を見直すタイミングの人には要チェック。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://deno.com/blog/v2.9" target="_blank" rel="noopener">Deno 2.9</a></h3>
+  <div class="tags"><span class="tag">🆕リリース</span><span class="tag">⚡性能</span></div>
+  <div class="src">Deno Blog｜2026-06-25</div>
+  <p class="sum">Deno 2.9 リリース。目玉は <strong>deno desktop</strong>（TypeScript 一枚から Next.js アプリまでを、Deno ランタイム + レンダリングエンジンを内包した単一バイナリにパッケージ、Electron のボイラープレートなし）と、<strong>コールドスタート 34ms → 17ms（約半分）</strong>の起動高速化。node: グローバルの遅延ロードと V8 コードキャッシュが効いた。HTTP スループット 1.11〜1.27 倍、負荷時メモリ 1/2〜1/3、Node の lockfile（npm/pnpm/yarn/Bun）を直読みできるようになり、Node → Deno の移行障壁を大幅に下げた。</p>
+  <div class="sup">"Electron 代替" の文脈だと Tauri（Rust 系）が先行してきたが、Deno Desktop は <em>Web 開発と同じ書き味のまま Node / npm 資産を活かせる</em>点で違う立ち位置。Deno Desktop が現実解になるかは "配布バイナリのサイズ" と "ネイティブ機能アクセス" 次第だが、社内向けツールや軽量 SaaS デスクトップ版なら選択肢に入りうる。加えて起動 17ms は Serverless / CLI ツール用途に効いてくる。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://investor.qualcomm.com/news-events/press-releases/news-details/2026/Qualcomm-to-Acquire-Modular/default.aspx" target="_blank" rel="noopener">Qualcomm to Acquire Modular</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🏢M&amp;A</span></div>
+  <div class="src">Qualcomm Investor Relations｜2026-06-24（発表）</div>
+  <p class="sum">Qualcomm が <strong>Mojo 言語と MAX 推論エンジンを提供する Modular を約 39 億ドル</strong>（全株式）で買収と発表（クローズは 2026 下期）。Chris Lattner（LLVM / Clang / Swift の父）含む Modular メンバー約 150 名が Qualcomm 傘下入り。狙いは <em>Nvidia / AMD / Intel / ARM を跨いで走る AI ソフトウェアレイヤ</em>を持つことで、CUDA ロックインへの正面攻撃。エッジからデータセンター、CPU/GPU/NPU/ASIC まで単一スタックで扱える基盤を目指す。</p>
+  <div class="sup">"Nvidia のロックインは <em>チップの速さ</em> ではなく <em>CUDA というソフトウェア資産</em>で守られている" は業界の共通認識。Modular MAX は <em>OpenXLA / Triton / IREE</em> と並ぶ "ハードウェア中立コンパイラ" 陣営で、Mojo は Python 上位互換で低レベル最適化を書ける Kotlin 的な立ち位置。買収でモバイル SoC 大手が息を吹き込むと、"AI 推論を Nvidia 以外で回せる現実解" が数年内に立ち上がる可能性があり、推論コスト設計の前提を変えうる長期ニュース。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">GPT-5.6 Sol on Cerebras at up to 750 tokens/sec</a></h3>
+  <div class="tags"><span class="tag">続報</span><span class="tag">⚡性能</span></div>
+  <div class="src">OpenAI Blog（続報）｜2026-07</div>
+  <p class="sum">6/26 発表の GPT-5.6 Sol に関する続報。<strong>7 月から Cerebras の Wafer-Scale Engine 上で最大 750 トークン/秒</strong>の提供が始まる（初期はセレクト顧客のみ）。Anthropic Opus 4.8 が openrouter 上で ~55 TPS、fast モードで ~102 TPS と言われている中、フロンティア級で 750 TPS は "推論レイテンシが対話体験の律速から外れる" ラインに近い。</p>
+  <div class="sup">昨日のブリーフでも GPT-5.6 Sol 自体には触れたが、今日新しいのは <em>非 Nvidia アクセラレータ（Cerebras）で本格的にサービス提供が始まる</em>点。Cerebras は 1 チップ丸ごとを "巨大な行列演算器" にする Wafer-Scale アーキで、メモリ帯域がボトルネックになる LLM 推論と相性が良い。<em>「エージェントの内的な思考ステップが 5〜10 倍のスループットで回せる」</em> なら、Multi-Agent 前提のワークフロー設計は <em>「1 呼び出しあたりのコスト」から「秒間の思考トークン量」に軸が動く</em>可能性がある。前述の Qualcomm/Modular とも合わせ、"Nvidia 一強からの分岐点" が同時多発している週。</p>
+</div>
+
+<h2>🔬 注目論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2606.16307" target="_blank" rel="noopener">State-Grounded Multi-Agent Synthetic Data Generation for Tool-Augmented LLMs</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">🤖エージェント</span></div>
+  <div class="src">arXiv 2606.16307｜2026-06-15</div>
+  <p class="sum">ツール利用エージェントの学習データ生成基盤 <strong>StateGen</strong> の提案。ペルソナ条件付きユーザーシミュレータ / 対象エージェント / <em>状態に紐づけたツールシミュレータ</em> / マルチ軸 LLM ジャッジの 4 ロールを協調させ、<em>推論トレース付き・スコア付き</em>の学習会話を大量合成する。ツールの副作用と状態遷移を明示的に扱う点が既存の合成データ手法との違い。</p>
+  <div class="sup">"社内の独自ツール / 独自 API を扱えるエージェント" を作ろうとすると、そもそも <em>教師データ</em>（正しい tool-call シーケンス）がないのがブロッカーになる。合成データを "本物のツールを叩かずに、状態機械で仮想的に叩いて生成する" 発想は <em>コスト・安全性の両立</em>で有力な選択肢。自社で fine-tune や DPO を回して独自エージェントを育てるチームには参照実装として価値がある。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2606.22388" target="_blank" rel="noopener">PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-Scale Tool Ecosystems</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📊評価</span></div>
+  <div class="src">arXiv 2606.22388｜2026-06</div>
+  <p class="sum">既存の PlanBench を "何千個のツールがあるカタログから正しいものを選ばせる" 大規模設定に拡張したベンチマーク。<em>ツール選択 → 長期計画 → 依存関係のあるサブゴール分解</em>を組み合わせて評価する。単一ツール呼び出しでは高性能なフロンティアモデルも、ツール数が増え計画深度が伸びると性能が急落することを示す。</p>
+  <div class="sup">"MCP サーバの数が増えて、エージェントが正しく道具を選べなくなる" は現場でよくある悩み。この論文の枠組みは "自社エージェントに N 個ツールを繋げていくときに、どの N で壊れるか" を実証的に検証する参考軸になる。<em>ツールカタログのグルーピング（context だけを絞る）</em>や <em>Router LLM</em> 導入の判断材料として使える。</p>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/usestrix/strix" target="_blank" rel="noopener">usestrix/strix</a></h3>
+  <div class="tags"><span class="tag">⚠セキュリティ</span><span class="tag">🛠OSS</span></div>
+  <div class="src">GitHub Trending（Python）｜今日 +1,195★</div>
+  <p class="sum">Web アプリの脆弱性を <em>自律 AI エージェント</em> で発見・再現・修正案生成まで行う OSS スキャナ。従来の SAST（静的解析）/ DAST（動的スキャン）と違い、<em>実際にアプリを操作して条件を組み立てるエージェント</em>として動作する。API / Web 両対応。</p>
+  <div class="sup">"AI が実際に PoC を作って脆弱性を再現する" 系の OSS が本格化してきている。既存の Semgrep / Snyk 系（静的パターンマッチ）と、Burp Suite 系（人手で探索）の中間で、<em>エージェントで再現ステップまで出す</em> のがトレンド。導入検討時は "自社の CI に組み込めるか / False Positive をどう抑えるか" が判断ポイント。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/msitarzewski/agency-agents" target="_blank" rel="noopener">msitarzewski/agency-agents</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">🤖エージェント</span></div>
+  <div class="src">GitHub Trending（Shell）｜今日 +2,097★</div>
+  <p class="sum">"AI エージェンシー" として、専門分野ごとのプロンプト / ツールセットを分けた <strong>Claude Code / Codex 向けサブエージェント集</strong>。マーケター、法務、営業、リサーチャー等の役割を CLAUDE.md ベースで切り、一つのターミナルから使い分けできるスターターキット。</p>
+  <div class="sup">Anthropic 公式の Sub-Agents / Custom Agents 機能を "実務ロール別のテンプレ集" として使い倒す運用例。導入検討時は <em>プロンプトのライセンス / 更新頻度 / ドキュメント量</em>を見てフォークする価値があるか判断。<em>「自社版 CLAUDE.md ライブラリ」</em>を作るときの構成参考として。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/allenai/olmocr" target="_blank" rel="noopener">allenai/olmocr</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📄OCR</span></div>
+  <div class="src">GitHub Trending（Python）｜今日 +295★</div>
+  <p class="sum">Allen AI（AI2）による <em>PDF を LLM 学習データ用にリニアライズ</em>する OSS ツールキット。数式・表・段組みを含む学術/技術系 PDF を <em>読み順に沿ったテキスト</em>に変換し、事前学習・RAG 前処理に耐えるクオリティで抽出する。VLM ベース。</p>
+  <div class="sup">"PDF 資料の中に情報が閉じ込められている" は多くの企業で RAG 実装のボトルネック。既存の Unstructured / Marker などと比較して、olmOCR は <em>研究機関発の再現可能な OSS で学習データ品質重視</em>の設計。社内技術文書や過去論文/報告書を LLM に食わせるパイプを組んでいる場合、前処理段の候補として比較検証する価値あり。</p>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/wsl_containers.html" target="_blank" rel="noopener">Windows上でLinuxコンテナが動く「WSL Containers」がパブリックプレビュー</a></h3>
+  <div class="tags"><span class="tag">🆕新機能</span><span class="tag">📰まとめ</span></div>
+  <div class="src">Publickey｜2026-07-01</div>
+  <p class="sum">上述 Microsoft 発表の日本語まとめ。<em>Docker Desktop などサードパーティ製ツールを介さず</em> Windows 上で Linux コンテナが動く公式機能で、Docker 互換 CLI 提供と Windows ↔ Linux ファイル IO の高速化（<em>約 2 倍</em>）が実務メリットとして強調されている。</p>
+  <div class="sup">Publickey の切り口はエンタープライズ視点で、<em>「Docker Desktop の商用ライセンス問題を回避できる MS 純正ルート」</em>としての位置付けが分かりやすい。日本企業でよくある "Docker Desktop 有償化で対応が止まっていた社内開発機ポリシー" の見直しトリガーになりうる。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/qualcommmojomodularai.html" target="_blank" rel="noopener">クアルコムがPythonライクな新言語「Mojo」開発元のModular社買収を発表</a></h3>
+  <div class="tags"><span class="tag">🏢M&amp;A</span><span class="tag">🔥話題</span></div>
+  <div class="src">Publickey｜2026-06-30</div>
+  <p class="sum">上述 Modular 買収の日本語解説。Mojo 言語（Python 互換 + 低レベル最適化可能）と MAX 推論エンジン、Chris Lattner の背景も含めて "AI データセンター市場への Qualcomm 参戦" として整理。日本語圏でも読める Modular 買収の一次まとめとして。</p>
+  <div class="sup">Publickey の視点は <em>「Qualcomm はスマホ以外で伸びしろが欲しい」</em>という市場文脈 + <em>Modular が持つ CUDA 代替ソフトウェア資産</em>の解説で、英語ソースに比べ "なぜ買ったか / 買収前後の市場地位" が読みやすい。技術動向を非エンジニアの経営層に共有するときの一次資料として使いやすい。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/deno_29.html" target="_blank" rel="noopener">Deno 2.9正式リリース。起動が2倍速、消費メモリは半分に</a></h3>
+  <div class="tags"><span class="tag">🆕リリース</span><span class="tag">📰まとめ</span></div>
+  <div class="src">Publickey｜2026-06-29</div>
+  <p class="sum">上述 Deno 2.9 の日本語まとめ。<em>Deno Desktop で WebView デスクトップアプリを Deno 一枚で作れる</em>点と、コールドスタート・メモリ改善・npm / pnpm / yarn / Bun のロックファイル直読み対応をコンパクトに解説。</p>
+  <div class="sup">Deno 系のリリースは英語圏の解説が多い中、Publickey の <em>「Node → Deno 移行への障壁がどれだけ下がったか」</em>という視点は日本の実務者向けにフィットする。特にロックファイル互換対応は "自社の既存 Node プロジェクトを試しに Deno に載せてみる" ハードルを下げる材料。</p>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/siromiya/articles/2026-06-03-01-claudecode-team-agents" target="_blank" rel="noopener">Claude Codeをチームで運用するためのCLAUDE.md設計とカスタムエージェント分担</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🤖エージェント</span></div>
+  <div class="src">Zenn（siromiya）｜2026-06-03</div>
+  <p class="sum">Claude Code をチームで共通運用する際の <strong>CLAUDE.md 分割戦略</strong>（プロジェクト共通 / ドメイン別 / 個人設定の3層）、カスタムエージェント（Sub-Agents）とスラッシュコマンド、Hooks / MCP サーバの役割分担を実運用ベースで整理。"個人が触るファイル / チームで統一するファイル / 自動生成される settings" を分けたリポジトリレイアウト例あり。</p>
+  <div class="sup">Anthropic の Sub-Agents 機能自体は英語のドキュメントで説明されているが、<em>"複数人チームで共通運用する"</em> ときの現実解（例：DBA 用エージェントを .claude/agents/ に置いて全員から呼べるようにする）は日本語での実践知が少ない領域。国内の複数チーム展開を検討している人には、"どう仕組み化するか" のリファレンスとして参考になる。</p>
+</div>
+
+<footer>
+  収集元:
+  Hacker News / GitHub Trending / Anthropic Newsroom / OpenAI Research / Google DeepMind Blog /
+  Pragmatic Engineer <span class="fail">(取得失敗)</span> /
+  Martin Fowler <span class="fail">(取得失敗)</span> /
+  AWS Architecture Blog <span class="fail">(取得失敗)</span> /
+  High Scalability <span class="fail">(取得失敗)</span> /
+  ThoughtWorks Radar /
+  Netflix Tech Blog <span class="fail">(取得失敗)</span> /
+  Uber Engineering Blog /
+  Stripe Dev Blog /
+  InfoQ /
+  arXiv (cs.AI) /
+  Changelog /
+  Zenn /
+  note <span class="fail">(取得失敗)</span> /
+  Publickey /
+  Microsoft Command Line Blog /
+  Deno Blog /
+  Qualcomm IR
+  <br><br>
+  🔨 エンジニアリング・モーニングブリーフ · <a href="../">過去ブリーフ一覧</a>
+</footer>
+
+</body>
+</html>
