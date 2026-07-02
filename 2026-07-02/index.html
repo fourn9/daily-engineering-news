@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月02日(木) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+.sup .lbl{color:var(--muted);font-weight:600;margin-right:4px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+@media (max-width:480px){
+  body{font-size:15px;padding:14px 12px 50px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.05rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年07月02日(木)</div>
+</header>
+
+<section class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p>
+    Anthropic が <strong>Claude Sonnet 5</strong> を投入 (6/30)。Opus 4.8 相当の性能を $2/$10 (100万トークン) と大幅に安い価格帯で提供し、1M コンテキスト＋エージェント寄りに振り切った設計で「Opus を常用していた用途を Sonnet に押し下げる」動きを狙う。もう1本の目玉は <strong>Netflix GenPage</strong> ── 多段の推薦パイプラインを単一 Transformer に集約し、ホームページの行構成そのものを自己回帰的に生成する構造転換の実例。単なる LLM 応用ではなく「レコメンド基盤アーキテクチャの再設計」であり、テックリード視点で読む価値が高い。
+  </p>
+</section>
+
+<h2>🤖 AI / LLM プラットフォーム</h2>
+
+<div class="art">
+  <h3><a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank" rel="noopener">Introducing Claude Sonnet 5</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">出典: Anthropic News (2026-06-30)</div>
+  <p class="sum">Sonnet 5 は「もっともエージェント寄りに設計された Sonnet」で、ツール利用・長時間の自律実行・多段推論において前世代 Sonnet 4.6 を明確に超え、社内評価では Opus 4.8 と同等クラス。導入価格は $2/$10 (Input/Output、100万トークンあたり、8/31まで)、コンテキスト 1M、最大出力 128k。Claude Code / Platform / Cowork 含む全プランに即日展開。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Sonnet ラインは Anthropic の中位モデルで、Opus (最上位) より安価ながら実用性能が高いのが売り。今回は「Opus 4.8 級を Sonnet 価格で」を打ち出したことで、社内のエージェント運用ワークロード ── Claude Code、ブラウザエージェント、CI 上での自律修正など ── を Opus から一段下げても品質が保てる可能性がある。テックリード視点では「常用モデル格下げ→月次コスト圧縮」の判断材料になる。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">Redeploying Claude Fable 5</a></h3>
+  <div class="tags"><span class="tag">続報</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">出典: Anthropic News (2026-07-01)</div>
+  <p class="sum">昨日の Fable 5 / Mythos 5 続報。米政府の輸出規制解除を受け、Fable 5 が 7/1 から全世界のユーザーに再展開。新たに投入された分類器は Amazon が報告した特定のジェイルブレイク手法を <em>99% 以上</em> でブロックするとされ、米商務省 CAISI が旧・新セーフガードの両方を独立検証。Amazon / Microsoft / Google らと共同で業界横断のジェイルブレイク評価フレームワーク策定にも着手。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "ジェイルブレイク分類器" とは、モデルへの入力／出力を別モデルで監視し危険な流れを遮断する仕組みで、モデル本体の再学習より短サイクルで安全側の挙動を積み増せるのが利点。単社の透明性報告ではなく「業界共通の評価枠組み」まで踏み込んだ点が、規制当局と AI 企業のインターフェース設計として先例になる可能性がある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://openai.com/index/us-department-of-energy-collaboration/" target="_blank" rel="noopener">Deepening our collaboration with the U.S. Department of Energy</a></h3>
+  <div class="tags"><span class="tag">📝発表</span></div>
+  <div class="src">出典: OpenAI</div>
+  <p class="sum">OpenAI と米エネルギー省 (DOE) が MoU (基本合意) を締結し、DOE の Genesis Mission (国家 AI 科学プロジェクト) に対して技術・計算資源・研究環境の相互提供を行う枠組みを新設。核融合など DOE 国立研究所の実データを用いた研究に、フロンティアモデルを直接投入する体制を志向する。1,000 名の研究者が参加した AI Jam Session の実績が下地。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Anthropic の DOD/DOE 連携、Google DeepMind の各国政府連携と並び、"フロンティアモデルを国立研究インフラに配布する" 動きが標準化しつつある。実務的にはモデルの学術ドメイン適応 (materials, fusion, biology) と政府調達 (FedRAMP High / IL5 等) をどう両立するかが論点で、事業側は "AI ラボは B2G の主要 SI プレイヤーになる" 視点を持っておく価値がある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://openai.com/index/how-chatgpt-adoption-has-expanded/" target="_blank" rel="noopener">How ChatGPT adoption has expanded</a></h3>
+  <div class="tags"><span class="tag">📊レポート</span></div>
+  <div class="src">出典: OpenAI (2026-06-30)</div>
+  <p class="sum">OpenAI Signals の新レポートで、ChatGPT 利用が地域・言語・ユーザ層 (エンタープライズ／教育) をまたいで一段深く浸透していることを示す統計を公表。ユーザ 1 人あたりのセッション長と機能利用の広がりが増加傾向で、"個人利用のオモチャ" ではなく "業務プロダクティビティレイヤ" として定着していると位置づける。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 開発者視点では、"ChatGPT がユーザ動線を持っている" こと自体がプラットフォーム化を意味する。Stripe の "エージェントトラフィックがドキュメント流入の 40% に到達" (下段参照) と併せて読むと、B2C プロダクトの UI 前段に LLM UI が挟まる構造が加速していることが読み取れ、自社プロダクトの検索／導線設計をどこまでエージェント経由に最適化するかの判断が近づいている。</div>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+  <h3><a href="https://netflixtechblog.com/genpage-towards-end-to-end-generative-homepage-construction-at-netflix-77146fba8a08" target="_blank" rel="noopener">GenPage: Towards End-to-End Generative Homepage Construction at Netflix</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: Netflix TechBlog (2026-06)</div>
+  <p class="sum">Netflix ホームページの複数段レコメンド (候補生成 → ランキング → 行構成 → 順序決定) を、単一の Transformer に統合。ユーザ文脈をトークン化した "プロンプト" として与え、行 (row) と各行内のエンティティを自己回帰的に生成する。既存の高度に最適化された多段プロダクション比較 A/B で、コアエンゲージメント指標が有意に向上しつつ E2E 遅延を 20% 削減。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 従来のレコメンドは "候補生成 → 個別ランキング → ページ組み立て" が分業されており、行間の相互作用や制約 (在庫、規制、UI 制約) は都度ヒューリスティックで縫っていた。GenPage は "ページ全体を一度に生成" することで RL でページ単位の最適化が可能になり、これは「LLM の推薦系転用」ではなく「多段 ML パイプラインの単一大規模モデルへの吸収」という構造転換の実例。自社が小規模でも「多段パイプラインの再設計余地」を考える視点は転用可能。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://netflixtechblog.com/how-netflix-simplified-batch-compute-with-kueue-87860682629c" target="_blank" rel="noopener">How Netflix Simplified Batch Compute with Kueue</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Netflix TechBlog (2026-06)</div>
+  <p class="sum">Netflix は長年、内製の CMB (Compute Managed Batch) でキューイングとスケジューリングを担ってきたが、Kubernetes-native なバッチジョブキュー <strong>Kueue</strong> に段階的移行。カスタムスケジューラのメンテナンス負債を落としつつ、リソースクォータや優先度制御など K8s エコシステム標準の運用に寄せた。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Kueue は Kubernetes SIG が推す OSS のバッチジョブキューで、Job / JobSet に対して "誰にどれだけ配分するか" を宣言的に扱える。自前スケジューラは細かい制御ができる反面、K8s のアップグレードやオートスケールとの結合コストが高い。「内製スケジューラを持ち続けるか、コミュニティ標準に載せ替えるか」の判断は多くの中規模プラットフォームチームの現在進行課題で、Netflix クラスの事例が公開された意義は大きい。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://netflixtechblog.com/from-silos-to-service-topology-why-netflix-built-a-real-time-service-map-0165ba13a7bc" target="_blank" rel="noopener">From Silos to Service Topology: Why Netflix Built a Real-Time Service Map</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Netflix TechBlog (2026-06)</div>
+  <p class="sum">数千サービス規模の Netflix 分散システムで、依存関係を "常時最新" で保つリアルタイムサービストポロジー基盤を構築。従来のドキュメント／CMDB 型からリアルタイム収集に切り替え、障害調査 (どこが誰に影響するか) や変更影響評価を高速化。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "サービスマップ" は Datadog / New Relic 等の APM ベンダも提供するが、大規模組織では自前構築が必要になることが多い。ポイントは "リアルタイム性" と "サービス以外 (データセット、フィーチャーフラグ、ジョブ)" まで含めた統一グラフ化で、これは observability プラットフォームが「テレメトリ収集」から「トポロジーの実行時モデル」へ拡張しつつある潮流の一角。小規模組織でも障害時の "影響範囲把握" は最速の投資対効果を出す領域。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://stripe.com/blog/stripe-projects-adds-new-agents-providers-developer-controls" target="_blank" rel="noopener">Stripe Projects adds new agent integrations, more providers, and custom developer controls</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Stripe Blog</div>
+  <p class="sum">Stripe Projects (AI エージェントがクラウド／SaaS サービスを "調達し支払う" 基盤) に、Nous の Hermes、Factory Droids、Warp 等の各種コーディングエージェント連携を追加。<em>サービス単位の課金上限</em>と <em>環境ごとの隔離クレデンシャル</em> (dev / staging / prod)、そして委任認可＋ホワイトラベル対応がプラットフォーム事業者向けに提供された。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "エージェントが暴走して本番課金を燃やす" は現実のリスクで、これに対して "権限最小化＋予算上限" を認証・支払基盤側で担保するのが Stripe のアプローチ。IaC における "prod 隔離" の考え方をエージェント時代の課金レイヤに持ち込んだ形で、社内エージェント運用の設計原則 (どのエージェントに何を許すか) を SRE / 情シスに丸投げせず、コード側で宣言する土台になる。</div>
+</div>
+
+<h2>☁️ インフラ / クラウド / 開発ツール</h2>
+
+<div class="art">
+  <h3><a href="https://www.infoq.com/news/2026/06/cloudflare-bug-quiche/" target="_blank" rel="noopener">How Cloudflare Solved a Congestion Bug in quiche</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🔬掘り下げ</span></div>
+  <div class="src">出典: InfoQ</div>
+  <p class="sum">Cloudflare の QUIC 実装 <strong>quiche</strong> (Rust製) で、輻輳制御アルゴリズム CUBIC がスロースタート中に大量のパケットロスが起きたときに "永遠のリカバリループ" に陥る不具合を発見・修正。原因は "アイドル時間" の測り方で、RTT 待ちの空白と本当のアプリケーションアイドルを混同していた。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> CUBIC は TCP/QUIC の代表的な輻輳制御で、Linux カーネルのデフォルトでもあるが、Rust への移植で "境界条件の解釈" がずれると再現困難なバグを生む典型例。テックリード視点では "既存アルゴリズムの再実装は同じ挙動になるとは限らない" という教訓が重要で、ミドルウェアを別言語で書き直すプロジェクトでは、こういう微妙な状態機械の不一致を早く検出するテスト設計が鍵になる。</div>
+</div>
+
+<h2>🔬 注目論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2607.01047" target="_blank" rel="noopener">Conversable Complexity: Agentic LLM Collectives as Interpretable Substrates</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span></div>
+  <div class="src">出典: arXiv 2607.01047 (2026-07-01)</div>
+  <p class="sum">複数の LLM エージェントを相互作用させると、単体では見られない <em>創発</em> 的な集団ダイナミクスが観察されることを、永続メモリ・ツール・自発的アクションを与えた "エージェント集合体" として体系化。これらの群れが解釈可能な "基質 (substrate)" として、社会シミュレーションや政策設計の実験場になり得ると主張。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "マルチエージェント LLM" の議論は多いが、多くは "分業による性能向上" を狙う工学的話題。この論文は "群れとしての性質" 自体を研究対象にしていて、Boid モデルや ABM (Agent-Based Modeling) の LLM 版とも読める。実務にはすぐ効かないが、"エージェント群の観測とデバッグ手段" の議論が今後増える兆候として押さえておくと文脈がつく。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2607.01034" target="_blank" rel="noopener">Behavior-Adaptive Conversational Agents: Toward a Fluid Personality Framework</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span></div>
+  <div class="src">出典: arXiv 2607.01034 (2026-07-01)</div>
+  <p class="sum">対話エージェントの "ペルソナ" と "表現の強度" を、対話中に流動的に適応させる Fluid Personality Framework を提案。固定ペルソナ (system prompt 上の設定) では捉えきれない、相手の状態や文脈に応じたトーン調整をパラメトリックにモデル化する。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> カスタマーサポート／メンタルヘルス／営業支援など、"同じエージェントが相手によって話し方を変える" 要件を持つプロダクトは多いが、実装は system prompt 分岐＋温度調整の泥臭い工夫に頼りがち。本研究のように "ペルソナ表現強度" を明示的パラメータにできると、A/B テストや監査ログ (どんなキャラで応答したか) が扱いやすくなる。</div>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/JuliusBrussee/caveman" target="_blank" rel="noopener">JuliusBrussee/caveman</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span></div>
+  <div class="src">JavaScript / ⭐80.6k (+866/day)</div>
+  <p class="sum">"最小限の言葉でだけ話す" を強制する Claude Code スキル。冗長な返答や自己解説を切り詰めて、実質的なトークン消費を大幅に削る目的で作られたコミュニケーションパターン集。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Claude Code の "Skill" は特定の作業パターンをまとめて呼び出せる Anthropic 標準の拡張機構で、CLAUDE.md や slash command とは別レイヤ。本 skill は "モデル出力の丁寧さ＝コスト" というトレードオフに割り切って向き合っており、CI / バッチ用の LLM 呼び出しで "自然な応答は要らないが結果は正しく欲しい" ケースで即効性がある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span></div>
+  <div class="src">Shell / ⭐244k (+962/day)</div>
+  <p class="sum">"エージェント駆動のソフトウェア開発" を実践するためのフレームワーク／方法論集。エージェントに任せる作業単位・レビュー観点・ハーネスパターンをテンプレ化し、実運用で得た知見を共有する。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "AI にコードを書かせる" は既に一般化したが、"チームがそれをどう回すか" (プロンプト共有、レビューポリシー、リグレッション検出) は各社バラバラ。superpowers のようなフレームワークは、Claude Code / Codex ユーザーが 0 から社内ガイドラインを書くのに叩き台として使えるため、初手コストを下げる意味で価値がある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/openai/codex-plugin-cc" target="_blank" rel="noopener">openai/codex-plugin-cc</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">JavaScript / ⭐22.5k (+448/day)</div>
+  <p class="sum">Claude Code から OpenAI Codex を呼び出してレビューやタスク委譲を行うためのプラグイン。異なるモデル (Anthropic / OpenAI) を組み合わせて "二人 AI ペア開発" のような使い方を可能にする。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 単一モデルにすべてを任せると、そのモデル固有の癖 (安全側寄せすぎ／推論のクセ) が生成物に強く出る。異ベンダのモデルを "レビュアー" と "実装者" で分けると、片方が見落としたエッジケースをもう一方が拾う効果が期待でき、Anthropic 側の Codex 連携公式サポートが薄い現状では貴重なブリッジ。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/astro_70vite_8rolldownrust.html" target="_blank" rel="noopener">静的サイトジェネレータ「Astro 7.0」正式リリース、ビルドシステムがVite 8/Rolldownに、Rust製コンパイラ採用で高速化</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span></div>
+  <div class="src">出典: Publickey (2026-07-02)</div>
+  <p class="sum">Astro 7.0 が正式リリース。ビルドシステムを Vite 8 と Rust 製バンドラ Rolldown に切り替え、Markdown/MDX 処理も Rust 実装に更新して、フルビルドが 60% 以上高速化。1月に Cloudflare が Astro を買収し、6月には Vite も Cloudflare 傘下に入っており、"エッジ配信＋高速ビルド" の一体スタックが Cloudflare 側で組み上がりつつある。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Rolldown は Vite の作者 Evan You が主導する "esbuild 相当の速度＋Rollup 相当の互換性" を狙う Rust 製バンドラで、esbuild の後継的な位置づけ。Astro のようなコンテンツ主体フレームワークではビルド時間がそのままデプロイ体験を左右するため、Rust 移行の効果が体感しやすい。Next.js が Turbopack で歩んでいる道を、Astro / Vite 系が Rolldown で追う構図。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/dnsaiagent_name_serviceanslinux_foundation.html" target="_blank" rel="noopener">DNSを基盤にAIエージェントに信頼できる名前を与える「Agent Name Service (ANS)」、立ち上げ意向をLinux Foundationが発表</a></h3>
+  <div class="tags"><span class="tag">📝発表</span><span class="tag">🌐標準化</span></div>
+  <div class="src">出典: Publickey (2026-07-02)</div>
+  <p class="sum">Linux Foundation が、既存 DNS を拡張して "AI エージェントに信頼できる識別子を与える" 標準 <strong>Agent Name Service (ANS)</strong> の立ち上げ意向を表明。エージェントが名乗る "誰" を、ドメイン所有者に紐づくかたちで検証可能にすることを狙う。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> エージェント同士が呼び合う世界では "相手がなりすましか" の検証が課題で、TLS の証明書チェーンは "ホストの実在" しか保証しない。ANS は "そのエージェントがそのドメイン組織のものである" ことを DNS レイヤで表現する試みで、MCP や Stripe Projects (上段) のようなエージェント間通信プロトコルの下敷きになり得る。標準化団体が動き始めた段階で、実装が定まるのは半年〜1年先。</div>
+</div>
+
+<footer>
+  <p><strong>収集元:</strong> Hacker News <em>(取得失敗)</em> / GitHub Trending / Anthropic News / OpenAI / Google DeepMind Blog / The Pragmatic Engineer / Martin Fowler / AWS Architecture / High Scalability / ThoughtWorks Technology Radar / Netflix TechBlog / Uber Engineering / Stripe Blog / InfoQ / arXiv cs.AI / Changelog / Zenn / note / Publickey</p>
+  <p>次回もお楽しみに。</p>
+</footer>
+
+</body>
+</html>
