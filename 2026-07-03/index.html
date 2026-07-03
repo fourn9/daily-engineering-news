@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月03日(金) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+.sup .lbl{color:var(--muted);font-weight:600;margin-right:4px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+@media (max-width:480px){
+  body{font-size:15px;padding:14px 12px 50px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.05rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年07月03日(金)</div>
+</header>
+
+<section class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p>
+    2大トピックはフロンティアモデル陣営の新規投入。<strong>Anthropic Claude Science</strong> (6/30) は Claude Code と同じ「エージェントに専門ドメインを丸ごと預ける」設計思想を、Claude 経営陣が自ら「創薬に持ち込む」と宣言した重い一手 ── 60超の科学 DB／計算ツールを内蔵し、Anthropic 自身も希少疾患の創薬プログラムを立ち上げる。もう一方は <strong>OpenAI GPT-5.6 Sol/Terra/Luna</strong> の限定プレビュー (7/1) ── 米政府への事前共有を経てから展開する新運用モデルで、フロンティアモデルの供給プロセスそのものが「限られた組織にまず開き、その後に一般開放」へと組み変わりつつあることを示唆する。テックリード視点で見ておきたいのは、この2件が「AI ラボの B2B 展開＝ドメイン別サブブランドの投入」というパターンを固めつつある点。
+  </p>
+</section>
+
+<h2>🤖 AI / LLM モデル更新</h2>
+
+<div class="art">
+  <h3><a href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">Previewing GPT-5.6 Sol: a next-generation model</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">出典: OpenAI (2026-07-01)</div>
+  <p class="sum">GPT-5.6 は Sol (フラッグシップ／$5/$30) / Terra (バランス／$2.50/$15) / Luna (高速安価／$1/$6) の 3 段構成。Sol は複雑なコーディング／セキュリティ研究、Terra はカスタマーサポートや文書分析、Luna は要約・下書きなどの高頻度用途を狙う。初期リリースは米政府への事前共有プロセスを経た約 20 社の "trusted partners" 限定で、API と Codex 経由で提供、数週間内に一般提供予定。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "trusted partners への限定プレビュー" は OpenAI の新運用パターンで、フロンティア級モデルはまず米政府へ共有 → 少数組織で試験運用 → 一般開放、という段階が固まりつつある。Anthropic の Fable 5 輸出規制騒動と同じ構造の裏返しで、"モデルの流通そのものが半安全保障マター化" していることが背景。事業側から見ると "自社が最新モデルを触れるまでのラグ" が構造化されるので、モデルベンダ選定は "GA 時点で何ヶ月遅れるか" も判断軸に入る。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.anthropic.com/news/introducing-claude-science" target="_blank" rel="noopener">Introducing Claude Science</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Anthropic (2026-06-30) ／ 一次報道: MIT Tech Review, STAT News, CNBC</div>
+  <p class="sum">Claude Science は 60 超の科学 DB と計算ツール (PubMed, UniProt, AlphaFold 等) を単一ワークスペースに束ねた研究者向けアプリで、Claude Code と同様に "高レベル指示 → 自律実行" を計算生物学／創薬向けに最適化。文献レビュー、生物データ解釈、複雑な計算ワークフロー、仮説生成を担う。有償プラン全体で即日利用可、"AI for Science" 助成として最大 50 プロジェクトに $30k 相当のクレジットを提供。Anthropic 自身も希少疾患の創薬プログラムを立ち上げる。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Claude Code が "汎用 LLM ＋開発者向けツール束＋エージェントループ" というレイヤ構造で成功したのを受けて、Anthropic は同じレイヤ構造をドメイン別に横展開している。設計論としては "モデル本体を作り変える" のではなく "ツール層 (60 個超の科学 DB / 計算ツール) を差し替える" だけで新ドメインに展開できる、という MCP 系エコシステムの正しさの実証。B2B 展開のフォーマットとして、他ドメイン (法務、金融、製造) にも同型のサブブランドが増える可能性が高く、"ドメイン別 Claude X" が来年の当たり前になり得る。</div>
+</div>
+
+<h2>🛠 AI開発ツール / エージェント</h2>
+
+<div class="art">
+  <h3><a href="https://developer.chrome.com/blog/chrome-devtools-mcp" target="_blank" rel="noopener">Chrome DevTools (MCP) for your AI agent</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🛠OSS</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Chrome for Developers Blog ／ GitHub: <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" rel="noopener">ChromeDevTools/chrome-devtools-mcp</a></div>
+  <p class="sum">Chrome DevTools を MCP サーバとしてエージェントに公開する公式実装。Puppeteer による自動操作、ネットワーク／コンソール／スクリーンショット取得、パフォーマンストレース収集までを "生きた Chrome" 越しに任せられる。Antigravity、Gemini CLI、Claude Code、Cursor、Copilot 等 MCP 対応クライアントで即利用可。GitHub Trending でも急上昇 (⭐45.4k / +404/day)。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> フロント/E2E 系のエージェントには "自分の書いたコードがブラウザで実際どう動いているか見えない" という根本課題があり、これが幻覚の温床になっていた。Chrome 公式が DevTools を MCP に露出したことで、Playwright/Puppeteer をラップした自作 MCP を書くコストが消え、エージェントが "生の DevTools プロトコル" を直接叩ける構造になる。MCP は Anthropic が起こしたプロトコルだが、Google の主要開発ツール (Chrome DevTools) が公式に MCP を採用したことで、"MCP は AI エージェント基盤のデファクト標準" が確立段階に入ったと読める。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.blog/changelog/2026-06-30-open-source-license-compliance-is-in-public-preview/" target="_blank" rel="noopener">Open source license compliance is in public preview (GitHub)</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">出典: GitHub Changelog (2026-06-30)</div>
+  <p class="sum">依存関係の追加／変更を含む PR に対して、組織で定めたライセンスポリシーに照らして自動チェックが走るようになった (パブリックプレビュー)。非準拠ライセンスの依存を本番前にブロックできる仕組み。Copilot CLI 側でも Claude Sonnet 5 サポート、サンドボックス強制の高速化、subagent 制限の改善が同日投入されている。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "AGPL / GPLv3 混入を CI で弾く" は多くの大企業が自前 lint／専用サービス (Snyk, FOSSA 等) で運用してきた領域で、それが GitHub 側の PR チェックに標準機能として降りてきた形。エージェント開発の文脈では、AI に依存を勝手に追加させると "誤ってライセンス汚染" が起きやすいため、"エージェント時代の SCA (Software Composition Analysis) を PR ゲートに組み込む" という位置付けが重要。</div>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+  <h3><a href="https://www.uber.com/en-US/blog/how-we-unified-configuration-distribution-across-systems-at-uber/" target="_blank" rel="noopener">How We Unified Configuration Distribution Across Systems at Uber</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: Uber Engineering Blog</div>
+  <p class="sum">Uber は各ドメインが持っていた設定配布パイプラインを、単一の <strong>UCDP (Unified Configuration Distribution Platform)</strong> に統合。1.5M 超のクライアントが 150k 超のホストを介して購読、週 400k 回の変更を配布 (週 350TiB) 、277 の設定ドメイン／71k の namespace を保持する規模。旧来の pull 型を置き換えて、"同じ設定変更を、1 桁少ない CPU で、より低い伝播遅延" で届けるという定量的成果が出ている。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "feature flag / 動的設定" は etcd、Consul、LaunchDarkly、AWS AppConfig 等が乱立し、各ドメインが自前でクライアント SDK を持ちがちな領域。UCDP のポイントは "配布基盤とドメイン特化 UI を分離" して、web UI・Git ベース・API といったフロント (＝設定"プロダクト") を上に載せられる pipe に徹させたこと。中規模組織でも "設定配布の重複" は静かに複利で効くコストなので、"配布基盤は 1 本、UI と用途は複数" という切り分けは横展開しやすいエッセンス。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://stripe.dev/blog/fund-segregation-stripe-connect" target="_blank" rel="noopener">Keeping funds where they belong: Implementing fund segregation in Stripe Connect</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">出典: Stripe Dev Blog (2026-07-02)</div>
+  <p class="sum">Stripe Connect の "separate charges and transfers" モデルに対して、<em>allocated balances</em> (割当済み残高) という新プリミティブを追加。PaymentIntent 作成時に <code>allocated_funds: {enabled: true}</code> を宣言すると、そのお金は "プラットフォーム残高" とは別のホールディング状態に置かれ、指定した connected account への transfer にしか使えなくなる。プラットフォーム運営中の資金と "売り手のためのお金" を勘定レベルで隔離する仕組み。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> マーケットプレイス型プラットフォームの会計は "自社の運転資金" と "売り手に渡すお金" が混ざりやすく、監査・返金・破綻時の債権者主張などで実務事故が起きる古典的な難所。allocated balances は "取引ごとに transfer_group で識別可能なホールディング領域を作る" 設計で、これは会計/監査でよく言う "ring-fencing (資金の隔離)" をコードレベルの primitive に落とし込んだもの。プロダクトが Connect を使っていなくても "顧客資金を自社資金と混同しない口座設計" を SaaS 側で持つ発想は転用可能。</div>
+</div>
+
+<h2>☁️ インフラ / クラウド / DevOps</h2>
+
+<div class="art">
+  <h3><a href="https://devblogs.microsoft.com/commandline/wsl-container-is-now-available-for-public-preview/" target="_blank" rel="noopener">WSL container is now available for public preview</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span></div>
+  <div class="src">出典: Microsoft DevBlogs / Windows Command Line (2026-06-30)</div>
+  <p class="sum">Windows Subsystem for Linux (WSL 2.9.3) が、Docker 相当の Linux コンテナ運用機能 <strong>WSL Containers</strong> を組み込みで提供開始 (パブリックプレビュー)。<code>wslc.exe</code> という CLI (Docker と同じ感覚) が入り、C/C++/C# 向けの API を NuGet で公開。virtiofs による Windows ファイルアクセス 2 倍高速化、"consomme" ネットワーキング (VPN/proxy との相性改善)、メモリ回収の改善が同梱。GA は 2026 年秋を予定。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "Docker Desktop の非商用ライセンス制限で乗り換え先を探す組織" が、"追加 3rd party ツールなしで WSL だけで完結する" 選択肢を得たことになる。実務的には Docker Desktop / Rancher Desktop / Podman Desktop 等の "Windows でコンテナを動かす層" が Microsoft 純正で置き換えられる可能性がある。Windows 上での開発体験は "WSL2 + wslc" を前提にした社内 SDK / CI 設計にシフトしていくと見ておくと、企業 IT の標準構成をリードできる。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://investor.qualcomm.com/news-events/press-releases/news-details/2026/Qualcomm-to-Acquire-Modular/default.aspx" target="_blank" rel="noopener">Qualcomm to Acquire Modular (Mojo / MAX)</a></h3>
+  <div class="tags"><span class="tag">📝発表</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Qualcomm IR (2026-06-24) ／ 日本語解説: <a href="https://www.publickey1.jp/blog/26/pythonmojomodularai.html" target="_blank" rel="noopener">Publickey</a></div>
+  <p class="sum">Qualcomm が Modular 社を全株式 $3.9B で買収することで合意 (6/24)。Modular は Python ライクな AI 向け新言語 <strong>Mojo</strong> と、NVIDIA/AMD/Intel/Arm クロスベンダで動く AI 実行スタック <strong>MAX</strong> の開発元。約 150 名のエンジニアが Qualcomm 傘下に入り、"Qualcomm チップ以外" でも AI モデルを効率実行できるソフト基盤を Qualcomm が握る形になる。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> AI インフラの主戦場は "CUDA 依存" ── NVIDIA GPU に最適化された PyTorch エコシステム ── を、いかにマルチベンダ (AMD/Intel/Arm) に開くかにシフトしている。Mojo/MAX は "Python の書き心地を残したまま、AOT コンパイルで NVIDIA 以外にも降ろせる" という位置付けで、"CUDA moat" を横から崩す動きの本命候補の 1 つだった。Qualcomm がハード側から抱え込んだことで、Modular はロードマップを Qualcomm 都合に寄せる可能性があり、コミュニティ主導の中立レイヤとしての性格は薄まる懸念もある。CUDA vs. その他という構図が来年以降どう組み替わるかの節目のニュース。</div>
+</div>
+
+<h2>🔬 注目論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2607.01233" target="_blank" rel="noopener">Measuring the Gap Between Human and LLM Research Ideas</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span></div>
+  <div class="src">出典: arXiv 2607.01233 (2026-07-01)</div>
+  <p class="sum">LLM の研究アイデア生成を "個別アイデアの新規性／妥当性" ではなく "人間研究者の分布との距離" で評価するフレームワークを提案。opportunity pattern × research paradigm の 2 軸でアイデアを分類し、複数 LLM で生成したアイデア群と実論文の分布を比較。結果、LLM は "bridge 系機会 × synthesis 系手法" (既存の橋渡し／合成) に偏り、人間側の "gap の切り方／貢献の組み方" の広がりを再現できていないことを定量的に示す。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "LLM 単体アイデアの質" 評価は数多いが、"LLM の想像力の分布そのものが人間より狭い" ことを示した点が新しい。実務的には、AI アシスト企画会議 / R&D ブレストが "似た方向にしか広がらない" 構造的バイアスがあることを意味し、多様性を担保するために意図的にプロンプトの初期条件を分散させる (異なる paradigm を明示的に指示する) 運用が必要という含意がある。エージェント設計時の "アイデアの偏り" にどう対処するか、という別軸の課題。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2605.22138" target="_blank" rel="noopener">SR²AM: Efficient Agentic Reasoning Through Self-Regulated Simulative Planning</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: arXiv 2605.22138 (Sailing Lab / CMU)</div>
+  <p class="sum">エージェントの推論を "反応的な CoT に全部押し付ける" 現状から、(I) 反応実行、(II) 世界モデルに基づくシミュレーション推論、(III) "いつ・どれだけ計画するか" を学習する自己調整、の 3 系統に分解する SR²AM を提案。8B/30B の SR²AM が、120–355B や 685B–1T クラスのエージェント系に対して Pass@1 で対抗しつつ、推論トークンを 25.8–95.3% 削減。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 最近のエージェントは "とにかく CoT を長くすれば良くなる" 傾向で、トークンコストとレイテンシが実運用の悩みになっていた。SR²AM は "どこまで考えるかを学習で決める" という System 1/2/3 的な階層設計で、これは Anthropic の "extended thinking" や OpenAI の "reasoning budget" と同じ課題領域の学術版。エージェントを高頻度に動かすワークロード (CI 上の自律修正、コーディングエージェント、24/7 の運用エージェント) では、"推論の深さの自己調整" が本番投入時のコスト設計の中核になる。</div>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/usestrix/strix" target="_blank" rel="noopener">usestrix/strix</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">⚠セキュリティ</span><span class="tag">📈急上昇</span></div>
+  <div class="src">Python / ⭐34.4k (+2,804/day)</div>
+  <p class="sum">"実際に攻撃する AI エージェント" として動く OSS のペネトレーションテスト基盤。コードを動的に走らせて脆弱性を発見し、PoC を伴う検証まで自動化する。HTTP プロキシ、XSS/CSRF/認証バイパス自動探索、Python サンドボックスでの exploit 開発、GitHub Actions / CI/CD 統合を備え、Sonnet 4.5 / GPT-5 をバックエンドとして選択可。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> SAST/DAST 系ツールは "静的解析ゆえの誤検知" と "動的テストゆえの実装コスト" の両方を抱えてきた領域で、AI エージェントが "動的だが自律に PoC まで作る" ことで両者の弱みを埋めるアプローチ。反面、"エージェントに攻撃能力を持たせる" ことは自社内から見ればセキュリティ強化だが、悪意ある使い手が使えばそのまま攻撃ツールになる二重利用の典型で、CI に入れる際は sandbox / 権限境界の設計 (Stripe Projects 的な "予算・環境隔離" と同じ発想) を必ずセットで考える必要がある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/facebook/astryx" target="_blank" rel="noopener">facebook/astryx</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📐設計論</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">TypeScript / ⭐4.5k (+943/day)</div>
+  <p class="sum">Meta 社内で 8 年かけて磨かれ、13,000 超のアプリが載る同社最大の内製デザインシステムを、そのまま OSS 化。150+ のアクセシブルコンポーネント、ブランド別テーマ、ダークモード、テンプレート、CLI が同梱。設計方針は「Guidance over enforcement」──強い制約より、規約の徹底されたコンポーネント API を提供し、人間と AI アシスタントが "同じ道具・同じ規約" で書けることを狙う。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Radix / shadcn/ui / MUI が支配的な "React 用デザインシステム" 領域に、"AI エージェント向けに設計されたもの" が Meta 発で入ってきた形。エージェント時代のデザインシステム設計論として重要なのは、"コンポーネントの API 一貫性" と "docs/CLI が LLM に読まれる前提" の 2 点で、Astryx はどちらも公式にコミットしている。既存の設計システムを持つ組織は "AI が理解しやすい API か" を評価軸に足す動きが今後増えそう。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/safishamsi/graphify" target="_blank" rel="noopener">safishamsi/graphify</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span></div>
+  <div class="src">Python / ⭐77.0k (+937/day)</div>
+  <p class="sum">コード／SQL スキーマ／R スクリプト／シェル／ドキュメント／論文／画像／動画を、丸ごと "問い合わせ可能なナレッジグラフ" に変換する Claude Code / Codex / Cursor / Gemini CLI 等向けスキル。Tree-sitter による AST 静的解析 (25 言語) と LLM の意味抽出を組み合わせ、"コードが何をするか＋なぜそう設計されたか" までグラフ化。抽出はローカル完結で外部 API に流さない。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> RAG や context engineering の課題は "コードベース全体を LLM に食わせられない" ことで、多くはベクトル検索でごまかしていた。Graphify は "静的解析でシンボル・依存を厳密に抽出＋ LLM で意味付け" を組み合わせるハイブリッド設計で、これは Semantic Kernel / Sourcegraph Cody / GitHub Copilot Workspace 等が内部でやっていることを、"Claude Code / Cursor 上の /graphify" として誰でも呼べるスキル層に落とし込んだ点が新しい。中規模以上のリポで "コードグラフを事前構築 → エージェントに参照させる" 設計は、来年のエージェント運用の基本装備になる可能性が高い。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/ogulcancelik/herdr" target="_blank" rel="noopener">ogulcancelik/herdr</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span></div>
+  <div class="src">Rust / ⭐10.7k (+513/day)</div>
+  <p class="sum">Claude Code / Codex / Copilot CLI / Cursor Agent など 15+ の "AI コーディングエージェント" を、tmux ライクな 1 個の Rust バイナリで多重化する terminal multiplexer。各エージェントに独立した本物の PTY を割り当てるので TUI もちゃんと描ける。ペイン分割、ワークスペース、"blocked / working / done" の状態バッジ表示、切断しても消えず SSH で再接続可。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "複数エージェントを同時に走らせて成果物を突き合わせる" というワークフローは開発現場で実際に増えているが、tmux/zellij では "AI がいつ止まっているか" が見えず、切り替えコストが高かった。Herdr は "エージェント運用専用の tmux" というポジションで、Unix socket による Ping/Pong で状態を購読できる (ポーリング不要) 点も設計として素直。"1 タスク＝ 1 エージェント" を捨てて "1 タスクに複数エージェントを並列に投げて比較する" 運用に舵を切る組織には即効性がある。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/windowslinuxwsl_containerswindows2.html" target="_blank" rel="noopener">Windows上でLinuxコンテナが動く「WSL Containers」がパブリックプレビュー。Windowsファイルへのアクセスが2倍高速に</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span></div>
+  <div class="src">出典: Publickey</div>
+  <p class="sum">上段の Microsoft WSL Containers パブリックプレビューの日本語解説。Docker 互換 CLI (<code>wslc.exe</code>) の位置付け、virtiofs による Windows ファイル 2x 高速化、consomme ネットワーク (VPN/proxy 相性)、C/C++/C# 向け NuGet API の存在、GA は 2026 年秋、といった実装面が整理されている。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Publickey は "何が入って何が入らないか" の一次情報を Microsoft DevBlog から一段丁寧に抜き出す傾向があり、社内展開時の "Docker Desktop 置き換え検討資料" のベースにしやすい。特に "GA まで運用は避け、検証環境で試す" の判断が今日時点でつけられる粒度の情報になっている。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/unixwindowsmacoslinuxubuntu20266.html" target="_blank" rel="noopener">UNIX系コマンドをWindowsに移植／macOS上にLinuxコンテナを統合／Ubuntu、開発環境をコマンド一発で構築ほか、2026年6月の人気記事</a></h3>
+  <div class="tags"><span class="tag">📊まとめ</span></div>
+  <div class="src">出典: Publickey (2026-07-03)</div>
+  <p class="sum">Publickey の 6 月人気記事まとめ。1 位は Build 2026 で発表された Microsoft "Coreutils for Windows" (UNIX 系基本コマンドの Windows ネイティブ移植)、2 位は WSL Containers、3 位は Apple の macOS "Container machine" v1.0 (Linux コンテナ統合)。開発マシン OS 各社が "Linux 開発体験を自分の OS に取り込む" 方向で同時にアップデートしていることが並ぶ。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "開発マシンとしての Windows/macOS が Linux にどれだけ寄せられるか" は静かな主戦場で、Microsoft の WSL 2 + Coreutils + WSL Containers、Apple の Container machine (Virtualization.framework 上に構築) と、両社が対称的に手を打っている。エンプラの開発環境ポリシー (どの OS を標準にするか、どこまで Linux VM を要求するか) が 2026 年後半以降で見直しの波を迎える可能性がある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/pythonmojomodularai.html" target="_blank" rel="noopener">クアルコムがPythonライクな新言語「Mojo」開発元のModular社買収を発表。AIデータセンター市場へ本格参入</a></h3>
+  <div class="tags"><span class="tag">📝発表</span></div>
+  <div class="src">出典: Publickey (2026-06-30)</div>
+  <p class="sum">上段の Qualcomm/Modular 買収の日本語まとめ。Mojo と MAX の技術的位置付け、Qualcomm のデータセンター参入戦略、CUDA "moat" への挑戦という文脈まで整理されている。買収発表当初の英語一次情報 (Bloomberg / Modular blog) と併読すると、"Qualcomm 傘下で Mojo のオープン性がどうなるか" という論点が浮かぶ。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Publickey は買収系ニュースを "戦略的意図＋技術的位置付け" の 2 軸で書く傾向があるので、社内共有時に "なぜ気にすべきか" を短時間で説明する叩き台に向いている。Mojo は前々から日本語圏でも話題になってきた言語で、"Python 資産をそのまま活かしつつ AI 特化" という売りが、Qualcomm 傘下で継続するか、Qualcomm チップ最適化に寄るかは注視ポイント。</div>
+</div>
+
+<footer>
+  <p><strong>収集元:</strong> Hacker News <em>(取得失敗)</em> / GitHub Trending / Anthropic News <em>(取得失敗・検索で補完)</em> / OpenAI <em>(取得失敗・検索で補完)</em> / Google DeepMind Blog <em>(取得失敗)</em> / The Pragmatic Engineer <em>(取得失敗)</em> / Martin Fowler <em>(取得失敗)</em> / AWS Architecture <em>(取得失敗)</em> / High Scalability <em>(取得失敗)</em> / ThoughtWorks Technology Radar <em>(取得失敗)</em> / Netflix TechBlog <em>(取得失敗)</em> / Uber Engineering <em>(検索経由)</em> / Stripe Blog <em>(検索経由)</em> / InfoQ <em>(検索経由)</em> / arXiv cs.AI <em>(検索経由)</em> / Changelog <em>(GitHub Blog 経由)</em> / Zenn <em>(取得失敗)</em> / note <em>(取得失敗)</em> / Publickey <em>(検索経由)</em></p>
+  <p>次回もお楽しみに。</p>
+</footer>
+
+</body>
+</html>
