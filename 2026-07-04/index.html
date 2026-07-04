@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月04日(土) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+.sup .lbl{color:var(--muted);font-weight:600;margin-right:4px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+@media (max-width:480px){
+  body{font-size:15px;padding:14px 12px 50px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.05rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年07月04日(土)</div>
+</header>
+
+<section class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p>
+    今日は "AI 推論基盤の主流化" と "エージェント運用の権限モデル改善" が同時に効いてくる 2 件。<strong>Claude in Microsoft Foundry の GA</strong> (7/3) は、Anthropic モデルが Azure 経由で GA になったこと以上に、<strong>NVIDIA GB300 Blackwell Ultra ＋ Quantum-X800 InfiniBand</strong> で走る初事例という点が重い ── Anthropic は自社ハード非依存で、GPT 系と同じ土俵で調達される "普通の企業向けフロンティアモデル" になった。もう一件、<strong>GitHub Copilot CLI が Actions の built-in <code>GITHUB_TOKEN</code> で動く</strong> (7/2) は、地味だが本番影響が大きい変更 ── PAT (personal access token) をリポジトリ Secret に置く運用 (＝長寿命クレデンシャル) がエージェント CI の攻撃面だったのが、GitHub 側の "使い捨てトークン＋policy 制御＋組織課金" に置き換わる。テックリードとして今週押さえておきたい潮流。
+  </p>
+</section>
+
+<h2>🤖 AI / LLM プラットフォーム</h2>
+
+<div class="art">
+  <h3><a href="https://www.anthropic.com/news/claude-in-microsoft-foundry" target="_blank" rel="noopener">Claude now available in Microsoft Foundry and Microsoft 365 Copilot</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Anthropic / <a href="https://azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry-is-now-generally-available/" target="_blank" rel="noopener">Azure Blog</a> / <a href="https://blogs.nvidia.com/blog/anthropic-nvidia-gb300-blackwell-ultra-microsoft-azure/" target="_blank" rel="noopener">NVIDIA Blog</a> (2026-07-03)</div>
+  <p class="sum">Claude Opus 4.8 と Haiku 4.5 が Microsoft Foundry (旧 Azure AI Foundry) 上で GA。Azure は "Claude と GPT のフロンティアモデルを同一プラットフォームで提供する唯一のクラウド" という立ち位置を取り、Foundry Models Messages API 経由で両方を呼べる。技術的な目玉は、Anthropic モデルとしては初となる <strong>NVIDIA GB300 Blackwell Ultra ＋ Quantum-X800 InfiniBand</strong> 上での稼働。Claude Enterprise 側にも管理者用の詳細分析／モデル別 entitlement／spend alerts が同時追加。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Anthropic は AWS Trainium で始まり Google TPU にも乗ってきたが、"NVIDIA 系はやらない" 派だった。今回それが崩れたのは、Azure Foundry を通じて "顧客がすでに持っている Azure クレジット・データレジデンシー・SSO 契約の枠内で Claude を購入できる" 経済圏に入るため。テックリード視点では、モデルベンダ選定が "モデル単体の性能" だけでなく "既存クラウド調達との合流点" で決まる時代に完全に移行した合図。エンプラで Azure 契約が支配的な組織は、これで OpenAI / Anthropic の乗り換えコストがほぼゼロになる ── 逆に "モデルロックイン" は薄れ、"クラウドロックイン" が主戦場に戻ってくる。</div>
+</div>
+
+<h2>🛠 AI開発ツール / エージェント</h2>
+
+<div class="art">
+  <h3><a href="https://github.blog/changelog/2026-07-02-copilot-cli-no-longer-needs-a-personal-access-token-in-github-actions/" target="_blank" rel="noopener">Copilot CLI no longer needs a personal access token in GitHub Actions</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">⚠セキュリティ</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: GitHub Changelog (2026-07-02)</div>
+  <p class="sum">GitHub Copilot CLI を GitHub Actions 内で使うとき、これまで必須だった長寿命 PAT (Personal Access Token) を、workflow の <code>GITHUB_TOKEN</code> ＋ <code>copilot-requests: write</code> permission だけで動かせるようになった。組織所有リポジトリでは Copilot CLI が消費した AI クレジットがそのまま組織課金に流れ、"Allow use of Copilot CLI billed to the organization" policy でガードできる。Copilot SDK GA (6/2) と Agentic Workflows の PAT 廃止 (6/11) に続く一連の権限モデル整備の 3 発目。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> エージェント CI (＝ CI 上でエージェントに commit / PR を作らせる運用) は、原理的に "人間の PAT を Secret に格納する" 構造で回ってきた。これは "credential が漏れると人間になりすませる" 攻撃面かつ、ローテーション運用が現実には破綻しがち。GitHub は built-in <code>GITHUB_TOKEN</code> (job ごとに使い捨て・スコープ最小) を "エージェントの実行 identity" に格上げする方向で修正しており、これは AWS の IAM Role for Service Account や GCP の Workload Identity に相当する "エージェント時代の short-lived credential" のデファクトになりつつある。自社の Claude Code / Codex / 内製エージェントを CI に載せている組織は、"エージェントは PAT ではなく、実行環境の identity で権限を得る" 設計に寄せる潮時。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/alibaba/page-agent" target="_blank" rel="noopener">alibaba/page-agent — In-page GUI agent that controls web interfaces via natural language</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📐設計論</span><span class="tag">📈急上昇</span></div>
+  <div class="src">出典: GitHub Trending / <a href="https://www.marktechpost.com/2026/07/02/meet-alibabas-page-agent-a-javascript-in-page-gui-agent-that-controls-web-interfaces-with-natural-language-through-the-dom/" target="_blank" rel="noopener">MarkTechPost 解説</a> (2026-07-02)</div>
+  <p class="sum">Alibaba 発の "ページの中に住む" JavaScript エージェント。Playwright / WebDriver のような外側からのブラウザ自動化ではなく、<strong>ページ内 JS として動き DOM をテキスト化して読む</strong>設計 (DOM dehydration)。サーバ側オーケストレータ、Python 依存、WebDriver プロトコルは一切不要でクライアントサイド完結。OpenAI / Claude / DeepSeek / Qwen / Ollama をバックエンドに選べ、MCP client (Claude Desktop, Copilot 等) からも駆動可能。TypeScript / ⭐23.0k (+726/day)。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> ブラウザ操作エージェントの主流は「外部プロセスで Playwright / Puppeteer を回す」設計 (Chrome DevTools MCP が典型) だが、これは "認証済みセッションを外部から再現する" コストが大きく、ERP / CRM のような社内アプリでは事実上動かせない問題があった。Page-Agent は"認証済みの本物のブラウザ画面にそのまま JS を仕込む"アプローチで、その壁を回避する。この設計思想は "ユーザー本人としてしか触れない社内画面を、ユーザー本人のセッション上でエージェント化する" 用途に強く、"20 クリックの ERP 業務が 1 文で終わる" の類のエンプラ RPA 系ユースケースを、既存の RPA 製品より軽量に置き換えられる可能性が高い。</div>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+  <h3><a href="https://www.infoq.com/articles/tradeoffs-event-driven-design/" target="_blank" rel="noopener">Scaling Java-Based Real-Time Systems: The Hidden Tradeoffs of Event-Driven Design</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: InfoQ (2026-06-30)</div>
+  <p class="sum">"マイクロサービス＝ Kafka で疎結合" の教科書的なイベント駆動アーキテクチャに対する、実装現場からの再点検記事。単一のユーザー操作が下流のイベントを連鎖させたときに、レイテンシは加算ではなく <em>compounding (複利的増加)</em> で悪化し、"平均 30ms のホップ × 6 段" が p99 で秒台に化けるメカニズムを、Java の JVM 特性 (STW GC、スレッドプール、backpressure 制御) と結びつけて解説。<em>synchronous fallback path</em> と <em>bounded queue with shed policy</em> の 2 パターンを、"完全にイベント駆動にしない選択肢" として推奨。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 分散システム入門の教材は「同期呼び出しは悪、イベント駆動が正義」で終わりがちだが、実運用では "全部イベント駆動にした結果、障害時の解析が誰にもできず、SLO が守れない" 事故が多発する領域。本記事のエッセンスは "イベント駆動は<strong>強い整合性が要らない外周</strong>に限定し、SLO を握る critical path には同期呼び出しと bounded queue を残せ" というトレードオフ論で、これは Netflix / Uber の Service Topology / UCDP 系設計 (前号既出) が暗黙に前提としているものを明示化した内容。自社が "全部 Kafka に投げる" 設計を採る前に読むと、"どこまで非同期にするか" の判断軸が 1 本増える。</div>
+</div>
+
+<h2>🔬 注目論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2607.01006" target="_blank" rel="noopener">Understanding Large Language Models</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: arXiv 2607.01006 (2026-07-01)</div>
+  <p class="sum">LLM の "何ができるようになったか (emerging capabilities)" と "内部で何が起きているか (mechanistic implementation within processing layers)" を 1 本にまとめた総説論文。Transformer / attention の基礎から、モデル規模を上げると出現する非線形能力、および layer 単位でどの機能が実装されているかを解剖する解釈可能性研究の最新到達点までを、1 リファレンスとして通読できる形に整理。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "LLM は結局中で何をしているのか" は、RAG やエージェント設計の前提を決める重要な問い (例: "attention は本当に検索に相当するのか"、"in-context learning は勾配降下と等価か") で、実務者は個別論文を追いきれないのが実情。この論文は "解釈可能性研究の 2024–2026 を 1 本で追える" ポジションを狙っており、テックリードが "自社のエージェントの限界がどこから来るか" を若手に説明するときの一次リファレンスに使える。プロンプト職人的な運用から "モデル内部の限界を織り込んだ設計" へ橋渡しする教材。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2607.00292" target="_blank" rel="noopener">An LLM-Based Framework for Intent-Driven Network Topology Design</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: arXiv 2607.00292 (2026-07-01)</div>
+  <p class="sum">"こういうネットワーク構成が欲しい" という自然言語の意図 (intent) から、構造的に妥当かつ制約 (帯域、遅延、コスト、ポリシー) を満たす network topology を LLM に生成させる pipeline。単に LLM に投げるのではなく、hierarchical modeling (骨格 → 部分) と systematic validation (制約チェック → 反復修正) を組み合わせ、LLM 出力の "構造的にありえない" 誤りをレイヤで潰す。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "自然言語→ Terraform / Kubernetes manifest / ネットワーク構成" 系のツールは既に多いが、そのほとんどは "生成してエラーになったら人間が直す" 運用で、規模が上がると誰も検証できない。この論文の設計思想 — "生成レイヤと検証レイヤを分けて、検証で落ちたら生成にフィードバックする" — は、IaC (Infrastructure as Code) 領域全般に転用可能で、AWS CDK / Pulumi 上のエージェント運用でも同型のループを持たせるべきという含意がある。テックリード的には "LLM に IaC を書かせる" の運用設計テンプレートを 1 つ持っておく価値がある。</div>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/agentskills/agentskills" target="_blank" rel="noopener">agentskills/agentskills — Specification and documentation for Agent Skills</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📐設計論</span><span class="tag">📈急上昇</span></div>
+  <div class="src">Python / ⭐22.3k (+351/day)</div>
+  <p class="sum">Anthropic が 2025-12 に "Agent Skills" というオープン標準として公開した spec の GitHub 中核リポ。skill の実体は "SKILL.md ＋ 補助スクリプト・テンプレート等" が入ったフォルダで、agent は必要に応じて on-demand で読み込む。2026-06 時点で Claude / OpenAI Codex / GitHub Copilot / VS Code / Cursor / Gemini CLI / Goose / OpenCode / Databricks Genie Code / Snowflake Cortex Code など約 40 プロダクトが対応。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> MCP が "エージェントの手 (tool 呼び出しプロトコル)" を標準化したのに対し、Agent Skills は "エージェントの頭 (手順書・context・procedure) の可搬フォーマット" を標準化する動き。組織内の "この業務手順は必ずこう踏む" というノウハウを、markdown ＋ スクリプトのフォルダに閉じ込め、Claude でも Codex でも Cursor でも同じ入力から同じ手順で動かせる、という汎用性が価値。自社の runbook / playbook を "AI 前提の可搬な資産" に変換していく組織にとっては、"どの AI を採用しても捨てる資産が出ない" という保険になる。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">mattpocock/skills — Skills for Real Engineers, straight from Matt Pocock's .claude directory</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">🔥話題</span></div>
+  <div class="src">Shell / ⭐156.5k (+1,013/day)</div>
+  <p class="sum">TypeScript 界で影響力の大きい Matt Pocock 氏が、自身の Claude Code 環境の <code>.claude/</code> ディレクトリの中身をそのまま公開したリポジトリ。個人のエディタ設定を丸ごと公開するのに近い透明性で、TypeScript 実装／テスト／リファクタ／PR レビュー用の skill が並ぶ。上記の Agent Skills spec に沿った実例集としても機能する。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "Claude Code はどう使うと生産的か" は 2026 春以降、Zenn / note でも大量の "○○のプロンプト集" が出ているが、本リポは "その道の第一人者が実務で毎日使っている中身" という一次資料の希少価値がある。Cursor 系の <code>.cursorrules</code> や <code>.mdc</code> の界隈でも同じ動きが起きているが、Agent Skills 側は "AI ベンダ非依存で持ち運べる" 点が違う。自社の "コーディングガイド" を PDF ではなく <code>skills/</code> に置く、という運用に舵を切るための直輸入元として使える。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/Zackriya-Solutions/meetily" target="_blank" rel="noopener">Zackriya-Solutions/meetily — Privacy-first, self-hosted AI meeting note taker</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span></div>
+  <div class="src">Rust / ⭐15.0k (+865/day)</div>
+  <p class="sum">macOS / Windows で動くローカル完結の会議メモ AI。Parakeet / Whisper でオンデバイス文字起こし (Otter.ai 比 4× 高速)、話者分離、Ollama / Claude / Groq / OpenRouter で要約。Google Meet / Zoom / Teams / Discord など、"デバイスのオーディオを掴む" 方式で相手側実装に依存しない。処理は 100% ローカル、音声・文字起こし・要約すべてマシン内に残る。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 会議 AI (Otter, Fireflies, Fathom, Grain) は "SaaS の透明性が業種によっては受け入れられない" (医療、金融、法務、政府系) 領域で採用が止まっていた。Meetily は "同じ UX を on-device で" 提供するアプローチで、"AI を導入するには DPA / SCC を全社で締結する必要がある" 系の障害を、権限モデルごと迂回する。エンプラ IT の情シスにとっては、"社員に AI 会議メモを使わせつつ、データを社外に出さない" 選択肢を初めて 1 バイナリで提供できる意味が大きい。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/dress_code/articles/62524f2e5dbd3c" target="_blank" rel="noopener">非同期処理のアーキテクチャに想いを馳せた</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Zenn (2026-07-03)</div>
+  <p class="sum">"非同期処理" と一口に言っても "遅延許容型 / 高スループット / at-least-once / at-most-once / exactly-once" のどれを取るかで正解が全く違う、という前提から、ECS Fargate 上での常駐タスクとしての非同期基盤を組む際の選択肢 (Lambda + SQS / ECS 常駐 / EventBridge Pipes / Step Functions) を、なぜそれを選ばなかったかの理由込みで並べた実装ノート。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 上段 InfoQ 記事 (Event-Driven の隠れた tradeoff) と同じ話題を、"AWS のマネージド選択肢の中で実装者が実際に踏む分岐" のレイヤで書いたもので、併読するとイベント駆動設計の "抽象論" と "実装現場の分岐" の両方が繋がる。特に "ECS Fargate 常駐タスクを "非同期処理の受け皿" として使う" 判断は、Lambda + SQS の 15 分制約や cold start の悩みを持つ組織にとって、"やってよかった / 悪かった" が言語化された事例が少ない領域なので、判断材料として価値がある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/takupeso/articles/claude-ontology-knowledge-structuring" target="_blank" rel="noopener">Claudeに「オントロジー」を持たせたら、コスト半分・3倍速になるかも</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: Zenn</div>
+  <p class="sum">Claude に "知識を構造化して持たせる" ── 具体的には対象ドメインのオントロジー (概念とその関係性を明示的にモデル化した辞書) を context として渡し、そこにマッピングさせる形で回答生成する ── ことで、実測でコスト半減・応答速度 3 倍に近い改善が出たという実践ノート。context engineering 系記事の中でも、"何を context に入れるか" ではなく "context の <em>構造</em> をどう設計するか" にフォーカスしている点が特徴。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> RAG やベクトル検索の課題は "似ているものは取れるが、概念の関係性は取れない" こと。オントロジー (哲学の用語だが情報科学では "対象領域の概念・関係の明示モデル") を LLM に渡すというアプローチは、"free-text の chunk を 100 個渡すよりも、100 語の概念グラフを渡す方が LLM は迷わない" という直感を実装レベルで検証した内容。自社の Claude Code / エージェント運用で "同じ質問を毎回長い context で解かせて金がかかる" ケースに対し、"context を graph に構造化する前処理" を 1 段挟むと、コスト・速度・回答の一貫性が同時に効く可能性が高い。</div>
+</div>
+
+<footer>
+  <p><strong>収集元:</strong> Hacker News <em>(取得失敗)</em> / GitHub Trending / Anthropic News <em>(取得失敗・検索で補完)</em> / OpenAI <em>(取得失敗・検索で補完)</em> / Google DeepMind <em>(取得失敗)</em> / The Pragmatic Engineer <em>(取得失敗)</em> / Martin Fowler <em>(取得失敗)</em> / AWS Architecture <em>(取得失敗)</em> / High Scalability <em>(取得失敗)</em> / ThoughtWorks Technology Radar <em>(取得失敗)</em> / Netflix TechBlog <em>(取得失敗)</em> / Uber Engineering <em>(検索経由)</em> / Stripe Blog <em>(検索経由)</em> / InfoQ <em>(検索経由)</em> / arXiv cs.AI <em>(検索経由)</em> / Changelog <em>(GitHub Blog 経由)</em> / Zenn <em>(検索経由)</em> / note <em>(取得失敗)</em> / Publickey <em>(検索経由・本日新規なし)</em></p>
+  <p>次回もお楽しみに。</p>
+</footer>
+
+</body>
+</html>
