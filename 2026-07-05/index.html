@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月05日(日) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+.sup .lbl{color:var(--muted);font-weight:600;margin-right:4px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+@media (max-width:480px){
+  body{font-size:15px;padding:14px 12px 50px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.05rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年07月05日(日)</div>
+</header>
+
+<section class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p>
+    今日は "AI ベンダ同士の相互乗り入れ" と "フロントエンドビルドの Rust 化" が同時に効く 2 件。<strong>openai/codex-plugin-cc</strong> (GitHub Trending +1,519⭐/day) は、OpenAI が公式に <em>Claude Code から Codex を呼ぶ</em> プラグインを配布し始めたというもの ── これまで "Claude Code vs Codex" だった対立軸が、<em>複数エージェントを 1 セッション内で組み合わせて使う</em> 時代に切り替わる合図。もう一件、<strong>Astro 7.0</strong> はビルドの最も重い部分を Rust ネイティブ実装に置き換え、実測で 15〜61% (最大 2 倍超) の高速化を実現。JavaScript/TypeScript のツールチェイン (esbuild → tsx → Bun → SWC/Turbopack → Rolldown) が完全に Rust コアの世代に移行しつつあり、フロントエンドのビルド時間が "CI で無視できる領域" に降りてきた。テックリードとして今週押さえておきたい 2 本。
+  </p>
+</section>
+
+<h2>🤖 AI / LLM モデル更新</h2>
+
+<div class="art">
+  <h3><a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank" rel="noopener">Introducing Claude Sonnet 5</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">出典: Anthropic News (2026-06-30 リリース／今週 GA)</div>
+  <p class="sum">Anthropic の中間ティア Claude Sonnet 5 が全プランで GA。デフォルトかつ最大値として <strong>1M トークンのコンテキスト</strong>、128k output、adaptive thinking を搭載し、"最も agentic な Sonnet" として位置づけ。性能は Opus 4.8 に迫る一方、導入価格 $2 / $10 per Mtok (8/31 まで、以降 $3 / $15) で Opus 系より大幅に安い。Claude Code のデフォルトモデルにも昇格。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "1M context" は "大きな設計文書やモノレポ全体を 1 リクエストで放り込める" というリテラルな意味以上に、RAG (Retrieval Augmented Generation = 検索して LLM に渡す方式) の妥当性を揺さぶるインパクトがある。従来は "モデルの context 窓が狭いから外部 DB から検索して詰める" のが必然だったが、Sonnet クラスで 1M が常時使える今、"まず context に全部入れて、入りきらない場合だけ RAG" という設計順序に逆転しつつある。テックリード視点では "自社の RAG パイプラインは、Sonnet 5 で丸ごと投げたときと比べて品質・コストで優位か？" を測り直すタイミング。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">Previewing GPT-5.6 Sol: a next-generation model</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">出典: OpenAI (2026-06-26 プレビュー開始)</div>
+  <p class="sum">OpenAI が GPT-5.6 シリーズ (フラッグシップ Sol / 汎用 Terra / 低コスト Luna) を 20 社限定プレビューで公開。数週間以内に GA 予定。Sol は <em>coding / biology / cybersecurity</em> の 3 領域に振り切った改善で、特に "長期タスク型のセキュリティ検証 (脆弱性発見・悪用) の性能効率フロンティアをずらした" と自称する。Terra は GPT-5.5 相当性能で 2 倍安、Luna は最安ティアで実用能力を確保。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Sol / Terra / Luna という 3 段のティア分けは、Anthropic の Opus / Sonnet / Haiku、Google の Ultra / Pro / Flash と同じ "同一世代の 3 段構造" に完全に収斂している ── 業界全体で "1 世代 = フラッグシップ + バランス + 高速廉価の 3 モデル" が標準テンプレになった、と読める。テックリード観点では、モデル選定を "モデル名" ではなく "ティア (深く考えさせる／日常業務／安価バッチ)" のマッピングで設計しておくと、Anthropic ↔ OpenAI ↔ Google の乗り換えコストがほぼゼロになる。</div>
+</div>
+
+<h2>🛠 AI開発ツール / エージェント</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/openai/codex-plugin-cc" target="_blank" rel="noopener">openai/codex-plugin-cc — Use Codex from Claude Code to review code or delegate tasks</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span></div>
+  <div class="src">GitHub Trending #2 / JavaScript / ⭐25.3k (+1,519/day) / OpenAI 公式</div>
+  <p class="sum">OpenAI が公式に配布する Claude Code プラグイン。<code>/codex:review</code> で "Codex に同じ diff を第二レビュアーとして走らせる"、<code>/codex:rescue</code> で "行き詰まった Claude Code セッションを Codex に丸ごと引き継ぐ"、<code>/codex:transfer</code> で "現在の会話コンテキストを Codex CLI 側で resume できる形で書き出す"、といった <em>複数エージェント間で作業を受け渡す</em> コマンドが並ぶ。実行はローカルの Codex CLI/Codex アプリ経由。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> AI コーディングは長らく "Claude Code か Codex か Cursor か Windsurf か" の <em>択一戦争</em> だったが、OpenAI が対抗ツール (Claude Code) 向けに公式プラグインを出したことで潮目が変わった。テックリード視点での意味は 2 つ: (1) 実務では "1 つのエージェントの得意分野に賭ける" より "同じタスクを 2 系統で回して差分を見る" が現実解になる (レビューはモデル間の <em>disagreement detection</em> が最も効く)、(2) MCP + Skills + プラグインという <em>クライアント側の共通レイヤ</em> が固まったことで、ベンダロックインの単位が "モデル" から "自社の runbook / skill 資産" に完全に移った。組織として "どのモデルを買うか" より "どの skill / MCP サーバに投資するか" が本質的な意思決定になる。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/CoplayDev/unity-mcp" target="_blank" rel="noopener">CoplayDev/unity-mcp — Bridge between AI assistants and the Unity Editor</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span></div>
+  <div class="src">GitHub Trending / C# / ⭐11.8k (+415/day)</div>
+  <p class="sum">Unity Editor を MCP サーバとして公開し、Claude / Codex / Cursor / VS Code / Gemini CLI / ローカル LLM 等から <em>アセット管理・シーン操作・スクリプト編集・自動テスト</em> を呼び出せるようにする OSS。47 tools を vfx / animation / ui / testing の 10 グループで公開。複数の Unity インスタンスを同時に扱う Multi-Instance Routing 対応、Unity 2021.3 LTS 〜 6.x、Python 3.10+。MIT。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> MCP (Model Context Protocol = Anthropic 発の "エージェントの手" を定義する共通プロトコル、2024 末公開・2025 に業界標準化) は、これまで開発者向けツール (git / GitHub / Slack / DB) 中心の adapter が主流だったが、Unity のような <strong>GUI アプリケーション本体を MCP サーバに変える</strong> 実装が増えつつある。テックリード視点では "自社の内製アプリを MCP サーバに変えると、ユーザは Claude / Codex どれからも同じ操作を呼べる" というアーキテクチャ選択肢が現実的になった意味が大きい ── UI を作らずに MCP サーバだけ公開する、という <em>ヘッドレス AI ネイティブ製品</em> の設計パターンが見え始めている。</div>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+  <h3><a href="https://www.uber.com/blog/uber-cart-assistant/" target="_blank" rel="noopener">Cart Assistant: Agentic Grocery Shopping on Uber Eats</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: Uber Engineering Blog (2026-06-16)</div>
+  <p class="sum">Uber Eats のグロサリー用エージェント "Cart Assistant" のバックエンド設計解説。単一 LLM に丸投げするのではなく、<strong>multi-prompt state graph</strong> という設計 ── 計画 → 商品の関連性判定 → 数量選択 → 制約 (アレルギー・予算) 適用 → ガードレール → 評価、と <em>1 ステップ 1 プロンプト</em> に責務を切り分け、それぞれが構造化 JSON を返し、決定的な API と検証層でつなぐ ── を採用。各ステップの trace が取れるため、"どの LLM 呼び出しで壊れたか" を eval で追える。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 現場でよくある失敗は "1 個の巨大プロンプトに全部詰めて、動くけど直せない" というもの。Uber の設計思想は "LLM 呼び出しをマイクロサービス化する" のに近く、Netflix の "小さな関数の合成" や DDD の bounded context 分割と同型の考え方を LLM ワークフローに持ち込んだ形。応用可能なエッセンスは "エージェントの各ステップを個別に eval して回帰を検出できる形にすると、変更コストが劇的に下がる" こと ── 自社の内製エージェントが 5 個以上の LLM 呼び出しを含むなら、この state graph 設計は輸入の価値が非常に高い。Anthropic 系の "sub-agent + skill" と組み合わせても機能する。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://martinfowler.com/bliki/AgenticProgramming.html" target="_blank" rel="noopener">bliki: Agentic Programming</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: martinfowler.com / bliki 更新</div>
+  <p class="sum">Martin Fowler 本人が "Agentic Programming" ── 開発者がキーボードで書くのではなく、LLM エージェントに書かせて自分はレビュー・監督する開発スタイル ── を bliki の 1 エントリとして正面から定義した。従来の pair programming / TDD に代わる新しい work mode で、"人間が生成物を確認する頻度と粒度" が方法論の核だと整理している。同時期の "Interrogatory LLM" では、生成物を <em>問い詰める (interrogate)</em> ことでモデル出力の信頼度を測る方法も提案。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Fowler の議論の価値は、"vibe coding / エージェント任せは危険 / TDD が復活" のような <em>両極端の意見</em> が乱立する中で、"レビュー粒度をどう定義するか" を独立の設計軸に立てた点にある。テックリード視点では、自社の "AI 生成コードの受け入れ基準" を定めるとき、この bliki の定義 (何を人間が見て、何を LLM に任せ、どのタイミングで interrogate するか) を出発点にすると、社内議論がぐっと収束しやすい。既存の Clean Architecture / DDD / TDD が LLM 時代にどう再定義されるか、の Fowler 版 "正典" として今後長く引用される可能性が高い記事。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.linuxfoundation.org/press/linux-foundation-announces-intent-to-launch-agent-name-service-to-establish-trusted-identity-infrastructure-for-ai-agents" target="_blank" rel="noopener">Linux Foundation Announces Intent to Launch Agent Name Service (ANS)</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🆕新リリース</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">出典: Linux Foundation / <a href="https://siliconangle.com/2026/06/23/linux-foundation-extends-dns-ai-agents-new-agent-name-service/" target="_blank" rel="noopener">SiliconANGLE</a> (発表 2026-06-23、Publickey 掲載 2026-07-02)</div>
+  <p class="sum">Linux Foundation が "AI エージェントを DNS で識別・検証する" 新オープン標準 <strong>Agent Name Service (ANS)</strong> を発表。既存の DNS 基盤の上に構築されるフェデレーテッドな identity レイヤで、"自社が持つドメインで自社エージェントを名乗る／署名する" 形にする。専用レジストリや中央集権プロバイダを介さない設計で、"どのエージェントが本物か / 誰に代理して喋っているか" をインターネット規模で検証可能にする。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> エージェント時代の 2 大未解決課題は "権限モデル (どこまで許すか)" と "identity (誰なのか)"。ANS は後者に対する回答で、"DNS を identity 層に転用する" というアプローチは、SPF/DKIM/DMARC がメールの送信者認証を DNS に載せたのと同じ発想 (既存インフラ再利用) と読める。テックリード観点では、自社のエージェントを社外システムに繋げる際に "認証情報を SaaS ごとに埋め込む" から "自社ドメインで署名する" に移行する下地が整うため、"AI エージェントは Web と同じレイヤ構造で相互運用する" 世界観が具体化した意味が大きい。中長期の技術ロードマップに "エージェント identity は DNS で解く前提" を織り込む価値がある。</div>
+</div>
+
+<h2>☁️ インフラ / プラットフォーム</h2>
+
+<div class="art">
+  <h3><a href="https://astro.build/blog/astro-7/" target="_blank" rel="noopener">Astro 7.0 — Rust-based compiler, 15–61% faster builds</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: astro.build 公式ブログ (2026-07 リリース、Publickey 2026-07-02)</div>
+  <p class="sum">静的サイト＆コンテンツ駆動フレームワーク Astro が 7.0 をリリース。目玉は <strong>.astro コンポーネントのコンパイラを Rust ネイティブに書き換え</strong>、Markdown 処理・バンドリングの重い部分もネイティブ化。実測でビルド時間が 15〜61% 改善、特に .astro / Markdown 比率が高いサイトでは 2 倍超高速化。加えて、<code>src/fetch.ts</code> によって Cloudflare Workers / Deno / Bun 流の <em>fetch handler パターン</em> でリクエストパイプラインを完全に握れるようになった。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> フロントエンドツールチェインは 2022 以降 esbuild (Go) → SWC (Rust) → Turbopack (Rust) → Rolldown (Rust) と、"JS ツールを JS で書くのは限界" の答えを <em>Rust に書き換える</em> で解いてきた。Astro 7 の意味は、単なる "Astro が速くなった" 以上に、"JS/TS 系フレームワークの内部言語が実質 Rust に統一される" 潮流の到達点。fetch handler パターンは "サーバレス各社の runtime 差 (Workers / Deno / Bun / Node) をアプリ側から吸収する" ための業界共通 API になりつつあり、Astro もこの共通規格に合流。CDN edge に載せる SSR 実装の標準形が固まってきたと読める。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://devblogs.microsoft.com/commandline/wsl-container-is-now-available-for-public-preview/" target="_blank" rel="noopener">WSL Containers is now available for public preview</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: Microsoft DevBlogs (2026-06-30 発表、Publickey 2026-07-01)</div>
+  <p class="sum">Windows Subsystem for Linux (WSL) に <strong>ネイティブの Linux コンテナ機能</strong>が搭載され Public Preview 開始。<code>wslc.exe</code> という Docker CLI 風のバイナリと、Windows アプリから Linux コンテナを実行する API が追加。Docker Desktop 不要でコンテナ開発ワークフロー (実行・デバッグ・テスト) が完結する。GPU パススルー対応、GA は 2026 秋予定。同時に <em>virtiofs</em> ベースの新 FS で Windows-Linux 間ファイル転送が高速化、社内 VPN 互換のため <em>consomme</em> ネットワークモードも追加。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> これは "Docker Desktop for Windows が有償化 (2021〜) で情シスが困った" 問題への Microsoft 純正回答。地味に見えるが、"Windows 開発端末で Docker を全社ライセンス調達する" 問題が消える意味は大きい。テックリード観点では、Ruby on Rails / Django / Postgres / Redis を "Windows 上で apt 感覚でコンテナ起動する" ワークフローが公式サポートに入り、社内で "Mac 縛り" を掲げていた開発チームの根拠が 1 つ減る。フリーの Podman Desktop / Rancher Desktop 派の存在価値もこの GA で見直し必至。エンプラの標準開発端末選定に直接効く変更。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.modular.com/blog/qualcomm-to-acquire-modular" target="_blank" rel="noopener">Qualcomm to Acquire Modular (Mojo / MAX) for ~$3.9B</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Modular / <a href="https://investor.qualcomm.com/news-events/press-releases/news-details/2026/Qualcomm-to-Acquire-Modular/default.aspx" target="_blank" rel="noopener">Qualcomm IR</a> (2026-06-24 発表、Publickey 掲載継続)</div>
+  <p class="sum">Chris Lattner (LLVM / Swift 作者) 率いる Modular が Qualcomm に約 $3.9B (前回評価 $1.6B から +140%) で買収されると発表。取得対象は 2 つ ── <strong>Mojo</strong> (Python の書き味 ＋ C 級のパフォーマンスを狙う新言語) と <strong>MAX</strong> (CPU / GPU / NPU / カスタム ASIC 上で同じモデルコードを走らせるハードウェア非依存の推論スタック)。クロージングは 2026 下半期予定。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> AI 業界の "CUDA ロックイン" 問題 (＝ Nvidia GPU 専用に書いたコードが他社チップで動かない) に対し、"チップで殴り返す" ではなく <em>ソフトウェアレイヤで抽象化する</em> という Modular の賭けを、Qualcomm が実装元ごと買い取った構図。テックリード視点では、"AI 推論スタックの中で <em>ハードウェア独立層</em> がどこに落ち着くか" が今後 2〜3 年で決まる勝負に、有力な旗が 1 本立ったと読める。自社で推論を大量に回す組織は、Mojo/MAX を "Nvidia 一択のリスク軽減" の選択肢として評価対象に入れる価値がある ── 特に、モバイル / 組込み / エッジで Snapdragon 系を使う既存プロダクトは既に守備範囲。</div>
+</div>
+
+<h2>🔬 注目論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2607.00233" target="_blank" rel="noopener">From Signals to Structure: How Memory Architecture Drives Language Emergence in LLM Agents</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: arXiv 2607.00233 (2026-06-30)</div>
+  <p class="sum">LLM エージェントに "メモリ (会話履歴を超えて持ち続ける状態)" を持たせるとき、<em>どんな構造で持たせるか</em> が容量そのものより性能を左右する、という主張の実証研究。Lewis シグナリングゲーム (送信者・受信者が過去の相互作用だけを頼りに共通コードを合意していく) を使い、5 種類のメモリアーキテクチャを比較。<strong>永続的なプライベートノート (private notebook)</strong> を持つ agent は、チャンネル容量が余っても "高容量崩壊 (stateless agent で観測される、記憶が過剰でむしろ協調が壊れる現象)" を回避し、最も安定した協調を達成 (0.867 ± 0.023 @ capacity=25)。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 実務におけるエージェントメモリ設計 (Cursor の <code>.cursorrules</code>、Claude の Skills、Codex の AGENTS.md 等) は、経験則で "何をどこに置くか" が決まっているのが実情で、<em>理論的な裏付け</em> がほぼなかった領域。本論文の "容量より構造 / 特に個別 agent 専用の private notebook が効く" という所見は、"チーム共有の一枚岩ドキュメント" よりも "各 agent 個別の永続メモ" を優先する設計を後押しする ── これは Claude Code の subagent (それぞれが独立の履歴を持つ) 設計とも整合的で、"どの agent がどの memory を持つべきか" の設計の一次リファレンスになる可能性。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2607.00939" target="_blank" rel="noopener">Leveraging LLM-Based Agentic Systems to Generate Quantum Applications for Test Optimization</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: arXiv 2607.00939 (2026-07 新着)</div>
+  <p class="sum">量子コンピューティング × エージェントの応用研究。"自然言語の要件を渡すと、量子アプリケーションのワークフローを自動生成する" マルチエージェントアーキテクチャ <strong>QPipe</strong> を提案。要件解析 → 定式化 → コード生成 → レビュー → 実行 → 検証を、それぞれ専門化した specialized agent が担当し、各ステップで trace を残す。従来の "1 個の LLM に丸投げ" 方式より、要件と実装の対応関係を追跡可能にすることが主眼。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 直接量子コンピューティングに触っていない読者にも価値があるのは、この論文の <em>マルチエージェント分業パターン</em> が上段の Uber Cart Assistant (multi-prompt state graph) と同じ設計思想を、より学術的な形で定式化しているから ── "requirement parsing → formulation → codegen → review → execution → verification" という 6 stage 分業は、自社の内製エージェント (契約書チェック、業務フロー自動化、コード修正 PR 生成 等) にほぼそのまま転写できるテンプレとして使える。"エージェントの分業テンプレ" を 1 本持っておくと、新しい業務に載せるときの設計初速がまるで違う。</div>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/facebook/astryx" target="_blank" rel="noopener">facebook/astryx — Open source design system, fully customizable and agent ready</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕新リリース</span><span class="tag">📈急上昇</span></div>
+  <div class="src">GitHub Trending / TypeScript / ⭐5.8k (+540/day) / Meta 公式</div>
+  <p class="sum">Meta が新規に公開したデザインシステム。<em>StyleX</em> ベースで内部実装、しかし利用側は Tailwind / CSS modules / plain CSS どれでも上書き可能。テーマは "CSS カスタムプロパティのオーバーライドの集合" として設計され、デザイナが Astryx を "自社ルック" にするのにコンポーネントの fork や wrap が不要。同梱テーマ 7 種 (neutral / butter / chocolate / matcha / stone / gothic / y2k)。"人間と AI が同じリファレンスから同じ方法で組み立てる" ことを API / docs / CLI 全体で意識した設計。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "agent ready" と自称する意味は、単に "Claude / Codex に読みやすい" ではなく、<em>コンポーネント API と docs の構造が LLM でパース可能な形で揃っている</em> こと ── 例えば prop 名・default 値・variant 一覧が構造化されており、AI がコンポーネントを組み合わせて画面を生成するときに <em>推測なしで書ける</em>。既存の Radix UI / shadcn/ui とも競合するが、"Meta 公式" のブランドと "エージェント時代前提" の設計はそれらとの差別化ポイント。テックリード観点では、自社デザインシステムを "AI 生成 UI の受け皿" として再設計する参考モデルとして評価する価値がある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/dotnet/skills" target="_blank" rel="noopener">dotnet/skills — Official Claude Code / Agent Skills for .NET development</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span></div>
+  <div class="src">GitHub Trending / C# / ⭐4.0k (+247/day) / Microsoft/.NET 公式</div>
+  <p class="sum">Microsoft の .NET チームが、Agent Skills 標準に沿った .NET 開発用 skill 群を公式リポジトリで公開。"C# の実装ガイド" "ASP.NET Core のプロジェクト初期化" "EF Core での migration 生成" 等が SKILL.md 形式で並び、Claude / Codex / Cursor / VS Code いずれから同じ手順で呼び出せる。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 昨日号で扱った Anthropic の Agent Skills spec と Matt Pocock の TypeScript skills に続く、<em>公式プラットフォームベンダによる採用</em> の第 1 例。意味は "Skills は Anthropic 独自のフォーマットではなく、言語プラットフォームの一次資産として管理される時代に入った" ということ ── PDF/wiki で書かれていた "社内 .NET 開発ガイド" が、これからは skills/ に置かれ、社員も AI も同じディレクトリを参照する運用に移る合図。自社の "言語別コーディング規約" を PDF から skills/ に移す判断根拠として使える。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/siromiya/articles/2026-06-03-01-claudecode-team-agents" target="_blank" rel="noopener">Claude Codeをチームで運用するためのCLAUDE.md設計とカスタムエージェント分担</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: Zenn (2026-06-03、継続的にランキング上位)</div>
+  <p class="sum">個人利用ではなく <em>チーム開発で Claude Code を運用する</em> ときに直面する現実問題を整理した実装ノート。CLAUDE.md (プロジェクト全体の共通指示) / custom agent (役割ごとの sub-agent) / MCP / Hooks の 4 つの仕組みを "どこに何を書くか" で役割分担させる方針を提案し、"よくある落とし穴 (規約の重複、context の肥大化、agent 同士の指示の食い違い) と回避策" を実運用の視点で列挙。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 上段の Martin Fowler "Agentic Programming" が方法論の抽象レベルの議論だとすると、この記事は "日本語チームで明日から適用する具体運用" レイヤの整理。特に "CLAUDE.md は理念、custom agent は職務分掌、MCP は権限、Hooks は自動化" というレイヤ分けは、社内で "AI 運用ガイドラインをどこに書くか" を議論するとき叩き台に使える。上段の openai/codex-plugin-cc と組み合わせると、"Claude Code を軸に置きつつ、必要な局面だけ Codex を呼ぶ" 実運用テンプレートが 1 枚に集約できる。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/76hata/articles/claude-code-customization-ecosystem" target="_blank" rel="noopener">Claude Codeを手懐ける — CLAUDE.md・Hooks・Skills・MCPによるカスタマイズ戦略</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Zenn</div>
+  <p class="sum">Claude Code の拡張ポイント 4 つ (CLAUDE.md / Hooks / Skills / MCP) を、それぞれ "いつ何を書くか" の <em>意思決定木</em> の形で整理した実践記事。Skills は "手順 (playbook) をパッケージ化", Hooks は "決定的な自動処理を差し込む場所", MCP は "外部システムへのアクセス", CLAUDE.md は "全てのセッション共通の前提" と、住み分けを明確にする。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 前記事とほぼ同じテーマだが、こちらは <em>個人開発者が拡張の全体像を最短で掴む</em> ためのマップとして機能する。上段の <code>dotnet/skills</code> と組み合わせると、"公式が用意した SKILL.md をどう自分の CLAUDE.md と協調させるか" の設計判断がやりやすい ── 具体的には "汎用ガイドは Skills として言語プラットフォームから輸入し、自社固有の意思決定だけ CLAUDE.md に残す" というレイヤ分けが実装可能になる。</div>
+</div>
+
+<footer>
+  <p><strong>収集元:</strong> Hacker News <em>(取得失敗)</em> / GitHub Trending / Anthropic News <em>(取得失敗・検索で補完)</em> / OpenAI <em>(取得失敗・検索で補完)</em> / Google DeepMind <em>(取得失敗)</em> / The Pragmatic Engineer <em>(取得失敗)</em> / Martin Fowler <em>(取得失敗・検索で補完)</em> / AWS Architecture <em>(取得失敗・本日新規なし)</em> / High Scalability <em>(取得失敗・本日新規なし)</em> / ThoughtWorks Technology Radar <em>(取得失敗・Vol.34 過去掲載)</em> / Netflix TechBlog <em>(取得失敗・本日新規なし)</em> / Uber Engineering <em>(検索経由)</em> / Stripe Engineering <em>(検索経由・本日新規なし)</em> / InfoQ <em>(検索経由・本日新規なし)</em> / arXiv cs.AI <em>(検索経由)</em> / Changelog <em>(取得失敗)</em> / Zenn <em>(取得失敗・検索で補完)</em> / note <em>(取得失敗・本日採用なし)</em> / Publickey <em>(取得失敗・検索で補完)</em></p>
+  <p>次回もお楽しみに。</p>
+</footer>
+
+</body>
+</html>
