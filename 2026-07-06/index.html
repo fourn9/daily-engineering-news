@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月06日(月) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+.sup .lbl{color:var(--muted);font-weight:600;margin-right:4px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+@media (max-width:480px){
+  body{font-size:15px;padding:14px 12px 50px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.05rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年07月06日(月)</div>
+</header>
+
+<section class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p>
+    今日は "エージェント時代のエンジニアリング規律" と "大規模マイクロサービスの可視化" が同時に効く 2 件。<strong>addyosmani/agent-skills</strong> (GitHub Trending #2、+1,114⭐/day) は、Google Chrome の Addy Osmani が <em>Software Engineering at Google</em> のプラクティスを 24 個の SKILL.md に落とし込んだ "エージェントに senior engineer の規律を強制する" スキルパック ── AI が手癖で spec / test / review を飛ばす問題への正面回答で、昨日の <em>dotnet/skills</em> と合わせて "Skills = 言語プラットフォームや大手エンジニアの資産で管理する時代" が確定した。もう 1 件、<strong>Netflix "Service Topology"</strong> (Netflix TechBlog 6 月末公開、InfoQ 追報) は <em>数千のマイクロサービスの依存グラフを eBPF + IPC メトリクス + 分散トレースの 3 系統をマージして 1 秒以下でトラバースできる</em> リアルタイム基盤の設計解説。"3AM に何が壊れたか" が計装なしで見える設計思想は、SLO / observability を持つ組織なら規模を問わず輸入価値のあるパターン。加えて Martin Fowler の Fragments (今朝公開) が "Thoughtworks 未来会議 第 2 回・欧州版" と "token 請求書が月 $500M ($5M→$15M/年 3,000%) 膨張したチームの実例" を報告しており、"AI 時代の設計・コスト・倫理" 議論の見取り図として必読。
+  </p>
+</section>
+
+<h2>🛠 AI開発ツール / エージェント</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">addyosmani/agent-skills — Production-grade engineering skills for AI coding agents</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span></div>
+  <div class="src">GitHub Trending #2 / Shell / ⭐70.6k (+1,114/day) / Google Chrome エンジニア Addy Osmani</div>
+  <p class="sum">"AI エージェントは常に最短経路を取り、spec / test / security review を飛ばす" 問題への構造的な回答。<code>/spec</code> → <code>/plan</code> → <code>/build</code> → <code>/test</code> → <code>/review</code> → <code>/ship</code> というライフサイクル各段階に、senior engineer の判断を模した SKILL.md 24 本 (23 lifecycle + <em>using-agent-skills</em> メタスキル) を割り当て、Google の "Software Engineering at Google" の実務規範をエージェント側で強制させる。Claude Code / Codex / Cursor / VS Code など SKILL.md 互換のツール全てで動く。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "Skills" は Anthropic が Claude Code 用に提唱したエージェント拡張フォーマット (プロンプト＋外部リソースを 1 ディレクトリでパッケージ化した "playbook") で、10 月に業界仕様が固まった。昨日号の <code>dotnet/skills</code> が "言語プラットフォームベンダの公式 skills" の第 1 例だったのに対し、こちらは "大手企業所属の著名エンジニア個人が公開する senior engineering 規律の詰め合わせ"。テックリード視点での意味は 2 つ: (1) 社内で "AI が雑な PR を量産する" 問題は、レビュアーの増員ではなく <em>Skills を強制する CI / hooks</em> で解ける可能性が高い、(2) "自社のコーディングガイド" は README や社内 wiki ではなく "SKILL.md の集合" として書き直せば、人間と AI が同じソースを参照できる。昨日話題になった Martin Fowler の <em>Agentic Programming</em> がレビュー粒度を議論の中心にしていたが、この agent-skills はレビュー粒度を <em>コミット前段階の skill enforcement</em> に押し戻す設計、と読める。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/ogulcancelik/herdr" target="_blank" rel="noopener">ogulcancelik/herdr — Agent multiplexer that lives in your terminal</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span></div>
+  <div class="src">GitHub Trending / Rust / ⭐12.8k (+783/day)</div>
+  <p class="sum">"tmux for AI エージェント" とも言える端末向けエージェントマルチプレクサ。1 つの CLI から Claude Code / Codex / Cursor CLI / ローカル LLM 等を並行して起動し、pane 単位で切り替え・観察・差分比較できる。Rust 実装、単一バイナリ配布。昨日号の <code>openai/codex-plugin-cc</code> が "Claude Code から Codex を呼ぶ" 発想だったのに対し、こちらは "複数エージェントを並行運転し、人間が指揮する" ハーネス。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 実務でエージェントを使い込むと、"同じタスクを 2〜3 種のモデルに同時に投げて結果を比較したい (disagreement を検出したい)"、"1 個のエージェントを走らせつつ、別テーマは別エージェントに任せたい" というニーズが出る。従来はターミナルタブを 3 枚並べる、あるいは自作スクリプトで捌いていた領域を、<em>専用マルチプレクサ</em>として抽象化した意味が大きい。"複数エージェント時代" のクライアント側 UX は "1 モデル向けチャット UI" ではなく "tmux + observability" に近づく、というシグナル。テックリード視点では、"どのエージェントに何を任せるか" が明確な組織 (レビュー = Codex、実装 = Claude Code、探索 = Cursor 等) では導入コストが低い。</div>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+  <h3><a href="https://martinfowler.com/fragments/2026-07-06.html" target="_blank" rel="noopener">Fragments: July 6 — Thoughtworks 未来会議 (欧州版) & AI トークン支出の爆発</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: martinfowler.com/fragments (2026-07-06 公開)</div>
+  <p class="sum">Martin Fowler が Thoughtworks 主催 <em>Future of Software Development Retreat</em> 第 2 回 (今回は欧州・Engelberg) の 5 並行トラックの断片的観察をまとめたもの。第 1 回 (Deer Valley) が "何かが起きているとは思うがまだ形が見えない" 空気だったのに対し、今回は "価値はここにある、と確信を持って議論できるようになった" (Giles Edwards-Alexander) 段階に進んだ。同時に、ある企業の AI トークン請求書が <strong>2025-08 月 $5M → 2026-05 月 $15M</strong>、年間換算 $120M を超える見込みという実データが共有され、"社員が PDF → スライド化のような雑用でトークンを食う" 問題を典型例として整理。Charity Majors の "AI 倫理エッセイ" と <em>Design as a hedge against AI dependency</em> の議論も紹介。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 昨日の Fowler 記事 (Agentic Programming) が "方法論" レイヤの整理だったのに対し、今回は "産業レベルで何が観察されているか" の中間報告。テックリード視点で 3 点抽出しておきたい: (1) <em>トークン請求書は放置すると 3〜4 倍 / 年で膨張する</em> ── 逐次 FinOps 対象に含める必要が出た。(2) <em>Design as a hedge</em> ── 良い設計 (レイヤ分離、boundary、SLO) は、AI が誤った時のフォールバックとしての価値が高まる。"AI がミスする前提" のアーキテクチャが今後の主流。(3) <em>倫理と skill atrophy</em> ── 現場で "AI 依存で若手のスキルが育たない" 懸念が言語化され始めた。"どこは人間が書き、どこは AI に任せるか" を組織として明文化する時期。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://netflixtechblog.com/from-silos-to-service-topology-why-netflix-built-a-real-time-service-map-0165ba13a7bc" target="_blank" rel="noopener">From Silos to Service Topology: Why Netflix Built a Real-Time Service Map</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: Netflix TechBlog (2026-06 末公開) / <a href="https://www.infoq.com/news/2026/06/netflix-microservices-realtime/" target="_blank" rel="noopener">InfoQ 追報</a></div>
+  <p class="sum">Netflix の "数千のマイクロサービスの依存関係を、traffic の変化にほぼリアルタイムに追従する形で可視化する" 内製システム <strong>Service Topology</strong> の設計解説。<em>eBPF によるネットワークフローログ (カーネルレベルの通信を計装なしで取得)</em>、<em>IPC メトリクス (RPC / gRPC 呼び出し統計)</em>、<em>分散トレース (Zipkin / Jaeger 系)</em> の 3 系統を独立に集めた上で 1 つのグラフに統合し、"どのサービスが何に依存し、何から呼ばれているか" のトラバースクエリを 1 秒以下で返せる。動機は 4 年分のサポート依頼の解析で、"3AM の障害対応で on-call が最も聞いてくるのは <em>これに依存しているのは誰か / これは何に依存しているか</em>" だと分かったこと。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Netflix の話は往々にして "うちには関係ない" と受け取られがちだが、この記事の輸入価値は <em>3 系統ソースの独立設計</em> にある。従来型の service map は分散トレースだけに依存 (＝ トレースの計装漏れがそのまま盲点になる) か、Consul / K8s 由来の宣言的な依存だけを見る (＝ 実際に叩かれてない依存も出る) のどちらかで、結局 "実運用の依存関係" が正しく取れない。eBPF の "計装なし・実測ベース" と分散トレースの "リクエスト経路" と IPC メトリクスの "頻度と量" を <em>互いに独立な視点として突き合わせる</em> ことで、片方が壊れても片方で検知できる冗長性が生まれる。テックリード視点では、"マイクロサービスが 20 個を超えた組織" ならこの 3 系統独立の思想は即応用可能 ── 完全な内製は不要でも、"eBPF ベースの実測依存 + トレースの経路" の 2 系統併用は今日から始められる。昨日の Uber Cart Assistant (LLM ワークフローをマイクロサービス化) の裏返しで、"膨大なマイクロサービスをどう見るか" の答えが Netflix 側にある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.uber.com/en-US/blog/how-we-unified-configuration-distribution-across-systems-at-uber/" target="_blank" rel="noopener">How We Unified Configuration Distribution Across Systems at Uber (UCDP)</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Uber Engineering Blog</div>
+  <p class="sum">Uber 内では長年 <em>Flipr</em> (フィーチャーフラグ / config)、<em>UBERCloud</em>、<em>Cassandra</em> 系など複数の設定配信システムが並行して発達しており、"どれを使うべきか / どこに何を書くか" が事業ごとに散っていた。それを "設定を配信する仕組みは 1 個で十分" の原則で <strong>Unified Configuration Distribution Platform (UCDP)</strong> に統合。UCDP は <em>下層 (効率的・信頼性のある配信基盤)</em> と <em>上層 (フィーチャーフラグ／dynamic config／実験など、ドメイン固有プロダクト)</em> の 2 層に責務を分け、上層は差し替え可能、下層は 1 個の共通実装を全社で共有する。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "設定配信システムがサイロ化する" 問題は、Uber ほど巨大でなくても、社歴 10 年を超える組織で必ず起きる。ここで参考にすべきは <em>統合の切り分け方</em> で、"下層 (配信の効率・信頼性) と上層 (ドメイン UI / 用途) を分けて、下層だけ 1 本化する" 発想は輸入価値が高い ── 実務では "フィーチャーフラグを LaunchDarkly、実験は Optimizely、動的 config は自作 K8s ConfigMap …" と乱立するのが典型で、それらを <em>API / UI 層は差し替え可能なまま、配信レイヤだけ 1 つに統一する</em> と、SLO 管理・監査・キャッシュ戦略が単一箇所に集中できる。逆に "全部 1 個のツールに寄せる" と失敗しがちで、そちらの反面教師でもある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://ui.shadcn.com/docs/changelog/2026-07-base-ui-default" target="_blank" rel="noopener">shadcn/ui — Base UI is now the default (Radix はサポート継続)</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: ui.shadcn.com/docs/changelog (2026-07 リリース)</div>
+  <p class="sum">React 界隈で事実上のデフォルト UI キットになっている shadcn/ui が、新規プロジェクトのデフォルトを <strong>Base UI</strong> に切替。<code>npx shadcn init</code> の既定選択と docs の初期タブが Base UI に。Radix (旧デフォルト) は非推奨扱いにはならず、全コンポーネントが両方向にビルドされ続ける。既にアクセス統計上 Base UI が Radix を 2:1 で選択されており、"事実の追認" として今回オフィシャル化された形。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Radix と Base UI は <em>同じチーム</em> (WorkOS / 旧 Radix Labs) が作っている ── これは "対抗プロダクトへの置き換え" ではなく "Radix v1 の学びを踏まえた第 2 世代への世代交代"。Base UI が優位に立った理由は主に (1) primitives の API が hooks 中心で React 19+ / Suspense に整合、(2) パッケージ分割が細かく tree-shake しやすい、(3) styling が完全に unopinionated (Tailwind / vanilla CSS / CSS-in-JS どれとも自然に組む)。テックリード観点では、既存 shadcn/ui + Radix のプロダクトは <em>移行必須ではない</em> が、新規案件は Base UI で開始する判断が事実上のスタンダードに。加えて、"複数の設計システムを行き来する" 現場は Base UI 側でスタックを揃えると、Astryx (昨日号の Meta 発 OSS) や Radix Themes、Nextra 等との組み合わせ問題が減る。</div>
+</div>
+
+<h2>⚡ 言語 / フレームワーク / ランタイム</h2>
+
+<div class="art">
+  <h3><a href="https://nextjs.org/blog/next-16-3-turbopack" target="_blank" rel="noopener">Next.js 16.3 — Turbopack: 90% メモリ削減・永続ビルドキャッシュ・Rust 版 React Compiler</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: nextjs.org/blog (2026-06-29 リリース、7 月に fixup 追報)</div>
+  <p class="sum">Next.js 16.3 が Turbopack 中心の 3 本柱で刷新。(1) <em>メモリ eviction</em> ── 長時間 dev サーバを立てているとメモリが積み上がる問題を修正、実測で <strong>最大 90% 削減 (設定不要でデフォルト有効)</strong>。(2) <em>persistent build cache</em> ── <code>turbopackFileSystemCacheForBuild</code> フラグで <code>.next</code> をビルド間で使い回せる。CI で前回の <code>.next</code> をキャッシュ ⇒ 復元するだけで大幅短縮。(3) <em>Rust 版 React Compiler</em> ── これまで Babel 変換で動いていた React Compiler が Rust ネイティブに移植され Turbopack パイプラインに統合、大規模アプリ (Vercel 内部の v0) で <strong>20〜50% のコンパイル時間短縮</strong>を確認。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "React Compiler" とは React 19 で導入された "手書きの useMemo / useCallback の大半を自動化するコンパイラ最適化" のこと (＝ 開発者が memo をつけ忘れて再レンダリングが起きる問題を、AST 解析で先回りする)。今回のポイントは "その最適化が Rust 版で速くなった" 以上に、<em>Babel を通らずに Turbopack から直で叩けるようになった</em> こと。従来は Turbopack (Rust) が Babel (JS) の完了を待つ形で、Rust 側の並列度を活かせなかった。昨日号の Astro 7.0 も "コンパイラを Rust ネイティブに書き換え、fetch handler 標準に合流" と同じ潮流で、"JS/TS ツールチェインの内部言語が Rust に統一される" 大局は Next.js 側でも完成に近づいた。テックリード視点では、CI 時間の削減効果が大きく、Turbopack への移行判断のハードルが 1 段下がった。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://openai.com/index/gpt-5-6-sol-and-terra-and-luna-pricing/" target="_blank" rel="noopener">GPT-5.6 の価格帯が確定 — Sol $5/$30, Terra $2.5/$15, Luna $1/$6 (per 1M tok)</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span></div>
+  <div class="src">出典: OpenAI 発表 / Releasebot 集約</div>
+  <p class="sum">昨日号でプレビュー開始を扱った GPT-5.6 3 モデルの価格が公開: <strong>Sol (フラッグシップ) $5 in / $30 out</strong>、<strong>Terra (バランス) $2.5 in / $15 out</strong>、<strong>Luna (廉価バッチ) $1 in / $6 out</strong> (per 1M tokens)。同時期の Claude Sonnet 5 の導入価格 $2/$10 (8 月末まで) と比較すると、Terra はほぼ同水準、Sol は Opus 4.8 相当のフラッグシップティア。Sol は Cerebras 上で <strong>最大 750 tok/sec</strong> のスループットで提供され、"推論速度そのものを差別化ポイントにする" 方向に振れた。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 昨日号で "1 世代 = フラッグシップ + バランス + 廉価の 3 モデル" が業界標準テンプレになった、と書いた続報。今回の重要ポイントは <em>Sol の $5/$30 という価格レンジと 750 tok/sec の速度が同居する</em> 点で、これは "エージェント長時間実行 = トークン食い" 問題への 2 方向の回答になっている ── <strong>単価は据え置き、速度で total 時間を縮める</strong> という戦略。今朝の Martin Fowler の "トークン請求書 3 倍膨張" 事例と重ねると、"モデル選定は単価と速度と品質の 3 次元で組む" 時代に入った。テックリードは、社内のエージェントワークフローを "Sol で早く終わらせて $ を減らす vs. Luna でゆっくり流す" の A/B で測る価値がある。</div>
+</div>
+
+<h2>☁️ インフラ / クラウド / DevOps</h2>
+
+<div class="art">
+  <h3><a href="https://aws.amazon.com/blogs/aws/run-isolated-sandboxes-with-full-lifecycle-control-aws-lambda-introduces-microvms/" target="_blank" rel="noopener">AWS Lambda MicroVMs — 状態を持てる Firecracker サンドボックス (最長 8h)</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🔥話題</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: AWS News Blog (2026-06-22 launch、7 月継続話題)</div>
+  <p class="sum">AWS Lambda に <strong>MicroVMs</strong> という新プリミティブが追加。Lambda の内部で使われている <em>Firecracker</em> (Amazon 製の軽量 VM 技術。月あたり 15 兆回超の Lambda 実行を支える) を直接プリミティブとして開放し、"VM レベル隔離 (共有カーネルなし)、ほぼ即時 (数百 ms) の起動と resume、最長 <strong>8 時間</strong>の実行、ARM64 / 最大 16 vCPU / 32GB mem / 32GB disk" のサンドボックスを Lambda 経由で作れる。用途としてターゲティングされているのは <em>AI コーディングアシスタント / インタラクティブなコード実行環境 / データ分析 / 脆弱性スキャナ / ユーザースクリプトを走らせるゲームサーバ</em>。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> これは "エージェント時代のインフラプリミティブ" として非常に大きな意味を持つ発表。従来 "AI エージェントに任意のコードを実行させる" には、コンテナ (Docker / K8s / ECS) を都度立ち上げるか、E2B / Modal / Daytona 等のサードパーティ製サンドボックスを使うしかなく、"起動 5〜30 秒 + セッション状態が消える + Lambda の 15 分制限に引っかかる" のどれかで詰まっていた。MicroVMs は "状態が残せる (最長 8h)、Lambda 課金モデルで安い、EC2 のような管理不要" の 3 拍子で <strong>この構造課題を丸ごと解く</strong> 提案。テックリード観点では、"社内エージェントに任意コード実行させる基盤" を Modal / E2B に外注していた組織は、AWS 内で完結させる選択肢が現実的に。加えて、"ユーザーがブラウザ上で任意コードを試せる SaaS" (Replit 系) を作る組織にとっては、コスト構造が大きく変わる。同日リリースの Bedrock 側 <em>Fully Managed Knowledge Bases</em> と組み合わせると、"RAG + 実行環境" が Lambda 1 個の設定で組める。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.notion.com/releases/2026-05-13" target="_blank" rel="noopener">Notion Workers — Notion 側で TS/JS を動かすホスト型ランタイム (5 月発表・7 月更新)</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">出典: Notion Developer Platform Release Notes / <a href="https://www.notion.com/blog/introducing-developer-platform" target="_blank" rel="noopener">announcement blog</a> (7 月に PAT 有効期限機能追加)</div>
+  <p class="sum">Notion が発表した <em>Developer Platform 3.5</em> の目玉である <strong>Workers</strong>。TypeScript/Node.js コードを Notion 側のインフラでホストできる serverless runtime で、webhook を受け → 任意ロジック → Notion 側の DB / ページ操作 or 外部 API 呼び出し、が "自前のサーバを一切立てずに" 実装できる。同時に <em>External Agents API</em> が Claude Code / Cursor / Codex / Decagon を "workspace の一級参加者" として扱う仕組みを提供、<em>Database Sync</em> が任意の REST/GraphQL API を Notion DB にライブ同期する。ベータ期間は無料、8/11 以降 Notion クレジットで課金。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 5 月発表だが 7 月 6 日に PAT の expiration date 機能 (7/30/90/180 日・1 年) と workspace admin のトークン失効フィルタ機能が追加され、"エンプラで採用可能な要件" が整った、というのが今日再掲する理由。テックリード観点での本質は、Notion が "SaaS の中に汎用ランタイムを埋める" 選択に踏み切ったこと ── Salesforce の Apex、ServiceNow のスクリプト、Airtable の Scripting Extension と同じ "SaaS 内 code exec" だが、TypeScript ネイティブ + webhook 駆動 + AI エージェントを一級参加者に、という設計は 1 世代新しい。自社が Notion に業務データを載せている組織は、"外部 Zapier / n8n / Retool + 自前 API サーバ" の構成を Workers に寄せる判断が現実的になり、運用対象を減らせる。逆に SaaS ベンダ側から見ると、"AI エージェント時代の SaaS = 汎用ランタイムを内蔵する" のが新標準になる可能性が高いシグナル。</div>
+</div>
+
+<h2>⚠️ セキュリティ / 規制</h2>
+
+<div class="art">
+  <h3><a href="https://www.heise.de/en/news/EU-Council-forces-Chat-Control-via-fast-track-10456789.html" target="_blank" rel="noopener">EU Council forces Chat Control via fast-track</a></h3>
+  <div class="tags"><span class="tag">⚠セキュリティ</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: heise (2026-07-05) / Hacker News 前ページ掲載</div>
+  <p class="sum">EU 理事会が児童性的搾取物 (CSAM) 対策を口実とする <em>Chat Control (CSAR) 規則</em>を再度早期採決トラックに乗せた、と heise 記事が報告。今回の草案では暗号化されたメッセージング (Signal / WhatsApp / iMessage / メールも含む) に対し、<strong>クライアント側でのスキャン (client-side scanning) を義務化</strong>する条項が復活。Signal / EDRi / EFF などがこれまで通り "実質的にエンドツーエンド暗号化の破壊" と反対。今回は fast-track を使い、通常より短い審議期間で合意を狙う点が新しい。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> <em>Client-side scanning (CSS)</em> とは "暗号化される前のメッセージを、送信者の端末上でハッシュ照合・ML 検出する" 方式。エンドツーエンド暗号 (E2EE) は "サーバ側は暗号文しか見えない" 保証だが、CSS は端末側で見るため理屈上 E2EE を破らずに検閲できる、と主張される。反対派の論点は 2 つ: (1) 一度端末に検閲コードを置くと、対象を CSAM 以外にも拡張する法改正だけで済む (機能自体は既にある)、(2) ハッシュ DB は非公開になりがちで、"何が検閲対象か" が民主的にコントロールできない。テックリード視点では、自社が EU 市場向けメッセージング / チャット機能を持つ場合、法制化されると "実装する / EU 市場から撤退する / E2EE を弱める" の三択を迫られる可能性が高い。加えて、Signal は過去に "EU が CSS を義務化するなら EU から撤退する" と表明済みで、"どの SaaS が EU で使えなくなるか" は今後 6〜12 ヶ月で判断が要る領域。</div>
+</div>
+
+<h2>🔬 注目論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2607.01641" target="_blank" rel="noopener">When Agents Do Not Stop: Uncovering Infinite Agentic Loops in LLM Agents</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">出典: arXiv 2607.01641 (2026-07-02、Xinyi Hou ら)</div>
+  <p class="sum">"エージェントが止まらない" 障害クラス <strong>Infinite Agentic Loops (IALs)</strong> の系統的な分類論文。従来のプログラムの無限ループとは異なり、IAL は "モデル呼び出し・ツール呼び出し・workflow 遷移・agent 間の handoff" が <em>フィードバック経路が有界化されていない</em> ために停まらない現象で、"1 リクエストがコスト枯渇 / model の DoS / context 膨張 / 副作用の反復" に化ける。論文はエージェントロジック × フレームワーク意味論 × ランタイム観測 × 終了機構 の 4 軸で IAL を分類し、実 fw (LangChain / AutoGen 等) で発生パターンを検出。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 実務でエージェントを本番投入している組織なら、"止まらないエージェント" は既に一度は踏んでいる問題 (ツール呼び出しが失敗 → 再試行 → 別ツール → 元に戻る、や、複数エージェントの handoff がループする、等)。この論文の価値は "IAL は無限ループの延長ではなく <em>フィードバック経路の設計失敗</em> だ" と概念整理し、"何を有界化すべきか" の設計チェックリストを与える点。テックリード視点で、内製エージェントの本番投入前に (a) 各サブエージェントの最大 iteration、(b) ツール呼び出しの budget、(c) handoff の depth、(d) context growth の閾値、の 4 つは必ず定義する運用にすべき ── 昨日話題になった Uber Cart Assistant の state graph 設計は、この "有界化を graph 定義で強制する" 側からの回答とも読める。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2607.01640" target="_blank" rel="noopener">AgentFlow: Building Agent Dependency Graphs for Static Analysis of Agent Programs</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: arXiv 2607.01640 (2026-07-02)</div>
+  <p class="sum">エージェントプログラム向けの <strong>初の静的解析フレームワーク</strong>を提案。<em>Agent Dependency Graph (ADG)</em> という framework 非依存の表現を導入し、agents / prompts / models / capabilities / memory / control policy を <em>typed node</em> として、component-dependency / control-flow / data-flow を <em>typed edge</em> として捉える。ADG から <em>Agent BOM (Bill of Materials — エージェント構成の部品表)</em> を自動生成でき、"prompt から tool への意図しないアクセス経路 (prompt-to-tool risk)" を静的に検出。5 つの代表的な fw (LangChain / AutoGen / CrewAI / LangGraph 等) 上で 5,399 個の実世界エージェントプログラムを評価し、<strong>238 件の実際の prompt-to-tool リスク</strong>を検出。既存の Agentic Radar / Agent-Wiz より詳細で、Drako / Trusera / Cisco 系の AI-BOM ツールより情報量が多い、と主張。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "Agent BOM" は SBOM (ソフトウェア部品表) の agent 版で、SBOM が npm / OSS の依存関係を静的に列挙するのに対し、Agent BOM は "このエージェントが呼ぶ tool / 参照する prompt / アクセス可能な memory" を列挙する。同日の "IAL 論文" が <em>ランタイムの停止性</em> の話だったのに対し、こちらは <em>デプロイ前の静的検査</em> の話 ── 対をなす。テックリード観点では、エージェントを 5 個以上運用する組織は、CI パイプラインに "ADG 抽出 → 意図しない tool 到達性の検査" を組み込む価値が急速に上がる。従来 "prompt injection で任意の tool を叩ける" 種の脆弱性はレビュー時に見落とされがちだったが、それを <em>コンパイル時に検出する</em> 発想は、Trivy / Snyk が SBOM を検査するのと同じ抽象化。"エージェントを扱う組織の DevSecOps はこの形になっていく" というシグナルとして注目。</div>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/Zackriya-Solutions/meetily" target="_blank" rel="noopener">Zackriya-Solutions/meetily — Privacy-focused AI meeting assistant (local transcription)</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span></div>
+  <div class="src">GitHub Trending #3 / Rust / ⭐19.1k (+2,493/day)</div>
+  <p class="sum">"プライバシー最優先" の AI ミーティングアシスタント。会議音声を <em>ローカルで文字起こし・要約</em> し、外部 API に音声/転写を送らないアーキテクチャ。競合の Otter / Fireflies / Grain は "サーバサイド ASR + LLM" が前提だが、meetily は Whisper 系のローカル ASR + ローカル LLM (Ollama / llama.cpp) を組合わせる構成で、"社外に会議内容を出せない企業" 向け。Rust で書かれ、macOS / Windows / Linux 全対応、+2,493⭐/day は今週最大級の伸び。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> ミーティング系 SaaS は "音声を出せるか / 出せないか" で市場が二分されており、金融 / 医療 / 法務 / 官公庁は前者に触れられない事情がある。meetily の位置づけは "外に出さないローカル完結型" ── これは <em>Enterprise SaaS の敗北領域</em> を OSS が拾いに来ている、というエコシステム的な意味がある。テックリード観点では、社内で "会議録の要約は AI で" と言われた時に "SaaS を使う" 以外の選択肢を持つ意義が大きい。今後は "エージェント時代の on-device LLM 統合" (Apple Intelligence / MLX / Ollama 系) を活用したデスクトップアプリのカテゴリが 1 つ立ち上がる兆し。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/alibaba/zvec" target="_blank" rel="noopener">alibaba/zvec — Lightweight, lightning-fast, in-process vector database</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span></div>
+  <div class="src">GitHub Trending / C++ / ⭐13.4k (+355/day) / Alibaba 公式</div>
+  <p class="sum">Alibaba が公開した <em>組み込み (in-process) ベクトル DB</em>。SQLite が RDB を "同一プロセス内・ファイル 1 個" に押し込んだのと同じ思想を、ベクトル検索に適用。<em>HNSW インデックス + Product Quantization</em> を C++ で密実装し、Python / Java / Go バインディングを持つ。競合の Chroma / Qdrant / Weaviate はサーバプロセス前提だが、zvec は "アプリと同一プロセス内に組み込む" 前提。単一ノードで数千万〜億スケールのベクトルを想定。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> ベクトル DB は 2023〜2025 に "Pinecone / Weaviate / Qdrant / Milvus…" と <em>サーバ型</em> の乱立を経て、SQLite pgvector / DuckDB VSS / LanceDB / usearch のような <em>組み込み型</em> の第 2 波に移りつつある。zvec はその第 2 波の Alibaba 版で、"サーバ運用が要らない = 小規模なエッジ / モバイル / スタンドアロンツールで RAG が回る" 意味が大きい。テックリード視点では、"社内 RAG のために Kubernetes 上で Qdrant を立てる" 一択だった過去 2 年から、"アプリに埋め込んで完結する" 選択肢が増える段階。特に Sonnet 5 の 1M context が使える今、"組み込み VDB + 巨大 context" のハイブリッドが軽量 RAG の設計デファクトになる可能性が高い。昨日号の Modular/MAX (推論の HW 抽象化) と組み合わせると、"AI アプリケーションが外部 SaaS 依存を減らして完結化する" 方向のシグナル。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/vmware_9.html" target="_blank" rel="noopener">ブロードコムの VMware 抱き合わせ販売疑惑、独禁法違反と認定されず — 公取委調査終了</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span></div>
+  <div class="src">出典: Publickey (2026-07-06 掲載)</div>
+  <p class="sum">2024 年 9 月に立ち入り検査に入っていた <strong>公正取引委員会が調査を終了、独禁法違反に該当する事実は認められなかった</strong>と発表。抱き合わせ販売の疑いは、Broadcom が 2023 年に VMware を買収した後 (a) 個別販売していた製品をバンドル化、(b) サブスク化により実質値上げ、(c) 富士通など従来ユーザに影響、といった一連の変更が対象だった。ただし Broadcom は今回、"契約変更でクラウドベンダに大きな不利益が出る場合、事前告知と誠実交渉を経る" コミットメントを提示しており、調査終了の前提になった、と読める。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 実務的な意味: (1) <em>VMware バンドル継続</em> ── 日本市場でも当面 VMware 製品は Broadcom のバンドル価格・体系のまま。継続利用予定の組織は次の更改タイミングの試算が必要。(2) <em>コミットメントの効果</em> ── 事前告知と交渉が "コミットメント" にとどまるため、実効性は Broadcom 側の自主性次第。将来的な突然の値上げリスクは制度上残る。(3) <em>Broadcom / VMware 脱出の潮流</em> ── AWS EC2 / Nutanix / Proxmox VE / OpenStack への移行検討が世界的に進んでおり、今回の判断はそのトレンドを止めない ("違反ではない" ≠ "使い続けるべき")。テックリード視点では、社内 vSphere 環境の 3〜5 年ロードマップを "Broadcom バンドル継続 vs. 段階的離脱" で試算し直す機会にすべき。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://blog.apnic.net/2026/04/28/google-hits-50-ipv6/" target="_blank" rel="noopener">Google IPv6 到達率が 50% を突破 (Publickey 追報 7/1)</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span></div>
+  <div class="src">出典: APNIC Blog (2026-04-28、Google Stat 発表 3/28) / Publickey 追報 (2026-07-01)</div>
+  <p class="sum">Google が公表するユーザー側 IPv6 到達率 (Google のサービスにネイティブ IPv6 でアクセスした割合) が <strong>初めて 50% を突破 (50.10%)</strong>。1 年前の 46.33% から漸進的に上昇。地域差は大きく、フランス 73% / インド 72% / サウジ 65% に対し、イタリア 17% / スペイン 10% / エジプト 4%、日本は 60% 前後 (mobile driven)。1998 年 IPv6 標準化から 28 年、"半分を超えるまでこれだけかかった" の側面が強調されている。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "IPv6 到達率" は <em>ユーザーが IPv6 で来る割合</em> の指標で、"インターネット全体の IPv6 割合" とは異なる (APNIC の測定では世界平均 42% と Google 発表より低い)。テックリード視点での意味は 2 つ: (1) <em>グローバル SaaS を作る組織は "IPv6 対応" が引き続き課題</em> ── AWS ALB / CloudFront は当然 IPv6 対応だが、自社の origin / 内部プロキシ / VPN / 監査ログの IP フィルタが v4 前提だと接続失敗が増える。(2) <em>日本は既に mobile IPv6 が主流</em> ── モバイル向けサービスで A/AAAA 両対応していないと、キャリア側の NAT64 経由になり接続品質が落ちる。IPv6 対応チケットを "いつかやる" のバックログから "今年やる" に格上げする根拠として使える数字。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/ino_h/articles/2026-05-15-claude-code-skills-orchestration" target="_blank" rel="noopener">Claude Code のスキルをオーケストレーションする方法 — 複数 Skill を連鎖させる設計パターン</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Zenn (2026-05-15、継続的にランキング上位)</div>
+  <p class="sum">Claude Code の Skills が単体で使える段階を超え、"複数 Skill を連鎖・オーケストレートさせる" 設計パターンをまとめた記事。基本原則を <em>"手順を教えるものが Skill、外部リソースにアクセスするものが MCP"</em> と定義し、"Skill が別 Skill を呼ぶ" 経路、"複数 Skill が同一 MCP を共有する" 経路、"failure fallback を Skill 間で連鎖させる" 経路の 3 パターンを図解。上段の <em>agent-skills</em> や昨日の <em>dotnet/skills</em> の実装が念頭にある。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Skill を 1 個作る話は既に多いが、"5 個以上の Skill を組合わせる時にどう設計するか" の記事はまだ少ない。この記事の 3 パターンは、上段の Uber UCDP の "下層は 1 本化、上層はドメイン別" の思想と実は同型 (＝ 呼び出し規約は 1 本化、意図・語彙は個別スキルに閉じる)。今日号の <code>agent-skills</code> のように 24 本規模の Skill を運用する組織は、この記事の分類を "組合わせパターンの共通言語" として使うと、Skill 数が増えた時のカオス化を避けやすい。組織で "Skill を書く担当" を分ける前段階の設計指針として、社内共有の価値が高い。</div>
+</div>
+
+<footer>
+  <p><strong>収集元:</strong> Hacker News <em>(取得失敗・検索補完)</em> / GitHub Trending / Anthropic News <em>(取得失敗・検索補完)</em> / OpenAI <em>(取得失敗・検索補完)</em> / Google DeepMind <em>(取得失敗・本日新規なし)</em> / The Pragmatic Engineer <em>(取得失敗・本日新規なし)</em> / Martin Fowler <em>(取得失敗・検索補完)</em> / AWS Architecture <em>(取得失敗・検索補完)</em> / High Scalability <em>(取得失敗・本日新規なし)</em> / ThoughtWorks Technology Radar <em>(取得失敗・Vol.34 過去掲載)</em> / Netflix TechBlog <em>(取得失敗・検索補完)</em> / Uber Engineering <em>(取得失敗・検索補完)</em> / Stripe Engineering <em>(取得失敗・本日新規なし)</em> / InfoQ <em>(取得失敗・検索補完)</em> / arXiv cs.AI <em>(検索補完)</em> / Changelog <em>(取得失敗・検索補完)</em> / Zenn <em>(取得失敗・検索補完)</em> / note <em>(取得失敗・本日採用なし)</em> / Publickey <em>(取得失敗・検索補完)</em></p>
+  <p>次回もお楽しみに。</p>
+</footer>
+
+</body>
+</html>
