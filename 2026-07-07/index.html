@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月07日(火) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+.sup .lbl{color:var(--muted);font-weight:600;margin-right:4px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+@media (max-width:480px){
+  body{font-size:15px;padding:14px 12px 50px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.05rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年07月07日(火)</div>
+</header>
+
+<section class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p>
+    今日は "AI を <em>実運用の基幹プロセス</em> に載せた実測ケーススタディ" が 2 件同時に降ってきた。<strong>Anthropic × Alberta 州政府</strong> の Claude Code 導入事例は <em>4.66 億行を 20 時間、50 エージェント並列でスキャン (人手なら 6.5 年見込み)、red team / blue team エージェントを開発プロセスに常駐</em> という規模と方法論の両方で "政府 IT が Claude Code をどこまで踏み込ませたか" を可視化した ── AI コーディングツールが "生産性向上" から "監査・セキュリティ基盤" に格上げされる転換点として、テックリードが自組織に持ち帰れる具体的な参考実装がついに揃った。もう 1 件、<strong>AWS Architecture Blog</strong> が公開した "AI-powered resilience framework" は <em>Bedrock AgentCore + FIS (Fault Injection Service) + Resilience Hub</em> を組合わせ、<strong>Discovery → Test Gen → Experimentation → Gap Analysis → Continuous Validation</strong> の 5 レイヤで chaos engineering を CI/CD に埋め込む設計提案。手動の game day / DR 訓練を "AI エージェントが仮説を立て、実験を回し、レポートを書く" 形に置き換える指針で、SRE / SLO を持つ組織なら規模を問わず輸入価値がある。他にも Uber の <em>AI エージェントの identity 問題</em>、Google の <em>A2UI v0.9 (framework 非依存の generative UI 標準)</em>、ThoughtWorks の <em>先月の Claude 障害から得た "AI as infrastructure" の教訓</em> と、"エージェントを本番運用する組織が今週向き合っている問題群" が一段と鮮明に見える 1 日。
+  </p>
+</section>
+
+<h2>🛠 AI開発ツール / エージェント / モデル</h2>
+
+<div class="art">
+  <h3><a href="https://www.anthropic.com/news/alberta-government-claude-cybersecurity" target="_blank" rel="noopener">Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">📐設計論</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">出典: Anthropic News (2026-07 公開) / 追報: The Logic, Digital Watch</div>
+  <p class="sum">カナダ・アルバータ州 (人口約 470 万) の Ministry of Technology and Innovation が、Claude Code (Opus / Sonnet) を使って所管する <strong>全リポジトリ 4.66 億行を 20 時間でスキャン</strong>し脆弱性を検出・修正した実測ケーススタディ。約 <strong>50 エージェントが自律的に並列動作</strong>し、従来型の自動スキャナが見逃していた脆弱性を検出、多くの場合 fix / test / build まで Claude が生成。従来手法での見積は <em>6.5 年</em>。加えて開発プロセスに <em>red team エージェント (外部からの攻撃視点で経路をマップ)</em> と <em>blue team エージェント (国際セキュリティ基準に照らして防御評価と修正計画)</em> を常駐させる継続的セキュリティレビュー体制も構築。25 年前に Java で 5 ヶ月かけて作られた補助金ポータルの <em>Claude による 4〜5 日でのモダン言語再構築</em> も紹介。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> ここまで大規模かつ <em>政府機関の実名で数字を出した</em> Claude Code 事例は初。テックリード視点で持ち帰れるのは 4 点: (1) <em>並列 50 エージェントで数億行を一気にレビューする</em> パターンは、"AI コーディングは 1 タスクを 1 エージェントで" の常識をはっきり超えた ── 依存関係の少ないスキャン / 静的解析タスクは並列度で殴る戦い方が正解。(2) <em>red / blue team を役割別に常駐させる</em> 設計は、昨日号の agent-skills や AgentFlow (静的解析) と同じ "role-specialized agent + プロセスへの埋め込み" 思想の延長線上にある。(3) 全 patch は <em>人間エンジニアがレビュー・承認</em> する形で humans in the loop を維持しており、"AI が勝手に本番を触る" を避けつつスループットを桁で上げる現実的な運用像。(4) <em>過度に古い言語で書かれたシステムはリライトが速い</em> ── レガシー Java / Perl / COBOL 資産のモダナイズ計画は、"移植コスト = 元の開発コスト" の前提を捨てて再見積もりする時期。今回の公開ホワイトペーパーは、社内で "AI を security review に入れる案" を通す時の参照資料として即使える。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://x.ai/news/grok-build-cli" target="_blank" rel="noopener">xAI Grok Build — plan-review-approve ループと 8 並列サブエージェント (7 月新機能)</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: xAI (Grok Build ベータ、5/25 発表→7 月に voice / /goal / MCP 拡張)</div>
+  <p class="sum">xAI が Claude Code / Codex CLI / Cursor CLI の対抗となる <strong>ターミナルネイティブの coding agent</strong> "Grok Build" のベータ機能を 7 月に大幅拡張。中核は (a) <em>plan-first execution loop</em> ── 計画 → 人間承認 → 実行を強制、(b) <em>最大 8 並列サブエージェント</em>、(c) <em>MCP ネイティブ</em> ── Claude Code / Codex 用に既に設定してある MCP サーバ (GitHub / Linear / Slack / DB / CI) を再設定なしで再利用可、(d) 新モード <code>/goal</code> ── 長時間の autonomous 実行モード、(e) <em>音声入力</em> (<code>/voice</code>) と <em>各サブエージェントを別 worktree で走らせる</em> 深い git 統合。基盤モデルは <code>grok-build-0.1</code>。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "エージェント CLI 戦国時代" が Anthropic / OpenAI / xAI / Cursor の 4 強に整いつつある。技術的差別化ポイントは 2 つ: (1) <em>MCP を "書き直しなしで再利用できる" ネイティブ対応</em> ── これは Grok Build を "他の CLI からの乗り換え" の摩擦を最小化する戦略で、社内で複数 CLI を並行評価する場合の切替コストを下げる。(2) <em>plan / execute の分離を強制</em> ── 昨日話題の <em>agent-skills</em> が "spec → plan → build → test を skill として強制" するのと同じ思想を、CLI 側で built-in に落とし込んだ。テックリード観点では、"どの CLI に社内標準を寄せるか" の判定基準は "モデルの性能" よりも "MCP エコシステムの互換性" と "サブエージェント並列度" になる ── Alberta 事例が示す通り、実運用では並列度が桁で効いてくる。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://openai.com/news/" target="_blank" rel="noopener">OpenAI gpt-realtime-2.1 / -mini — 低遅延音声モデルの世代交代</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span></div>
+  <div class="src">出典: OpenAI News (2026-07 発表)</div>
+  <p class="sum">音声・マルチモーダル向け Realtime モデル <strong>gpt-realtime-2.1</strong> と廉価版 <strong>gpt-realtime-2.1-mini</strong> を発表。p95 レイテンシで前世代比 <strong>約 25% 短縮</strong>、function calling / tool use を音声セッション内で maintain したまま扱える点が主要な強化。同時に ChatGPT Enterprise / Edu で <em>タスク別に "速度重視 vs 推論重視" を切替える Model Picker</em> を刷新。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Realtime API の主戦場は "コールセンター AI"、"車載音声アシスタント"、"リアルタイム議事録"、"AI 面接官" などで、<em>音声 → 音声</em> の往復レイテンシが 500ms を超えると人間との対話体感が急激に落ちる。今回の 25% 削減はここに直撃 ── 従来 "テキストで LLM に投げてから TTS" の 2 段構成で 800ms〜1.2s だった経路を、<em>音声セッション内で tool call を維持したまま</em> 300〜400ms 台まで圧縮できる可能性が高い。GPT-5.6 Sol の 750 tok/sec (数日前既報) と組合わせると、"エージェントが音声で対話しながら裏で tool を叩く" が実用ラインに乗る。テックリード視点では、社内の音声アプリを "テキスト経由の合成" から "Realtime API 直" に切替える技術的な理由が揃った。</div>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+  <h3><a href="https://aws.amazon.com/blogs/architecture/architecting-ai-powered-resilience-framework-on-aws/" target="_blank" rel="noopener">Architecting an AI-powered resilience framework on AWS</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: AWS Architecture Blog</div>
+  <p class="sum">AWS が提示した <strong>AI エージェントを組み込んだ resilience engineering の 5 レイヤ設計</strong>。<em>(1) Discovery ── 既存のシステム依存関係とリスクを自動抽出、(2) Test Generation ── 障害シナリオを生成、(3) Experimentation ── FIS (Fault Injection Service) で実際に注入、(4) Gap Analysis ── SLO / 復旧手順の穴を検出、(5) Continuous Validation ── これを CI/CD に組込</em>。中核に <strong>Bedrock AgentCore</strong> を置き、<em>Resilience Hub</em> と <em>FIS</em> をアクチュエータとして接続する参照アーキテクチャで、"手動の game day / DR 訓練 → AI エージェントが仮説を立て、実験を回し、レポートを書く" への移行を提示。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> Chaos Engineering (Netflix Chaos Monkey が始祖) は "本番相当環境で意図的に障害を起こし、SLO の実測耐性を検証する" プラクティスで、成熟した組織でも "game day を四半期に 1 回" が限界だった。この設計の輸入価値は 3 点: (1) <em>Discovery を AI に任せる</em> ── 依存関係が 100 サービスを超えたら人手では追えないので、eBPF / トレースから "壊れうる境界" を自動抽出させるのが現実的、(2) <em>test generation の bar が下がる</em> ── 昨日号の Netflix Service Topology と組合わせると、"どこに何を注入すべきか" の候補が LLM で列挙できる、(3) <em>CI/CD に埋める</em> ── "四半期に 1 回" から "PR ごとにレジリエンス検証" のスパンに縮められる。AWS 依存でない組織でも、FIS 相当 (Toxiproxy / Chaos Mesh / Litmus)、Resilience Hub 相当 (Backstage の TechDocs + SLO ダッシュ) を差し替えれば同じ 5 レイヤは組める。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://aws.amazon.com/blogs/architecture/lessons-learned-from-scaling-to-1-million-lambda-functions/" target="_blank" rel="noopener">Lessons learned from scaling to 1 million Lambda functions (ProGlove)</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">出典: AWS Architecture Blog</div>
+  <p class="sum">産業用ウェアラブルの ProGlove が、マルチテナント SaaS を "1 顧客 = 1 AWS アカウント + n Lambda 関数" 構造で <strong>累計 100 万 Lambda 関数規模</strong>まで拡大した実践レポート。単一アカウントの <em>Lambda concurrency quota (デフォルト 1,000)</em>、<em>関数個数上限 (1 リージョン当たり数千〜1 万)</em>、<em>デプロイパイプラインのスループット</em> が ~10k 関数を超えたところで詰まり始めることを実測し、"quota を上げるより<strong> account を横に増やす</strong> ほうが scale-to-zero と請求分離の両方で有利" と結論。運用側では <em>account provisioning の自動化</em>、<em>クロスアカウント observability</em>、<em>tenant onboarding のリードタイム 5 分以内</em> が要件になった。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "Lambda 100 万個" は極端に見えるが、要諦は <em>マルチテナント SaaS の scale-out 単位を "リソース" ではなく "AWS アカウント" にする</em> という判断。従来の "1 アカウント + IAM で顧客分離" は監査 / quota / blast radius の 3 点で頭打ちになる。今回の設計は AWS の Organizations / Control Tower / SSO を組合わせて <em>アカウント自体を tenant primitive として扱う</em> ── これは Salesforce の org 分離、Snowflake の account 分離と同じ思想で、"クラウドネイティブ SaaS の第 2 世代アーキテクチャ" と読める。テックリード観点では、tenant 数が数百を超え始めた組織は "IAM 分離 → アカウント分離" への段階移行計画を持つべき ── 一度組んだ IAM ベースの分離を後からアカウント分離に切替えるのは高コストなので、tenant 数が伸びる前の判断が要る。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.uber.com/blog/solving-the-identity-crisis-for-ai-agents/" target="_blank" rel="noopener">Solving the Identity Crisis for AI Agents (Uber)</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">出典: Uber Engineering Blog</div>
+  <p class="sum">Uber が社内 AI エージェントを本番投入していく過程で直面した <em>"エージェントには誰の権限を持たせるか" 問題</em>への公式な設計解。従来の "サービスアカウント = 固定の高権限" では監査・最小権限原則が破綻し、"エージェント個別に短命な identity を発行し、実行ごとに委任スコープを絞る" 方式へ。中心概念は (1) <em>agent identity</em> (人間 identity とサービス identity のハイブリッド)、(2) <em>on-behalf-of スコープ</em> (誰のリクエストで動いているかを identity に埋める)、(3) <em>短命トークン + Just-in-Time 承認</em>、(4) <em>audit trail が "エージェントの意図" まで含む</em>。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> AI エージェントを本番投入する組織が例外なく踏むのが "権限をどう与えるか" の壁 ── 従来のサービスアカウントに紐づけると <em>権限が広すぎて監査が通らない</em>、ユーザ identity で動かすと <em>複数ユーザ跨ぎのバッチが書けない</em>、という板挟み。Uber の答えは "エージェントに独自の identity クラスを作り、その上に on-behalf-of の委任を載せる" 方式で、Kubernetes の ServiceAccount + Google の domain-wide delegation + OAuth の on-behalf-of の折衷。今日の Alberta 事例が "50 エージェント並列" を実現できたのも、同種の identity 設計が裏で効いているはず。テックリード視点では、社内エージェント基盤の <em>identity レイヤは早期に設計しないと後戻り不可</em> ── Zenn / Anthropic の agent skills 論と組合わせて、"skill = 何をするか" と "identity = 誰の権限で" の 2 軸で管理する構造が今後の標準になる。数日前のブリーフで Linux Foundation の Agent Name Service (ANS) が話題になったが、あちらが "名前解決" を担うのに対し、Uber は "実行時の identity" を担う ── 相補的な議論。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.uber.com/blog/simplifying-data-and-product-integrations-with-a-data-abstraction-layer/" target="_blank" rel="noopener">Simplifying Data and Product Integrations with a Data Abstraction Layer (Uber DAL)</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Uber Engineering Blog</div>
+  <p class="sum">Uber の "プロダクトチームがデータプラットフォームと直接結合してしまう" 問題への解として、<strong>Data Abstraction Layer (DAL)</strong> を導入した設計解説。プロダクト側の view (顧客・注文・車両) と、データプラットフォーム側の実装 (Hive テーブル / Kafka / Cassandra / Iceberg) を <em>DAL の schema と semantic layer</em> で分離する。プロダクト側は "顧客 by ID" とだけ書けばよく、裏で最適なストア・パーティション・キャッシュを選ぶ。結果、プロダクトチームは "どのテーブルを見るか" を学ばずに済み、データプラットフォーム側は互換を保ったまま裏実装を差し替えられる。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 数日前に取り上げた Uber の <em>UCDP (Unified Configuration Distribution Platform)</em> と同じ設計思想の "データ版" ── <em>上層 (ドメイン UI) と下層 (物理配信 / 物理ストレージ) を分離する</em>。ここが持ち帰れる本質: (1) "データ基盤の乱立を統合するとき、"全てを 1 つのストアに寄せる" 選択は失敗しがち"、(2) 代わりに "<em>読み書きの契約層 (DAL / semantic layer)</em> だけを 1 つに揃え、裏実装は目的別に多層化" するのが実用解。dbt の semantic layer や Cube.js、Databricks Unity Catalog も同種の抽象化で、"データメッシュ (ThoughtWorks 今週の記事) の実装形" とも読める。テックリード観点では、社内で "customer_id を引くのにチームごとに違うテーブルを叩いている" 状態は、DAL 相当の抽象化を挟むだけで運用対象が半分になる。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.infoq.com/news/2026/07/google-a2ui-genui/" target="_blank" rel="noopener">Google Releases A2UI v0.9: Portable, Framework-Agnostic Generative UI</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: InfoQ (2026-07)</div>
+  <p class="sum">Google が <strong>A2UI v0.9</strong> を公開。エージェントが実行時に "任意のコード" ではなく <em>宣言的な UI intent (何を出すか)</em> を返す標準フォーマットで、クライアント側 (Web / iOS / Android / Native) がそれを自身のデザインシステムで描画する。<em>フレームワーク非依存</em> (React / SwiftUI / Compose / Flutter どれでもレンダラを実装可能) が特徴で、Python SDK と改良版トランスポートが同時公開。用途としては "エージェントがフォーム / カード / 選択肢を出す" 系のインタラクションが主。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "Generative UI" は 2024 年からじわじわ増えている概念で、<em>エージェントが JSON でボタンや入力欄を返す → クライアントが自分の UI キットで描く</em> パターン (Vercel AI SDK, LangChain の generative UI, Radix Themes の Slot 系など)。ただしどれも <em>フレームワーク依存</em> で、"React 前提" だと iOS ネイティブや Slack ボットに移植しづらい。A2UI の価値は "intent スキーマを標準化して <em>複数フロントエンドで再利用可能</em> にする" 方向で、AWS / Google / Anthropic / Microsoft のエージェント間相互運用性 (A2A / MCP) と対をなす "エージェント→UI 側の標準化"。テックリード観点では、社内で "Slack ボット、Web、モバイル、Teams で同じエージェントを出す" ユースケースが増えてきたら、A2UI 準拠で intent を返す設計を検討する価値が高い。1 世代前の "React でだけ動く AI ウィジェット" は将来ロックインの温床になる。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://netflixtechblog.com/thinking-fast-slow-for-a-personalized-notification-system-4d89b26525cd" target="_blank" rel="noopener">Thinking Fast & Slow for a Personalized Notification System (Netflix)</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Netflix TechBlog</div>
+  <p class="sum">Netflix のプッシュ通知基盤を <strong>dual-policy アーキテクチャ</strong>に再設計した事例。<em>Slow (戦略) レイヤ</em>: 週次で "ユーザに対して今週打つべき通知の総量・種類・タイミング" を LLM ベースのプランナーで決める。<em>Fast (戦術) レイヤ</em>: リアルタイムで "今この瞬間、この端末で、これを打つべきか" を軽量モデルで判定。Kahneman の "System 1 / System 2" になぞらえた命名。結果、通知疲労を抑えつつ CTR を改善。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> このパターンは <em>あらゆる大量意思決定システムに輸入可能</em>。実際、金融のポートフォリオリバランス、EC の割引配信、広告配信、コンテンツ推薦、機械のスケジューリングまで、"戦略 (計画)" と "戦術 (即応)" を <em>別プロセス・別モデル・別 SLO で分離する</em> のは同型の設計。特に LLM を絡めるときの本質: <em>戦略側は "遅く・高精度・高コスト・オフライン" (LLM を使う)、戦術側は "速く・軽量・オンライン" (古典 ML / ルール) で使い分ける</em>。全部 LLM で捌こうとすると即応性が死ぬし、全部軽量モデルだと "なぜそれをやったか" の説明が弱くなる。テックリード観点では、社内の "リアルタイム意思決定に AI を入れる" 議論は、fast / slow を分けて設計するだけで実装コストと SLO の両方が現実的になる。数日前の Uber Cart Assistant (state graph 型 LLM ワークフロー) と、"AI 意思決定は必ずしも 1 モデル 1 経路ではない" という共通のメッセージ。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.thoughtworks.com/insights/blog/generative-ai/claude-outage-june-2026" target="_blank" rel="noopener">Claude outage, June 2026: reckoning with AI as infrastructure (ThoughtWorks)</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">出典: ThoughtWorks Insights</div>
+  <p class="sum">先月の Claude API 大規模障害を題材に、"AI をアプリケーションレイヤの機能" から <strong>"インフラレイヤの依存"</strong> として扱い直す設計論。ThoughtWorks が提案する 3 つの規律: (1) <em>graceful degradation</em> ── LLM が落ちてもアプリの主機能は縮退運転できること、(2) <em>multi-model fallback</em> ── Claude 単独ではなく OpenAI / Gemini / open weights を fallback 経路として実装、(3) <em>provider abstraction layer</em> ── ルータ / ゲートウェイ層で provider を差し替え可能に。裏返すと、"1 つの LLM プロバイダに直結する SDK 呼び出し" は今後アンチパターンとして扱うべき、というメッセージ。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "AWS が落ちた時にサービスが落ちる" は 10 年前から当然視されているが、"Anthropic が落ちた時にサービスが落ちる" は多くの組織で <em>まだ設計に組み込まれていない</em>。ここで参考にすべきは "AI プロバイダ = クラウド DB / SaaS 依存と同じ扱いにする" 発想。実務では下記が即やれる: (a) LLM 呼び出しは <em>必ずゲートウェイ経由</em> (LiteLLM / OpenRouter / OmniRoute 等、後述) で行い直呼びしない、(b) <em>fallback ポリシーを設定ファイルで宣言</em>、(c) 障害時の縮退経路を <em>e2e で年 1〜2 回テスト</em>、(d) SLO に "LLM 依存部分" を項目として明示。今日の AWS Resilience Framework と組合わせると、"LLM プロバイダの停止を FIS で注入して、fallback が本当に働くか実験する" が自然な延長線上に。テックリード視点では、"Claude をどの provider に置き換えるか" の議論は、"どう置き換え可能な形で組むか" に置き換えるべき時期。</div>
+</div>
+
+<h2>⚠️ セキュリティ / 運用</h2>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/awsuae2.html" target="_blank" rel="noopener">AWS UAE (中東) リージョンの復旧に "数カ月" と発表 — 攻撃を受けたインフラの物理再構築</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">出典: Publickey (2026-07-06 掲載)</div>
+  <p class="sum">AWS が中東 (UAE) リージョンで発生した攻撃 (物理・サイバーの両側の可能性が示唆されている) について、<strong>完全復旧に数カ月かかる見込み</strong>と正式にアナウンス。当該リージョンを本番運用に使っていた顧客は他リージョンへのフェイルオーバー、または一時的なリードオンリー運用への切替を余儀なくされる。マルチリージョン設計の重要性を、パブリッククラウド側から "リージョンが数カ月消える可能性がある" と示された初めての大型ケース。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 従来の "リージョン障害" は数時間〜数日での復旧が前提だったが、"物理的な再構築が要る" 種の障害は今回のように <em>月単位</em>で継続する。テックリード観点では: (1) <em>DR (災害復旧) の RPO / RTO は "リージョンが数カ月消える" 前提の再試算が要る</em>、(2) 単一リージョン設計の SaaS はこれを機に <em>マルチリージョン active-active or active-passive</em> の設計に見直すべき、(3) <em>データを複数リージョンにレプリケートする際の主権・法制対応</em> (GDPR / データ保管地の規制) の見直しも同時に。上段の AWS Resilience Framework とセットで、"リージョン単位の障害を FIS で注入して縮退経路を検証" が現実的な演習項目になる。地政学的リスク (中東地域の緊張) を "アーキテクチャ判断の入力" として明示する組織が増える予感。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.uber.com/blog/building-a-file-semantic-analyzer/" target="_blank" rel="noopener">Building a File Semantic Analyzer: Guarding Outbound Data at Scale with AI (Uber)</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">出典: Uber Engineering Blog</div>
+  <p class="sum">Uber がアウトバウンド経路 (社外へのファイル送信) に置いた <strong>LLM ベースの DLP (Data Loss Prevention) 基盤</strong>の設計解説。従来型 DLP は "正規表現・キーワード・ハッシュマッチ" 中心で、"位置情報が入った GeoJSON、契約書に埋まった料率、コード内のトークン" のような <em>意味的な機密</em>を捕捉できなかった。Uber の Semantic Analyzer は "ファイルの中身と外部送信の状況を合わせて LLM に問う" 方式で、<em>false positive / false negative の両方を桁で改善</em>。パイプラインは "サンプリング → 前処理 → 意味的分類 → 判定" の 4 段で、スループット制約は前処理側で吸収。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> DLP を LLM ベースに置き換える動きは、Netflix / Meta / Uber の 3 社が今年公開した記事 (Uber は今回) で <em>方向性が一致</em>してきた。ここが持ち帰れる本質: (1) <em>従来 DLP は "パターン" が定義できる漏洩しか捕まえられない</em> ── コードに埋まった認証情報、"重要顧客リスト" と書かれていないが実質そうであるファイル、翻訳された機密文書、等の "意味的漏洩" は素通り、(2) <em>LLM DLP は false positive も減る</em> ── 従来 "signature 一致" では実務書類まで大量にブロックしていたのが、意味理解で "この文脈では OK" と判定できる、(3) <em>本番投入には全ファイル LLM 呼びは非現実的</em> ── サンプリング + 事前ルールで絞ってから LLM を呼ぶ 2 段構えが定石。テックリード観点では、社内 DLP のリプレース検討に "LLM based に段階移行" を選択肢として持つ価値が急速に上がる。Alberta の red / blue team エージェントと同じで、"AI をセキュリティの一次防衛線に置く" 流れの一部。</div>
+</div>
+
+<h2>🔬 注目論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2607.05029" target="_blank" rel="noopener">Your Agent's Memories Are Not Its Own — FARMA: Memory Poisoning Attacks on Persistent LLM Agents</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">出典: arXiv 2607.05029 (2026-07)</div>
+  <p class="sum">"長期記憶を持つ LLM エージェント" に対する新しい攻撃クラス <strong>FARMA (False Agent Recall via Memory Attack)</strong> を提示。攻撃者は 1 度のセッションで <em>エージェントの記憶に "偽の推論プロセス" を混入させ</em>、以後のセッションで agent が "自分が過去にそう推論した" と誤信して意思決定を歪める。従来の prompt injection と異なり、<em>攻撃が消えず、時間を跨いで影響する</em> のが特徴。実験では複数の記憶方式 (vector store 型 / episodic / graph 型) すべてに成功し、実質的な defense として "記憶項目に origin metadata と integrity signature を付ける" 案を提示。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "エージェントが長期記憶を持つ" と言った時、実装は大抵 <em>会話ログの一部をベクトル DB に貯めて、後で検索して context に混ぜる</em> ── ここが攻撃面。従来はここに "prompt injection を仕込めば数ターンで発火する" くらいの話だったが、FARMA は "仕込みは 1 回、発火は無期限に、しかもエージェント側は <em>自分の記憶を疑わない</em>" 点で 1 段深刻。テックリード観点での防衛策は 3 点: (1) <em>記憶項目に "誰から得た情報か" の origin を必ず付ける</em>、(2) 検索時に <em>低信頼 origin の記憶を "参考程度に" フラグ立て</em> して context に混ぜる、(3) 記憶書き込み時に <em>integrity signature (LLM が "これは自分の推論" と確信する属性)</em> を付ける。長期記憶を採用する前に、この論文の脅威モデルは必ず読んでおきたい。今週の agent-skills / agent identity 議論と同じ "エージェント基盤のセキュリティ" の 3 本目。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2607.01867" target="_blank" rel="noopener">An Exploratory Study on LLM-Generated Code in Real Repositories</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: arXiv 2607.01867 (2026-07)</div>
+  <p class="sum">大手 OSS リポジトリ群 (数百件、コード量数十億行) を実測し、<strong>コミット済みコードの 20〜30% が LLM 生成であると推定</strong>。特徴として (1) <em>後続のデバッグコミット率が有意に高い</em>、(2) <em>不自然なコメント (LLM 特有の冗長さ・機能を過剰説明) が有意に多い</em>、(3) <em>コミット単位のコード変更幅は小さいが変更頻度は高い</em>、(4) 検出精度は静的解析 + パーサー + コミット履歴の 3 系統で 90%+ を達成。方法論としても "LLM 生成コードの検出" 研究の 1 つの標準的ベンチマークになりうる。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 実務で持ち帰れる意味は 3 点: (1) <em>もう自組織のコードの 1/4 は LLM 生成である前提で運用を組む</em> ── コードレビュー / テストカバレッジ / 静的解析の <em>力点を "LLM が失敗する境界" に寄せる</em>のが合理的、(2) <em>デバッグコミット率の増加</em> は "LLM が最初に書いたコードは動くが本質的な理解を欠く" ことの間接指標 ── AI 出力を "動いたら OK" で merge するのが根源、(3) 上段の Alberta 事例と対をなす形で、"AI が書いたコードを AI がレビューする" ワークフロー (red / blue team エージェント) の必然性が数字で裏付けられた。テックリードは "AI 生成コードの品質メトリクス" を組織 KPI に加える判断が要る段階。Fowler の Agentic Programming、agent-skills、AgentFlow の議論はどれもこの実測を前提にすると理解しやすい。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2607.02333" target="_blank" rel="noopener">Guiding Human Validation via Verifiable Literate Programming</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: arXiv 2607.02333 (2026-07)</div>
+  <p class="sum">LLM が生成したコードを人間が検証する際、"生成コードを直に読む" 代わりに <em>literate programming 形式 (Knuth の LP スタイル: コードと文章が相互参照される)</em> で出力させ、加えて <em>各文と各コード塊に検証プロパティ (前提・型・invariant) を明示</em>させる方式を提案。実験で pass@1 が <strong>28.7〜73.2% → 65.4〜93.5% に改善</strong>。人間の validation 時間は短縮方向、"どのブロックを疑うべきか" が明示的になることが有効性の源泉。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "AI 出力の品質" は <em>モデル側だけの改善では頭打ち</em>で、"人間がどう読むか" 側の設計で伸ばせる領域が残っている、というメッセージ。具体的なテックリード視点での応用: (1) 社内のコードレビューを "コミット diff を読む" から "AI 生成の literate 版と、そこに埋まった検証プロパティを読む" ワークフローに切替える、(2) この形式は <em>agent-skills や Skill.md の設計思想と相性が良い</em> ── "spec / plan / build / test / review" の各 skill が literate 出力を生成し、各段階で invariant を人間が確認する。今日号の Verifiable Literate Programming と Exploratory Study 論文は <em>1 対の応答</em>として読むと理解が深い ── "LLM 生成コードの 1/4 化が既定の環境で、人間 validation の生産性をどう上げるか" が今後の実務課題。</div>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank" rel="noopener">diegosouzapw/OmniRoute — 231+ AI プロバイダに対応する統合ゲートウェイ</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span><span class="tag">📐設計論</span></div>
+  <div class="src">GitHub Trending Weekly / TypeScript / +4,594⭐/週</div>
+  <p class="sum">Anthropic / OpenAI / Google / Bedrock / Groq / Together / Fireworks / Cerebras 等 <strong>231 以上の AI プロバイダに単一 API で統合するゲートウェイ</strong>。特徴は (1) <em>プロバイダ間の自動 fallback / A/B / cost routing</em>、(2) <em>プロンプト圧縮とキャッシュでトークン節約</em>、(3) <em>OpenTelemetry 互換の可観測性</em>、(4) TypeScript ネイティブ。LiteLLM / OpenRouter の対抗軸で、"self-hosted で全ての LLM 呼び出しを 1 個のゲートウェイに寄せる" 用途向け。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> 上段の ThoughtWorks "Claude outage の教訓" が言う <em>provider abstraction layer</em> の実装候補として、今週の Weekly トレンドで急伸。テックリード観点での意味: 社内で LLM API 呼び出しを "SDK 直呼び" のまま散らかしておくと、(a) provider 単価が変わっても切替コストが高い、(b) 障害時の fallback が個別実装、(c) トークン消費が可視化できない、の 3 点で詰む。OmniRoute / LiteLLM / OpenRouter のような <em>プロバイダ抽象化ゲートウェイ</em>を 1 個挟むだけで、Alberta 事例の "50 エージェント並列" のような大規模化にもすぐ耐えられる基盤になる。数日前の Fowler Fragments で報告されていた "トークン請求書 3 倍膨張" 事例と重ねて、"最初にゲートウェイを立てる" 判断はコスト対策としても効く。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/TencentCloud/CubeSandbox" target="_blank" rel="noopener">TencentCloud/CubeSandbox — AI エージェント向け軽量サンドボックス</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span><span class="tag">🆕新リリース</span></div>
+  <div class="src">GitHub Trending / Rust / +665⭐/day / Tencent Cloud 公式</div>
+  <p class="sum">Tencent Cloud が公開した <em>AI エージェントに任意コードを実行させる用の軽量サンドボックス</em>。Rust 実装で、Firecracker 相当の分離を持ちつつ <em>数百 ms で起動</em>し、Python / Node.js / Go などの言語ランタイムをプリロード可能。数日前既報の <em>AWS Lambda MicroVMs</em> に対する OSS / self-hosted 側の対抗軸で、"AWS ロックインを避けて社内 or 別クラウドで同じことをやる" 選択肢を提供。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "エージェントに任意コード実行環境を渡す" 需要は Cursor / Devin / Cline / 社内自作エージェントで共通の詰まりポイント。AWS の MicroVMs は AWS 依存の代わりに運用不要、CubeSandbox は運用が要る代わりに <em>どのクラウド / オンプレでも動く</em>。中国系 (Tencent) がインフラプリミティブの OSS を出す動きは 2025 以降増えており、"社内エージェント基盤の中核部品を どの陣営に賭けるか" は現実的な選択課題に。テックリード観点では、社内で E2B / Modal / Daytona に月数万〜数十万 $ を払っているなら、CubeSandbox + Kubernetes での置換の TCO 試算をこのタイミングで走らせる価値がある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/ruvnet/RuView" target="_blank" rel="noopener">ruvnet/RuView — WiFi 信号から空間インテリジェンス + バイタル監視</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span></div>
+  <div class="src">GitHub Trending / Rust / +1,122⭐/day</div>
+  <p class="sum">既存の WiFi ルーターの信号 (CSI — Channel State Information) をリアルタイム解析し、<em>部屋の中の人の位置、姿勢、動作、さらに心拍・呼吸のような細かな動き</em>を推定する OSS。Rust 実装で、消費電力・レイテンシとも on-device で動くレベル。プライバシー面では "カメラを設置せずに空間状況を得る" 系のユースケース (在宅監視、無人店舗、介護施設のバイタル、オフィスの空調最適化) に効く一方、"目に見えない可観測性" の倫理問題も同時に提起。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> WiFi CSI ベースの sensing は学術界で 10 年前から研究されていた領域だが、<em>on-device Rust 実装で OSS 化</em>されたのはインパクトが大きい。テックリード観点では、(1) <em>IoT / エッジデバイスの "第 3 のセンサ" として WiFi 信号が実用フェーズに入った</em> ── 従来はカメラ (映像・法規制強) と加速度・音センサ (専用ハード要) の 2 択だったところに、"既存の WiFi ルーターだけで空間を測る" 選択肢が加わる、(2) 一方で <em>ユーザ同意なしに人体状態が推定できてしまう</em> のは <em>次の "privacy by design" 議論のトリガー</em>になる。今週前半に取り上げた EU Chat Control のような "見えないところで検知される" 議論と共振する予感。B2B ユースは強い一方、B2C 実装は法務・倫理レビューが必須。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/asgeirtj/system_prompts_leaks" target="_blank" rel="noopener">asgeirtj/system_prompts_leaks — 主要 AI プラットフォームの system prompt キュレーションアーカイブ</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">📈急上昇</span><span class="tag">⚠セキュリティ</span></div>
+  <div class="src">GitHub Trending / JavaScript / +1,704⭐/day</div>
+  <p class="sum">Claude / ChatGPT / Gemini / Cursor / Copilot 等の <strong>実測された system prompt (エージェントに与えられている隠しプロンプト) を集めた OSS キュレーション</strong>。攻撃 / リサーチ両用途で、(a) 各サービスがどの範囲でモデルを制約しているか、(b) prompt injection / jailbreak の狙い所、(c) 自組織のエージェントを設計する時の "本気の system prompt 実装例" を参照する用途に使える。急伸中。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "system prompt leak" というジャンル自体は 2023 頃からあるが、今回のように <em>curation として体系化された</em> ものは "内部設計を知りたい / 対策したい" の両サイドから見に来る。テックリード観点での使い所は 2 つ: (1) <em>自組織のエージェントの system prompt を書く時の参考書</em> ── Copilot / Cursor が数千トークン規模の system prompt でエッジケースを制約している事実は、"うちの system prompt が短い" 場合の見直しトリガー、(2) <em>脅威モデル入力</em> ── 上段の FARMA 論文 (memory poisoning) や AgentFlow (静的解析) の議論と重ねて、"自組織のエージェントで system prompt が抜けたら何が起きるか" のリスクレビューに使える。ただし、掲載されている prompt を業務で商用利用するのは各社の TOS / 著作権のグレー領域なので、"読む" ことと "使う" ことは明確に分けるべき。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <h3><a href="https://www.publickey1.jp/blog/26/typescript7.html" target="_blank" rel="noopener">なぜ TypeScript は成功しているのか — Hejlsberg 氏が語る 7 つの教訓</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: Publickey (2026-07 掲載)</div>
+  <p class="sum">Turbo Pascal / Delphi / C# / TypeScript の設計者 Anders Hejlsberg が語る "TypeScript が成功した 7 つの理由" を Publickey が整理。(1) <em>JS の superset にした</em> (置換ではなく段階採用可能に)、(2) <em>型は消せる (発行後の JS は素の JS)</em>、(3) <em>徐々に厳しくできる (strict の段階導入)</em>、(4) <em>周辺エコシステム (エディタ体験) に投資した</em>、(5) <em>コンパイラを OSS で自作した</em>、(6) <em>言語進化はコミュニティと歩調を合わせる</em>、(7) <em>今後は "Rust 移植で 10x 高速化" と "型情報を runtime にも使う" の 2 軸</em>。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> テックリードが "自社の言語 / DSL を作るか" 議論をする時の <em>反面教師と模範例が同居する</em> 1 本。特に持ち帰るべき原則は 2 つ: (1) <em>既存資産を敵にしない (superset 戦略)</em> ── 実務でも、"既存の Python / Ruby コードを段階的に型付けする" 系のツール (Pyright, Sorbet) の成功パターンは全て TypeScript と同じ路線。(2) <em>採用の摩擦をエディタ体験で埋める</em> ── 言語仕様の良し悪しより <em>LSP / エディタ統合 / 補完速度</em>のほうが採用可否を決定する、という事実は AI エージェント時代でも変わらない (むしろ agent が LSP を叩くので重要度は増す)。Deno 2.9 / Astro 7.0 / Next.js 16.3 で <em>ツールチェインを Rust に置き換える</em>流れが今週も強く、"TypeScript compiler の Rust 移植 (次期メジャー)" はこの流れの本丸として注視。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/hinoguma/articles/23905889418405" target="_blank" rel="noopener">クリーンアーキテクチャで迷子になったときに読む (Go 実装例付き) — AI 駆動時代のフォルダ構造とルール</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span></div>
+  <div class="src">出典: Zenn (継続的ランキング上位)</div>
+  <p class="sum">"AI にコードを書かせる時に、クリーンアーキテクチャの各レイヤをどのフォルダに置くと Claude / Cursor が迷わないか" を、Go の実装例つきで解説。焦点は (a) <em>依存の向きをフォルダ構造で "物理的に" 表現する</em>、(b) <em>各レイヤの命名を統一して AI が推論しやすくする</em>、(c) <em>usecase 層 / interface 層 / infra 層の境界を README でエージェントに教える</em>、(d) 実務でハマる "domain と usecase の切り分け" の Go 特有のパターン。単なる CA の解説ではなく "AI エージェントに書かせる CA" 視点が特徴。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "AI が正しく書くためのアーキテクチャ" は、今週号の複数テーマ (agent-skills、Uber DAL、Uber Identity) と <em>同型の議論</em> ── <em>境界を明示すれば AI も人間も迷わない</em>。Go を選ぶ意味: Go は "禁欲的な言語仕様 + 明確な package boundary" が AI エージェントの生成コードと相性が良い、というのは実務で強く感じられる (Ruby / TypeScript よりも AI 出力の "無駄な優雅さ" が入り込みにくい)。テックリード観点では、社内で "AI 駆動での新規実装は Go で書く" 判断は Alberta の modernize like Java→modern パターンとも整合する ── "レガシー言語を AI に modernize させる" 議論の帰着点として Go / Rust は有力候補。この記事の boundary 論と、上段の Uber DAL / Identity 議論を並行して読むと "AI エージェント時代のクリーンアーキテクチャ" の輪郭が見えてくる。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://zenn.dev/takna/articles/ai-agent-browser-tools" target="_blank" rel="noopener">Claude Code ブラウザ操作 4 ツール徹底比較 — Claude in Chrome / chrome-devtools-mcp / agent-browser / Playwright MCP</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🛠OSS</span></div>
+  <div class="src">出典: Zenn (2026-07 掲載、継続的にランキング上位)</div>
+  <p class="sum">Claude Code に "ブラウザを操作させる" 実装案 4 種の実測比較。(a) <em>Claude in Chrome (公式拡張)</em>: 認証済みブラウザで操作、ユーザ介入前提、(b) <em>chrome-devtools-mcp</em>: DevTools プロトコルを MCP 経由で公開、デバッグ寄り、(c) <em>agent-browser</em>: OSS Playwright ベース、CI 向け、(d) <em>Playwright MCP</em>: 公式 MCP、汎用性高。各ツールの得手・不得手・実装コスト・"どのユースケースで何を選ぶか" が実測ベースで整理されている。</p>
+  <div class="sup"><span class="lbl">💡 補足:</span> "エージェントが Web を操作する" 領域は 2026 に入ってから急速にツールが増え、テックリードが "どれを社内標準にするか" を決めかねる状況になっている。この記事の価値は <em>意思決定のフレームを与える</em> こと ── "認証済み or 非認証" × "対話的 or CI で自動" の 2 軸で 4 象限に切り分け、各ツールがどの象限にフィットするかを可視化。ちなみに数日前既報の <em>Chrome DevTools for AI Agents (MCP)</em> は (b) にあたる。Alberta 事例の "Web ポータルの脆弱性を自動でつつく red team エージェント" のような用途では (c) or (d)、Cursor / Cline から "認証済みブラウザで社内 SaaS を操作させたい" は (a) が現実解。社内で "何を採用するか" の議論のたたき台として、この記事を先に共有すると議論の効率が上がる。</div>
+</div>
+
+<footer>
+  <p><strong>収集元:</strong> Hacker News <em>(取得失敗・検索補完)</em> / GitHub Trending / Anthropic News <em>(取得失敗・検索補完)</em> / OpenAI <em>(取得失敗・検索補完)</em> / Google DeepMind <em>(取得失敗・本日新規少)</em> / The Pragmatic Engineer <em>(取得失敗・本日新規なし)</em> / Martin Fowler <em>(取得失敗・検索補完)</em> / AWS Architecture <em>(取得失敗・検索補完)</em> / High Scalability <em>(取得失敗)</em> / ThoughtWorks Insights <em>(取得失敗・検索補完)</em> / Netflix TechBlog <em>(取得失敗・検索補完)</em> / Uber Engineering <em>(取得失敗・検索補完)</em> / Stripe Engineering <em>(取得失敗・本日新規なし)</em> / InfoQ <em>(取得失敗・検索補完)</em> / arXiv cs.AI / cs.SE <em>(検索補完)</em> / Changelog <em>(取得失敗・本日新規なし)</em> / Zenn <em>(取得失敗・検索補完)</em> / note <em>(取得失敗・本日採用なし)</em> / Publickey <em>(取得失敗・検索補完)</em></p>
+  <p>次回もお楽しみに。</p>
+</footer>
+
+</body>
+</html>
