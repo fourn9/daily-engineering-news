@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月08日(水) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+.sup .lbl{color:var(--muted);font-weight:600;margin-right:4px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+@media (max-width:480px){
+  body{font-size:15px;padding:14px 12px 50px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.05rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+
+<header>
+<h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+<div class="date">2026年07月08日(水)</div>
+</header>
+
+<section class="hi">
+<h2>🎯 今日のハイライト</h2>
+<p>
+本日 7/8 は AI プラットフォーム二強それぞれで大きな節目が来る。<strong>Anthropic は Claude の消費者アカウント向けに本日から年齢・本人確認 (顔写真＋顔ジオメトリ) を Persona / Yoti 経由で必須化</strong>し、生体データを AI サービスに預ける流れの起点になる可能性が高い。同時に<strong>OpenAI は GPT-5.6 Sol/Terra/Luna のグローバル展開を発表し、明日 7/9 に一般公開</strong>、米政府レビュー下での「20 パートナー限定プレビュー」体制がついに終了する。加えて、<strong>15 年間 Linux カーネルに残っていた use-after-free 脆弱性 "GhostLock" (CVE-2026-43499)</strong> に公開エクスプロイトが出た日でもあり、ローカル root / コンテナ脱出のパッチ適用が急務。
+</p>
+</section>
+
+<h2>🤖 AI / LLM プラットフォーム</h2>
+
+<div class="art">
+<h3><a href="https://cyberinsider.com/anthropic-to-introduce-age-and-id-checks-for-claude-users-on-july-8/" target="_blank" rel="noopener">Anthropic、本日 7/8 から Claude 消費者アカウントに年齢・ID 確認を導入</a></h3>
+<div class="tags"><span class="tag">🆕本日開始</span><span class="tag">Anthropic</span><span class="tag">プライバシー</span></div>
+<div class="src">出典: CyberInsider / Techtimes / TechCrunch</div>
+<p class="sum">Claude Free / Pro / Max のうち Anthropic 側のシグナルで "flagged" された小規模なユーザー層を対象に、政府発行 ID の画像・顔写真・顔ジオメトリテンプレートを Persona 経由で提出させる (年齢のみは Yoti を利用、Pass/Fail のみ返る)。Enterprise / API 開発者プラットフォームは対象外。</p>
+<div class="sup"><span class="lbl">💡</span>Persona は生体テンプレートを自社サーバに保持する「データ処理者」であり、Anthropic は "データ管理者" として法的責任を負う構造。開発者にとっての示唆は 2 つ — (1) Claude を裏側で使う自社プロダクトでも将来 Anthropic が同種検査を要求する可能性があり、その時にユーザーの生体データを扱う実装余地が問われる。(2) BIPA (イリノイ州生体情報保護法) 訴訟が Persona に対して進行中で、"AI ベンダーが認可済みの第三者に生体データを送る" 設計自体の法的リスクが顕在化しつつある。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html" target="_blank" rel="noopener">OpenAI、GPT-5.6 Sol/Terra/Luna を明日 7/9 グローバル公開 — 政府レビュー下の限定プレビュー終了</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🔥話題</span><span class="tag">続報</span></div>
+<div class="src">出典: CNBC / 9to5Mac / OpenAI (X)</div>
+<p class="sum">昨日までの続報。米政府の要請で "小規模な信頼できる約 20 パートナー" に絞られていた GPT-5.6 のプレビューが、今日 7/8 の発表で "グローバル展開開始"、明日 7/9 に ChatGPT・Codex・API で一般公開。Sol はコーディング / 生物学 / サイバーで最上位、Terra は GPT-5.5 相当を半額、Luna は低遅延・低価格の 3 段構成。</p>
+<div class="sup"><span class="lbl">💡</span>フロンティアモデルの「政府レビュー」というゲート運用は今回が本格化した最初の例で、米国 AI Safety Institute が事実上の事前検査役を果たした。テックリード視点では 2 点意味がある — (1) 従来「モデル発表 → API 即開放」だったサイクルに数週間のバッファが入るのが常態化しうる。(2) Sol は Cerebras ウェハに載せ最大 750 tok/s で提供予定 (Nvidia GPU の同規模比 ~10x)、価格 $5/$30 per 1M tok は昨日 (7/7) 号で既報。フロンティア推論の高速化は "エージェント実運用" のレイテンシ制約を根本から緩める。</div>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+<h3><a href="https://news.ycombinator.com/item?id=48816959" target="_blank" rel="noopener">98% Isn't Much — HN で盛り上がる可用性設計の「見た目のパーセンテージに騙されるな」論</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span><span class="tag">SLO/SLA</span></div>
+<div class="src">出典: Hacker News (フロントページ 7/7)</div>
+<p class="sum">「98% 稼働率」は年間 7 日超のダウンタイムを意味し、実務的にはほぼ落ちている状態。9 が 1 個増えるごとに許容 downtime は 10 分の 1 になる (99.9% は 8h46m/年、99.99% は 52m/年)。SRE 界では常識だが、経営 KPI として "2 nines" を掲げる SaaS がいまだ多く、HN スレでは "SLA を約束するときは downtime を分数で書け" が支持を集めた。</p>
+<div class="sup"><span class="lbl">💡</span>SLO (Service Level Objective) は「約束する可用性の目標値」で、SLA (契約) の内側に置く運用ターゲット。Google SRE 本の教義では、9 を 1 個増やすインフラコストは指数的に跳ねる (再送・多地域フェイルオーバ・on-call 24/7 化) ため、"必要なだけ 9 を積む" のがベストプラクティス。設計判断としては、対象機能ごとに SLO を分ける (決済は 4 nines、レコメンドは 2 nines) のが定石で、"サービス全体 99.9%" と一枚岩で語らないほうが健全。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://www.thediligencestack.com/p/ai-infrastructure-economics-the-2" target="_blank" rel="noopener">The AI Infrastructure Economics: The $2-for-$1 Problem</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">経済性</span></div>
+<div class="src">出典: The Diligence Stack (7 月上旬 / 続報関連)</div>
+<p class="sum">AI スタートアップは平均で $1 の収益を得るために $2 のコンピュート費を支払っており、業界全体で contribution margin は -100%。トークン単価が年 70%+ で下落するため、"収益維持だけで 225%+ の利用量成長が必要"。訓練最適化された $400B のインフラは推論経済とアーキテクチャが合っておらず、"訓練残骸" が推論単価の重荷となる構造的ミスマッチが指摘される。</p>
+<div class="sup"><span class="lbl">💡</span>テックリード的な含意は 2 つ — (1) 自社サービスの LLM 呼び出しコストは短期的にはさらに下がる (ベンダー間のマージン競争が続く) が、その代わりレイヤ間のトレードオフ (レイテンシ / モデル品質 / データ地理) の交渉余地は "値下げ交渉" ではなく "SLA 交渉" に移る。(2) 訓練 GPU クラスタと推論 GPU の要件が違う (訓練は大 mem・all-reduce 中心、推論は KV cache と低レイテンシ重視) ため、"訓練で使ったのと同じ H100 を推論に転用" は経済的に成立しない — Cerebras / Groq / Trainium など推論特化 ASIC への棚卸しが加速する背景。</div>
+</div>
+
+<h2>☁️ インフラ / クラウド / 開発ツール</h2>
+
+<div class="art">
+<h3><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-rc/" target="_blank" rel="noopener">TypeScript 7.0 RC 公開 — Go 移植版コンパイラ、TS 6.0 比 10 倍高速</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">TypeScript</span><span class="tag">Go</span></div>
+<div class="src">出典: TypeScript Blog / InfoWorld / Slashdot (7/5)</div>
+<p class="sum">Microsoft が TS 7.0 の Release Candidate を 7/5 に公開。TypeScript コンパイラ自身を Go でネイティブ実装し直したもので、パース・型チェック・emit を並列化した結果、既存 TS 6.0 比で約 10 倍高速。Bloomberg・Canva・Figma・Google・Notion・Slack・Vercel など主要企業の実プロジェクトでプレビュー検証済み。1 か月以内に 7.0 stable リリース予定。</p>
+<div class="sup"><span class="lbl">💡</span>従来 TypeScript コンパイラは "TypeScript で書かれ、tsc 自身でセルフブートストラップされた" JavaScript バイナリだった。これを Go で書き直した理由は、循環参照だらけの内部データ構造 (AST・型グラフ) が Rust の所有権モデルとは相性が悪く、Go の GC + 構造的類似性のほうがコード改変を最小化できたため。JS→Go 移植でよく問われる "ランタイム API どうするか" 問題への一つの答え。実務的には、大型 monorepo で `tsc` に 5〜10 分待たされていた企業ほど、7.0 の 10x 短縮効果が CI 時間・DX に直接効いてくる。</div>
+</div>
+
+<h2>⚠️ セキュリティ</h2>
+
+<div class="art">
+<h3><a href="https://thehackernews.com/2026/07/15-year-old-ghostlock-flaw-enables-root.html" target="_blank" rel="noopener">CVE-2026-43499 "GhostLock" — 15 年物の Linux カーネル脆弱性、ローカル root + コンテナ脱出 (公開エクスプロイトあり)</a></h3>
+<div class="tags"><span class="tag">⚠セキュリティ</span><span class="tag">🔥話題</span><span class="tag">緊急</span></div>
+<div class="src">出典: The Hacker News / SecurityOnline / Threat-Modeling.com (7/8)</div>
+<p class="sum">Linux カーネル `rt_mutex` (futex サブシステム経由) の use-after-free 脆弱性。特殊権限・特殊設定・ネットワーク不要で、ローカルで通常のスレッド呼び出しからトリガー可能。Nebula チームが 97% の信頼性で root PoC を作成し、コンテナ脱出も成功 (Google の kernelCTF から $92,337 の報奨金)。修正はカーネル 7.1 で upstream。Ubuntu 24.04/22.04/20.04 LTS は 7/8 時点でまだ脆弱またはパッチ配信中。</p>
+<div class="sup"><span class="lbl">💡</span>use-after-free (UAF) は "解放済みメモリ領域をまだ生きているつもりで参照" するバグで、攻撃者が解放後の領域に細工したデータを詰め直せば任意カーネルコード実行につながる。今回のインパクトが大きい理由は 2 つ — (1) 2011 年から shipping されており、事実上すべての主要ディストロが影響を受ける (Debian/Ubuntu/RHEL/Amazon Linux 全系統)。(2) コンテナ脱出可能なため、"共有カーネルの前提" で成り立つ Kubernetes マルチテナント構成 (EKS / GKE のノード共有・CI Runner・Function-as-a-Service 基盤) が特に危険。gVisor / Firecracker / Kata Containers のような "追加隔離" が入っていない環境は即時パッチが必要。</div>
+</div>
+
+<h2>🔬 注目論文 / 研究</h2>
+
+<div class="art">
+<h3><a href="https://arxiv.org/abs/2607.01523" target="_blank" rel="noopener">Multi-Head Recurrent Memory Agents — 固定長メモリ再帰エージェントの信頼性問題を "多頭化" で緩和</a></h3>
+<div class="tags"><span class="tag">🔬論文</span><span class="tag">LLM Agent</span></div>
+<div class="src">出典: arXiv 2607.01523 (7/1)</div>
+<p class="sum">LLM の実効コンテキストを "固定長メモリ窓に情報を逐次圧縮する再帰エージェント" として拡張する系統 (RMT 系) は長文脈で崩壊する既知の問題があった。本論文は再帰時の書き込みヘッドを複数分割し、各ヘッドが専門化した情報を保持することでコンテキスト長スケール時の性能劣化を抑える。長文脈タスク・多段推論で従来 RMT を上回る。</p>
+<div class="sup"><span class="lbl">💡</span>そもそも "再帰メモリエージェント (RMT: Recurrent Memory Transformer)" は、200 万トークンなど長文入力を全部 attention に載せる代わりに、"小さなメモリ窓を上書きしながら順に読む" 発想で、実質的に無限長文脈を扱う手法。ただし逐次圧縮の性質上、遠くの情報を忘れる「壊滅的忘却」が課題だった。本論文の "多頭 (multi-head)" は Transformer の multi-head attention に着想を得たもので、"複数の視点で同じ入力を要約すれば失われる情報が減る" というシンプルな洞察に基づく。エージェント実装では、KV cache の GB 単位のコスト vs 遠距離忘却のトレードオフの再検討材料。</div>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+<h3><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers — Coding agent 向け "エージェント方法論" (Brainstorm→Plan→TDD→Review)</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🔥話題</span><span class="tag">Shell</span></div>
+<div class="src">⭐249k+ (+999 today) / Shell / MIT</div>
+<p class="sum">エージェントに "使わせる" 前提のスキル群と方法論を Shell で組み合わせたフレームワーク。Brainstorming・Planning・Worktrees・TDD・Review・Branch Completion まで一貫し、"タスク前に必ずスキルを検索・使用する" ことを強制する mandatory workflow が特徴。Claude Code / Antigravity / Codex App/CLI / Cursor / Factory Droid / GitHub Copilot CLI / Kimi Code / OpenCode / Pi に対応。</p>
+<div class="sup"><span class="lbl">💡</span>類似カテゴリの addyosmani/agent-skills (7/6 号で既出) は "個別スキル集" だが、superpowers は "方法論そのものを skill 化" した点で位置づけが違う — 個々のスキルより「エージェントに TDD を強制する」といったプロセス制約が本体。実務的には、Claude Code / Codex を導入した企業で "何をやらせるか" ではなく "どう安全にやらせるか" のガードレールとして参照される事例が増えている。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/iOfficeAI/OfficeCLI" target="_blank" rel="noopener">iOfficeAI/OfficeCLI — AI エージェントが Word/Excel/PowerPoint を読み書き自動化</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕急上昇</span><span class="tag">C#</span></div>
+<div class="src">⭐11.5k (+1,712 today) / C#</div>
+<p class="sum">AI エージェント向けの Microsoft Office 操作 CLI。Word・Excel・PowerPoint ファイルを CLI 経由で読み・編集・自動化できる。エージェントが Office ドキュメントを扱う際に、GUI 経由の UI Automation ではなく Office 標準ファイル形式に直接触れる。</p>
+<div class="sup"><span class="lbl">💡</span>類似のアプローチに Anthropic の docx/xlsx/pptx MCP スキルがあるが、OfficeCLI は Microsoft Office 本体の COM/OpenXML API を叩く前提の C# 実装。何が違うかと言うと、Excel の複雑な計算式・条件付き書式・マクロを "壊さずに" 編集できる点。実務で "既存の膨大な Excel 資産をエージェントに触らせる" 際に、"OpenXML パーサで内部を書き換えて壊す" 事故を避けたい場合の選択肢。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank" rel="noopener">TencentCloud/TencentDB-Agent-Memory — 完全ローカル・ゼロ外部依存の AI エージェント長期記憶</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">TypeScript</span><span class="tag">Memory</span></div>
+<div class="src">⭐7.5k (+351 today) / TypeScript</div>
+<p class="sum">AI エージェント向けの "完全ローカル" 長期メモリ実装。段階的パイプライン (Progressive Pipeline) 構造で、外部 API 依存 (OpenAI embedding など) をゼロにし、ローカル LLM とローカルベクトル DB だけで持続的な記憶を運用する。</p>
+<div class="sup"><span class="lbl">💡</span>類似カテゴリの Mem0 や Zep は API 前提だが、これは "オンプレでのエージェント運用" に振っている。本日別トピックで扱った Multi-Head Recurrent Memory Agents (arxiv) がメモリ表現の学術改良ならこちらは "実装レイヤの選択肢" — エンタープライズ (金融・医療) で "顧客データが自社ネットワーク外に出るのは NG" という制約下で使える。テンセント発というのは、中国側でオンプレ AI エージェント需要が強いことの傍証でもある。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/bradautomates/claude-video" target="_blank" rel="noopener">bradautomates/claude-video — Claude に動画を "見せる" ためのダウンロード + フレーム抽出 + 転写</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕急上昇</span><span class="tag">Python</span></div>
+<div class="src">⭐5.9k (+948 today) / Python</div>
+<p class="sum">Claude は動画ネイティブ入力を持たないため、URL を渡すとダウンロード → フレーム抽出 → 音声転写を自動で行い、Claude に "画像 + テキスト" として渡す。YouTube 講演・チュートリアル動画を Claude で要約・分析する用途。</p>
+<div class="sup"><span class="lbl">💡</span>ネイティブ動画対応の Gemini 2.5+ や GPT-4o と違い、Claude はマルチモーダルでも動画は未対応。この種の "外側で動画を静的資産化して LLM に渡す" パターンは今年上半期に定着した実装アプローチで、実用面では 1 秒あたり 1 フレーム抽出 + Whisper 転写の組み合わせが多い。将来 Anthropic が動画ネイティブサポートを出せば陳腐化するが、Claude Cowork や MCP 経由の Skill から手軽に呼べる利便性が当面の優位点。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+<h3><a href="https://zenn.dev/meijin/articles/ai-agent-design-tips" target="_blank" rel="noopener">エージェントは魔法じゃない：LLM 時代の "不確実性" を武器に変える設計術 (Zenn)</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">Zenn</span></div>
+<div class="src">出典: Zenn / meijin</div>
+<p class="sum">従来 UI は「都道府県プルダウン」のようにユーザーの入力空間を "確実に絞る" 方向で作ってきた。LLM エージェントは逆に "曖昧なままの入力" を許容できるが、その代償として実行結果の不確実性がシステム側に降ってくる。この不確実性を "バグ" ではなく "設計素材" として扱うためのパターン集 (入力側の緩やかな正規化、実行前の意図確認、Undo 前提の操作、幂等化されたツール呼び出し)。</p>
+<div class="sup"><span class="lbl">💡</span>要点は "LLM を確定的に振る舞わせようとするな、代わりにシステム側で確定性の境界を引け" というテックリード向けの実装ポリシー。従来の Web/API 設計は "リクエストが来たら決まった応答を返す" 前提だが、エージェントは同じ入力でも複数の実行経路を取りうる。ここで有効なのが幂等性・Saga パターン (失敗時にロールバック用の補償トランザクションを回す) — マイクロサービス設計で分散トランザクションを扱う際の既知パターンが、そのまま LLM エージェントの信頼性設計に転用できる、というのが記事の実践的洞察。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://zenn.dev/agenticai_flow/articles/ai-era-software-engineer-survival-guide" target="_blank" rel="noopener">AI 時代のソフトウェアエンジニア生存戦略：2026 年に求められる「π 型スキルセット」とは (Zenn)</a></h3>
+<div class="tags"><span class="tag">👥組織</span><span class="tag">キャリア</span><span class="tag">Zenn</span></div>
+<div class="src">出典: Zenn / agenticai_flow</div>
+<p class="sum">"T 型 (1 専門 + 広い教養)" から "π 型 (2 本の柱 + 横のつながり)" への移行を提案。1 本目は従来通り "ドメイン専門技術"、2 本目に "AI エージェント設計・運用 (LangChain / CrewAI 系) と LLMOps / Observability" を置く構成。高度なプロンプト設計だけでは差別化にならず、エージェントの Runtime・Tool Boundary・Failure Recovery まで設計できることが 2026 年のテックリード要件と主張。</p>
+<div class="sup"><span class="lbl">💡</span>π 型スキルという言葉自体は日本の経産省人材論などで以前から使われるが、AI 時代版として "2 本目の柱を AI エージェント運用に置く" というのが今回の主張。テックリード視点で重要なのは、"新しいプロンプト技術を覚える" ことではなく、既存の分散システム / SRE / セキュリティ知識を "エージェント運用" 領域に転用できる技術者ほど価値が高くなる、という指摘 — 上に紹介した "エージェント設計に Saga パターンを使う" 話ともまっすぐ繋がる。</div>
+</div>
+
+<footer>
+収集元: Hacker News <em>(取得失敗、WebSearch で補完)</em> / GitHub Trending / Anthropic News <em>(取得失敗、WebSearch で補完)</em> / OpenAI Blog <em>(取得失敗、WebSearch で補完)</em> / DeepMind Blog <em>(取得失敗、WebSearch で補完)</em> / Martin Fowler <em>(取得失敗、WebSearch で補完)</em> / AWS Architecture Blog <em>(取得失敗、WebSearch で補完)</em> / High Scalability <em>(該当なし)</em> / ThoughtWorks Radar <em>(該当なし)</em> / Netflix Tech Blog <em>(取得失敗、該当新記事なし)</em> / Uber Engineering <em>(取得失敗、該当新記事なし)</em> / Stripe Engineering <em>(該当新記事なし)</em> / InfoQ <em>(取得失敗、WebSearch で補完)</em> / arXiv cs.AI / Changelog <em>(該当なし)</em> / Zenn / note <em>(該当新記事なし)</em> / Publickey <em>(取得失敗、既出以外なし)</em> / The Hacker News / CyberInsider / CNBC / 9to5Mac / TypeScript Blog
+</footer>
+
+</body>
+</html>
