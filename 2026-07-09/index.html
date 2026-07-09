@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月09日(木) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+.sup .lbl{color:var(--muted);font-weight:600;margin-right:4px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+@media (max-width:480px){
+  body{font-size:15px;padding:14px 12px 50px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.05rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+
+<header>
+<h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+<div class="date">2026年07月09日(木)</div>
+</header>
+
+<section class="hi">
+<h2>🎯 今日のハイライト</h2>
+<p>
+本日 7/9 は "エージェント運用の実装が主戦場になった日"。<strong>OpenAI は GPT-5.6 Sol/Terra/Luna を予告どおり GA 化しつつ、同時に "ChatGPT Work" — 数時間かけて Sheet/Slides/Docs/Web アプリまで作り切るワークプレース向けエージェント</strong>を Pro/Enterprise/Edu で公開 (Codex アプリは新 ChatGPT デスクトップに統合)。<strong>Anthropic は "Reflect" ダッシュボードで "使いすぎを可視化する" 逆張り機能を全プランに投入</strong>、Cowork の会話まで対象に含める。エンタープライズ側では <strong>IBM Bob が multi-agent / Bobalytics で SDLC 全体を "エージェント経済" として管理する路線</strong>、Microsoft は <strong>MDASH (100+ AI エージェントの合議) で Windows カーネル・IKEv2 に 16 件の新規脆弱性 (うち Critical RCE 4 件)</strong> を掘り出した。"エージェント複数体が真面目に働き、その運用とコスト・安全を人間が観測する" 構図が、今日一斉に主要プラットフォームで実装レイヤに降りてきた。
+</p>
+</section>
+
+<h2>🤖 AI / LLM プラットフォーム</h2>
+
+<div class="art">
+<h3><a href="https://openai.com/index/introducing-workspace-agents-in-chatgpt/" target="_blank" rel="noopener">OpenAI, ChatGPT Work を発表 — GPT-5.6 上で数時間かけて成果物を作り切る "ワークプレース向けエージェント"</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🔥話題</span><span class="tag">続報</span><span class="tag">OpenAI</span></div>
+<div class="src">出典: OpenAI (workspace agents) / Bloomberg / Forbes / 9to5Mac</div>
+<p class="sum">昨日 7/8 号の "GPT-5.6 明日 GA" の続報にあたるが、新情報は "ChatGPT Work" というエージェント製品の登場。ゴールを渡すと接続済み SaaS を横断で参照し、タスクを分解して数時間かけて Sheets/Slides/Docs/Web アプリを "完成品" として返す。Pro/Enterprise/Edu で本日開始、Plus/Business は数日中、Codex アプリは新 ChatGPT デスクトップに統合され Chat/Work/Codex が Free 含む全プランで同居する構成に。</p>
+<div class="sup"><span class="lbl">💡</span>"Chat=一問一答、Codex=コード、Work=長時間の実務" と役割を分けた 3 表面設計が本命。テックリード視点では、(1) 課金は Codex 型の usage-based (Enterprise には Admin Console のワークスペース既定値・グループ上限・個別上書き・追加クレジット申請フロー) で、"1 リクエスト当たり従量" の予算感が SaaS の "月額シート課金" と噛み合わなくなる構造変化。(2) "エージェントが数時間動く" 前提の UI は Anthropic Cowork や Vercel eve (先月発表) と同型で、"人間が細かい指示を続ける" チャット文化から "ゴール投げっぱなし → 承認ゲート付き非同期実行" にプラットフォーム側の想定が移った。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://www.anthropic.com/news/reflect-with-claude" target="_blank" rel="noopener">Anthropic Reflect — Claude 利用の使い方を可視化する "使いすぎ抑制" ダッシュボードをベータ公開</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Anthropic</span><span class="tag">UX</span></div>
+<div class="src">出典: Anthropic News / Engadget / TechCrunch</div>
+<p class="sum">Settings &gt; Reflect で 1/3/6/12 ヶ月の Claude 利用を集計。話題トピック・最も活発だった日・ピーク時間・総チャット数を可視化し、"Claude より速くても、自分でやり続けたい 1 つは何か？" などの内省プロンプトも定期表示。Time and focus タブから静音時間 (quiet hours) と休憩リマインダも設定可能。Free/Pro/Max の Web/デスクトップで本日開始、要 Memory ON。Cowork 会話は近く対応。</p>
+<div class="sup"><span class="lbl">💡</span>"AI からログオフしろと促す AI" という珍しい方向性で、TechCrunch は "AI 依存を "解決する" ふりをした新種のロックイン" と辛口評価。テックリード視点では 2 点意味がある — (1) Anthropic は Memory を利用データ蓄積の中央基盤に据える方針が明示され、これに乗る Claude Skills / MCP アプリは Memory API に読み書きするのが基本経路になる可能性が高い。(2) 利用時間の "見える化" は数年前の iOS Screen Time と同じ路線だが、企業導入時の "AI 依存の労務リスク" (常時 AI に張り付く社員の生産性低下・スキル劣化) への実装的回答としても機能する。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://newsroom.ibm.com/2026-07-09-ibm-advances-enterprise-ai-software-development-with-multi-agent-capabilities-and-specialized-modernization-workflows" target="_blank" rel="noopener">IBM Bob, multi-agent 化 + Bobalytics — SDLC 全域を "エージェント経済" として計測・統制</a></h3>
+<div class="tags"><span class="tag">🆕新機能</span><span class="tag">エンタープライズ</span><span class="tag">SDLC</span></div>
+<div class="src">出典: IBM Newsroom / Yahoo Tech / StockTitan</div>
+<p class="sum">agentic SDLC プラットフォーム "Bob" にネイティブ tool calling / 並列実行 / サブエージェント / バックグラウンド task 制御を追加。加えて Bobalytics で AI 利用量・リソース消費・コストを組織横断で監視、モデルとタスクをマッチさせて実行。IBM 調査で "DevSecOps 業務のボトルネックはコードを書くことから "レビュー・検証" へ移った" と回答したのは 85%。</p>
+<div class="sup"><span class="lbl">💡</span>Bob は "計画 → 開発 → テスト → CI/CD → 運用" 全レイヤに AI を差し込む発想で、単一 IDE ではなく "共有ワークフローエンジン" が中核。汎用化可能なエッセンスは "エージェント同士の呼び出しを parallel execution + subagent + background task の 3 プリミティブに整理する" 抽象化 — これは Claude Code や Cursor の Task ツールと同型だが、Bob は "人間承認ゲート" を必須ステップとして組み込む点が差別化。GitHub Copilot Business / Vercel eve と同じく "AI コスト計測をプラットフォームの標準機能に組み込む" ことが 2026 年後半のエンタープライズ AI 開発ツールの当たり前になりつつある。</div>
+</div>
+
+<h2>🛡 セキュリティ / AI Safety</h2>
+
+<div class="art">
+<h3><a href="https://blogs.windows.com/windowsexperience/2026/07/09/evolving-windows-vulnerability-management-to-meet-the-speed-of-ai-powered-discovery/" target="_blank" rel="noopener">Microsoft MDASH — 100+ AI エージェント合議で Windows カーネル・IKEv2 に 16 件の新規脆弱性を発見</a></h3>
+<div class="tags"><span class="tag">🆕本日開始</span><span class="tag">⚠セキュリティ</span><span class="tag">Microsoft</span></div>
+<div class="src">出典: Windows Experience Blog / BleepingComputer / MacObserver</div>
+<p class="sum">Microsoft Security Autonomous Code Security チームが構築した multi-model agentic scanning harness "MDASH" を Windows に本格展開。フロンティア + 蒸留モデルのアンサンブル 100+ エージェントがバイナリを走査し、multi-model debate (複数モデル間の合議) で exploitable か検証するパイプライン。今回 Windows ネットワーキング / 認証スタックに 16 件の新 CVE、うちカーネル TCP/IP・IKEv2 サービスに Critical RCE が 4 件。Microsoft は今後 "AI 発見の速度に合わせて修正リリース頻度が増える" と明言。</p>
+<div class="sup"><span class="lbl">💡</span>"multi-model debate" は同じ入力を複数モデルに与えて反論・合議させ、単体モデルの hallucination を打ち消す手法。今年 5 月の Microsoft Security Blog "Defense at AI speed" が先行事例で、産業界での定着期。テックリード視点での含意は 3 つ — (1) "ソフト開発者が AI に脆弱性を書き込むリスク" の裏で "AI が既存コードから脆弱性を掘り起こす" 側の火力が上がった (攻撃者側の同じ手法が使えるので defender は先行するしかない)。(2) "月次パッチ Tuesday" のような calendar-driven 運用は続かず、"リスク駆動 (risk-driven) の継続的パッチ" 前提でシステム設計する必要がある。(3) 自社製品にも同型の内製 MDASH 相当を回すべきかの検討タイミング。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/" target="_blank" rel="noopener">GitLost — 公開 Issue の本文だけで GitHub Agentic Workflows に private repo を漏洩させる prompt injection</a></h3>
+<div class="tags"><span class="tag">⚠セキュリティ</span><span class="tag">Prompt Injection</span><span class="tag">GitHub</span></div>
+<div class="src">出典: Noma Security / The Register / The Hacker News / Dark Reading</div>
+<p class="sum">Noma Labs が 7/6 開示。GitHub Agentic Workflows は同一 organization の public repo に立てられた Issue 本文を "信頼データ" として読み取る。攻撃者は Issue に自然文で命令を書き込むだけで、エージェントに private repo の内容を漏洩させられる。ガードレールは "Additionally" と一語前置きするだけで貫通した。認証・コード知識不要、Issue を書いて待つだけ。</p>
+<div class="sup"><span class="lbl">💡</span>Prompt Injection とは「LLM に外部データを読ませた瞬間、そのデータ内の指示文が上位命令として実行される」古典的脆弱性。設計論としての教訓は "信頼境界 (trust boundary)" の甘さで、エージェントに与える入力に対して "system 命令" と "untrusted user data" のラベルを最後まで保持しない実装が原因。汎用化可能なエッセンス — (1) 自社エージェントの入力ソースを "誰でも書き込める領域" (Issue/コメント/メール/DB のユーザ入力欄) と "内部制御領域" で二分し、前者由来のテキストにはツール実行権限を絞る。(2) "この文字列は行動指示ではなくデータである" を宣言する構造 (XML タグ / 別チャネル配信) が有効。GitHub の "Additionally" 事件は、ガードレールを "文言マッチ" ではなくアーキテクチャで担保するしかないことを示す実例。</div>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+<h3><a href="https://www.uber.com/en-US/blog/zero-growth-stack/" target="_blank" rel="noopener">Zero-Growth Stack, Real Gains: How Stack Allocation Can Save 10% CPU in Go (Uber)</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">Go</span><span class="tag">Uber</span></div>
+<div class="src">出典: Uber Engineering Blog</div>
+<p class="sum">Go の goroutine スタックはデフォルト 2KB で、溢れると倍に拡張 → データコピーというコストが発生する。Uber の高スループット系サービスではこの拡張サイクルだけで最大 10% の CPU を食っていた。CPU プロファイルとバイナリシンボルから "サービスごとの最適初期スタックサイズ" を自動計算する profile-guided automation を導入し、200 万コアの fleet 全体でメモリオーバヘッド 2% 未満、拡張オーバヘッド 1% 未満、CPU 効率 +16% を達成。</p>
+<div class="sup"><span class="lbl">💡</span>"デフォルト 2KB は Go 開発者が全 goroutine に払う "予防的最小コスト" だが、大量並列で長寿命な goroutine を大量に持つサービスでは "初回に一発大きく取っておく" ほうが割安" というのが要点。汎用化可能なエッセンスは "ランタイムの安全デフォルト" と "自社ワークロードの実測分布" のギャップを埋める profile-guided な設定生成 — 同型パターンとしては Go GC tuner (2022) や JVM の JIT ヒント、Rust の PGO 最適化がある。自社が同じ規模でなくても、"デフォルト値が支配的コストになるレイヤ" (例: DB コネクションプール初期サイズ、Kafka producer batch size) を CPU プロファイル駆動で決める設計は転用可能。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://www.uber.com/blog/hybrid-core-allocation/" target="_blank" rel="noopener">Hybrid Core Allocation: From Overallocation to Reliable Sharing (Uber Odin)</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">Scheduler</span><span class="tag">Uber</span></div>
+<div class="src">出典: Uber Engineering Blog</div>
+<p class="sum">Uber の stateful プラットフォーム Odin (380 万コンテナを扱う) の縦スケーラは、バースト性ワークロードで "専有コア割当" 一辺倒だと過剰プロビジョンになりがちだった。ベースライン性能用の dedicated core と、バースト用の shared core を組み合わせるハイブリッドモデルを Linux cpusets / cpu.shares で実装。可変ワークロードのオーバプロビジョン削減とフリート全体の CPU 利用率向上を、SLO 保証・クロスホスト移送なしで達成。</p>
+<div class="sup"><span class="lbl">💡</span>"burstable" 概念自体は K8s の QoS class (Guaranteed/Burstable/BestEffort) や AWS EC2 T シリーズで既知だが、これを "自社スケジューラの中で dedicated と shared を 1 pod で両立する" 設計にした点が独自。汎用化可能なエッセンスは "SLO 保証は dedicated で担保、余剰は shared で吸収" という 2 段構成 — 自社で K8s を運用しているなら、"CPU limit + request を厳密に張る + cpu-manager-policy=static + HPA" の組み合わせで似た挙動を作れる。Odin 特有なのは "cross-host workload migration なし" の要件で、これはステートフル (DB/キャッシュ) を扱う前提から来る制約。ステートフル系を大規模に運用する組織で有効な参照実装。</div>
+</div>
+
+<h2>☁️ データ基盤 / DB</h2>
+
+<div class="art">
+<h3><a href="https://www.snowflake.com/en/blog/engineering/postgresql-19-features-beta/" target="_blank" rel="noopener">PostgreSQL 19 Beta ディープダイブ — SQL/PGQ グラフクエリ・並列 autovacuum・REPACK/ON CONFLICT DO SELECT</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">PostgreSQL</span><span class="tag">📐設計論</span></div>
+<div class="src">出典: Snowflake Engineering Blog / InfoQ / PostgreSQL.org</div>
+<p class="sum">Postgres 19 (Beta 1 は 6/4、GA は 9〜10 月見込) の設計ポイントを Snowflake が解説。既存リレーショナルテーブル上に SQL/PGQ (プロパティグラフクエリ) を追加、Neo4j 等の別 DB を持たずグラフクエリが書ける。ON CONFLICT DO SELECT で "insert して結果を返す or 既存を返す" の get-or-create セマンティクスを 1 statement で実現。REPACK でオンライン領域再構築、autovacuum に parallel worker、pg_plan_advice/pg_stash_advice でプラン制御。JIT はデフォルト OFF、TOAST 圧縮は lz4 が既定に。</p>
+<div class="sup"><span class="lbl">💡</span>SQL/PGQ (SQL:2023) は "リレーショナルスキーマ上に PROPERTY GRAPH を "ビュー" として定義してグラフパターン (MATCH (:User)-[:FRIEND]->(:User)) で問い合わせる" 標準規格。既存 DB を捨てずグラフクエリを載せられるのが要点で、"軽量に社内グラフ分析を始めたいが Neo4j 導入は重い" 中規模事例の受け皿になる。汎用化の観点では ON CONFLICT DO SELECT が地味に効く — 従来 "INSERT ... ON CONFLICT DO NOTHING → SELECT" と 2 クエリ + 競合レースを書いていた get-or-create が atomic 1 文で書ける。JIT デフォルト OFF は "ワークロードによっては JIT のオーバヘッドが利得を食う" 実運用の学びを反映した正常化。</div>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+<h3><a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">MadsLorentzen/ai-job-search — Claude Code 上で動く "AI 求職エージェント" フレームワーク</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕急上昇</span><span class="tag">TypeScript</span></div>
+<div class="src">⭐+3,728 today / TypeScript</div>
+<p class="sum">Claude Code の Skills / Subagent の上に構築された、求職活動 (求人検索 → 履歴書調整 → 応募文生成 → トラッキング) を一気通貫で扱うフレームワーク。1 個人ユースケースを "Claude Code をランタイムに使うマルチエージェントアプリ" として実装した参照設計として注目。</p>
+<div class="sup"><span class="lbl">💡</span>意義は "アプリ" 側ではなく "Claude Code = 開発者ツール" ではなく "汎用エージェント実行環境" として使うパターンの実例になっている点。以前は LangChain / CrewAI 等の "自作エージェントフレームワーク" が主流だったが、Claude Code (や OpenAI Codex) 側が Skill / Subagent / MCP を標準化した結果、フレームワーク不要で "Skills 群 + Runbook.md" だけでエージェントアプリが組める時代に。読者がイベント運用や社内業務に AI を持ち込むときの "軽量な参照実装" として読める。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/VoltAgent/awesome-design-md" target="_blank" rel="noopener">VoltAgent/awesome-design-md — エージェントに UI を生成させるためのデザインシステム Markdown 集</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕急上昇</span><span class="tag">Design System</span></div>
+<div class="src">⭐+1,233 today</div>
+<p class="sum">shadcn/ui、Material、Ant Design 等の "デザインシステムの規約 (トークン・コンポーネント一覧・命名) を Markdown 化" したコレクション。エージェントにこの Markdown を context として渡すと、生成される UI コードが該当デザインシステムに準拠する。</p>
+<div class="sup"><span class="lbl">💡</span>"デザインを AI に伝える方式" が 2026 に入って 3 段階目に進んだ — (1) Figma を直接読ませる (Figma MCP)、(2) スクリーンショット + Vision モデル、(3) デザインシステムの規約テキストで縛る。この (3) は最も軽く、CI で "生成コードが design token 表を参照しているか" を lint するのも容易。汎用化のエッセンス: "AI に守らせたい規約は "コードで書ける ESLint rule" ではなく "自然文の Markdown" として置いておく" 方が、モデル横断で通用しやすい (特定 IDE の shim に依存しない)。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/vxcontrol/pentagi" target="_blank" rel="noopener">vxcontrol/pentagi — 完全自律のペネトレーションテスト AI エージェントシステム</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">⚠セキュリティ</span><span class="tag">Go</span></div>
+<div class="src">⭐+543 today / Go</div>
+<p class="sum">スコープ・ターゲット URL を渡すと、偵察・脆弱性探索・エクスプロイト試行・レポート生成までを AI エージェント群だけで実行するペンテスト自動化。Go 実装、複数モデル対応、内部で複数の specialist agent (recon/exploit/reporter) を並列で走らせる構成。</p>
+<div class="sup"><span class="lbl">💡</span>実務的な文脈は 2 つ — (1) 上で扱った Microsoft MDASH と同型の "AI が脆弱性を掘る" が、企業内部でも赤チーム自動化としてコモディティ化する動き。認可された自社サービスの継続的脆弱性テストに使える。(2) 一方で "同じツールが攻撃者側に流通する" 二重用途性は明白で、Microsoft の "AI 発見速度に合わせて patch 頻度を上げる" 方針の裏付けになる。読者が SRE/インフラ責任者なら、"AI ペンテストを想定した継続的攻撃耐性" (WAF・レートリミット・ハニポット) の見直しタイミング。</div>
+</div>
+
+<h2>🔬 論文 / 研究</h2>
+
+<div class="art">
+<h3><a href="https://arxiv.org/abs/2607.00939" target="_blank" rel="noopener">Leveraging LLM-Based Agentic Systems to Generate Quantum Applications for Test Optimization (QPipe)</a></h3>
+<div class="tags"><span class="tag">🔬論文</span><span class="tag">Multi-Agent</span></div>
+<div class="src">出典: arXiv 2607.00939 (2026-07-01)</div>
+<p class="sum">自然言語の要件 → 量子コンピューティング応用ワークフローを、requirement parsing / formulation / code generation / review / execution / verification の 6 specialist agent 分業で構築するマルチエージェント設計 QPipe を提案。実世界ベンチマーク 20 件で code compilation 100% / 実行成功 96% を達成。ablation で "レビューフィードバックとタスク知識の保持" が精度差の主因と示す。</p>
+<div class="sup"><span class="lbl">💡</span>量子応用というドメインは一見特殊だが、設計論としては汎用的 — "1 タスクをレビュー付き 6 段パイプラインに分ける" 構造は Claude Code の Plan → Implement → Verify や Anthropic Skill orchestration と同型。ablation で "review agent を抜くと精度が急落する" 結果は、単なる "LLM を並列で走らせる" よりも "critic を 1 段挟む" ほうが効くという既知パターンを再確認したもの。汎用化のエッセンスは "エージェントを増やす方向より、critic / verifier を必ず 1 段挟む" 設計原則 — 昨日号 (7/8) の Multi-Head Recurrent Memory Agents や、7/7 号の FARMA (メモリポイズニング) の "memory を持つエージェントほど verifier が必須" の議論と直接繋がる。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+<h3><a href="https://www.publickey1.jp/" target="_blank" rel="noopener">PostgreSQL 19 beta 版リリース — Autovacuum の並列化と I/O worker の自動スケーリング (Publickey)</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">PostgreSQL</span><span class="tag">Publickey</span></div>
+<div class="src">出典: Publickey (2026-07-09)</div>
+<p class="sum">上の英語版と同じ Postgres 19 Beta を日本語で概説。autovacuum が並列 worker 対応で大テーブルの vacuum が時間短縮、io_method=worker が io_min_workers / io_max_workers で自動スケール。オンラインで data checksum の有効化・無効化が可能に (クラスタ再初期化不要)。</p>
+<div class="sup"><span class="lbl">💡</span>日本の運用現場で効くのは "autovacuum の並列化" と "オンライン checksum" の 2 つ。前者は "巨大テーブルの autovacuum が業務時間に食い込む" 従来の悩みへの直接的な解、後者は "運用中にデータ破損検知を有効化したいがクラスタ停止できない" という古典的ジレンマの解消。汎用化観点では "オンライン化 (無停止での設定変更)" が Postgres 19 全体のテーマで、Aurora / Cloud SQL 等マネージド DB の "無停止運用" 機能を OSS 本体が追随しているという構造的意味合い。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://zenn.dev/topics/claudecode" target="_blank" rel="noopener">Zenn "Claude Code" トピック — Skills オーケストレーション・Fable 5 対応など 7 月の実装記事群</a></h3>
+<div class="tags"><span class="tag">Zenn</span><span class="tag">Claude Code</span></div>
+<div class="src">出典: Zenn (Claude Code トピック)</div>
+<p class="sum">7 月上旬〜中旬にかけて "Claude Code = ターミナルで動く AI コード補完" から "チーム開発前提の統合プラットフォーム" へ位置づけを更新する記事が続く。中核モデルは Claude Opus 4.8 (5/28)、7/1 に最上位の Claude Fable 5 が再開、Claude Code から使用可能に。Dynamic Workflows / Subagents / Skills の 3 プリミティブで、複数エージェント並列 + 社内知識再利用が標準化。</p>
+<div class="sup"><span class="lbl">💡</span>読者関心のイベント運用 / 社内業務 AI 活用の実装レイヤに直結する話題。要点は "Skills を単発で書く時代" から "Skills を組み合わせて Workflow を組む時代" に移った点 — テックリード視点では "組織固有の Runbook 群 (デプロイ手順・障害対応・PR レビュー基準) をどう Skill 化して再利用可能にするか" が 2026 後半の焦点。Claude Fable 5 は "モデル階層の最上位" で、Opus より高コストだが長時間タスク / 高難度推論用途に使い分けるのが定番構成になりつつある。</div>
+</div>
+
+<footer>
+収集元: Hacker News <em>(取得失敗、WebSearch で補完)</em> / GitHub Trending / Anthropic News <em>(取得失敗、WebSearch で補完)</em> / OpenAI News <em>(取得失敗、WebSearch で補完)</em> / Google DeepMind <em>(取得失敗、該当新記事なし)</em> / Martin Fowler <em>(取得失敗、該当新記事なし)</em> / AWS Architecture Blog <em>(取得失敗、該当新記事なし)</em> / High Scalability <em>(該当なし)</em> / ThoughtWorks Radar <em>(該当新記事なし)</em> / Netflix Tech Blog <em>(取得失敗、該当新記事なし)</em> / Uber Engineering <em>(取得失敗、WebSearch で補完)</em> / Stripe Engineering <em>(該当新記事なし)</em> / InfoQ <em>(取得失敗、WebSearch で補完)</em> / arXiv cs.AI / Changelog <em>(該当新記事なし)</em> / Zenn / note <em>(取得失敗、該当新記事なし)</em> / Publickey <em>(取得失敗、WebSearch で補完)</em> / Windows Experience Blog / OpenAI (workspace agents) / IBM Newsroom / Bloomberg / Forbes / 9to5Mac / TechCrunch / Engadget / Noma Security / The Register / Snowflake Engineering Blog
+</footer>
+
+</body>
+</html>
