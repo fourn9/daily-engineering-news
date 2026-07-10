@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月10日(金) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+.sup .lbl{color:var(--muted);font-weight:600;margin-right:4px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+@media (max-width:480px){
+  body{font-size:15.5px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.05rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+
+<header>
+<h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+<div class="date">2026年07月10日(金)</div>
+</header>
+
+<section class="hi">
+<h2>🎯 今日のハイライト</h2>
+<p>
+本日 7/10 は "AI が言語ランタイムを丸ごと書き換える時代" と "言語ツールチェイン自体が別言語で書き直される時代" が同日にニュースになった日。<strong>Publickey が Bun の "Zig → Rust 移植を Claude Fable 5 が 11 日 / 64 並列 / 約 $165K で完遂" した実装レポートを日本語で詳解</strong>し、"どのように Claude を使ったか" の運用パターンを日本のエンジニア読者に届けた。同時に <strong>Microsoft が TypeScript 7.0 stable を出荷 — コンパイラ本体を TypeScript から Go へ移植した "Project Corsa" の完成で、VS Code (2.3M LOC) の型検査が 125 秒 → 10.6 秒 に</strong>。両者は "AI と長期構造改善のどちらが最終的に効いたか" の対照実験にもなっている。加えて <strong>Uber は GitFarm — 大規模モノレポの Git をサーバサイド gRPC ストリームで抽象化して "ローカルクローン 0" に</strong>する社内基盤を公開、モノレポ運用の常識を更新している。
+</p>
+</section>
+
+<h2>🧰 言語 / ランタイム / コンパイラ</h2>
+
+<div class="art">
+<h3><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/" target="_blank" rel="noopener">Announcing TypeScript 7.0 — コンパイラを Go に書き直して型検査 10倍高速化 (Project Corsa 完成)</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🔥話題</span><span class="tag">TypeScript</span><span class="tag">📐設計論</span></div>
+<div class="src">出典: Microsoft TypeScript Blog / The Register / InfoWorld / DevClass</div>
+<p class="sum">1 年超に渡る "Project Corsa" — TypeScript コンパイラ本体を TypeScript から Go に移植する取り組み — が完成し、7.0 が stable に。Microsoft の内部ベンチで VS Code (2.3M LOC) の型検査が 125 秒 → 10.6 秒 (約 11.9 倍)、ビルド時間全体でも 8〜12 倍高速化。移植は "設計を刷新しない" 方針で、6.0 と 7.0 の型検査ロジックは構造的にほぼ同一。Volar / Vue / Svelte のテンプレート型検査は 7.1 (2026 秋) での公開プログラマティック API 対応まで待ち。</p>
+<div class="sup"><span class="lbl">💡</span>設計論として重要なのは "書き直しに際して抽象を作り直さなかった" 点。既存の TS コンパイラは "セルフホスト (TS で書かれた TS コンパイラ)" ゆえ性能天井が JS VM に縛られていたが、"アルゴリズムは変えずランタイムだけ差し替える" 選択で移行リスクを最小化した。汎用化可能なエッセンス: 大規模な "書き直し" が失敗する典型パターンは "書き直しついでに設計も変える" ことで、Microsoft はここを意識的に切り離した。Bun (今日の Rust 移植) が同じ思想を採ったのと対照的に、TS チームは AI ではなく人間 + Go による "1 年かける" 書き換えで、規模と信頼性の両立を優先した。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://bun.com/blog/bun-in-rust" target="_blank" rel="noopener">Rewriting Bun in Rust — Claude Fable 5 を 11 日稼働、64 並列 implementer/reviewer で完遂</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🔥話題</span><span class="tag">Bun</span><span class="tag">📐設計論</span></div>
+<div class="src">出典: Bun Blog / The Decoder / Silicon Report / BigGo Finance</div>
+<p class="sum">Bun (2025 年に Anthropic 買収) が Zig で書かれていた本体 535K 行を Rust に移植完了。5/3〜5/14 の 11 日、Jarred Sumner が 3 時間かけて "マッピングパターン" を定義した後、64 並列の Claude Fable 5 (implementer / reviewer 二役) が実装 → レビュー → 修正のループを回した。純粋な実装時間は 6 日、5.9B input token / 690M output token / 約 $165,000。結果: Linux x64 glibc でテスト互換 99.8%、メモリ 6.7GB → 609MB (2,000 ビルドのストレステスト)、バイナリ ▲20%、性能 +2〜5%。動機は "Zig の手動メモリ管理と JS の GC の境界" で起きていた use-after-free / double-free / メモリリーク。Rust の borrow checker で compile time に潰す狙い。</div>
+<div class="sup"><span class="lbl">💡</span>"AI が言語ランタイムを丸ごと書き換える" 最初の大規模事例。汎用化可能なエッセンスは 2 点 — (1) "implementer/reviewer を別インスタンスに分けて並列に走らせる" 二役構成が単一エージェントに勝つ。Anthropic 自身の Claude Code Workflow 手法や、7/9 号 QPipe 論文が示した "critic を必ず 1 段挟む" 原則の実務証拠。(2) 3 時間の "マッピングパターン仕様書" (Zig イディオムを Rust イディオムにどう対応させるか) を人間が先に用意した点が肝で、AI の勝敗はここで決まる。同じ手法を自社の "Ruby on Rails レガシー → 別言語" 等に転用する場合の学び。並列度・コスト ($165K で 535K 行) は "人間チーム数ヶ月" の代替案と初めて数字で比較可能になった水準。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://blog.rust-lang.org/2026/07/09/Rust-1.97.0/" target="_blank" rel="noopener">Announcing Rust 1.97.0 — v0 symbol mangling が既定に、Cargo warning レベル制御が stable</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Rust</span></div>
+<div class="src">出典: Rust Blog</div>
+<p class="sum">7/9 リリース。Nightly で 2025-11 から有効だった Rust 独自の v0 symbol mangling を stable でも既定化。旧 Itanium ABI 方式は "generic 実体化を保存できない・独自デマングラが必要" などの欠点があり、v0 でこれを解消。Cargo は warning を allow / warn (既定) / deny の 3 段で切り替え可能に (ビルドキャッシュは無効化しない)。リンカ stderr がデフォルトでターミナルに流れるように。他に isolate_highest_one / bit_width など整数ユーティリティ、ARM v8.6-A 拡張 (div32 / lamcas 等) が nightly なしで利用可。</p>
+<div class="sup"><span class="lbl">💡</span>symbol mangling は "コンパイラが同名の関数/generic 実体をリンカが区別できる形の文字列に変換する規約"。従来 Rust は C++ 用の Itanium 方式を借用していたが、generic 型パラメータの実体 (例: Vec&lt;u32&gt; と Vec&lt;u64&gt;) を保存できずデバッガ表示が読みにくい/panic! バックトレースで型情報が消える問題があった。v0 で情報保存量が増え、デバッグ・プロファイリング体験が改善する。Cargo warning レベル制御は CI 移行時に地味に効く — 従来 "警告全部 deny にしたいが 1 箇所だけ許容したい" ケースで職人芸が必要だったのを Cargo.toml 一行で扱えるようになる。</div>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+<h3><a href="https://www.uber.com/us/en/blog/gitfarm-as-a-service/" target="_blank" rel="noopener">GitFarm: Git® as a Service for Large-Scale Monorepos (Uber)</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">Uber</span><span class="tag">Monorepo</span><span class="tag">Developer Platform</span></div>
+<div class="src">出典: Uber Engineering Blog (2026-07-09) / arXiv 2604.11977 (併存論文)</div>
+<p class="sum">Uber モノレポ規模になると "gigabyte 級の clone / 定期 fetch / 差分 pull" が数百の自動化系ジョブで支配的コストになる。GitFarm は "Git を高性能 gRPC API に抽象化する" 内部 SaaS で、双方向 gRPC ストリーミングで 1 セッション内に複数の Git コマンドを stdin/stdout ごと連鎖可能。クライアントはローカル clone を持たず、フルチェックアウトに 500ms 未満でアクセスできる。2025 年頭から本番稼働、コード所有権判定サービスは CPU 70 コア → 16 コア (▲77%)、メモリ 400-600GB → 32GB (▲90%) を実測。全体で client-side リソースを 80% 以上削減。</p>
+<div class="sup"><span class="lbl">💡</span>"モノレポは巨大 clone に耐えなさい" という Google/Meta 系の常識に対して、Uber は "clone しないアーキテクチャ" で解いた。汎用化可能なエッセンスは "共通のローカル操作を bidirectional streaming RPC に置き換え、状態はサーバに持つ" 設計 — 同型パターンとしては Meta の EdenFS (仮想 FS 経由の遅延 fetch) や Google の CitC (Client-in-the-Cloud) がある。GitFarm の差別化は "Git ワイヤプロトコルではなく Git コマンド自体を stream 抽象化した" 点で、既存の git 操作を書いた CI スクリプトを大幅改変せず移行可能にする。自社が Uber 規模じゃなくても、"CI キャッシュ肥大で Runner が遅い / 大量の shallow clone を回している" 状況に光を当てる参照アーキテクチャ。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://martinfowler.com/fragments/2026-07-06.html" target="_blank" rel="noopener">Fragments: July 6 (Martin Fowler) — Thoughtworks リトリートで議論された "LLM 時代の設計論"</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">Martin Fowler</span></div>
+<div class="src">出典: martinfowler.com (2026-07-06)</div>
+<p class="sum">Thoughtworks の Future of Software Development リトリート (欧州開催) の議事メモ。中心議題は "LLM がこれだけ強くなった今、アーキテクチャや設計はまだ重要か"。対立仮説として (a) LLM が十分強ければ設計品質は問題にならない、(b) 良い設計原則は人間にとっても AI エージェントにとっても等しく有益 — の 2 つ。Fowler は後者の立場で "同じ変更が少ないトークンで済む = 良いアーキテクチャ" という trivial かつ強力な計測指標を提示。LLM 生成コードには "domain と display の混在" 等の重複が頻繁に見られる観察と、"LLM への機械的シンパシー (LLM がどう動くかを理解して使う)" の必要性を強調。</p>
+<div class="sup"><span class="lbl">💡</span>この "トークンコストを設計品質の代理指標にする" 主張は、Fowler が 2004 年から使ってきた "コード変更の容易さ = 設計品質" (Design Stamina Hypothesis) を LLM 時代に更新した形。汎用化可能なエッセンスは 3 点 — (1) 自社コードベースの "同じ機能追加を各リポジトリに投げたときの平均トークン" を継続計測すれば、アーキテクチャ健全性のトレンドが定量化できる (実装済み事例はまだ稀)。(2) "domain と display の混在" は初心者が書いてしまう古典的 anti-pattern で、LLM も同じ罠に落ちる = 責任分離が甘いコードは AI 時代にむしろ悪化する。(3) "mechanical sympathy (Jackie Stewart の F1 語源)" を LLM に適用する発想 — attention の効きやすいコード配置、コンテキストウィンドウを圧迫しない module 境界 — は、実務的な設計原則にまだあまり体系化されておらず、これから 1〜2 年の議論の焦点になる。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://www.publickey1.jp/blog/26/javascriptbunclaude_fable_511zigrustclaude.html" target="_blank" rel="noopener">Publickey (日本語) — JavaScript ランタイムの Bun、Claude Fable 5 を 11 日間稼働させて Zig から Rust への移植を実現</a></h3>
+<div class="tags"><span class="tag">Publickey</span><span class="tag">日本語解説</span><span class="tag">📐設計論</span></div>
+<div class="src">出典: Publickey (2026-07-10)</div>
+<p class="sum">上の Bun ブログを日本語で詳解する記事が本日 (7/10) 公開。技術的な要点 (borrow checker が Zig-JS 境界のメモリ問題を compile time で潰す構図、5.9B input / 690M output トークン、64 並列の implementer/reviewer) と、"Claude をどう使ったか" のワークフローに焦点。日本のエンジニア読者にとって、"AI で大規模書き換えを回す運用" の一次資料に近い日本語解説として貴重。</p>
+<div class="sup"><span class="lbl">💡</span>Publickey の切り口は "AI をどう "運用" したか" に寄せられており、コスト・並列度・レビューループの実数値が読める。読み手の関心である "イベント運用 / 社内業務への AI 活用" に直接繋げると、汎用化可能な観察は — (1) "1 個の巨大タスク" を人間が最初にマッピング仕様書に落とし、その後は分割並列 (今回 64 並列) で AI にやらせる、が現時点で最強のパターン。(2) 一つのゴールに対して implementer と reviewer を別プロセスにする分離が、Skill/Subagent 設計の実務的な最小構成として機能する — Cowork や Claude Code の Subagent もこの二役分離を採る流れ。</div>
+</div>
+
+<h2>🤖 AI プラットフォーム / エージェント運用</h2>
+
+<div class="art">
+<h3><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/" target="_blank" rel="noopener">MCP 2026-07-28 Spec Release Candidate — sticky session を捨てた stateless プロトコルへの大改訂</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">MCP</span><span class="tag">📐設計論</span></div>
+<div class="src">出典: Model Context Protocol Blog / WorkOS / Stacktree / MCP.Directory</div>
+<p class="sum">2024-11 launch 以来最大の改訂となる MCP 仕様 2026-07-28 の RC が公開 (最終公開は 7/28、Tier1 SDK 対応期限 10 週)。中核変更は "sticky session を廃止して stateless に" — 従来 sticky session + 共有セッションストア + gateway での深いパケット検査が必要だったリモート MCP サーバが、単純なラウンドロビン LB + Mcp-Method ヘッダ ルーティング + tools/list の TTL キャッシュだけで運用可能に。他に SEP-1865 "MCP Apps" (server-rendered HTML を sandbox iframe でホストが描画、JSON-RPC で双方向) と Tasks 拡張 (長時間ジョブ)、OAuth/OIDC ネイティブな認可への寄せ込み。</p>
+<div class="sup"><span class="lbl">💡</span>MCP は Anthropic が 2024-11 に公開した "LLM とツール/データの繋ぎ方を標準化する" プロトコル。従来版はチャットセッション前提だった (session id をヘッダで持ち回る) ため、AWS ALB のような普通の L7 LB では捌けなかった。stateless 化の意味 — (1) "LLM/MCP アプリを Kubernetes + 普通の LB でスケール可能" になり、大規模運用時のインフラ選択肢が広がる。(2) session 廃止は "会話コンテキストは呼び出し側 (ホスト) が保持する" 責務再分担で、これは HTTP/REST が cookie に頼らず stateless で成功した歴史の再来。汎用化のエッセンス: "分散システムを設計するとき、session を持ち回るか / 呼び出し側にコンテキスト管理を戻すか" のトレードオフで、後者を選んだのが今回の MCP と REST。Tier1 SDK (Anthropic 公式 TypeScript/Python 等) は 10 週で追随、社内 MCP サーバは早めに stateless-first で書き始めるのが今日以降の推奨。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/" target="_blank" rel="noopener">Anthropic, Claude Cowork をモバイル & Web に拡張 — セッション同期 + 端末オフラインでもバックグラウンド実行</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Anthropic</span><span class="tag">Cowork</span></div>
+<div class="src">出典: TechCrunch / 9to5Mac / VentureBeat / Help Net Security (2026-07-07)</div>
+<p class="sum">Claude Cowork (従来デスクトップアプリ限定) を Web / iOS / Android に beta 拡張。デスクで開始したタスクを電話から進捗確認、端末をすべて閉じても Cowork がクラウド側で継続実行する背景モード、指定時刻でスケジュール実行、が導入。加えて Chat と Cowork を Web / Desktop で "同一表面" に統合 — Cowork は独立モードではなく通常の claude.ai フローの一部に。ロールアウトは Max から順次、他プランは数週で。8/5 まで usage 上限 2 倍のインセンティブ付き。</p>
+<div class="sup"><span class="lbl">💡</span>設計的に興味深いのは "端末を閉じても進む" バックグラウンドをクライアントレスで担保するために、Cowork が実質 "エージェント実行 VM をクラウドに常駐させ、複数端末はその VM の view でしかない" 設計に寄せた点。ChatGPT Work (7/9 号) や Vercel eve (先月) と同じで、"エージェント = リモートで動く長寿命プロセス、UI は薄い view" が業界標準になった。テックリード視点での含意 — (1) "非同期・長時間実行を許容する" 前提を UI 設計に組み込む必要 (進捗確認・承認ゲート・失敗リトライ)、(2) セッション同期は分散システムの CRDT や event log 型の同期の応用で、社内 AI ツールで似た体験を作るならモバイル/Web 対応より先に "サーバ側実行 + view 同期" の骨格を作れ、が学び。VentureBeat は "実は Cowork ユーザの大半はコーディングをしていない" 利用データを引用しており、"エージェント = 開発者向け" から "汎用タスク実行環境" への移行を裏付けた。</div>
+</div>
+
+<h2>🔬 論文 / 研究</h2>
+
+<div class="art">
+<h3><a href="https://arxiv.org/abs/2607.00269" target="_blank" rel="noopener">Mnemosyne: Agentic Transaction Processing for Validating and Repairing AI-generated Workflows</a></h3>
+<div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span><span class="tag">Multi-Agent</span></div>
+<div class="src">出典: arXiv 2607.00269 (Edward Y. Chang, Longling Geng, Emily J. Chang 他)</div>
+<p class="sum">"Agentic Transaction Processing (ATP)" — LLM/ソルバ/エージェントの出力を "提案 (proposal)" として扱い、"提案がトランザクションとして admit される前に" 意味的妥当性を検査するモデル。従来 ACID は "admit 済みユニットに対する保証" しか与えていなかったが、agentic workflow では admit 前に "hallucinate/stale/意味不正な提案" を弾く必要がある。Active Commitment Records (ACR) で 提案の追跡・補償 (compensation) を扱い、"複数エージェントが競合する提案を出す" ケースにも対応する設計。</p>
+<div class="sup"><span class="lbl">💡</span>ATP は要は "エージェント出力を DB に書き込む前段に、ACID を拡張した gatekeeper 層を置け" という提案。汎用化可能なエッセンス — (1) 既存の DB / workflow エンジンは "submit されたものは意味あるはず" を前提にしているので、そのまま LLM エージェントの前段には置けない (yesterday 号 7/9 の Microsoft MDASH や GitLost 事件と同じ "trust boundary の甘さ" 問題)。(2) 補償トランザクション (compensation) を "AI 由来だから起こる" ケースにまで拡張する視点は Saga パターンの LLM 時代版として実務転用しやすい。(3) 7/9 号 QPipe が "critic を挟め" と示したのに続き、今回の Mnemosyne は "critic の位置は DB へのコミット直前" と場所を特定した設計提案 — "AI 対応の分散システム設計" の教科書化が進み始めている。</div>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+<h3><a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">mattpocock/skills — "Real Engineers のための Skills" と称する .claude 公開集</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕急上昇</span><span class="tag">Claude Code</span></div>
+<div class="src">⭐+1,663 today / 164K total / Shell</div>
+<p class="sum">TypeScript 教育コンテンツで著名な Matt Pocock が自身の ~/.claude ディレクトリを公開。実務で回している Skills 群 — 型検査タスク・OSS メンテナンス・ドキュメント執筆・code review — を "そのままコピーして使える形" で配布。7/9 号 addyosmani/agent-skills と同種の動きで、"Skills = 個人の暗黙知の実行可能形" の共有カルチャーが形成中。</p>
+<div class="sup"><span class="lbl">💡</span>設計論としての意義: Skills は "特定のツールを操作する自然文の手順書 + 必要な補助スクリプト" で、"個人のワークフローそのものをテキスト化して他人に配れる" 抽象。従来 dotfiles で共有していた bash alias / vimrc / zshrc の "次の階層" と位置づけると分かりやすい。汎用化可能なエッセンスは "個人ワークフロー = Skill" として切り出す発想を組織にも適用すると、"あの人しかできない DB 復旧" のような属人化を Skill として再利用可能にできる。読み手のイベント運用領域なら、"顧客対応の定型フロー" や "障害告知テンプレの生成" が最初の Skill 化候補になる。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers — "エージェント Skills フレームワーク + ソフトウェア開発方法論"</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕急上昇</span><span class="tag">📐設計論</span></div>
+<div class="src">⭐+969 today / 252K total / Shell</div>
+<p class="sum">"Skills を単体でなく、開発方法論として体系化して束にする" というコンセプトの Skills 集。要件定義→設計→実装→レビュー→デプロイの各フェーズに対応する Skill が、相互に呼び出し合う workflow として組まれている。Claude Code などの Skill/Subagent 対応ランタイム上で稼働。</p>
+<div class="sup"><span class="lbl">💡</span>7/9 号 IBM Bob (multi-agent SDLC) と同じ発想 — "AI を単発のコード生成ではなく、SDLC 全体の workflow エンジンに載せる" 抽象。IBM Bob はエンタープライズ製品、superpowers は個人〜小チームの OSS 実装で対照的だが、"Skill/Subagent プリミティブの上に方法論を載せる" 上位パラダイムは共通。汎用化のエッセンス: 個々の Skill を書くよりも "Skill 間の呼び出し関係 = メタ方法論" を先に決めるアプローチが、フレームワーク非依存で長持ちする。読み手が社内 AI 導入をリードするなら、まず自社の SDLC を "どの Skill が / どういう順で / どの成果物を渡すか" のグラフに書き出すのが最初の 1 週間の作業。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank" rel="noopener">TencentCloud/TencentDB-Agent-Memory — 外部 API 依存なしで動く AI エージェントの長期記憶</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕急上昇</span><span class="tag">TypeScript</span><span class="tag">Memory</span></div>
+<div class="src">⭐+134 today / 8.2K total / TypeScript</div>
+<p class="sum">Tencent Cloud 発の "AI エージェント向け長期記憶" 実装。外部 embedding API / ベクトル DB / LLM を呼び出さずに動く自己完結型を売りにし、単一プロセスで会話ログの要約・検索・忘却を回す。企業内の "外部 SaaS に依存しないエージェント" 要件を満たすためのリファレンス。</p>
+<div class="sup"><span class="lbl">💡</span>Memory 系は 7 月に入って過熱ジャンルで、Anthropic Reflect (7/9 号) が UI 側から利用可視化を、こちらは実装側から自己完結を提案。汎用化のエッセンスは 2 つ — (1) 大企業/政府系案件では "OpenAI や Anthropic への外部通信禁止" 要件が現実にあり、"外部 API 依存なし" は差別化要因になる (逆に高性能を諦める側面もある)。(2) エージェントメモリは "永続化 + 意味検索 + 圧縮/忘却 + アクセス制御" の 4 要素が最小単位で、それを 1 プロダクトに閉じ込めるか (今回のパターン) 個別 SaaS を組み合わせるかの選択問題。7/9 号 pentagi や QPipe の "memory を持つエージェントほど verifier が必須" と併せて、Memory の "何を保持するか + どう検証するか" が 2026 後半の設計論の焦点。</div>
+</div>
+
+<h2>🛡 セキュリティ</h2>
+
+<div class="art">
+<h3><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-59793" target="_blank" rel="noopener">JetBrains TeamCity / IntelliJ IDEA / YouTrack に複数の新規 CVE (7/10 公開)</a></h3>
+<div class="tags"><span class="tag">⚠セキュリティ</span><span class="tag">JetBrains</span></div>
+<div class="src">出典: NVD (CVE-2026-59791 / 59792 / 59793 / 59794)</div>
+<p class="sum">本日 (7/10) 公開の JetBrains 関連 CVE 4 件: (1) TeamCity 2026.1.2 未満で Perforce VCS 統合を経由した任意ファイル読み取り (CVE-2026-59793)、(2) TeamCity クラウドプロファイル画面のエージェント自己申告データ経由の stored XSS (59794)、(3) IntelliJ IDEA 2026.1.4 / 2026.2 未満で project workspace ID のパストラバーサル経由のコード実行 (59792)、(4) YouTrack 2026.2.17012 未満で Mermaid ダイアグラム描画経由の CSS injection (59791)。同時期 CISA も Adobe/Joomla/Langflow の実悪用 4 件を KEV に追加し FCEB 期限を 7/10 に。</p>
+<div class="sup"><span class="lbl">💡</span>共通するパターンは "本来 "設定データ" として渡ってくる文字列を、実行可能なパスやマークアップに使ってしまう" trust boundary の失敗 — 7/9 号 GitLost (Issue 本文で AI エージェントに指示を注入) と同型の "データがコードに昇格する" 脆弱性。汎用化可能な教訓は "外部から与えられる文字列は、必ず "データ" として扱う型 (Path / Sanitized HTML) にラップして境界を明示する" 設計原則で、これは AI エージェント時代の prompt injection 対策とも同根。実務では、CI/CD 系の (TeamCity / GitHub Actions 等) パッチは Web アプリより後回しにされがちだが、"CI が乗っ取られると本番デプロイ権が丸ごと持って行かれる" ので優先度は最高クラス。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+<h3><a href="https://zenn.dev/team_zenn/articles/ai-agent-security" target="_blank" rel="noopener">2026年の AI Coding Agent 活用 — スピードと安全性を両立させる (Zenn / team_zenn)</a></h3>
+<div class="tags"><span class="tag">Zenn</span><span class="tag">Claude Code</span><span class="tag">⚠セキュリティ</span></div>
+<div class="src">出典: Zenn (team_zenn / 話題記事)</div>
+<p class="sum">Claude Code や Codex 等の coding agent を実務投入するときの "速度と安全性のトレードオフ" を扱う実装ガイド。Manual permission (Claude Code v2.1.200 で既定化) 前提の運用、承認ゲート設計、内部秘密情報が prompt に混入しないための review 手順、社内 CI/CD への統合パターンを整理。個人 hack ではなく "組織で AI コーディングを回す前提" の運用論。</p>
+<div class="sup"><span class="lbl">💡</span>読み手のイベント運用/社内業務 AI 活用の観点に直結する日本語記事。要点は "Auto mode (AI が自律で書き換える) と Manual mode (毎アクションで人間承認) を、対象コードのリスクレベルで切り替える" 二層構成の推奨で、これは 7/3 の Claude Code v2.1.200 で "Manual を既定化" した Anthropic の設計判断と整合する。汎用化のエッセンスは "AI エージェントを組織で使うとき、"どの操作に人間承認を要求するか" の polic tree を最初に作れ" ということ。CI/CD の Approval Gates と同型で、Terraform apply / DB migration / 本番デプロイ など blast radius の大きい操作を要承認、read-only 系は自動許可、が定石。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://www.publickey1.jp/blog/26/xaigrok_build.html" target="_blank" rel="noopener">xAI が Grok Build ベータ公開 — サブエージェント並列実行対応の CLI コーディングエージェント (Publickey)</a></h3>
+<div class="tags"><span class="tag">Publickey</span><span class="tag">xAI</span><span class="tag">Coding Agent</span></div>
+<div class="src">出典: Publickey</div>
+<p class="sum">xAI が Claude Code / OpenAI Codex に対抗する CLI ネイティブのコーディングエージェント "Grok Build" を公開。最大 8 並列サブエージェント、承認前 plan mode、MCP 互換、Arena mode (複数エージェントに同じ問題を独立で解かせて出力を比較選択)、grok-build-0.1 モデルは $0.20/M input token。SWE-Bench Verified は 70.8% と Claude Opus 4.7 (87.6%) / GPT-5.5 (88.7%) にはまだ及ばず。</p>
+<div class="sup"><span class="lbl">💡</span>Grok Build が学べる観点は 2 つ — (1) "Arena mode (複数出力を比較選択)" は "同じ問題を N 回投げて best-of-N を選ぶ" 古典手法をユーザ体験に組み込んだ例で、AI に正解を絞らせるより "並べて人間に選ばせる" ほうが早い実装領域が広い、という設計判断。(2) 並列サブエージェント + Git worktree isolation の組み合わせは今日の Bun Rust 移植 (64 並列) と同じ抽象で、業界標準化しつつある。読み手のテックリード視点では "自社の Coding Agent 選定" が Claude Code / Codex / Grok Build / Cursor Agent の 4 択に定着しつつあり、選定軸は "モデル性能 (Opus 4.7 / GPT-5.6 / Grok が今並ぶ) より、権限管理 / MCP 対応 / 社内ツール統合の実装コスト" に移った。</div>
+</div>
+
+<footer>
+収集元: Hacker News <em>(取得失敗、WebSearch で補完)</em> / GitHub Trending / Anthropic News <em>(取得失敗、WebSearch で補完)</em> / OpenAI News <em>(取得失敗、WebSearch で補完)</em> / Google DeepMind <em>(取得失敗、ICML 2026 中で該当新記事なし)</em> / The Pragmatic Engineer <em>(取得失敗、記事一覧は WebSearch で補完)</em> / Martin Fowler <em>(取得失敗、WebSearch で補完)</em> / AWS Architecture Blog <em>(取得失敗、該当新記事なし)</em> / High Scalability <em>(該当新記事なし)</em> / ThoughtWorks Radar <em>(該当新記事なし、TW リトリート内容は Fowler Fragments 経由)</em> / Netflix Tech Blog <em>(該当新記事なし)</em> / Uber Engineering <em>(WebSearch で補完)</em> / Stripe Engineering <em>(該当新記事なし)</em> / InfoQ <em>(取得失敗、記事一覧は WebSearch で補完)</em> / arXiv cs.AI / Changelog <em>(該当新記事なし)</em> / Zenn / note <em>(取得失敗、話題タグは WebSearch で補完)</em> / Publickey / Microsoft TypeScript Blog / Rust Blog / Bun Blog / Model Context Protocol Blog / TechCrunch / VentureBeat / The Register / DevClass / NVD (JetBrains CVE)
+</footer>
+
+</body>
+</html>
