@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月11日(土) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+.sup .lbl{color:var(--muted);font-weight:600;margin-right:4px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+@media (max-width:480px){
+  body{font-size:15.5px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.05rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+
+<header>
+<h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+<div class="date">2026年07月11日(土)</div>
+</header>
+
+<section class="hi">
+<h2>🎯 今日のハイライト</h2>
+<p>
+本日 7/11 は "AI で言語ランタイム / DB を丸ごと書き換える" 事例が <strong>個人開発規模でも成立する水準に降りてきた</strong> ことを示す一日。昨日の Bun (Anthropic 買収 / Zig→Rust / 64 並列 / $165K) に続き、<strong>pgrust — Malcolm Matis 個人が Codex 8 アカウント / 月 $1,600 / Conductor で 10〜20 並列を回して PostgreSQL 18.3 の 46,000 件の回帰テストを 100% パスさせた完全な Rust 移植</strong>が公開された (HN #1、740 pt / 620 コメント)。もう 1 本の目玉は <strong>Google Labs の "Stitch Skills" が今日 GitHub Trending で +338 stars/day で急上昇</strong> — Google が自社の Stitch (Figma 型 UI 生成) を Skills + MCP サーバとして開放し、Claude Code / Cursor / Codex / Antigravity 全対応で提供、"Skills = 業界共通の抽象" の流れが Anthropic 発から Google まで広がった証拠。加えて <strong>Anthropic の Opus 4.7 fast mode が 7/24 で提供終了、Opus 4.1 は 8/5 リタイア</strong>と、モデル世代交代のスケジュールが具体化。テックリード視点の総合テーマは "AI 起点の大規模書き換え" と "Skills/MCP 標準化" が同日並走。
+</p>
+</section>
+
+<h2>🧰 AI が言語・DB を書き換える (Bun の次の証拠)</h2>
+
+<div class="art">
+<h3><a href="https://github.com/malisper/pgrust" target="_blank" rel="noopener">malisper/pgrust — Postgres 18.3 の回帰テスト 46,000 件を 100% パスする Rust 版 Postgres (Codex 8 並列 / 月 $1,600 / 個人開発)</a></h3>
+<div class="tags"><span class="tag">🔥話題</span><span class="tag">🆕新リリース</span><span class="tag">Rust</span><span class="tag">📐設計論</span><span class="tag">HN #1</span></div>
+<div class="src">出典: GitHub malisper/pgrust / malisper.me 解説記事 / Hacker News (7/9 announced, 7/10 #1 で 740 pt / 620 コメント)</div>
+<p class="sum">Malcolm Matis が個人開発で "Postgres を Rust で 1 から書き直し" を成立させ、7/9 に v0.1 を公開。46,000 件の Postgres 18.3 回帰テストを 100% パス、既存の Postgres 18.3 データディレクトリからそのままブート可能というディスク互換を実現。公開版は 15 万行超、内部未公開版は 45 万行超・"thread-per-connection モデル" (process-per-connection ではない)、トランザクションで +50%、分析ワークロードで ~300 倍高速の主張。実装は Codex 8 アカウント ($200/mo × 8 = $1,600/mo)、"Conductor" と呼ぶ自作ツールで 10〜20 セッションを並列制御。README では "まだプロダクション用途ではない・性能最適化前" と明記。</p>
+<div class="sup"><span class="lbl">💡</span>昨日の Bun (Anthropic + Fable 5 / 64 並列 / $165K で 11 日 / 535K 行) と対をなす事例で、"個人開発でも AI に大規模書き換えを任せられる" 下限が今週で見えた。汎用化可能なエッセンス — (1) <strong>回帰テストを "AI の合格判定" として使い切る</strong> Oracle 型設計: Matis は自ら仕様を書かず "既存の Postgres 回帰テストが通ればよい" とゴールを定義し、AI に自由度を渡した。同じ発想は "既存製品のリライトを AI に任せる" 全ての実務で流用可能。(2) <strong>"thread-per-connection" で 30 年来の Postgres 設計をひっくり返す</strong>: Postgres は 1996 年設計の fork() ベースでコネクションごとにプロセスを立てるが、Rust の async ランタイム + Tokio 等で "1 プロセス多スレッド" に変えると、コネクション増加時のメモリ効率と connection pooling 常設化のコストが劇的に下がる。これは PgBouncer が長年埋めてきたギャップを言語処理系側で解消する話。(3) <strong>コストが個人レベルに落ちた</strong>: $1,600/月 × 数ヶ月で "SQL エンジンを丸ごと書き換え" が届く価格に。既存 OSS の "戦略的リライト" が新しい競争軸として現実的になった。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://newsletter.pragmaticengineer.com/p/tdd-ai-agents-and-coding-with-kent" target="_blank" rel="noopener">TDD, AI agents and coding with Kent Beck — Pragmatic Engineer podcast 全文 (無料公開)</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">Kent Beck</span><span class="tag">Pragmatic Engineer</span></div>
+<div class="src">出典: The Pragmatic Engineer / Kent Beck 出演回</div>
+<p class="sum">XP / Agile Manifesto / TDD の生みの親 Kent Beck が、AI エージェント時代における TDD の位置づけを語る。核となる主張は 3 つ: (1) TDD は AI エージェントに対する "superpower" — エージェントは容易にリグレッションを入れるが、単体テストが最小の防御線になる。(2) AI エージェントの mental model は "予測不可能な genie": 願いを叶えるが、しばしば予期せぬ (かつ非論理的な) 形で返してくる。(3) 我々は "コードは急速に累積しているのに、その信頼 (trust) の累積が追いついていない" — trust の累積速度を上げることが今後の SWE の主戦場だと Beck は捉える。関連して Beck は 2026 年 3 月に "Still Burning" というポッドキャストを開始。</p>
+<div class="sup"><span class="lbl">💡</span>Beck の "trust の累積が遅い" 指摘は、7/10 号 Fowler の "同じ変更を少ないトークンで済ませられる = 良いアーキテクチャ" と相補的。両者とも "AI が書いたコードを人間/組織が信頼する仕組み" を設計論の中核に据えている。汎用化可能な観察: 昨日の Bun / 本日の pgrust の "AI 書き換え" は、いずれも "既存の回帰テスト" を trust の基盤にした。つまり "テストが十分にある領域は AI に任せられる範囲が広く、テストがない領域は依然として人間中心" という現代的な境界線。読み手の実務では、"AI に任せたい領域" ほど先に "テストで trust を積む" ことが実装ロードマップの逆順で効いてくる — レガシー Rails/Django アプリの AI 移植を考えるなら、まず golden test の充実が最短距離。</div>
+</div>
+
+<h2>🤖 Skills / MCP エコシステム — Google 参入</h2>
+
+<div class="art">
+<h3><a href="https://github.com/google-labs-code/stitch-skills" target="_blank" rel="noopener">google-labs-code/stitch-skills — Google の Stitch (UI 生成) を "Agent Skills 標準" で開放</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕急上昇</span><span class="tag">Google</span><span class="tag">Skills</span><span class="tag">MCP</span></div>
+<div class="src">⭐+338 today / 7,018 total / TypeScript / v1.0 (2026-05-18)</div>
+<p class="sum">Google Labs (google-labs-code 組織) が、自社 UI 生成プロダクト "Stitch" 用の Agent Skills 集を公開。Claude Code / Cursor / Codex / Antigravity と互換の "Agent Skills オープン標準" に準拠する形で 3 系統 (<code>stitch-design</code> / <code>stitch-build</code> / <code>stitch-utilities</code>) を提供。design→React / React Native / Remotion 動画 / shadcn/ui などへの変換、design-md の自動生成、プロンプト強化などをカバー。前提として "Stitch MCP サーバ" を各エージェント環境で稼働させる必要がある。7/11 時点で +338 stars/day、Trending 上位。</p>
+<div class="sup"><span class="lbl">💡</span>意義は "Skills = 業界共通抽象" の流れが Anthropic 起点で始まり、Google が同標準に乗って参入した点。汎用化可能なエッセンス — (1) <strong>Skills はベンダロックインを緩める抽象</strong>: Google が自社 UI 生成 SaaS を売るためのフックとして "全エージェント対応" を選んだこと自体が、"個別 IDE / エージェント別プラグインを書き分ける時代" の終わりを示す。同じ動きは 7/9-10 号の mattpocock/skills や obra/superpowers といった OSS も追認。(2) <strong>MCP サーバ + Skills の 2 層構成</strong>: Google の実装は "低レイヤ (ツール接続) は MCP、高レイヤ (ワークフロー) は Skills" という役割分担が明確。自社が MCP + Skills で製品を開放する場合の参照実装として読み解ける。(3) <strong>Stitch は Figma に対抗する Google の UI 生成 SaaS</strong> で、Skills 経由で各エージェントが直接呼び出せる = "Figma の代替を Claude Code から使う" ワークフローが公式サポートされたことになる。読み手のイベント運用領域なら、"自社の内製サービス (顧客管理 / 予約) を MCP サーバ + Skills で公開すれば、社内エージェント全部から呼べる" という応用が同構造で成立。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/wonderwhy-er/DesktopCommanderMCP" target="_blank" rel="noopener">wonderwhy-er/DesktopCommanderMCP — MCP でシェル/ファイル操作を統合、+900 stars/day で急伸中</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕急上昇</span><span class="tag">MCP</span></div>
+<div class="src">⭐+900 today / 7,740 total / TypeScript / MIT</div>
+<p class="sum">Eduard Ruzga (wonderwhy-er) の stdio MCP サーバで、Claude Desktop / Claude Code / Cursor / Codex 等のエージェントに "ターミナル + ファイルシステム + 差分編集" を一括提供。ツール数は 22 (terminal / filesystem / editing / config / analytics の 5 分類)、markdown 描画 + インライン画像 + "Open in folder" 等の UI 統合も持つ。2026 年初めに Claude Connectors ランキング 5 位で Figma 公式 MCP を超えた実績。7/11 時点で +900 stars/day、Trending 上位。導入は <code>claude mcp add desktop-commander -- npx -y @wonderwhy-er/desktop-commander</code>。</p>
+<div class="sup"><span class="lbl">💡</span>MCP プロトコル (7/10 号で紹介した 2026-07-28 spec RC で "stateless 化" した Anthropic 標準) の実務的成功例。汎用化のエッセンス — (1) <strong>単一 MCP に "22 ツールを詰め込む" 設計</strong>は Unix 哲学に反するが、実利用者にとっては "1 個入れれば足りる" が最強の DX で、"薄いツールを組み合わせる" 理想と "分厚いツールを 1 個入れる" 実利の対立を可視化した事例。(2) <strong>Figma 公式 MCP を追い抜いた個人 OSS</strong> という構図は、MCP エコシステムがまだ "誰が入っても勝てる" 初期段階にあることを示す。ここで参入するなら自社ドメイン特化 (医療 / 会計 / イベント) の MCP に速度勝負で入るのが得策。(3) MCP は仕様が stateless 化する方向 (7/10 号) で、"サーバ側で状態を持つ old-school エージェント" は今後不利になる。DesktopCommander も stateless 化アップデートに対応する必要が出てくるはず。</div>
+</div>
+
+<h2>🧠 Anthropic Platform — モデル世代交代のスケジュール</h2>
+
+<div class="art">
+<h3><a href="https://docs.anthropic.com/en/release-notes/api" target="_blank" rel="noopener">Anthropic API 移行スケジュール確定: Opus 4.7 fast mode 7/24 廃止、Opus 4.1 は 8/5 完全リタイア</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Anthropic</span><span class="tag">⚠移行</span></div>
+<div class="src">出典: Claude Platform Docs (API リリースノート) / Anthropic newsroom</div>
+<p class="sum">Anthropic API のリリースノートで、モデル世代交代の期日が具体化。(1) <strong>Opus 4.7 fast mode</strong>: 7/24 で除去、以降 <code>speed:"fast"</code> でのリクエストはエラー、移行先は Opus 4.8 fast。(2) <strong>Opus 4.1 (claude-opus-4-1-20250805)</strong>: 8/5 で完全リタイア、移行先も Opus 4.8。(3) <strong>Cache diagnostics</strong> が public beta 化: <code>diagnostics.previous_message_id</code> をリクエストに載せると、prompt cache の hit/miss と "どこで prefix が乖離したか" の理由が返る、beta header は <code>cache-diagnosis-2026-04-07</code>。(4) <strong>agent-memory-2026-07-22 beta</strong>: メモリ一覧の順序が "server 側で定義した安定順" に、depth パラメータの選択肢が簡略化。(5) Claude Managed Agents で self-hosted sandbox が本番利用可能に。</p>
+<div class="sup"><span class="lbl">💡</span>実務直撃の内容が集中している回。汎用化 & 実務注意点 — (1) <strong>Opus 4.7 fast の 7/24 廃止</strong>は、モデル ID を <code>claude-opus-4-7</code> にハードコードしている社内システム全てが対象。テックリードは deploy pipeline の grep でハードコード検出を今週中に実施推奨。(2) <strong>Cache diagnostics</strong> は prompt cache が本番でヒット率が落ちる問題 (例: 会話履歴の中に日時が入って毎回 miss する古典的な落とし穴) を LLM を触らずに追える初の一次データ提供機能。読み手が社内で LLM プロンプトを組む役割なら、開発中の LLM アプリすべてで beta header を有効化しておく価値がある。(3) <strong>self-hosted sandbox</strong>は "AI エージェントに手元 VM 上でコード実行させたいが Anthropic のクラウドを使いたくない" 金融 / 医療系の要件に対応。7/9 号 TencentCloud/TencentDB-Agent-Memory の "外部依存なしメモリ" と同じテーマ (エージェントを閉域で運用したいニーズ) に応えている。</div>
+</div>
+
+<h2>🗄 データベース / データ基盤</h2>
+
+<div class="art">
+<h3><a href="https://www.postgresql.org/about/news/postgresql-19-beta-1-released-3313/" target="_blank" rel="noopener">PostgreSQL 19 Beta 1 — I/O ワーカ自動スケールと Autovacuum の並列化</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">PostgreSQL</span><span class="tag">📐設計論</span></div>
+<div class="src">出典: PostgreSQL Global Development Group (2026-06-04 リリース) / Publickey (2026-07-09 日本語解説)</div>
+<p class="sum">PostgreSQL 19 Beta 1 が 6/4 に公開、日本語解説が 7/9 の Publickey に。中核変更: (1) PostgreSQL 18 で導入された非同期 I/O サブシステムを 19 が拡張、<code>io_method=worker</code> が <code>io_min_workers</code> / <code>io_max_workers</code> / <code>io_worker_idle_timeout</code> / <code>io_worker_launch_interval</code> に応じて I/O ワーカ数を自動スケール。(2) Autovacuum が並列ワーカで実行可能に (新パラメータ <code>autovacuum_max_parallel_workers</code>、テーブル単位で <code>autovacuum_parallel_workers</code>)、テーブル間の優先度付けの新スコアリングも導入。(3) 正式リリースは 2026 秋 (9〜10 月) 予定、Beta 2 / RC は継続予定。</p>
+<div class="sup"><span class="lbl">💡</span>設計論として重要なのは "Postgres の性能ボトルネックが徐々に "SQL エンジン" から "I/O と保守処理" に移った" のを 19 でも継続的に潰しに来ている点。汎用化可能な観察 — (1) <strong>Autovacuum の並列化</strong>は "肥大化した SaaS で夜間 vacuum が間に合わず断片化する" 典型パターンに直接効く。今まで DBRE が手動で <code>VACUUM PARALLEL</code> を叩いていたのを autovacuum に組み込んだ形。(2) <strong>I/O ワーカ自動スケール</strong>は Kubernetes 的 "HPA (Horizontal Pod Autoscaler)" 発想を DB プロセス内に持ち込んだ抽象。同様の "worker pool の自動サイジング" は Redis の I/O threads や Node.js の libuv でも見られる潮流で、"DB の水平垂直スケール判断を DB エンジン自身に委ねる" 方向。(3) 上の pgrust "thread-per-connection" と対比すると、Postgres コア陣営はプロセスモデルを維持しつつ I/O 層で追いつく戦略を明確化した — Rust リライトが未成熟なうちは公式 Postgres が現実解であり続ける。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://supabase.com/blog/multigres-v0-1-alpha" target="_blank" rel="noopener">Multigres v0.1 alpha — Vitess の作者が Supabase で作る "Postgres 版 Vitess"</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">PostgreSQL</span><span class="tag">Vitess</span><span class="tag">📐設計論</span></div>
+<div class="src">出典: Supabase Blog (2026-06-04 alpha 公開) / Publickey (2026-07-09 日本語解説)</div>
+<p class="sum">YouTube を支えた Vitess (MySQL の水平スケール層) の共同発案者 Sugu Sougoumarane が Supabase に参画して立ち上げた OSS。v0.1 alpha (6/4 公開、7/9 に Publickey が日本語紹介) は "Postgres のシャーディング + コネクションプーリング + 自動フェイルオーバー + バックアップオーケストレーション" を一体で提供する "Postgres の OS" を目指す。アーキテクチャは <code>MultiGateway</code> (クエリルーティング) + <code>MultiPooler</code> (接続プール) のレイヤ型プロキシ、Kubernetes オペレータで運用、Apache 2 ライセンス。関連データの co-location を意識した relational sharding モデルも特徴。</p>
+<div class="sup"><span class="lbl">💡</span>汎用化可能な観察 — (1) <strong>"Vitess for Postgres" のポジショニング</strong>: Postgres 陣営は歴史的に "スケールは Citus / PgBouncer / patroni / pg_repack 等の道具を組み合わせる" DIY 文化だったが、Multigres は "ひとつの管理面で全部する" ("Postgres の OS") 方向に統合を狙う。これは MySQL 世界が Vitess で歩んだ道筋の再現で、"SaaS ベンダの Postgres" (RDS / Neon / Supabase) が下敷きにする共通レイヤになる可能性。(2) <strong>読み手の実務: 大規模な Rails / Django アプリで "Postgres がシャーディングできず垂直スケールの限界" に当たっている場合、今までは "Citus か Vitess for MySQL に載せ替え" の 2 択だった。Multigres が成熟すれば "Postgres のまま横に伸ばす" 3 択目になる</strong>。(3) 昨日の Uber GitFarm と同じで、"共通で使う道具を SaaS 抽象に閉じ込める" 潮流が Git / DB / Skills / MCP と全ジャンルで同時進行している。設計論としては "個別 CLI ツールから、抽象度の高い管理面 (control plane) へ" が 2026 年の共通テーマ。</div>
+</div>
+
+<h2>🍎 プラットフォーム / 言語 — Apple が Swift をカーネル層に</h2>
+
+<div class="art">
+<h3><a href="https://blog.calif.io/p/apple-internals-swift-in-the-kernel" target="_blank" rel="noopener">Apple Internals: Swift in the Kernel — WWDC 2026 発表の "メモリセーフカーネル" 準備が macOS 26 に着弾</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">Apple</span><span class="tag">Swift</span><span class="tag">Kernel</span></div>
+<div class="src">出典: Josh Maine (calif.io) 解析記事 / OSnews / Publickey (2026-07-07 日本語解説)</div>
+<p class="sum">Apple が WWDC 2026 で発表した "macOS 27 系でカーネルの一部を Swift で書く" の第一段が macOS 26 SDK / ビルドで判明。(1) <code>KernelKit</code> という内部 SDK が新設、(2) 各 OS 用に別々の Mach-O プラットフォーム識別子が追加、(3) Embedded Swift ランタイムが macOS のカーネル拡張 (kext) に静的リンクされる形で同梱。ただし XNU コア (Mach / BSD / IOKit) は C/C++ のまま、Swift は "KernelKit の一部 kext 内の Embedded ランタイム" として限定的に出現するに留まる。iOS ではツールチェイン / ランタイム / リンク環境の下地整備が終わった段階で、Swift 実装のカーネル部品はまだ実装されていない。</p>
+<div class="sup"><span class="lbl">💡</span>設計論として重要なのは "既存の C カーネルを Swift で全書き換えする" のではなく、"kext (拡張ドライバ層) に Embedded Swift ランタイムを差し込む" 段階的移行を選んだ点。汎用化可能な観察 — (1) <strong>"Embedded Swift ランタイム"</strong> とは、Swift の言語機能から GC / ARC / 大きなランタイムライブラリを削ぎ落として "OS カーネルや MCU で使える最小構成" にしたモード。C/C++ を全置換せず、"新規実装だけ Swift、既存は C" と混在させられる。(2) 昨日の TypeScript 7.0 が採った "アルゴリズムは変えずランタイムだけ差し替える" 戦略と対照的で、Apple は "既存を保存しつつ、新規部分にだけメモリ安全な言語を導入する" 逆方向のリスク管理。両者とも "大規模書き換えを一気にやらない" 教訓を示す — Bun/pgrust の AI 一気書き換えとは違う流派。(3) 読み手の実務での応用: 自社レガシー (PHP / Perl / 古い Rails 等) を "全書き換え" するか "新機能だけ新言語" にするかの意思決定に、Apple 型は "コアは触らず境界層で切り替える" 参照モデルとして使える。特に "書き換え中に本番を止めない" 制約下では強い。</div>
+</div>
+
+<h2>🔬 論文 / 研究</h2>
+
+<div class="art">
+<h3><a href="https://arxiv.org/abs/2605.02801" target="_blank" rel="noopener">Reinforcement Learning for LLM-based Multi-Agent Systems through Orchestration Traces (arXiv 2605.02801)</a></h3>
+<div class="tags"><span class="tag">🔬論文</span><span class="tag">Multi-Agent</span><span class="tag">📐設計論</span></div>
+<div class="src">出典: arXiv 2605.02801 (2026 年 5 月投稿、7 月に注目度が上がり多エージェント研究のリファレンスに)</div>
+<p class="sum">"Orchestration traces" — マルチエージェント実行時に自然に生成される "サブエージェント spawn / 委任 / 通信 / tool use / return / 集約 / 停止判定" の時間順イベントグラフ — を RL の学習信号として使う手法。従来 "1 個の LLM を PPO 等で fine-tune する" 発想から、"エージェント群のオーケストレーション全体を報酬信号でチューニングする" 発想へ拡張。実行トレースを graph として保存し、成功/失敗経路の差分を報酬に写像する仕組みが中心。</p>
+<div class="sup"><span class="lbl">💡</span>汎用化可能な観察 — (1) <strong>"orchestration trace" は今後の LLM 運用の "アプリログ" 相当</strong> になる。従来 Web アプリで APM / distributed tracing が業界標準になったのと同型で、"どのエージェントがどのツールを呼び、どの分岐でエラーが出たか" をトレースとして持たなければ、AI 運用の SRE ができない。(2) 昨日 7/10 号の Mnemosyne (Agentic Transaction Processing、"提案が commit 前に検証される") と、この論文の "trace ベース RL" は補完関係にある — Mnemosyne が "実行前ガード"、こちらが "実行後学習"。両方揃うと "AI に業務を任せる" 実務系のロードマップが (a) trust boundary を明示 → (b) 実行トレースを保存 → (c) RL で継続改善 の 3 段になる。(3) 実務適用の入口は Anthropic の Cowork / Skills / MCP の "実行ログ" を既にサーバ側に持っている点で、当面は "そのログから orchestration graph を組み立てる" 内製ツール実装が読み手のイベント運用領域でも初動になる。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+<h3><a href="https://note.com/yasuhitoo/n/nba437f259b74" target="_blank" rel="noopener">国内 AI エージェント動向 (2026/7/11 号) — Yasuhito Morimoto (note)</a></h3>
+<div class="tags"><span class="tag">note</span><span class="tag">国内動向</span><span class="tag">AI Agent</span></div>
+<div class="src">出典: note.com/yasuhitoo (2026-07-11)</div>
+<p class="sum">国内の AI エージェント関連の "本日の動向" をまとめる連載の 7/11 号。主要テーマは "PoC から本番運用への移行を支える基盤 / 専門領域特化 / 業務データとの安全な接続"。具体的動き: 合同会社 Nagon が "AI エージェント向けデータ流通基盤 Nonagon Link" ベータ版を 7/10 から国内限定公開、日本情報クリエイトが "賃貸革命 11" のデータを Claude Desktop 等から自然言語で照会できる MCP サーバを 7/22 から試験提供、JTP が OpenAI 最新モデル (GPT-5.6 Sol / Terra / Luna) 対応を 7/10 完了。</p>
+<div class="sup"><span class="lbl">💡</span>読み手のイベント運用 × 社内業務 AI 活用の観点で最も直接的な日本語記事。汎用化可能な観察 — (1) <strong>"業務データ ↔ AI" の接続レイヤとして MCP がデファクトになっている</strong> — 賃貸管理という国内 SaaS 領域 (SIer 産業の中核) が Claude Desktop から MCP 経由で自然言語照会できるようになる、というのは "MCP は開発者だけの技術ではなく、業務系 SaaS の外側で採用が始まっている" 証拠。(2) <strong>データ流通基盤 (Nonagon Link) の登場</strong>: 従来「エージェントが業務データを触るには API を書け」の世界だったのが、"データ提供者・エージェント運用者・アプリ開発者を分離した SaaS" が生まれ始めている。海外の LlamaIndex / LangChain のホスト版と対比する読み手には、日本版のポジション取りとして興味深い。(3) MCP 対応 = 業務プロダクトの "第 3 の SDK" (Web SDK / モバイル SDK / MCP) という位置づけに整理できると、自社サービスの拡張ロードマップに組み込みやすくなる。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://zenn.dev/muramasa0228/articles/2026-06-20-mcp-zenn-pipeline" target="_blank" rel="noopener">Claude Code と MCP で「記事を書く→Zenn 公開→経歴に蓄積」を自動化した (Zenn)</a></h3>
+<div class="tags"><span class="tag">Zenn</span><span class="tag">Claude Code</span><span class="tag">MCP</span></div>
+<div class="src">出典: Zenn (muramasa0228)</div>
+<p class="sum">Claude Code の Skills + MCP サーバを組み合わせて "記事執筆 → Zenn 公開 → 経歴データベースへ蓄積" を一気通貫で自動化した実装記事。核心は "人間の承認 (Push 前レビュー) を挟むが、それ以外は完全に AI が回す" 半自動フローで、"どの操作は人間承認、どの操作は AI 自律" を明確化した設計。関連して "Zenn 記事のズボラ運用術" 派生記事もあり、コミュニティ内で類似の Skill+MCP 実装が広がっている。</p>
+<div class="sup"><span class="lbl">💡</span>読み手のイベント運用視点への転用余地が大きい記事。汎用化可能なエッセンス — (1) <strong>"AI 自律で回すが、外向き publish の直前だけ人間承認" パターン</strong> は、7/10 号の Zenn team_zenn 記事の "Manual mode を publish 直前だけに絞る" 二層設計と同じ潮流。イベント通知や顧客告知の生成でも "文章生成は AI、送信は人間の承認" が最初の 1 週間で立てる典型構造。(2) <strong>"経歴データベースに蓄積"</strong>という発想が面白く、これは自社の "顧客対応履歴" や "イベント運営履歴" にも横展開できる。ワークフローの副産物としてナレッジベースが自動更新される設計は、7/9 号 Anthropic Reflect (memory 可視化) の背後にある思想と同じで、"エージェント経由の作業ログ = 組織の memory" として意識的に扱う設計は 2026 年後半のトレンド。(3) MCP の勉強コストが下がったので、今週動くなら "自社 CMS / Notion / Slack を叩く MCP サーバを 1 つ作る → Claude Code で書かせる" が最短経路。</div>
+</div>
+
+<h2>🛡 セキュリティ</h2>
+
+<div class="art">
+<h3><a href="https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/" target="_blank" rel="noopener">Cavern Manticore — Iran-linked APT が SysAid の更新経路を悪用、モジュラー .NET C2 で IT/官公庁を標的</a></h3>
+<div class="tags"><span class="tag">⚠セキュリティ</span><span class="tag">サプライチェーン</span><span class="tag">APT</span></div>
+<div class="src">出典: Check Point Research / The Hacker News / SecurityWeek</div>
+<p class="sum">Iran の MOIS (情報安全保障省) 系統の APT クラスタが、新しいモジュラー C2 フレームワーク "Cavern (Cav3rn)" を使ってイスラエルの IT / 官公庁を狙う。攻撃連鎖は "SysAid の更新機能を悪用してトロイの木馬化した DLL (Cavern Agent) を実行 → C2 と通信して用途別モジュール (偵察 / データ窃取 / トンネリング / 横方向移動) を追加ダウンロード"。実装は .NET Framework / .NET Mixed-Mode C++/CLI / .NET Native AOT を混在させた成熟した構造。MuddyWater / Lyceum (OilRig 傘下) とも戦術重複あり。特徴は "IT ベンダを踏み台にして 2 段跳びで最終標的に到達する" サプライチェーン型侵入。</p>
+<div class="sup"><span class="lbl">💡</span>汎用化のエッセンス — (1) <strong>"IT サービスベンダの信頼関係を武器化する" 手口</strong>は、Cavern 固有ではなく 2020 年 SolarWinds、2022 年 Kaseya、2024 年 XZ backdoor に続く系譜。自社が "ベンダから何かを更新される側 (SysAid のような監視/バックアップ/RMM ツールを入れている)" なら、"更新経路も高権限資産として扱う" 意識設計が要る。(2) <strong>C2 が Native AOT を使い分ける</strong>のはフォレンジック回避目的で、"1 種類の実行体でしか動かない前提の EDR" は捕捉率が落ちる。テックリードの防御側視点では、EDR ルールを "特定バイナリタイプ限定" にせず、行動ベース (プロセスツリー、C2 通信パターン) に寄せる方向に更新する必要がある。(3) 昨日 7/10 号の JetBrains CVE 群と同じで、"開発 / 運用ツールが最上位の攻撃対象" というトレンドは加速。特に SysAid のような IT 運用系 SaaS は "セキュリティ製品と同じ扱いで監視" するのが 2026 の実務ライン。</div>
+</div>
+
+<footer>
+収集元: Hacker News <em>(取得失敗、WebSearch で補完)</em> / GitHub Trending / Anthropic News <em>(取得失敗、WebSearch で補完)</em> / OpenAI News <em>(取得失敗、WebSearch で補完)</em> / Google DeepMind <em>(WebSearch 経由)</em> / The Pragmatic Engineer <em>(WebSearch 経由)</em> / Martin Fowler <em>(取得失敗、WebSearch で補完)</em> / AWS Architecture Blog <em>(取得失敗)</em> / High Scalability <em>(該当新記事なし)</em> / ThoughtWorks Radar <em>(該当新動きなし、Vol.33 は 2025-11 公開)</em> / Netflix Tech Blog <em>(該当新記事なし)</em> / Uber Engineering <em>(GitFarm 7/9 は 7/10 号で扱い済)</em> / Stripe Engineering <em>(engineering 側の新記事なし、7/7 Product Blog のみ)</em> / InfoQ <em>(取得失敗、WebSearch で補完)</em> / arXiv cs.AI / Changelog <em>(該当新記事なし)</em> / Zenn <em>(取得失敗、WebSearch で補完)</em> / note.com <em>(取得失敗、WebSearch で補完)</em> / Publickey <em>(取得失敗、WebSearch で補完)</em> / GitHub malisper/pgrust / Supabase Blog / PostgreSQL.org / Check Point Research / calif.io (Apple Kernel)
+</footer>
+
+</body>
+</html>
