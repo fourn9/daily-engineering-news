@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月12日(日) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+.sup .lbl{color:var(--muted);font-weight:600;margin-right:4px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+@media (max-width:480px){
+  body{font-size:15.5px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.05rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+
+<header>
+<h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+<div class="date">2026年07月12日(日)</div>
+</header>
+
+<section class="hi">
+<h2>🎯 今日のハイライト</h2>
+<p>
+本日 7/12 は "<strong>AI コーディングエージェントの利用が "個人の趣味プロジェクトから、Fields Medalist の教材コード復活まで一貫して使える汎用ツールへ" 到達した</strong>" ことを象徴する 1 日。HN #1 は <strong>Terry Tao (フィールズ賞、UCLA) が 1999 年に書いた Java applet 24 本を AI エージェントで JavaScript に丸ごと移植</strong>、AI 起因のバグは 1 件のみ、逆に "27 年間気付かなかった元コードのバグを 2 件発見" した実録。昨日の pgrust (Postgres 完全 Rust 移植) と対をなす "AI 時代のレガシー modernization" の 2 つの極 — <em>大規模基幹書き換え / 個人研究者の教材保全</em> — が同一の道具立てで動いていることを示す。もう 1 つの目玉は <strong>MCP Enterprise-Managed Authorization (EMA) が stable 化</strong>し Anthropic / Microsoft / Okta / Atlassian / Figma / Linear / Supabase らが即対応、"MCP サーバごとの OAuth 同意ページを 1 個ずつ踏む地獄" が終わった一件。加えて <strong>Slack が "Agentic E2E Testing"</strong>、<strong>Cloudflare が "AI エージェント用の一時アカウント"</strong>、<strong>Linux Foundation が "Agent Name Service (ANS)"</strong> と、"エージェントを本番運用する側の抽象" が今週まとめて公開された週末となる。テックリード視点の総合テーマは "<em>AI エージェントの ID / 権限 / 実行環境を組織インフラに接続する</em>" 標準化フェーズへの移行。
+</p>
+</section>
+
+<h2>🧠 AI エージェント × レガシー modernization</h2>
+
+<div class="art">
+<h3><a href="https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents/" target="_blank" rel="noopener">Old and new apps, via modern coding agents — Terence Tao が 1999 年の Java applet 24 本を AI エージェントで完全 JS 移植</a></h3>
+<div class="tags"><span class="tag">🔥話題</span><span class="tag">📐設計論</span><span class="tag">HN #1</span><span class="tag">Terry Tao</span></div>
+<div class="src">出典: Terence Tao (terrytao.wordpress.com, 2026-07-11) / Hacker News #1 (7/12 時点、item 48880170)</div>
+<p class="sum">Fields Medalist の Terence Tao が、1999 年頃に UCLA の複素解析・線形代数の授業用に自作した Java 1.0 applet 24 本を、最新のコーディングエージェントで JavaScript に一括移植した実録。Tao 本人がコードを 1 行も書かず、エージェント 1 セッションで丸ごと変換完了。移植後に発見されたバグは合計 3 件 — うち 1 件は AI 起因 (軽微)、残り 2 件は "27 年間気付かなかった元コードの数式バグ" で、AI の指摘で初めて修正できたと明記。移植先は現代ブラウザで即動く HTML+JS、モバイル対応も含む。</p>
+<div class="sup"><span class="lbl">💡</span>読み手が最も応用しやすい "AI modernization" の実践例。汎用化可能なエッセンス — (1) <strong>"AI に既存コードを移植させる時のオラクル (正解判定)"</strong> の設計論として重要: pgrust (昨日) は "既存の回帰テストが全部通ればよい" で 46,000 件のテストを oracle にし、Tao の場合は "同じ数学的振る舞いが視覚的に再現できればよい" と定義した。両者とも "AI に自由度を渡す前に、成功条件を測定可能な形で凍結" しているのが共通点で、これは "AI に任せる領域を広げるほど oracle の質が競争軸になる" ことを示す。(2) <strong>"元コードのバグを AI が発見する"</strong> 副次効果: 移植とは "同じ振る舞いを別言語で再現する" 作業だが、AI が両言語で仕様を検証する過程で "元コードの隠れバグ" が浮かぶ。これは "リファクタリングは仕様書き直しの副産物としてバグを露出させる" という Kent Beck 的教訓 (昨日 7/11 号の Beck インタビューと重なる) を AI が体現。(3) <strong>個人研究者スケールでも成立</strong>: Tao は API 課金アカウント 1 本、数時間で完了と示唆。<em>読み手の実務: 社内の "古い個人ツール" (Perl / VB / Access / 古い Rails) の modernization は、"やる価値ないと思われていた工数" が急落したので、今週ロードマップに載せ直す価値がある</em>。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/cosmtrek/mindwalk" target="_blank" rel="noopener">Show HN: Mindwalk — コーディングエージェントのセッションを "コードベースの 3D マップ" 上で再生</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕新リリース</span><span class="tag">MCP</span><span class="tag">observability</span></div>
+<div class="src">出典: GitHub cosmtrek/mindwalk / Show HN (item 48878682, 7/12 フロントページ入り)</div>
+<p class="sum">Claude Code / Codex のセッションログをローカルで読み込み、コードベースを 3D の "地形" として描画し、エージェントの探索・読み込み・編集をアニメーション再生する Go 製 CLI。状態表現は 4 段階: <em>seen (moss green)</em> / <em>read (moon white)</em> / <em>edited (warm amber)</em> / <em>unvisited (dark)</em>。加えて "friction signals" (エラー率、頻繁に編集し直したファイル、編集回数) を HUD 表示し、スクラブ再生でセッションをタイムライン操作可能。データは全てローカル処理で、セッションログは端末外に出さない設計。</p>
+<div class="sup"><span class="lbl">💡</span>"エージェント observability" というジャンルが独立領域として立ち上がってきた証拠。汎用化 — (1) <strong>APM のエージェント版</strong>: 従来の Web アプリで Datadog / New Relic が "リクエスト → SQL → 外部 API" のトレースを見せたのと同じレイヤを、AI エージェントの "探索 → 読み → 編集" に対して提供する道具。テックリード視点では、社内でエージェントを常用させるなら "何を触ったか" を可視化する 1 段の抽象がやがて必須になる (昨日紹介した arXiv "orchestration traces" 論文と同じ思想を実装側から埋める形)。(2) <strong>ローカル処理</strong>を売りにしている点は、大企業導入 (顧客コードを外に出せない) の要件に直で刺さる。7/11 号で紹介した "MCP stateless 化" と同じ、"エージェント運用は組織内に閉じさせる" 流れ。(3) <strong>3D 表現の意味</strong>: 従来型のコールグラフ / ファイル一覧より "熱量" (どこを何度も編集したか、迷ったか) を直感的に見せる。<em>これはコードレビュー時に "AI が何にハマったか" を人間側が学べるようにするための UX で、"人間 - AI 協業のコードレビュー" 設計の 1 参照実装</em>。</div>
+</div>
+
+<h2>📐 アーキテクチャ / 設計事例</h2>
+
+<div class="art">
+<h3><a href="https://slack.engineering/agentic-testing-where-agents-fit-in-the-e2e-testing-stack/" target="_blank" rel="noopener">Slack Engineering: Agentic Testing — E2E テストスタックの中で AI エージェントが担う "壊れにくい層"</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">Slack</span><span class="tag">Playwright</span><span class="tag">テスト設計</span></div>
+<div class="src">出典: Slack Engineering blog / InfoQ (2026-07)</div>
+<p class="sum">Slack が自社の E2E テスト運用に AI エージェントを組み込んだ設計の解説。前提: "決定的なスクリプトテストはリグレッション検出には有効だが、UI の小さな変化で連鎖的に壊れる" ため CI で長期メンテコストが積み上がる。新方針は "テストを目的 (intent) として表現し、AI エージェントが UI / API を叩きながら達成する" 二層化 — <strong>下層: 決定的 Playwright テスト (速い / 回帰検証)</strong>、<strong>上層: エージェント駆動 (UI 変更に自動追従、代替経路を試行)</strong>。実験規模は 200 超のワークフローを Playwright MCP + Playwright CLI + エージェント生成 Playwright テストの組み合わせで、非本番データを使うテストワークスペースで実行。</p>
+<div class="sup"><span class="lbl">💡</span>読み手の関心領域 (大規模テック企業のアーキテクチャ事例) の中核記事。汎用化のエッセンス — (1) <strong>"決定的 + 適応的" 二層化</strong>は 2026 年の QA 設計の標準テンプレになりつつある: 下段で"壊れなさ" を担保しつつ、上段で "変化への追従" を AI に任せる。7/11 号の Zenn team_zenn "Manual mode を publish 直前だけ" と同じ二層設計パターン (=<em>信頼が要る境界にだけ決定的処理を残す</em>)。(2) <strong>MCP がテスト実行のインタフェースに使われる</strong>: Playwright MCP が中心で、"エージェント → MCP → ブラウザ" の呼び出しが Slack 規模で本番運用されている事実は、MCP がプロトタイプ段階を超えた明確な証跡。(3) <strong>Slack 規模でなくても応用可能</strong>: 読み手のイベント運用 SaaS で "UI が頻繁に変わる管理画面の E2E" は同じ構造で組めて、<em>"決定的 CI + AI エージェント nightly" の運用 2 本立てが、Slack を真似る最短距離</em>。(4) 対比: 昨日 7/11 号の Kent Beck 発言 "TDD は AI に対する superpower" は "AI がコードを書く時の防御" として TDD を捉えたが、Slack のこれは逆方向 "テスト側にも AI を入れる" — <em>両方合わせて "AI が書き、AI が検証し、人間が gate する" の 3 段構成が完成する</em>。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://medium.com/pinterest-engineering/smarter-url-normalization-at-scale-how-miqps-powers-content-deduplication-at-pinterest-4aa42e807d7d" target="_blank" rel="noopener">Pinterest Engineering: MIQPS — URL 正規化を "レンダリング差分ベース" で学習し、数百万ドメイン横断で重複処理を削減</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">Pinterest</span><span class="tag">大規模</span></div>
+<div class="src">出典: Pinterest Engineering (Medium) / InfoQ 2026-06 (7 月に日本コミュニティで再露出)</div>
+<p class="sum">Pinterest の Web 取り込みパイプラインで発生する "見た目は違うが実体は同じページ" の重複処理を減らすために、URL クエリパラメータの重要度を学習で決める Minimal Important Query Param Set (MIQPS) を導入。仕組みは: (1) パイプラインで取得した URL コーパスを "パラメータパターン" でグルーピング、(2) 各パラメータを "外した後の HTML レンダリング結果 (content fingerprint)" と比較、(3) 差分が閾値を超えたら "そのパラメータは page identity に効く" と判定、超えなければ削除対象。従来のルールベース (utm_* を落とす等の手書きリスト) を、offline 分析 + anomaly detection + runtime lookup で置き換える設計。</p>
+<div class="sup"><span class="lbl">💡</span>読み手の関心 (大規模設計のトレードオフ議論) にドンピシャの事例。汎用化 — (1) <strong>"ルールを書かず、レンダリング結果で学ぶ"</strong> という発想の転換: 従来なら "utm 系は落とす、page/id は残す" と手書きし、月次でメンテしていた領域を、"レンダリング結果 = 正解" と定義し直して自動化する。同じパターンは "検索インデックスの去重"、"CDN キャッシュキーの正規化"、"BI ダッシュボードの重複クエリ集約" にも横展開できる。(2) <strong>"content fingerprint" は 2026 年の便利な抽象</strong>: 同じ考え方が LLM の RAG の去重、動画配信の segment 同一性検出、モバイル App の A/B バリアント衝突検出でも使われ始めている。<em>読み手の実務では、イベント運営の "同じイベント告知が違う URL で複数回配信される" 現象を content fingerprint で去重する応用が近い</em>。(3) 対比: 昨日 7/11 号の Uber GitFarm と同じ潮流 — "各プロダクトチームが個別にルールを書いていた領域を、共通の学習可能な control plane に集約する" が 2026 年のインフラ設計のマクロテーマ。</div>
+</div>
+
+<h2>☁️ クラウド / インフラ — エージェント向け進化</h2>
+
+<div class="art">
+<h3><a href="https://aws.amazon.com/blogs/aws/introducing-the-next-generation-of-amazon-opensearch-serverless-for-building-your-agentic-ai-applications/" target="_blank" rel="noopener">Amazon OpenSearch Serverless 次世代版 GA — "エージェントワークロード用に一から作り直し"、20 倍高速の autoscale と scale-to-zero</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">AWS</span><span class="tag">📐設計論</span><span class="tag">ベクトル検索</span></div>
+<div class="src">出典: AWS Blog (2026-05-28 GA) / InfoQ 2026-06 / 7 月に日本コミュニティで再露出</div>
+<p class="sum">AWS が OpenSearch Serverless を "エージェント想定のバースト / 予測不能な負荷" に向けて再設計、GA。主要変更: (1) compute と storage を完全分離、共有ストレージ層を新設、(2) autoscale が 20× 高速化、リソース確保は数秒単位、(3) <strong>10 分 idle で OCU 消費が 0 まで落ちる scale-to-zero</strong>、リクエスト到来から復帰まで ~10 秒、(4) ピーク前提のプロビジョニングに対しコスト最大 60% 削減、(5) Vercel / Kiro との統合で "開発環境からのプロビジョニング" を自然言語で発行可能。ベクトル検索も待機コストが 0 になり RAG バックエンドとして刺さる形。</p>
+<div class="sup"><span class="lbl">💡</span>汎用化のエッセンス — (1) <strong>"scale-to-zero は 2026 年の DB / 検索インフラの必須要件"</strong> に格上げ: エージェントの利用パターン (深夜は無、日中バースト、SLA 要件不明) は従来型のプロビジョニングに壊滅的で、"待機コスト = 0" を提供できるベンダが RAG 時代の勝ち組になる。既に Neon (Postgres)、PlanetScale の Serverless などが同型で、AWS が OpenSearch でこれを揃えたのは "検索インフラ = エージェントバックエンドの主戦場" の宣言。(2) <strong>compute / storage 完全分離</strong>: 20 年来のクラウド DB 設計潮流 (Snowflake / BigQuery 型) が、検索エンジン領域にも本格移行した。読み手の関心 (アーキテクチャ判断) では、"検索を SaaS の外側に切り出す" 判断がしやすくなる — <em>自社の "検索は本業ではないが提供する必要がある" 機能 (店舗検索 / イベント検索) を、常時稼働 EC2 上のクラスタから scale-to-zero SaaS へ移す再検討の材料</em>。(3) 対比: 昨日 7/11 号の Multigres (Supabase 版 "Postgres の OS") と同じ潮流で、"個別ミドルウェアの直接運用 → control plane 経由の抽象化" が加速している。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://blog.cloudflare.com/temporary-accounts/" target="_blank" rel="noopener">Cloudflare: Temporary Accounts for AI agents — "エージェントが署名不要で Worker をデプロイ" できる 60 分ゾーン</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Cloudflare</span><span class="tag">エージェント</span></div>
+<div class="src">出典: Cloudflare blog (2026-06-19) / InfoQ 2026-07 / Simon Willison (blog, 2026-06-21)</div>
+<p class="sum">"AI エージェントが Cloudflare にデプロイしたい" だけの用途で、"OAuth ログイン → ダッシュボード → API トークンをコピペ → MFA" の人間向け UI を全部飛ばせる一時アカウント機構。<code>wrangler deploy --temporary</code> (Wrangler 4.102.0+) を認証情報なしで叩くと、(1) 一時アカウントが自動発行、(2) API トークンが Wrangler に渡り、(3) "claim URL" が発行され、人間に渡してその場でリンクを踏めば所有権が確定。デプロイは 60 分だけ生存、対応リソースは Workers / Static Assets / KV / D1 / Durable Objects / Hyperdrive / Queues / SSL。カスタムドメイン不可、CI/CD には非推奨 (本番は通常アカウント運用)。</p>
+<div class="sup"><span class="lbl">💡</span>汎用化のエッセンス — (1) <strong>"エージェント向けの UI/UX は人間向けと分ける"</strong> という抽象が正式に生まれた事例: 今まで SaaS の onboarding は "人間が Sign Up → Verify → Configure" が前提だったが、エージェントには "とりあえず動かし、後から人間に紐付ける" 逆順が必要。同じ構造は他 SaaS (DB / CI / ホスティング) も追随する可能性が高い。(2) <strong>MCP EMA (本日の別記事) との対比</strong>: EMA は "組織側で承認済み SSO を使う正式アクセス" ルート、Cloudflare Temp Accounts は "組織にまだ属さない 60 分の探索アクセス" ルート — 両者合わせて "エージェントの ID / 権限運用" の 2 極が今週まとめて標準化した。(3) <strong>7/11 号 Anthropic self-hosted sandbox</strong>と同じで、"エージェントを本番運用に近づけるための細部" (認証、実行環境、ID) が同時多発的に埋まっている段階。読み手の実務では、"社内エージェント向けのオンボーディング" を "既存の従業員オンボーディング" と分けて設計する必要性を思い出させる。</div>
+</div>
+
+<h2>🔧 MCP / エージェントプロトコル — ID・権限の標準化</h2>
+
+<div class="art">
+<h3><a href="https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/" target="_blank" rel="noopener">MCP Enterprise-Managed Authorization (EMA) が stable 化 — "MCP サーバごとの OAuth 同意" が消える</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">MCP</span><span class="tag">Enterprise</span><span class="tag">📐設計論</span></div>
+<div class="src">出典: MCP 公式 blog (2026-06-18 stable) / InfoQ 2026-07 / Publickey (2026-07-07 日本語解説) / Kong 解説</div>
+<p class="sum">MCP 仕様に EMA 拡張が追加され stable 化。従来は "エージェントが MCP サーバに接続するたびにブラウザで OAuth 同意 → トークン取得" だったフローを、"組織の IdP (Okta / Entra ID 等) で管理者が一度承認すれば、全社員に対して同意フローが不要" に変える。技術的には <strong>SSO ログイン → IdP が ID-JAG (RFC 8693 token exchange) を発行 → クライアントが MCP アクセストークン (RFC 7523 JWT-bearer) と交換</strong>、MCP サーバ側の同意画面をスキップ。既に Anthropic / Microsoft / Okta が導入表明、対応 MCP サーバは Asana / Atlassian / Canva / Figma / Granola / Linear / Supabase、Slack ほか対応進行中。</p>
+<div class="sup"><span class="lbl">💡</span>読み手の関心 (アーキテクチャ判断 / 業界標準の位置づけ) に直結。汎用化のエッセンス — (1) <strong>"MCP を組織で運用可能にする最後のピース"</strong> だった OAuth 地獄が解消: 従来は "50 個 MCP サーバを繋ぐには 50 回同意画面" で現実的に大企業展開ができなかった。EMA によって "組織単位で承認 → 従業員は 1 度ログインするだけ" が成立し、MCP は "個人開発者の玩具" フェーズから "大企業 IT 基盤" フェーズに正式に移行した。(2) <strong>RFC 8693 (Token Exchange) + RFC 7523 (JWT Bearer) の組み合わせ</strong>という枯れた仕様に乗ったのが賢い設計: 新規のプロトコルを発明せず、既存の IAM / IdP 側の実装をそのまま流用可能にしたので、Okta / Entra ID / Auth0 側で "IdP 対応" と言うだけで済む。<em>読み手が社内 SaaS で MCP サーバを提供する立場に立つ場合、"我々の MCP は EMA に対応済み" が今後 6 ヶ月で必須要件になる</em>。(3) 対比: 昨日 7/11 号の "Anthropic Managed Agents で self-hosted sandbox" と同じで、Anthropic は "エージェント運用の企業導入に必要な残タスク" を 1 個ずつ潰しに来ている。標準化の主導権を持ち続けている状態は 2026 後半も継続とみるべき。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://www.linuxfoundation.org/press/linux-foundation-announces-intent-to-launch-agent-name-service-to-establish-trusted-identity-infrastructure-for-ai-agents" target="_blank" rel="noopener">Linux Foundation "Agent Name Service (ANS)" 発表 — DNS を土台に AI エージェントに "信頼できる ID" を与える標準</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Linux Foundation</span><span class="tag">DNS</span><span class="tag">📐設計論</span></div>
+<div class="src">出典: Linux Foundation (2026-06-23 発表) / InfoWorld / Publickey (2026-07-02 日本語解説)</div>
+<p class="sum">Linux Foundation が新プロジェクト "Agent Name Service (ANS)" を発表。既存の DNS (毎秒 1 億クエリ規模の分散基盤) を土台に AI エージェントに検証可能な ID を付与する規格。エンタープライズは "自社所有ドメインの下に エージェント ID を発行" 可能で、"どの組織を代表するエージェントか / どの権限が付与されているか / コードや実行履歴が改変されていないか" を DNSSEC 型の署名で検証。バックにいるのは GoDaddy / Cloudflare / Cisco / Salesforce / Infoblox。近数週間内の launch 予定。</p>
+<div class="sup"><span class="lbl">💡</span>汎用化のエッセンス — (1) <strong>"エージェント間の相互認証"</strong> は 2026 後半の未解決課題の 1 つで、既存 X.509 PKI / OIDC は "人間 / 機械" 前提で "自律エージェント" の存在を織り込んでいない。ANS は "DNS のオーナーシップ = ドメイン所有者" を出発点にし、"どの組織のどのエージェントか" を DNS で解決可能にする発想 — SPF / DKIM / DMARC がメールに対して行ったのと同じレベルの介入を、エージェント通信に対して行う。(2) <strong>本日の EMA (人間 → MCP サーバ) と対比</strong>すると、EMA は "組織内での認可" を扱い、ANS は "組織間 / インターネット越しの ID 検証" を扱う異なるレイヤ。両方揃うと "認可 (認可済みユーザ経由) + 認証 (エージェント本人性) + 出所検証 (どの組織のエージェントか)" の 3 点セットが標準化される。(3) <strong>DNS を再利用する政治的意味</strong>: 新規識別レジストリを作らず既存 DNS に乗せる = "既存の権限構造 (レジストラ / ISP) をそのまま流用" するため、比較的スピーディに広まる可能性が高い。<em>読み手のイベント運用系 SaaS で "他社の予約エージェント" が自社 API を叩きに来る未来を考えるなら、ANS 型の相手側 ID 検証は 12 ヶ月以内に実務化する見立て</em>。</div>
+</div>
+
+<h2>🌟 GitHub Trending / 注目 OSS</h2>
+
+<div class="art">
+<h3><a href="https://github.com/Dicklesworthstone/destructive_command_guard" target="_blank" rel="noopener">Dicklesworthstone/destructive_command_guard (dcg) — エージェントの "破壊的コマンド" を μs 単位でブロックする Rust 製 PreToolUse フック</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕急上昇</span><span class="tag">Rust</span><span class="tag">Trending #1</span></div>
+<div class="src">⭐+444 today / 2,730 total / Rust / cross-agent (Claude Code / Codex CLI / Gemini / Copilot / Cursor)</div>
+<p class="sum">Claude Code / Codex CLI 0.125.0+ / Gemini CLI / Copilot CLI / Cursor / Grok 等のエージェント環境で、"<code>git reset --hard</code>" "<code>rm -rf ./src</code>" "<code>DROP TABLE</code>" のような破壊的コマンドを PreToolUse フックで実行前ブロックする Rust 製 CLI。パイプラインは 4 段: (1) JSON パース、(2) SIMD 高速化キーワード事前選別 (95%+ が <10μs で通過)、(3) 危険キーワードを含むもののみ regex 判定、(4) 最終判定。Linux / macOS / Windows (WSL) のバイナリを自動選択、各エージェントの hook 設定も自動注入。</p>
+<div class="sup"><span class="lbl">💡</span>汎用化のエッセンス — (1) <strong>"エージェントが catastrophic なコマンドを打つのを外側で止める" 発想</strong>: モデルが賢くなっても "npm パッケージ名を勘違いして rm -rf" する事故はゼロにできないため、"モデルの外側にゲート層を置く" が現代の安全設計。これは 7/11 号で紹介した Mnemosyne (実行前 gate) と同じ思想を、"軽量ローカルフック" として実装した個人 OSS 版。(2) <strong>Rust + SIMD</strong> で "hook のレイテンシが増えて DX を壊さない" ことに拘っている点が実務的: 90% 以上のコマンドを 10μs で pass-through させるため、エージェントの体感速度に影響しない。<em>読み手の実務: 社内で Claude Code / Cursor を許可する場合、この dcg を全社員に配って hook 統一するのが最小コストの安全設計</em>。(3) 対比: 昨日 7/11 号 wonderwhy-er/DesktopCommanderMCP (22 ツール MCP) と補完関係にあり、"MCP で能力を広げる" と "hook で危険を止める" の両輪が揃った。組み合わせて社内展開するのが 2026 後半の実務パターン。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/Nutlope/hallmark" target="_blank" rel="noopener">Nutlope/hallmark — "AI っぽさ" を消す anti-AI-slop デザイン Skill (Together AI 開発)</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕急上昇</span><span class="tag">Skills</span><span class="tag">デザイン</span></div>
+<div class="src">⭐+210 today / 4,169 total / CSS / Claude Code / Cursor / Codex 対応</div>
+<p class="sum">Together AI の Hassan (@nutlope) が公開した Agent Skill。"Claude や Cursor が生成する UI はどれも似た構造 (hero → 3 feature → CTA → footer) になる" 現象 (AI slop) を明示的に禁じ、"構造的な多様性" を強制する制約を組み込んだデザイン Skill。4 つのジャンル (editorial / modern-minimal / atmospheric / playful) を切り替え可能で、それぞれ Stripe・Linear 系、Suno・Runway 系、Post-Linear 系などの参照モデルを持つ。導入は <code>npx skills add Nutlope/hallmark</code>。</p>
+<div class="sup"><span class="lbl">💡</span>汎用化のエッセンス — (1) <strong>Agent Skill の実用ユースケースが "AI らしさをそぎ落とす" 方向に広がった</strong>: 7/11 号の Google Stitch Skills が "生成する" 方向の Skill だったのに対し、Hallmark は "生成物を差別化する" 方向。両者とも "Skills = ベンダ横断で振る舞いを組み込む共通抽象" として機能。(2) <strong>"structural variety" を制約として書ける</strong>のは LLM の癖への現代的対処: モデルはトレーニングデータの中央値に引き寄せられるため、"変化を強制する" 制約を Skill で書くのは他ドメインでも応用可能。<em>読み手の実務: 自社の "AI 生成ドキュメント / メール" が同じテンプレに寄り過ぎる問題も、"structural variety を強制する Skill" として書けば横展開できる</em>。(3) 対比: 昨日 7/11 号 team_zenn の "Manual mode を publish 直前だけ" と同じ、"人間が本能的に嫌う AI らしさ" を体系的に扱う設計論が独立ジャンルとして立ち上がりつつある。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/HKUDS/Vibe-Trading" target="_blank" rel="noopener">HKUDS/Vibe-Trading — 香港大 DS グループ発、"MCP 54 ツール構成の個人トレーディングエージェント" が Trending 上位</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">🆕急上昇</span><span class="tag">MCP</span><span class="tag">研究発</span></div>
+<div class="src">⭐+776 today / 20,429 total / Python / Apache 2 / HKU Data Science Lab</div>
+<p class="sum">香港大 Data Science グループ (HKUDS) がリリースした OSS。株式 (香港 / 米国 / A 株) / 暗号資産 / 先物 / FX の市場データを "全て無料 API + 自動フォールバック" (yfinance / OKX / AKShare) で扱い、Claude Code / Codex CLI / ChatGPT を含む任意の MCP クライアントから 54 種類の MCP ツールとして呼び出せる。対応 LLM は OpenRouter / OpenAI / DeepSeek / Gemini / Groq / DashScope-Qwen / Zhipu / Moonshot-Kimi / MiniMax / Xiaomi MIMO / Z.ai / Ollama (ローカル)。免責: research / backtesting のみで、実発注は行わない。</p>
+<div class="sup"><span class="lbl">💡</span>汎用化のエッセンス — (1) <strong>"MCP 54 ツール" で 1 個の巨大サーバに詰め込む設計</strong>は、7/11 号の DesktopCommanderMCP (22 ツール) と同じで、"用途特化の分厚い MCP を配布する" 潮流の追認。細かい MCP を組み合わせる Unix 哲学より "1 個入れれば足りる" 実利が受けている。(2) <strong>データ源の自動フォールバック</strong>: yfinance / OKX / AKShare を横断して "動く方を使う" 抽象は、"外部 API 依存を減らす" 実務パターンの参考実装。API キー不要は導入障壁を極限まで下げるが、レート制限違反リスクを個人ユーザに転嫁するトレードオフに注意。(3) <strong>研究グループ発の OSS が Trending 上位に</strong>: 大学系のオープンソースは往々にして "研究デモで終わる" が、Vibe-Trading は "MCP 統合を SDK として提供" するアプローチで実務ユーザを取り込みに来ている。<em>読み手の実務: 自社ドメイン (イベント / 予約) を "MCP ツール群として公開する" 参照実装として、54 ツール構成の分類の仕方が参考になる</em>。</div>
+</div>
+
+<h2>🔬 論文 / 研究</h2>
+
+<div class="art">
+<h3><a href="https://arxiv.org/abs/2601.13671" target="_blank" rel="noopener">The Orchestration of Multi-Agent Systems: Architectures, Protocols, and Enterprise Adoption (arXiv 2601.13671)</a></h3>
+<div class="tags"><span class="tag">🔬論文</span><span class="tag">Multi-Agent</span><span class="tag">📐設計論</span><span class="tag">MCP</span></div>
+<div class="src">出典: arXiv 2601.13671 / 7 月に ICML 2026 / エンタープライズ MCP 実装のリファレンスとして再露出</div>
+<p class="sum">"複数エージェントを連携させて業務目的を達成する系" の技術的構成要素を統合的に定式化した論文。核となる主張は "オーケストレーション層" に <strong>Planning (計画) / Policy enforcement (規則適用) / State management (状態管理) / Quality operations (品質運用)</strong> の 4 機能を明示的に持たせ、その上に 2 種類の通信プロトコルを載せる: (1) <strong>Model Context Protocol (MCP)</strong> — エージェントが外部ツール・データにアクセスする標準、(2) <strong>Agent2Agent Protocol</strong> — エージェント間の交渉 / 委任 / 集約のプロトコル。両者を組み合わせて "監査可能 / ポリシー準拠 / スケーラブルな" 分散エージェント通信を実現する枠組みを提示。</p>
+<div class="sup"><span class="lbl">💡</span>汎用化のエッセンス — (1) <strong>今日ハイライトの各記事 (EMA / ANS / Slack agentic testing / Cloudflare Temp Accounts)</strong> は全てこの論文の枠組みで解釈できる: EMA = Policy enforcement 層の実装、ANS = "監査可能な ID" の実装、Slack testing = Quality operations 層の実装、Cloudflare Temp Accounts = State management (エージェントごとの一時実行環境) の実装。論文が "こうあるべき" と描いた枠組みが、今週の産業アップデートで具体化された形。(2) <strong>Agent2Agent プロトコル</strong>: MCP は "エージェント ↔ ツール" だが、"エージェント ↔ エージェント" は Anthropic の Agent 標準 / Google A2A / MS Copilot Extensions などの断片は出揃いつつも標準化は途上。この論文は "MCP と対をなす A2A プロトコル" を明示的に必要と主張しているのが重要。(3) 昨日 7/11 号 arXiv 2605.02801 (orchestration traces を RL 信号に) と組み合わせると "オーケストレーション層の設計 (今日論文) → 実行トレース保存 (昨日論文) → RL 学習" の一連の実装ロードマップが読み取れる。<em>読み手が社内エージェント基盤を組む時、この 4 機能 (Planning / Policy / State / Quality) を設計の脊柱にすると議論がすっきりまとまる</em>。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+<h3><a href="https://zenn.dev/satoshissss/articles/5be253a330896c" target="_blank" rel="noopener">Build, Don't Buy — 2026 年、AI エージェントは内製する時代へ (Zenn)</a></h3>
+<div class="tags"><span class="tag">Zenn</span><span class="tag">📐設計論</span><span class="tag">AI Agent</span><span class="tag">内製</span></div>
+<div class="src">出典: Zenn / satoshissss</div>
+<p class="sum">"エージェント SaaS を買うか、内製するか" の意思決定を、"LLM は 5〜6 週間毎に世代交代する" 前提から論じる記事。主張: (1) 外注 / SaaS 導入は "モデル切替時に週単位の遅延" が発生し、モデル改善の恩恵を先送りする、(2) 内製化した組織は "新モデル公開当日に本番投入して検証" が可能で、この差が 1 年で決定的な競争優位に転化する、(3) MCP と Skills の登場で "内製の初期コスト" が過去 2 年で 10 分の 1 になり、"買う理由 > 作る理由" の閾値が下がった、(4) ただし "コアでないユースケース" は依然として SaaS が正解で、判断基準は "自社ドメインの深さ × モデル改善の恩恵の受け方"。</p>
+<div class="sup"><span class="lbl">💡</span>読み手の関心 (テックリード視点の意思決定) にドンピシャの日本語記事。汎用化 — (1) <strong>"モデル改善サイクルと発注サイクルの噛み合わせ"</strong> という切り口は 2026 年独自: 従来の Build vs Buy 議論は "コスト / 差別化 / 保守" 3 軸だったが、"モデル進化速度" が第 4 軸として立ち上がった。特にコアユースケース (自社の差別化領域) は "月次でモデル切替を試したい" 要件が新規に出てくるため、SaaS の "四半期リリース" では追いつけない。(2) 今日ハイライトの <strong>MCP EMA</strong> は "内製の障壁を下げる" 具体的道具: 自社 SaaS を "MCP サーバとして開放" すれば、外部 (パートナー / 顧客) からも標準化されたエージェント接続を受けられる。買う vs 作るの意思決定に "MCP で開放する" の 3 択目が入ってきたのが 2026 後半の変化。(3) 対比: 7/11 号 team_zenn (人間承認 + AI 実装) と組み合わせると、"内製化 → MCP + Skills で標準化 → 人間 gate + AI 実行の 2 層" が現代的な自社構築テンプレの形。<em>読み手の実務では、自社イベント運用 SaaS で "顧客側の AI エージェントから叩ける MCP エンドポイントを提供する" が、2026-Q4 のロードマップに載せる価値のある機能</em>。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://zenn.dev/tesla/articles/545165ed6334c7" target="_blank" rel="noopener">今年の生成 AI のテーマは「シミュレーション」である (Zenn / tesla)</a></h3>
+<div class="tags"><span class="tag">Zenn</span><span class="tag">📐設計論</span><span class="tag">生成AI</span><span class="tag">世界モデル</span></div>
+<div class="src">出典: Zenn (tesla)</div>
+<p class="sum">2026 年の生成 AI トレンドを "テキスト生成 → シミュレーション" のフレームで整理する解説記事。核となる主張: (1) LLM のパラダイムは "次の単語を予測する言語モデル" から "世界の状態遷移を模倣する world model" へシフト中で、動画生成 / 実世界エージェント / エンボディド AI はいずれも "世界の物理をシミュレートする" 共通軸を持つ、(2) この流れの実務含意は "コード生成、UI 生成、ドキュメント生成もそれぞれ '実行環境をシミュレートしながら生成する' 発想に置き換わる"、(3) 具体例として Slack agentic testing (本日別記事) や Astro の "エージェント検知 → 開発サーバをバックグラウンド実行 → JSON ログ出力" 機能が、"世界を並列シミュレートしながら学ぶ" 側の実装として位置づく。</p>
+<div class="sup"><span class="lbl">💡</span>読み手のアーキテクチャ関心にはっきり刺さる日本語記事。汎用化 — (1) <strong>"シミュレーション軸"</strong> は Karpathy の "world model" 論、DeepMind の "Genie" 系、NVIDIA の Cosmos などが個別に話してきた話題を、"生成 AI の 2026 年の共通軸" として日本語で束ねている稀少な整理。実務者向けの意義は "検索補助 / 質問応答から、'仕組みを試させる' タスクに AI の主用途が拡張しつつある" ことを言語化してくれる点。(2) <strong>本日ハイライトとの結線</strong>: Terry Tao 記事 (AI が Java applet をシミュレートしながら JS に移植)、Slack agentic testing (AI が UI 状態をシミュレートしながらテスト)、Pinterest MIQPS (レンダリング結果をシミュレートして URL を正規化) — いずれも "生成 = 実行環境のシミュレート" 系。この記事のフレームで見ると 2026 前半の産業アップデートが 1 本の軸で読める。(3) <strong>読み手の実務への転用</strong>: 自社ドメイン (イベント運営) で AI を"補助ツール" として使う段階から、"顧客対応シミュレーション" "会場レイアウトシミュレーション" 等 "実行環境シミュレート" 用途に移すのが 2026 後半のロードマップに乗せる価値がある — 抽象度を 1 段上げた投資判断のフレームとして使える。</div>
+</div>
+
+<footer>
+収集元: Hacker News <em>(取得失敗、WebSearch で補完)</em> / GitHub Trending / Anthropic News <em>(取得失敗、WebSearch で補完)</em> / OpenAI News <em>(取得失敗、WebSearch で補完)</em> / Google DeepMind <em>(WebSearch で補完)</em> / The Pragmatic Engineer <em>(WebSearch 経由、該当新記事なし)</em> / Martin Fowler <em>(取得失敗、WebSearch で補完、新記事なし)</em> / AWS Blog / AWS Architecture Blog <em>(取得失敗)</em> / High Scalability <em>(該当新記事なし)</em> / ThoughtWorks Radar <em>(該当新動きなし)</em> / Netflix Tech Blog <em>(該当新記事なし)</em> / Uber Engineering <em>(該当新記事なし)</em> / Stripe Engineering <em>(該当新記事なし)</em> / InfoQ <em>(取得失敗、WebSearch で補完)</em> / arXiv cs.AI / Changelog <em>(取得失敗)</em> / Zenn <em>(取得失敗、WebSearch で補完)</em> / note.com <em>(取得失敗、WebSearch で補完、新記事なし)</em> / Publickey <em>(取得失敗、WebSearch で補完)</em> / Cloudflare Blog / Slack Engineering / Pinterest Engineering (Medium) / MCP 公式 blog / Linux Foundation newsroom / GitHub cosmtrek/mindwalk / Dicklesworthstone/destructive_command_guard / Nutlope/hallmark / HKUDS/Vibe-Trading
+</footer>
+
+</body>
+</html>
