@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年07月18日(土) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+.sup .lbl{color:var(--muted);font-weight:600;margin-right:4px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+@media (max-width:480px){
+  body{font-size:15.5px}
+  h1{font-size:1.2rem}
+  h2{font-size:1.05rem}
+  .art h3{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+
+<header>
+<h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+<div class="date">2026年07月18日(土)</div>
+</header>
+
+<section class="hi">
+<h2>🎯 今日のハイライト</h2>
+<p>
+本日 7/18 (土) の主題は "<strong>Stripe が "MongoDB フリート運用" を "グラフ探索 + 状態機械" として本番実装した設計論、"harness engineering" が arXiv でも学術用語化、Bun/Zig 論争がついに Andrew Kelley の "反省文" で決着</strong>"。目玉は 3 本。1 本目は <strong>Stripe が世界規模の MongoDB フリートを "traversable graph + pathfinding + state machine" で自動修復する仕組みを公開</strong> — pager 発火 30% 削減、shard 不健全時間を年 12 日ぶん削減。<em>SRE の "手順書 → runbook → orchestrator" 進化の到達点</em>として直接応用可能な具体アーキテクチャ。2 本目は <strong>arXiv 2607.04528 "Measuring Harness-Induced Belief Divergence in Multi-Step LLM Agents"</strong> — 7/16 Fowler の "harness engineering" が 3 ヶ月で学術ベンチマークの中心語彙になった。同時期に 2607.12227 "Rethinking the Evaluation of Harness Evolution" / 2607.12338 "How Many Tasks Are Enough for Agent Benchmark Decisions" が並び、<em>"エージェント評価は harness を隠すと再現しない" が業界の共通前提化</em>。3 本目は <strong>Andrew Kelley (Zig 作者) が "Bun の Rust rewrite を "unreviewed slop" と呼んだ自分の投稿を書き直し、resentment を認めて謝罪</strong> — HN 大炎上、"AI 並列書き直しの是非" と "OSS リーダーシップの感情労働" が絡んだ稀有な事例。加えて GitHub Code Quality が 7/20 GA (10,000 企業のプレビュー実績、$10/コミッター/月)、MoonshotAI の Kimi Code CLI (1T param K2.6 モデルベース)、Zenn の "AI エージェント経由アカウント乗っ取り 8 桁後半被害" 実例、Publickey が伝えるデジタル庁 "源内 (Gennai)" のさくらクラウド上での国産 LLM 3 モデル A/B テスト。読み手のアーキテクチャ関心軸で見れば、7/14 Uber GitFarm → 7/15 Cloudflare hyper / Datadog / Fowler → 7/16 Grab / DoorDash / Radar / 7/17 Pinterest / Logic Apps → 7/18 <strong>Stripe DB フリート自動修復 + harness 学術化</strong>、と "本番運用の SRE 語彙" が具体アーキテクチャ + 理論の両輪で 5 日連続で更新されている。土曜のため新規リリース系は少ないが、"金曜の InfoQ 記事の消化と週明けを見据えた深めの読み物" が主戦場の 1 日。
+</p>
+</section>
+
+<h2>📐 アーキテクチャ / 設計 — Stripe の DB 自動修復と "harness" の学術化</h2>
+
+<div class="art">
+<h3><a href="https://stripe.dev/blog/how-stripe-uses-graph-search-and-state-machines-to-auto-remediate-a-global-database-fleet" target="_blank" rel="noopener">How Stripe uses graph search and state machines to auto-remediate a global database fleet (Stripe / Pragya Mehta &amp; Sai Samant) — MongoDB フリートを "traversable graph + pathfinding + state machine" で自動修復、pager 30% 減 / 不健全時間 年 12 日削減</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">🔥話題</span><span class="tag">Stripe</span><span class="tag">SRE</span><span class="tag">データ基盤</span></div>
+<div class="src">出典: stripe.dev/blog (2026-07-16 公開 / 本ブリーフ初取り上げ)</div>
+<p class="sum">Stripe が世界規模の MongoDB インフラを<strong>「探索可能なグラフ」としてモデル化</strong>し、pathfinding アルゴリズムで<em>復旧計画を動的に計算・実行</em>する auto-remediation の設計論を公開。State machines で shard の状態遷移を管理し、単なる runbook 自動化を超えた「探索型の復旧」を実装。結果は <strong>pager 発火 年 200 件 (30%) 減 / shard の不健全状態 年 12 日ぶん削減 / 新 shard レイアウトも手動作業ゼロで対応</strong>。</p>
+<div class="sup"><span class="lbl">💡</span><strong>読み手のアーキテクチャ関心にドンピシャ</strong>。<strong>汎用化のエッセンス</strong> — (1) <strong>SRE の "手順書 → runbook → orchestrator" 進化の到達点</strong>: 従来の SRE 運用は「発火 → PagerDuty → runbook を人間 or bot が実行」が主流。Stripe はこれを <em>"インフラを状態遷移グラフとしてモデル化し、"現在地 → 目標地" の最短経路を探索する"</em> という一段上の抽象に置き換えた。runbook が「静的なノード」に、遷移が「グラフのエッジ」になり、<em>runbook 群の "組み合わせ" として復旧計画を自動生成</em>できる。(2) <strong>他社事例との違い</strong>: 7/16 の DoorDash "eval-as-CI"、7/15 の Datadog "AI-assisted refactoring"、7/17 の Pinterest "MIQPS content fingerprint" と発想の系譜は同じ = <em>"人間が書き溜めたルール表を、機械が探索できるデータ構造に変換して runtime で使う"</em>。判断ロジックをコードから宣言的構造へ移す 2026 年後半のパターン。(3) <strong>汎用化可能なエッセンス</strong>: 自社が MongoDB を持たなくても、<em>k8s cluster / VPC / 認証プロキシ / データパイプラインなど「複数の状態を持つリソース群」を運用する場合は同じ手法が輸出可能</em>。実務ステップは (a) リソースの正常状態を有限個の "健全ノード" として列挙、(b) 修復アクション (再起動、フェイルオーバー、スケール) を "エッジ" として定義、(c) 現在状態からゴールへの最短経路を探索器で解く。<em>runbook 1 個 1 個の品質より、"組み合わせ空間全体の到達可能性" を担保する</em>視点への転換が鍵。(4) <strong>読み手の実務</strong>: 自社で "オンコール当番が同じ手順を毎回踏んでいる" 事象があれば、それは <em>状態機械 + グラフ探索で自動化できる兆候</em>。まずは "頻出インシデントの状態遷移図を書く" だけで、可視化される復旧路の重複や、手順書間の依存関係が見え、次の投資判断が明確になる。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://arxiv.org/abs/2607.04528" target="_blank" rel="noopener">Measuring Harness-Induced Belief Divergence in Multi-Step LLM Agents (arXiv 2607.04528) — 同じ LLM + 同じタスクでも "harness" が違うだけでエージェントの信念軌跡が発散する</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">🔬論文</span><span class="tag">harness</span><span class="tag">評価</span></div>
+<div class="src">出典: arxiv.org/abs (2026-07-05 提出 / 本ブリーフ初取り上げ)</div>
+<p class="sum">Toronto 大 / Emory 大チームが "<strong>harness (エージェントに何を見せ何を許すかの実行足場) がベンチマーク結果を左右する</strong>" を実験で示した論文。エージェントに progress / risk / recoverability / constraints / failure mode / uncertainty / future success / repair cost / next action の 9 軸で K ステップの信念を語らせる <em>belief-rollout diagnostic</em> を導入し、<strong>arrival term (即時のインターフェース差) + growth term (時間発展での信念差)</strong> に分解。結論: <em>同じ LLM ・同じタスクでも harness が異なれば信念軌跡が発散し、しかも最終ベンチマークラベルは同じままなことがある</em> = "スコアは同じでも中身の推論経路が違う" ため既存評価が不十分。</p>
+<div class="sup"><span class="lbl">💡</span><strong>汎用化のエッセンス</strong> — (1) <strong>Fowler "harness engineering" の学術化</strong>: 7/13 の Fowler メモ、7/17 の retreat 続報、7/17 の Radar v34 で立ち上がった <em>"harness" という語彙が 3 ヶ月で arXiv 中心の学術ベンチマークにも到達</em>。同月 arXiv 2607.12227 "Rethinking the Evaluation of Harness Evolution" や 2605.23950 "Stop Comparing LLM Agents Without Disclosing the Harness" と並び、"harness を隠したエージェント比較は再現しない" が共通前提化した。(2) <strong>読み手の実務への含意</strong>: 自社エージェントの評価に "SWE-bench / AppWorld で何点" だけを持ち出すのは 2026 後半では不十分。<em>"どの harness で / どのモデルで / どの信念軌跡で" を三点セットで記録する運用</em>が、社内の意思決定にも顧客への提示にも必要になる。7/17 Radar が推した "既に確立された技への回帰 (Zero Trust / DORA / testability)" の直接的な処方箋が、"信念軌跡の観測性" として具体化した形。(3) <strong>設計論の実装</strong>: PoC 段階で "同一タスクを 2〜3 種類の harness で走らせて信念軌跡を diff" するだけでも、社内エージェントの "harness 依存の脆弱性" を早期に検出できる。特にツール呼び出し順序が正解を左右する UI 操作 / DevOps 自動化 / データ抽出系のワークロードで効く。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://arxiv.org/abs/2607.12338" target="_blank" rel="noopener">How Many Tasks Are Enough for Agent Benchmark Decisions? (arXiv 2607.12338) — SWE-bench / AppWorld / tau-bench の replay analysis、"AppWorld は 15% で結論確定、SWE-bench は 90% 必要"</a></h3>
+<div class="tags"><span class="tag">🔬論文</span><span class="tag">評価</span><span class="tag">SWE-bench</span></div>
+<div class="src">出典: arxiv.org/abs (2026-07-14 提出 / 本ブリーフ初取り上げ)</div>
+<p class="sum">SWE-bench / AppWorld / tau-bench の task-level 記録を再生 (replay) し、"<em>ベンチマーク全体を走らせずに部分ランで同じ pairwise 結論を得られるか</em>" を分析。0pp 厳密閾値・5pp バジェットで、<strong>AppWorld は全体の 15% / tau-bench は 25% / SWE-bench Verified は 90%</strong> でようやくすべての pairwise ターゲットに達する。<em>ベンチマークによって "サンプル効率" が桁違いに違う</em>実データを明示。</p>
+<div class="sup"><span class="lbl">💡</span><strong>汎用化のエッセンス</strong> — (1) <strong>"評価コストの見積もり" が新しい設計判断軸に</strong>: エージェント時代の性能検証は 1 タスクの API 呼び出しコストが重い (Claude Code なら 1 タスク数百円〜数千円級)。SWE-bench Verified を fair に評価するには全 500 問走らせないと差が読めない = <em>数十万円の評価予算が 1 モデル比較に必要</em>という具体スケール感が読める。(2) <strong>読み手の実務</strong>: 社内で "モデル A vs B" の意思決定をする時、<em>フルベンチではなく "何 % 走らせれば結論が確定するか" を先に見積もる</em>のが 2026 後半の合理的な運用。tau-bench の 25% 相当なら現実的、SWE-bench の 90% 相当なら本気で予算計画を立てる必要。(3) <strong>アーキテクチャ的な示唆</strong>: 前記 2607.04528 と組で読めば "何 % のタスクを走らせれば harness 差異まで含めて再現性が確保できるか" までが評価設計の対象になる = <em>"評価 pipeline も設計対象 (harness × サンプリング率 × 信念軌跡)"</em> という視点。</div>
+</div>
+
+<h2>🤖 AI / LLM プラットフォーム — Kimi K2.6 CLI と MCP RC ステートレス化</h2>
+
+<div class="art">
+<h3><a href="https://github.com/MoonshotAI/kimi-cli" target="_blank" rel="noopener">MoonshotAI/kimi-cli — Kimi Code CLI (K2.6 / 1T パラメータ / 256K context) がオープンソースで公開、subagent / ACP / MCP を同梱</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">MoonshotAI</span><span class="tag">Kimi</span><span class="tag">CLI エージェント</span></div>
+<div class="src">出典: github.com/MoonshotAI/kimi-cli (Python, 9,421 ⭐, +48 today / MarkTechPost 6/6)</div>
+<p class="sum">Moonshot AI が <strong>Kimi Code CLI</strong> を MIT ライセンスで公開。TypeScript 実装 (単一バイナリ配布)、<strong>1T パラメータ Kimi K2.6 モデル + 256K コンテキスト</strong>で動作。<em>subagent (coder / explore / plan) の並列ディスパッチ、conversational MCP 設定 (/mcp-config)、Zed / JetBrains 向け ACP (Agent Client Protocol) 統合</em>が最初から入る。認証は Kimi Code OAuth or Moonshot Open Platform API key。</p>
+<div class="sup"><span class="lbl">💡</span><strong>読み手のための背景</strong> — (1) <strong>ACP (Agent Client Protocol) とは</strong>: 2025 年後半に登場したオープン規格で、"IDE ⇔ エージェント" 間の通信を統一する。従来は Claude Code / Cursor / Codex / Windsurf それぞれが独自プロトコルだったのを、<em>Zed が主導した ACP で標準化</em>する動き。MCP (ツール呼び出し規格) と対の関係で、"外向き (ツール)" が MCP、"内向き (IDE)" が ACP。(2) <strong>Kimi CLI の位置づけ</strong>: <em>Claude Code / Codex / kimi-cli / kimi-code (別 repo) / Copilot CLI / opencode / Gemini CLI</em> という "CLI エージェント春秋戦国期" に、中国発オープンソース陣営の第一線が Moonshot AI = 1T モデルまで自前で提供可能な体力。7/17 の Codex デスクトップ統合と対照的に、CLI 一本足の "Unix 系哲学" 路線。(3) <strong>読み手の実務</strong>: 自社の CLI エージェント選定で、<em>"OSS + subagent + MCP + ACP 統合" を最初から満たすオプション</em>が増えた意味は大きい。ベンダロックイン懸念のある組織は、社内 PoC で kimi-cli / opencode / Kimi K2.6 を Claude Code 相当の比較対象に入れる時期。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://developer.mamezou-tech.com/blogs/2026/07/10/mcp-spec-2026-07-28-rc/" target="_blank" rel="noopener">MCP 2026-07-28 RC 解説：ステートレス化がもたらす AI エージェント実装の変化 (豆蔵デベロッパー) — HTTP transport が "stateful → optional stateless" に、水平スケール前提へ</a></h3>
+<div class="tags"><span class="tag">📐設計論</span><span class="tag">MCP</span><span class="tag">プロトコル</span></div>
+<div class="src">出典: developer.mamezou-tech.com/blogs (2026-07-10 / 本ブリーフ初取り上げ)</div>
+<p class="sum">MCP 仕様の <strong>2026-07-28 リリース候補 (RC)</strong> についての日本語解説。改訂の主眼は "<em>HTTP transport のステートレス化</em>" で、<strong>session ID 管理が必須から任意に、サーバ側の状態保持を前提としない設計</strong>に変わる。ロードバランサ配下での水平スケール / エッジ配置 / サーバレス実行が現実的になる方向で、<em>"MCP サーバを本番運用する" 段階に踏み込んだ改訂</em>。</p>
+<div class="sup"><span class="lbl">💡</span><strong>読み手のための背景</strong> — (1) <strong>なぜステートレス化が重要か</strong>: 初期 MCP は "エージェントとサーバが 1 対 1 で長時間セッションを持つ" 前提で設計されていた = <em>K8s の水平スケールや、AWS Lambda / Cloud Run 等のサーバレス実行と相性が悪い</em>。RC ではセッション ID が任意になり、リクエスト単位で完結する構成を許容 = 7/17 の AWS OpenSearch Serverless "scale-to-zero" や Grab Palana の Envoy egress proxy と同じ "エージェント基盤のマネージド化" 方向。(2) <strong>実務への含意</strong>: 自社で MCP サーバを持つ (or 検討中) なら、RC への準拠を今から計画すべき。特に <em>SaaS ベンダとして顧客に MCP を提供する側</em>は、"水平スケールのプロトコル対応" が近い将来の調達要件になる可能性大。(3) <strong>汎用化のエッセンス</strong>: 初期の "対話型プロトコル" が普及後に "REST 的なリクエスト完結型" に再設計される流れは、GraphQL / gRPC / WebSocket の歴史でも見た既視感あるパターン。<em>プロトコル成熟の第 2 段階 = "運用しやすさへの回帰"</em>という位置づけ。</div>
+</div>
+
+<h2>💬 コミュニティ議論 — Bun/Zig 論争の "反省文" 決着</h2>
+
+<div class="art">
+<h3><a href="https://andrewkelley.me/post/my-thoughts-bun-rust-rewrite.html" target="_blank" rel="noopener">My Thoughts on the Bun Rust Rewrite (Andrew Kelley / Zig 作者) — "unreviewed slop" 発言を書き直し、resentment を認めて謝罪、"Jarred が幸せなら OK" と結論</a></h3>
+<div class="tags"><span class="tag">🔥話題</span><span class="tag">Zig</span><span class="tag">Bun</span><span class="tag">OSS 文化</span></div>
+<div class="src">出典: andrewkelley.me / The Register 2026-07-14 / HN item 48933149</div>
+<p class="sum">Bun が Zig → Rust への<strong>535,000 行の書き直しを 11 日間 / Claude エージェントの並列実行で $165K で完遂</strong>したという 7 月上旬のニュースを受け、Zig 作者の Andrew Kelley が<em>「テストスイートが 100 万行の "unreviewed slop" を検出できるはずがない」</em>と反応。この記事は <strong>その "unreviewed slop" 発言を公開 git repo で書き直した反省文</strong>で、"自分の resentment が読者には見えていたが自分には見えていなかった" と認めて謝罪。"Jarred は幸せそうで成功している、それでいい" と結論した。HN でも "How Our Rust-to-Zig Rewrite Is Going" (item 48933149) と並んで議論継続中。</p>
+<div class="sup"><span class="lbl">💡</span><strong>読み手のための背景</strong> — (1) <strong>技術論と感情労働の分離</strong>: Kelley の元投稿は "AI 並列書き直しの品質は担保されない" という技術的主張と、"Bun の Zig 依存が自分のプロジェクトの評判を悪くする" という感情が混じっていた。今回の書き直し版はその<em>感情部分を切り出して謝罪し、技術主張だけを残す</em>という異例のリーダーシップ。OSS リーダーの "感情労働" が公開の場で扱われる稀な事例。(2) <strong>"AI 並列書き直し" の是非</strong>: Bun 側は <em>"Zig コントリビュータの絶対数が少ないため Rust へ" </em> を主張、Kelley は <em>"言語選定より engineering discipline の問題"</em> を主張。両方が正しい可能性が高く、7/17 Radar v34 の "認知負債" と直結する議論 (= 生成コードの量が増えるほど人間の理解が追いつかない)。(3) <strong>読み手の実務</strong>: 自社で "AI を使った大規模書き直し" の提案が来た時に見るべき指標は、<em>(a) レビュー体制のスケール限界、(b) テストカバレッジの意味論的な質、(c) 書き直し後のバグ収束速度</em>。$165K で 11 日という工程は魅力的だが、"11 日後に 6 ヶ月間バグ収束期間が続く" 可能性を計上できているかが分岐点。</div>
+</div>
+
+<h2>☁️ 開発ツール / インフラ — GitHub Code Quality GA と Debian 13.6</h2>
+
+<div class="art">
+<h3><a href="https://github.blog/changelog/2026-06-16-github-code-quality-generally-available-july-20-2026/" target="_blank" rel="noopener">GitHub Code Quality が 2026-07-20 に GA — $10/コミッター/月、10,000 社プレビュー実績、Copilot 系は使用量課金</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">GitHub</span><span class="tag">品質管理</span></div>
+<div class="src">出典: github.blog/changelog (2026-06-16 告知 / 7/20 GA)</div>
+<p class="sum">GitHub Code Quality が<strong>プレビュー期間 (1 万社超が利用) を経て 2026-07-20 に GA</strong>。価格は<em>有効リポジトリの active committer 1 人あたり月 $10</em>、<strong>CodeQL は Actions minutes を消費、Copilot code review / AI-assisted 検出 / Copilot Autofix は使用量課金</strong>。組織全体の展開、組織ダッシュボード、ruleset による coverage 強制、リポジトリ / 組織単位のスコアリング、maintainability / reliability / coverage 閾値での PR マージブロックまで含む。GitHub Enterprise Cloud / Team プランで提供 (Enterprise Server は対象外)。</p>
+<div class="sup"><span class="lbl">💡</span><strong>読み手のための背景</strong> — (1) <strong>"品質を課金対象にする" 戦略の意味</strong>: Codacy / SonarCloud / CodeClimate 等の外部 SaaS が担っていた領域を、GitHub が組み込みで押さえに来た形。<em>"Code review の Copilot 化" と "maintainability の閾値 gate 化" を "PR マージブロック" までワンストップ提供</em>する = 7/17 Radar v34 の "gate 群 = testability への回帰" と正面から呼応。(2) <strong>コスト計算の重要ポイント</strong>: 100 コミッターの組織で <em>1,000/月 = 年 $12K</em>、Copilot 系の使用量は別途。既存の Codacy / SonarCloud との切替判断は "committer 数 × 使用頻度 × 既存契約単価" で計算可能。(3) <strong>読み手の実務</strong>: 7/20 の GA 開始前に、社内で "現在の code quality ツールへの支払い + PR ブロック運用" のベースラインを整理しておくと、GA 後の PoC → 移行判断が高速化する。<em>特に Enterprise Server 利用組織は対象外</em>のため、Enterprise Cloud への移行検討が必要。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://www.debian.org/News/2026/20260711" target="_blank" rel="noopener">Updated Debian 13.6 released — Secure Boot CA 2013 の期限切れ対応が目玉、fwupd 2.0.20 で自動更新可能に</a></h3>
+<div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Debian</span><span class="tag">⚠セキュリティ</span></div>
+<div class="src">出典: debian.org/News (2026-07-11 / 本ブリーフ初取り上げ)</div>
+<p class="sum">Debian 13 (trixie) の 6 番目のポイントリリース。<strong>124 のバグ修正 + 120 のセキュリティ更新</strong>。最大の変更は<em>2013 年の UEFI Secure Boot CA が期限切れになったこと</em>への対応 — 大半の PC にプリインストールされ、ブートローダの署名に使われてきた CA が失効。<strong>fwupd 2.0.20</strong> でSecure Boot の CA / KEK / DBX を自動更新可能に。geoip-database は Debian Free Software Guidelines と非互換となったため 2019 年 12 月版まで巻き戻し。</p>
+<div class="sup"><span class="lbl">💡</span><strong>読み手のための背景</strong> — (1) <strong>Secure Boot CA 期限切れの実務的インパクト</strong>: 大半の PC / サーバは 2013 年 CA を信頼している。<em>放置すると新しく署名されたブートローダが検証失敗 → 起動不能</em>という事故に繋がりうる。fwupd 経由で自動更新できるようになったのは実務的に大きい。(2) <strong>企業サーバでの対応順序</strong>: (a) fwupd の稼働確認、(b) Secure Boot 有効なホストの棚卸し、(c) CA 更新のロールアウト計画。<em>"数年に 1 回しか起きない、しかし起きた時は全台に影響する" タイプの運用タスク</em>で、ADR (7/17 号でも触れた context decay 対策の意味で) に残しておくと 5〜10 年後の担当者を救う。(3) <strong>汎用化のエッセンス</strong>: 有効期限を持つ長寿命の鍵 / 証明書 / トークンは、<em>ADR に「有効期限」フィールドを一級市民として設ける</em>ことで、context decay を減らせる。今回の CA 事案は業界全体で参考になる ADR ネタ。</div>
+</div>
+
+<h2>🌟 GitHub Trending / 注目 OSS — Design Skills, Local-first MCP, 3D 基盤モデル</h2>
+
+<div class="art">
+<h3><a href="https://github.com/ibelick/ui-skills" target="_blank" rel="noopener">ibelick/ui-skills — Design Engineers 向けの Claude Skill 集、agent が "UI 磨き" のスキルセットに自動ルーティングされる (+242 today, 4,922 ⭐)</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">Claude Skills</span><span class="tag">デザイン</span></div>
+<div class="src">出典: github.com/ibelick/ui-skills (TypeScript, 4,922 ⭐, +242 today)</div>
+<p class="sum">"<strong>UI Skills</strong>" は<em>デザインエンジニアリング用の Claude Skill ディレクトリ</em>。<code>npx ui-skills start</code> でエージェントをタスクに応じた適切な UI スキルにルーティング。同梱スキルは <em>baseline-ui (スペース / 階層 / タイポの高速クリーンアップ)、improve-ui (既存プロダクトの UI 監査 + 修正計画)、frontend-design (creative かつ generic AI aesthetic を避ける UI 生成)、fixing-motion-performance</em> など。MIT / 68 fork / 3 コントリビュータ。</p>
+<div class="sup"><span class="lbl">💡</span><strong>読み手のための背景</strong> — (1) <strong>7/17 の Hallmark と対の位置づけ</strong>: Hallmark は "AI slop の gate 型監査" (出力のフィルタリング)、ui-skills は "エージェントに UI 作業の "型" を教える教材" (入力側の質の底上げ)。<em>両者を組み合わせると "生成前に型で導き、生成後に gate で削ぐ" 二段階の UI 品質担保</em>が組める。(2) <strong>Claude Skills エコシステムの成熟</strong>: `.claude/skills/` に置くだけで自動的に skill として認識され、条件付き自動起動できる仕組みが 2026 中盤で普及。<em>mattpocock/skills (7/14 で登場), Together AI hallmark (7/17), ibelick/ui-skills (7/18) と、"skill パッケージング" が OSS の新しいユニット</em>になりつつある。(3) <strong>読み手の実務</strong>: 自社の UI レビューで "毎回同じ改善指摘" があるなら、それを <em>社内 skill として `.claude/skills/` に固定</em>する運用が定石化した。ui-skills の frontend-design / baseline-ui は、社内ブランディング / アクセシビリティ / i18n を追加する土台として使いやすい。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/KnockOutEZ/wigolo" target="_blank" rel="noopener">KnockOutEZ/wigolo — Local-first Search / Fetch / Crawl / Research over MCP, "API key 不要" が売り (+192 today, 1,156 ⭐)</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">MCP</span><span class="tag">Local-first</span></div>
+<div class="src">出典: github.com/KnockOutEZ/wigolo (TypeScript, 1,156 ⭐, +192 today)</div>
+<p class="sum">"<strong>ローカルファーストで検索 / フェッチ / クロール / リサーチを MCP 経由で提供</strong>" する OSS。特徴は <em>API キー不要</em> — Google / Bing / Tavily 等の商用検索 API を挟まずローカルで完結する。エージェントに "調査系ツール一式" を渡す用途で、7/17 の tirth8205/code-review-graph (コード知識グラフ) と同じ "local-first MCP" の系譜。</p>
+<div class="sup"><span class="lbl">💡</span><strong>読み手のための背景</strong> — (1) <strong>"local-first MCP" が Trending の新カテゴリ</strong>: code-review-graph (コード) + wigolo (Web リサーチ) と並び、<em>"外部 SaaS に API key を渡さず、エージェントが自分でツールを持つ" 設計</em>が伸長。プライバシー要件 / 契約制約 / エッジ運用のいずれにも刺さる。(2) <strong>API key 不要の意味</strong>: <em>コンプライアンス上 "商用検索 API に問い合わせ内容を送ることができない" 業種 (医療 / 金融 / 公共 / 法律)</em> にとって、ローカル完結の Web ツールは実務上の必須要件。この方向は 2026 後半に一段加速する見込み。(3) <strong>読み手の実務</strong>: 自社エージェントの Web ツールを "Tavily / Perplexity API 前提" にしていると、<em>エンタープライズ顧客への提供時に契約条項でブロック</em>される事故が起きる。ローカル代替の PoC を並行で走らせておく価値大。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://github.com/Robbyant/lingbot-map" target="_blank" rel="noopener">Robbyant/lingbot-map — Ant Group Robbyant の 3D 基盤モデル、"see-as-you-go" 型で streaming データからリアルタイム 3D 再構成 (+827 today, 12,790 ⭐)</a></h3>
+<div class="tags"><span class="tag">🛠OSS</span><span class="tag">3D 再構成</span><span class="tag">Embodied AI</span></div>
+<div class="src">出典: github.com/Robbyant/lingbot-map (Python, 12,790 ⭐, +827 today)</div>
+<p class="sum">Ant Group の embodied AI 子会社 <strong>Robbyant</strong> が LingBot-Map を OSS 化。<em>従来の "画像を貯めてからバッチで復元" ではなく、映像を撮りながらフレーム毎にカメラ位置推定 + 3D 構造の再構成</em>を行う feed-forward 3D 基盤モデル。純 auto-regressive な Geometric Context Transformer で、<strong>Oxford Spires での ATE 6.42m (従来 streaming 手法の 2.8 倍精度) / ETH3D で F1 98.98 (次点比 +21pt)</strong>。RGB カメラだけでロボット / 自動運転 / AR デバイスに使える。</p>
+<div class="sup"><span class="lbl">💡</span><strong>読み手のための背景</strong> — (1) <strong>"streaming 3D 再構成" の意味</strong>: 従来主流だった NeRF / Gaussian Splatting は "十分な枚数の画像を貯めてから最適化" するオフライン計算。LingBot-Map は <em>1 フレーム到着ごとに逐次更新する feed-forward モデル</em>で、リアルタイム性が要る用途 (ドローン / ロボット / AR) に本命。(2) <strong>Ant Group の embodied AI 参入</strong>: Alibaba グループの金融子会社が embodied AI に注力する動きは、<em>中国 AI 各社が "物理世界へ出る AI" にリソースを寄せ始めた</em>兆候。7/16 の Google DeepMind Bioresilience と対で、"AI が実世界のセンサ / アクチュエータに接続する" 2026 後半の主戦場。(3) <strong>読み手の実務</strong>: 自社の SaaS で AR / 3D 表示 / センサ融合を扱う場合の下敷きになる。個別プロダクトへの直接組込みより、<em>"streaming 3D 再構成のオープンな SOTA" が MIT で使える</em>という業界地図の更新として押さえるのが実用的。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向 — さくら + 国産 LLM 3 モデル、AI エージェント経由の乗っ取り事例</h2>
+
+<div class="art">
+<h3><a href="https://www.publickey1.jp/blog/26/3ai.html" target="_blank" rel="noopener">さくらのクラウドで、3 つの国内開発された大規模言語モデルの試用を開始、デジタル庁がガバメント AI「源内」用に評価 (Publickey)</a></h3>
+<div class="tags"><span class="tag">🇯🇵日本</span><span class="tag">Publickey</span><span class="tag">政府 AI</span></div>
+<div class="src">出典: publickey1.jp/blog (2026-07-14 / 本ブリーフ初取り上げ)</div>
+<p class="sum">さくらインターネットの "さくらのクラウド" 上で、<strong>NTT データ "tsuzumi 2"、富士通 "Takane 32B"、Preferred Networks "PLaMo 2.0 Prime"</strong> の 3 モデルが試用開始。デジタル庁の政府 AI プラットフォーム "<em>源内 (Gennai)</em>" に組み込み、<em>ユーザが応答を選ぶ A/B テスト形式で、既存の AWS 上 (Nova Lite / Claude Haiku 4.5 / Claude Sonnet 4.6 / Claude Opus 4.8) と比較</em>。デジタル庁は 8 月までに試験環境を構築、9〜11 月に本格実験。</p>
+<div class="sup"><span class="lbl">💡</span><strong>読み手のための背景</strong> — (1) <strong>"源内" とは</strong>: デジタル庁が構築中の政府職員向け生成 AI プラットフォーム (Claude 系 + Nova 系が現行) で、日常業務 (文書要約 / 議事録整形 / 検索) のインフラ化を進めている。今回の試験は "国産 LLM に置き換え可能か" の実用評価フェーズ。(2) <strong>政府 AI 調達に含意</strong>: これまで政府案件では実質 AWS + Anthropic が優勢だったが、<em>"さくら + 国産 LLM" が同じ土俵の A/B 比較で並ぶ = 国産勢が本気の調達候補</em>という段階に到達。7/17 号で扱った ".NET EOL" と並ぶ、公共領域の "国産化圧" を示す事例。(3) <strong>読み手の実務</strong>: 自社が公共 / 準公共向け SaaS を持つ場合、"国産 LLM 対応" を選定条件に組み込む調達 RFP は 2026 後半以降増える見込み。<em>プロンプト / RAG 設計を "モデル差替可能" な抽象で書く</em>という 2024〜25 の教訓が、ここでも効く。</div>
+</div>
+
+<div class="art">
+<h3><a href="https://zenn.dev/ga14tools/articles/ai-agent-security-risk" target="_blank" rel="noopener">AI エージェント経由でアカウントが乗っ取られた事例と今すぐやるべき対策 (Zenn) — 広告アカウント (Google Ads MCC) が乗っ取られ 8 桁後半の被害</a></h3>
+<div class="tags"><span class="tag">⚠セキュリティ</span><span class="tag">Zenn</span><span class="tag">エージェント運用</span></div>
+<div class="src">出典: zenn.dev (2026-07 中旬 / 本ブリーフ初取り上げ)</div>
+<p class="sum">AI エージェントツールを導入した企業で、<strong>Google Ads の広告アカウント (MCC) が乗っ取られ 8 桁後半 (数千万〜1 億円) の被害</strong>が発生した実例を扱う Zenn 記事。エージェントに与えた OAuth スコープ / MCP ツールの権限境界 / 監査ログの粒度が甘く、<em>"エージェントが正規の権限で意図しないアクションを実行" した事故</em>。対策として <em>スコープ最小化 / 二段階の承認 / 出金上限のハードコーディング / 監査ログの外部保全</em>。</p>
+<div class="sup"><span class="lbl">💡</span><strong>読み手のための背景</strong> — (1) <strong>"agent 経由の権限膨張" が実損害まで到達</strong>: 7/17 Radar v34 が警告した "権限が肥大するエージェント" の具体例が、"数千万円の広告費が流れる" 形で日本国内で発生。<em>広告 / 決済 / 発注のように "金銭が動くツール" にエージェントを繋ぐ場合の設計の慎重さ</em>が改めて示された。(2) <strong>実務チェックリスト</strong>: (a) OAuth スコープはエージェントごとに独立発行、(b) MCC / 決済 / 発注は "承認ステップ" を人間側に残す (agent-loop の中断点)、(c) 監査ログを外部 SIEM に送る (エージェント自身が改ざんできない場所)、(d) 上限額 / 上限件数を "コード側で" 強制 (プロンプト側の指示ではなく)。(3) <strong>汎用化のエッセンス</strong>: 7/17 Grab Palana の Envoy egress proxy と発想は同じ = <em>"エージェントの行動範囲は、エージェント本体ではなくランタイム層で強制する"</em>。プロンプトで "危険なことをするな" と書くのは<em>統制ではなく祈りである</em>、というのが 2026 の共通認識に。</div>
+</div>
+
+<footer>
+<div><strong>収集元</strong>: Hacker News <em>(取得失敗 / WebSearch 補完)</em> / GitHub Trending / Anthropic News <em>(取得失敗)</em> / OpenAI Blog <em>(取得失敗)</em> / Google DeepMind Blog <em>(取得失敗)</em> / The Pragmatic Engineer <em>(取得失敗)</em> / Martin Fowler <em>(取得失敗)</em> / AWS Architecture Blog <em>(取得失敗)</em> / High Scalability <em>(取得失敗)</em> / ThoughtWorks <em>(該当なし)</em> / Netflix TechBlog <em>(該当なし)</em> / Uber Engineering Blog <em>(該当なし)</em> / <strong>Stripe Engineering</strong> / InfoQ <em>(取得失敗)</em> / arXiv (cs.AI) / Changelog / Zenn <em>(取得失敗 / WebSearch 補完)</em> / note / Publickey <em>(取得失敗 / WebSearch 補完)</em></div>
+<div style="margin-top:8px">※ WebFetch が egress ポリシーで一部 403 を返した媒体は WebSearch のスニペットで補完しています。個別記事 URL は検証済みですが、日付表示は情報源スニペット依存です。土曜日のため新規リリース系は少なく、金曜の InfoQ 記事の消化と週明けを見据えた深めの読み物中心の構成です。</div>
+</footer>
+
+</body>
+</html>
