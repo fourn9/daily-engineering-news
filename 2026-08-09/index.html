@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/reader.css">
+<script src="../assets/reader.js" defer></script>
+<title>2026年08月09日(日) のブリーフ｜エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;--border:#e5e7eb;--tag-bg:#f3f4f6;--sup-bg:#f4f7fb;--sup-border:#3b82f6;--hi-bg:#fff7e0;--hi-border:#f59e0b}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1012;--fg:#e6e6e6;--muted:#a0a8b2;--accent:#7ab2ff;--border:#30343a;--tag-bg:#1c1f24;--sup-bg:#13181f;--sup-border:#5fa0ff;--hi-bg:#2a2210;--hi-border:#d97706}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0 auto;padding:18px 16px 60px;max-width:760px;background:var(--bg);color:var(--fg);font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;font-size:16px;line-height:1.75;overflow-wrap:anywhere}a{color:var(--accent);text-decoration:none}.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}h1{font-size:1.35rem;margin:0}.date,.src,footer{color:var(--muted)}h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}.hi h2{margin:0;border:0;padding:0}.hi p{margin:8px 0 0}.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}.art h3{font-size:1.04rem;line-height:1.5;margin:0 0 4px}.tags{margin:4px 0 6px}.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}.src{font-size:.82rem;margin:2px 0 6px}.sum{margin:8px 0 6px}.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);font-size:.82rem}
+</style>
+</head>
+<body>
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+<header><h1>🔨 エンジニアリング・モーニングブリーフ</h1><div class="date">2026年08月09日(日)</div></header>
+
+<section class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p>今日の軸は「単発の検査」から「継続的な安全性」への移行です。Cloudflareはセッション全体の挙動で自動化を判定し、GitHubはnpmとActionsの既定値を供給網攻撃に強い方向へ変更しました。一方、更新された <code>_for-sale</code> DNS仕様は、稼働中のドメインを売却可能と機械判読させる小さな相互運用規約を示しています。</p>
+</section>
+
+<h2>🛡️ セキュリティ / プラットフォーム</h2>
+<div class="art">
+  <h3><a href="https://blog.cloudflare.com/introducing-precursor/" target="_blank" rel="noopener">Cloudflare Precursor、セッション全体の行動からbotとAIエージェントを検出</a></h3>
+  <div class="tags"><span class="tag">セキュリティ</span><span class="tag">AIエージェント</span><span class="tag">Open Beta</span></div>
+  <div class="src">出典: Cloudflare Blog / Cloudflare Docs / InfoQ（2026-08-08）</div>
+  <p class="sum">CloudflareはPrecursorをオープンベータで提供した。マウス移動、キー入力の間隔、反応時間などをクライアント側で継続的に観測し、単一リクエストではなく訪問セッション全体の一貫性からbotやAIエージェントを判定する。CAPTCHAや指紋だけを模倣する自動化には運用コストを上げられる一方、正規利用者への割り込みを減らせる。Security Analyticsにもセッション単位の表示が加わる。実装側は、検出精度だけでなく、収集信号の最小化、同意、保持期間、誤判定時の救済経路まで設計対象にする必要がある。</p>
+  <div class="sup"><strong>実務への含意:</strong> 導入評価では、bot遮断率に加えて正規ユーザーの誤検知率とプライバシー影響を計測する。セッション識別子や行動データを既存のログ保持方針へ無条件に混ぜず、用途・保存期間・アクセス権を明示する。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.blog/security/supply-chain-security/disrupting-supply-chain-attacks-on-npm-and-github-actions/" target="_blank" rel="noopener">GitHub、npmとActionsの供給網防御を「任意機能」から安全な既定値へ</a></h3>
+  <div class="tags"><span class="tag">Supply Chain</span><span class="tag">GitHub Actions</span><span class="tag">npm</span></div>
+  <div class="src">出典: GitHub Blog / InfoQ（2026-08-08）</div>
+  <p class="sum">GitHubは3〜7月に導入したnpmとActionsの防御策を整理した。高影響npmアカウントはメール変更や2FA復旧後に72時間読み取り専用となり、Actionsでは信頼できないforkコードのcheckoutやキャッシュ書き込みを既定で制限する。Trusted Publishing、段階公開、外向き通信の可視化も組み合わせ、侵入・権限昇格・認証情報流出・拡散の各段階を分断する設計だ。利用者は既定値だけに依存せず、長期シークレット削除とworkflow権限の棚卸しを優先すべきである。npm v12ではinstall scriptも既定で無効化される。</p>
+  <div class="sup"><strong>実務への含意:</strong> CIの永続トークンをOIDCベースの短命認証へ置き換え、fork由来トリガーの権限、キャッシュ共有、外向き通信先を監査する。72時間の待機だけでは、失効ドメインや侵害済みrelease workflowの問題は解決しない。</div>
+</div>
+
+<h2>🌐 Web標準 / 相互運用</h2>
+<div class="art">
+  <h3><a href="https://specification.website/spec/foundations/for-sale-dns/" target="_blank" rel="noopener"><code>_for-sale</code> DNSレコード仕様が更新、稼働中ドメインの売却意思を機械判読</a></h3>
+  <div class="tags"><span class="tag">DNS</span><span class="tag">RFC 10023</span><span class="tag">相互運用</span></div>
+  <div class="src">出典: Website Spec（2026-08-08更新） / RFC 10023</div>
+  <p class="sum">Website SpecはRFC 10023に基づく <code>_for-sale</code> DNSレコードの解説を更新した。所有者は <code>_for-sale.example.com</code> のTXTに <code>v=FORSALE1</code> と、連絡先URI、説明、価格など最大1個の属性を置き、通常のWebやメールを止めずに売却意思を表せる。WHOISやRDAPが登録状態を示すのに対し、この規約は「登録済みだが購入可能」を仲介業者や探索サービスへ伝える。採用時はTXTの真正性をDNSSECと所有確認で補い、表示前に内容を検証する必要がある。ブラウザー表示を置き換えるドメインパーキングとは用途が異なる。</p>
+  <div class="sup"><strong>実務への含意:</strong> ドメイン探索サービスはTXTだけで所有権や価格を確定せず、DNSSEC、HTTPS上の案内先、追加の本人確認を組み合わせる。運営側は売却終了時のレコード削除を資産管理手順へ入れる。</div>
+</div>
+
+<footer>
+  <p>掲載: 3件。各要約は「事実 → 技術的意味 → 読み手への含意」で構成し、直近7日分のURLとトピックを照合しました。</p>
+  <p>基準時刻: 2026-08-09 JST。古い記事がHacker Newsで再浮上しただけの項目と、前日掲載済みの続報は除外しました。</p>
+</footer>
+</body>
+</html>
