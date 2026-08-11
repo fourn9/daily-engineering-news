@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/reader.css">
+<script src="../assets/reader.js" defer></script>
+<title>2026年08月11日(火) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+  --alert-bg:#fef2f2;--alert-border:#ef4444;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+    --alert-bg:#2a1414;--alert-border:#dc2626;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+</style>
+</head>
+<body>
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年08月11日(火)</div>
+</header>
+
+<section class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p>今日のテーマは「<strong>コーディングエージェントの"1 段上"の運用層が主戦場に</strong>」。Cloudflare が <code>cloudflare/computer</code> v0.2.0 を本日リリースし、Container / Isolate Shell / Isolate JS の 3 backend を <code>workspace.runtime.exec()</code> 統一 API で切り替える "エージェント用仮想コンピュータ" が 1 週間で +6,800 stars。並行して Orca（並列 worktree で 1 プロンプトを 5 エージェントに fan-out）、Paperclip（エージェントを"社員"、Paperclip を"会社構造"として運用）、LoopX（200 時間規模の長時間タスクの状態カーネル）が同時に台頭。個別エージェント（Claude Code / Codex / Cursor）競争から、"フリート運用" ・"組織化" ・"継続実行" の上位層に焦点が完全に移った 1 週間になった。</p>
+</section>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/cloudflare/computer" target="_blank" rel="noopener">cloudflare/computer v0.2.0 — Durable Object + SQLite を "authoritative state" にした agent 用仮想コンピュータ</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span><span class="tag">Cloudflare</span></div>
+  <div class="src">出典: GitHub cloudflare/computer（v0.2.0 リリース: 2026-08-11、週次 Trending +6,807 stars）</div>
+  <p class="sum">Cloudflare が本日 v0.2.0 をリリース。Durable Object 内に SQLite を "authoritative state store" として置き、そこに対して 3 種類の実行 backend（① Container: SQLite state を FUSE mount で射影した Linux userland + 実バイナリ、② Isolate Shell: state store 不要で just-bash を Dynamic Worker 上で実行、③ Isolate JavaScript: durable imports 付き ESM 実行）を <code>workspace.runtime.exec()</code> の単一 API で切り替える。v0.2.0 では egress 設定の統一、RPC 経由の bounded workspace 読み取り、read tool の image / data 対応、find/grep の追加フィルタと delete tool の新設、file chunk リンクによる sync 時ピークメモリ削減が入った。まだ "preview only, NOT for production" だが、"agent に function-call ではなく本物の filesystem + 実行環境を渡す" 設計思想の実装リファレンスとして本命候補。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> "Durable Object" は Cloudflare Workers の状態を持てる特殊オブジェクトで、単一の永続インスタンスとして振る舞いつつ globally routable な点が特徴。従来 agent に環境を渡すには "Docker コンテナを毎回起動 → shell/exec を露出" が定番だったが、コールドスタートと課金効率が課題だった。SQLite を state の真実として持ち、Container / Isolate を "state への異なる view" として抽象化する設計は、"agent が使う環境" と "永続化される事実" を切り離すエッセンスとして自社実装にも転用可能。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/stablyai/orca" target="_blank" rel="noopener">Orca ADE — 1 プロンプトを N 個の agent に並列 fan-out、それぞれ独立 git worktree で走らせて winner を merge</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span><span class="tag">エージェント運用</span></div>
+  <div class="src">出典: GitHub stablyai/orca（日次 Trending +881 stars、42,627 stars）</div>
+  <p class="sum">"Agent Development Environment" を名乗り、Codex / Claude Code / OpenCode / Pi など任意の CLI agent を同時に走らせる基盤。設計の中心は "並列 worktree"、すなわち「1 プロンプトを 5 agent に fan-out、それぞれ独立 git worktree で作業させ、diff を比較して勝った実装だけを merge」というワークフロー。加えて Ghostty ベースの WebGL ターミナル（無限 split と再起動を跨ぐ scrollback）、モバイル companion app、SSH worktree（リモートサーバー上の agent を手元から操作）、GitHub / Linear 統合を含む。"1 agent が正解を出すまで待つ" のではなく、"複数 agent の解を並列で得て選ぶ" にワークフローを組み替えるための IDE 相当の存在。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 個別 agent の性能競争 (SWE-Bench 何 %) が飽和すると、"1 回の試行の期待値" より "同じコストで N 試行して max を取る" 方式のリターンが増える。git worktree は同じ repo を独立ディレクトリに複数展開する Git 標準機能で、ここに直接 map している点が実装として素直。応用可能なエッセンスは「LLM 呼び出しを "確定的な 1 通" ではなく "並列 sample から選択" として扱うと、下流のマージ・比較・selector 設計が新しい第一級の関心事になる」という点。Claude Code の同時セッション運用にもそのまま持ち込める発想。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener">Paperclip — 個々のエージェントを "社員"、Paperclip を "会社構造" として扱う組織 OS</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span><span class="tag">エージェント運用</span></div>
+  <div class="src">出典: GitHub paperclipai/paperclip（日次 Trending +743 stars、77,082 stars）</div>
+  <p class="sum">Node.js サーバー + React UI で "複数プロバイダの agent を組織的に運用する" ためのプラットフォーム。明確に "agent framework ではなく agent を運用する会社の OS" と位置付けており、4 本柱は (1) チケット制 + 検証ゲート + 監査証跡の Agentic Task Manager、(2) role / permission / delegation を持つ Org Chart for Agents、(3) skills / evals / metrics の Agent Training、(4) multi-provider runtime + 隔離 + secrets + コスト管理の Agentic OS。技術的には atomic task checkout（重複作業防止）、heartbeat 跨ぎの永続状態、runtime での skill 注入、祖先情報付きの goal-aware 実行、1 デプロイ内の multi-company データ隔離を持つ。Cursor / Windsurf のような "個人の IDE" とは真逆で、"agent 群を人と同じ組織構造で扱う" 層の実装例として貴重。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> Orca が "1 プロンプトの複製実行" の並列化なら、Paperclip は "複数の異なる目的の agent を同時運用" の組織化を狙う（レイヤーが違う）。応用エッセンスは「ticket / org chart / audit trail は人組織のためだけの構造ではなく、agent 群のガバナンスにもそのまま流用できる」という発見で、自社で内製エージェント基盤を作るとき "何を SaaS で買い、何を組織構造として持つか" の判断軸として参考になる。特に "role + budget + approval workflow" を LLM 層でなく orchestration 層で強制する思想は、Cloudflare Wallets（昨日号）と同型の "支払い/権限は payment/governance 層で" 発想。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/huangruiteng/loopx" target="_blank" rel="noopener">LoopX — 200 時間規模の長時間 agent タスクを支える "state kernel"、5 質問で loop を運用</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span><span class="tag">エージェント運用</span></div>
+  <div class="src">出典: GitHub huangruiteng/loopx（週次 Trending +2,947 stars、Python 3.11+ / MIT）</div>
+  <p class="sum">agent runtime（Codex / Claude Code / Cursor）と実際の実行の間に挟まる軽量な "state kernel"。objective / decisions / evidence / resource quotas を bounded turn を跨いで安定保持し、Kanban に近い抽象で「カードが identity, authority, continuation semantics を運ぶ」形をとる。ループは 5 つの質問で運用: (1) 目的は何か、(2) 次に何が起きるか、(3) 人間の判断が必要か、(4) どの evidence が変わったか、(5) loop を続けてよいか。公開ケースでは 200+ 時間の連続プロジェクト、無人での複数日運用、PR マージ実績を主張。"chat 記憶 + timer だけでは長時間タスクが持続しない" 問題への構造化された答えで、"quota を尊重した auto-wake" と "非エンジニアでも進捗が読める legibility" を両立する設計。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 一般的な agent framework は "1 turn の履歴" しか永続化しないため、複数日を跨ぐタスクでは "何を目指していたか" と "何は既に判断済みか" が失われて trajectory drift を起こす。LoopX の "objective / evidence / decision を第一級 record にして turn を跨がせる" 発想は自社で長時間 agent を作るときの必須構造として参考になる。読み替えると「エージェント設計における『データベース設計』の役割は、chat 履歴でも RAG でもなく "5 種類の別テーブル" だ」という主張で、これは LangGraph の checkpoint とも Anthropic の memory とも異なる、専用 kernel を切る側の設計。</div>
+</div>
+
+<h2>🤖 AI / エージェント基盤</h2>
+
+<div class="art">
+  <h3><a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">Claude Code 2.1.227 — feature flag 評価とスラッシュコマンドメニューを是正、bash / claude-code-action 系の実運用バグを一掃</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Claude Code</span><span class="tag">続報</span></div>
+  <div class="src">出典: Claude Code Changelog（2.1.227: 2026-08-10 / 2.1.225: 2026-08-08）</div>
+  <p class="sum">2.1.227 で長時間セッションで問題化しやすい既知バグを複数是正。① 期限切れログイントークンで開始したセッションで feature flag が subscription tier なしに評価される問題を修正、② claude-code-action + <code>allowed_non_write_users</code> + GitHub-hosted runner の組合せで bash が失敗するのを解消、③ 最初のメッセージ以前まで巻き戻された会話が <code>/tui</code> で復活してしまう事象を修正。UI は slash-command メニューを整理し、青ハイライトは選択行のみ・マッチ文字は色ではなく太字で、絵文字と拡張文字を持つ名前も glyph を保持。加えて file-not-found suggestion と at-mention size チェックのイベントループ停止時間を短縮。2.1.225（8/8）は gateway spend-limit を Claude Code の usage warning に反映、<code>claude agents</code> に workspace trust prompt を追加、MCP OAuth server の keychain 読取タイムアウト後の 401 バースト、および OAuth token 差替時の headless セッション破壊を修正。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 昨日号で触れた 2.1.224 に続く連続 patch で、今週の Claude Code は "自動化と長時間実行" の隅ケースを畳んでいるフェーズ。特に <code>allowed_non_write_users</code> + GitHub-hosted runner 経路の bash 失敗は "PR 内での Claude 自動応答" 運用の中核なので、CI/CD で Claude Code を組み込んでいるプロジェクトは 2.1.226 以前から 2.1.227 への更新が推奨。gateway spend-limit の usage warning 反映は "エージェント同士のセルフ暴走" の課金安全弁で、Orca / Paperclip 的な複数エージェント運用と組み合わせるときの前提条件になる。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank" rel="noopener">TencentDB Agent Memory — Chat / Skills / Wiki / CodeGraph を "チーム所有の記憶資産" として versioned + ACL 管理</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">エージェント記憶</span><span class="tag">Tencent</span></div>
+  <div class="src">出典: GitHub TencentCloud/TencentDB-Agent-Memory（週次 Trending +7,555 stars、TypeScript）</div>
+  <p class="sum">会話 / ドキュメント / コードを 4 種類の再利用可能な "記憶資産" — Chat Memory（好み・事実・決定の抽出）、Skills（version・validation・実行ステップ付きワークフロー）、Wiki（プロダクトドキュメントから派生した構造化ドキュメントとリンクグラフ）、CodeGraph（シンボル・ファイル・呼び出し関係のインデックスによる影響解析）— に変換し、共有・展開・ガバナンスをフレームワーク横断で行う。記憶は L0 (raw 会話) から L3 (安定した persona とパターン) の 4 層に階層化され、"精密な事実想起" と "コンテキストの高速復元" をトークン予算を圧迫せずに両立。private / team / restricted の 3 段階可視性と ACL、明示共有前提でチーム跨ぎの情報漏洩を防止。"RAG は content を返すだけ、記憶資産は who が いつのバージョンを どの agent に 使ってよいか まで答える" 設計として明確な差別化。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> "agent memory" は Letta / Mem0 / LangMem のような "個人 agent の記憶" 実装が先行していたが、企業で使うと "誰の記憶か / 誰がアクセスしてよいか" のガバナンスが崩れる問題があった。TencentDB Agent Memory の "記憶を versioned な資産として ACL 管理" は、そのまま社内エージェントプラットフォームの参照モデルになる。特に CodeGraph は Zenn / GitHub でも実装例が増えている領域で、"MCP server として出す" だけでも Claude Code / Cursor から使えるのが実務上の到達点。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/semantica-agi/semantica" target="_blank" rel="noopener">semantica-agi/semantica — 決定・因果・provenance を deterministic に記録する "監査可能な AI インフラ層"</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span><span class="tag">エージェント監査</span></div>
+  <div class="src">出典: GitHub semantica-agi/semantica（週次 Trending +2,009 stars、Python）</div>
+  <p class="sum">"ほとんどの agent は trail を残さない — 保存されているのは embedding であって意味ではない" を出発点に、agent 下に決定・因果関係・provenance を構造化した knowledge graph を差し込むインフラ層。ingestion / extraction / knowledge construction / intelligence layer / storage の 5 段パイプライン。Intelligence layer は SHACL/OWL governance、forward-chaining / Rete / Datalog / SPARQL による推論、W3C PROV-O 準拠の provenance、決定記録を含み、"deterministic — LLM なしでも graph 構築・推論・監査生成が可能" が売り。<code>record_decision()</code> / <code>trace_decision_chain()</code> / <code>find_similar_decisions()</code> API で "なぜこの結論に至ったか" を後追い可能。Databricks Unity Catalog と Snowflake のネイティブ連携で lineage を保つ。金融審査、医療、法律証拠チェーン、規制 AI 監査など "監査線が引ける AI" が要求される場面向け。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> "AI 監査可能性" は EU AI Act 完全施行以降の企業導入で常に blocker になる論点で、vector DB + LLM 構成では "この判断の根拠" が構造的に説明できない。semantica の "決定を graph 上の 1st-class ノードとして記録、bi-temporal で真だった時期と記録した時期を分ける、W3C PROV-O で来歴を辿れる" は "監査に耐えるとは何か" の技術的定義そのもの。自社では規制業界でなくても「重要な自動判断（承認、リジェクト、割当）は決定 record として構造化保存する」だけ抜き出しても、後日 debug / postmortem で大差がつくエッセンス。</div>
+</div>
+
+<h2>🛠 開発ツール / OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/firecrawl/pdf-inspector" target="_blank" rel="noopener">firecrawl/pdf-inspector — Rust で "PDF を 10-50ms で分類" してから抽出、200 docs / 0.5s、モデルなし</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">Rust</span><span class="tag">パフォーマンス</span></div>
+  <div class="src">出典: GitHub firecrawl/pdf-inspector（週次 Trending +7,143 stars、14,659 stars）</div>
+  <p class="sum">PDF を一律に処理せず、まず content stream をサンプリングして "text-based / scanned / image-based / mixed" の 4 種に 10-50ms で分類し、真の scanned だけを高コスト OCR に回すという設計。ML モデルも外部サービスも使わず pure Rust（依存は lopdf のみ）で 200 documents を 0.5s 未満に処理。Markdown 出力は font size 比の H1-H4 見出し、bullet / numbered / letter リスト、コードブロック、表（rectangle 検出 + heuristic）、bold / italic、URL リンク、ページ区切りに対応。core は Rust だが Python (PyO3) / Node (napi-rs) / Browser WASM binding を持つマルチプラットフォーム。RAG 前処理・ドキュメント OCR コスト最適化・請求書処理のような "大量 PDF が来る" 現場で GPU なし・API 課金なしで前段フィルタとして直接効く。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 従来の PDF 抽出は Unstructured.io / LlamaParse のように "全部を高機能パイプに通す" 構成が主流で、OCR API 課金と ML モデルのコールドスタートが実運用の隠れボトルネックだった。pdf-inspector の "まず分類、必要なら OCR" は "早い判定を安く先に置き、高コスト処理を条件付きで発火" という汎用パターンで、これは filterable pre-processing の設計原則そのもの（gate at the cheapest layer that has enough signal）。Rust 単一 crate で Py/Node/WASM を叩ける構成は、"pipeline のホットパスを Rust に切り出しつつ既存 stack を保つ" 実装テンプレートとして参考になる。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/lyogavin/airllm" target="_blank" rel="noopener">AirLLM — GPU 上に "常に 1 レイヤーだけ" 載せる方式で 70B を 4GB VRAM、MoE なら DeepSeek-V3 が 12GB</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">LLM 推論</span><span class="tag">📐設計論</span></div>
+  <div class="src">出典: GitHub lyogavin/airllm（週次 Trending +4,042 stars、30,746 stars）</div>
+  <p class="sum">量子化・蒸留・pruning を一切使わず、モデルをレイヤー単位に分解して "常に 1 レイヤーだけ GPU に載せる" ことで、必要 VRAM を "モデル全体サイズ" ではなく "個々のレイヤーサイズ" に落とす仕組み。素直な結果として 70B モデルが 4GB GPU で動く。sparse MoE モデルでは "レイヤー全体" ではなく "1 エキスパート単位" に更に細分化でき、671B の DeepSeek-V3 でも ~12GB VRAM で推論可能。Llama / Qwen / DeepSeek / Mistral など主要 open LLM を <code>AutoModel</code> 統一 IF で対応。当然レイテンシは上がるので "対話" 用ではなく "ローカルで大きなモデルを触りたい・実験したい・オフラインで動かしたい" 用途向けだが、"評価だけ回したい" 場面の GPU 資源設計を根本から変える選択肢。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> "モデル全部を VRAM に載せる" は伝統的に inference の暗黙の前提で、この壁を破る手段は主に量子化 (4bit / GGUF) が主流だった。AirLLM の "quantization 不使用でレイヤーごとに載せ替え" は精度を犠牲にしない代わりにレイテンシと引き換える方針で、"精度が要る評価・fine-tune 前の理解・オフライン推論" とは相性が良い。応用エッセンスは「メモリ制約は "モデル全体" ではなく "アクセスパターンの最大単位" で決まる」で、これは CPU cache や DB buffer の設計原則と同型。ローカル LLM のハードウェア要件を "GPU 1 枚のサイズ" から解放する系譜（llama.cpp、Ollama、AirLLM）の中で "精度保持" 側の代表例。</div>
+</div>
+
+<h2>🌟 GitHub Trending / 注目OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/cathrynlavery/diagram-design" target="_blank" rel="noopener">cathrynlavery/diagram-design — Claude Code 用 "編集品質 29 種" のダイアグラム・スキル、1 日 +1,612 stars</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">Claude Code Skill</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: GitHub cathrynlavery/diagram-design（日次 Trending 1 位、+1,612 stars/日、6,547 stars）</div>
+  <p class="sum">Claude Code 向けの "editorial-quality diagram" スキルで、self-contained HTML + SVG のみ、mermaid 非依存。29 種を Structural & Flow（architecture / flowchart / sequence / state machine / swimlane / process）、Hierarchy（tree / org chart / nested / layers / pyramid）、Data（ER / Venn / timeline / quadrant / 2×2）、Specialized（IT current-state / high-level stack / medallion / data flow / DP integration & security）、Charts（bar / line / scatter / Gantt / radar）、Advanced（loop flywheel / nested containment）に分類。設計原則は "最良の一手は削除、各ノードは配置理由を持て"、単一アクセント色、Instrument Serif（見出し）+ Geist（本文）+ Geist Mono（技術ラベル）、1px hairline、shadow 禁止、border-radius 10px 以下、全座標 4 の倍数（"AI 生成っぽさ" 回避）、密度 4/10 目安。BestSelf.co 創業者 Cathryn Lavery による、"Mermaid-slop" ではないダイアグラム出力の実装標準候補。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> Claude Code の Skill は Anthropic 公式 anthropics/skills（168k stars）以外にコミュニティ側の実装標準がまだ立っておらず、"良い skill" の設計原則自体が明文化途上。diagram-design が数日で 6.5k stars を集めた理由の 1 つは、"skill を作る側にとってのお手本" として読める点（トークン制約、"AI 出力の見分けやすさ"、Serif + Sans の視覚的階層など、UI/UX を Claude 経由で出力するときの実践知が全部入っている）。自作 skill を書く前に "何を目指せば人間の目にプロフェッショナル寄りに映るか" のリファレンスとして 1 読の価値。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">addyosmani/agent-skills — 24 の "senior engineer が使う workflow / quality gate" を Skill 化、Google 由来の Hyrum's Law / Beyonce Rule 明示</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">Claude Code Skill</span><span class="tag">エンジニアリング組織</span></div>
+  <div class="src">出典: GitHub addyosmani/agent-skills（日次 Trending +571 stars、86,169 stars）</div>
+  <p class="sum">Google の Addy Osmani が公開した "production-grade" skill 集。基本思想は「AI コーディングエージェントに shortcut を default で許してはいけない、senior engineer が本番で使う workflow と品質ゲートを skill として明文化する」。ライフサイクル 6 フェーズに 24 skill: Define（interview-me / idea-refine / spec-driven-development）、Plan（planning-and-task-breakdown）、Build（incremental / TDD / context engineering / source-driven / doubt-driven / frontend / API design）、Verify（browser testing with devtools / debugging）、Review（code quality / simplification / security / performance）、Ship（git workflow / CI-CD / deprecation-migration / docs-ADR / observability / launch）+ どの skill をいつ使うかを判断する meta-skill。Hyrum's Law（"contract 未定義の挙動でも利用者は依存する"）や Beyonce Rule（"CI で守らないルールは存在しないと同義"）、trunk-based development を明示的に skill に組み込んでいる点が特徴。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> Skill Marketplace 系の "skill" は多くが "使い方 tips" レベルだが、agent-skills は "エンジニアリングプラクティスを skill として実装" するアプローチ。応用エッセンスは「暗黙知としてチームで共有してきた品質ゲート（PR 前の TDD、レビューの 4 段階、shipping 前 checklist）は skill として明文化することで agent にも人にも共通の運用基準になる」で、これは onboarding ドキュメントを skill 化する方向の実装例として直接参考にできる。特に doubt-driven-development と source-driven-development は他所であまり見ない概念で、"エージェントが自信過剰にコード書き始めない" ための ISO 的なガードレール。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/HKUDS/DeepTutor" target="_blank" rel="noopener">HKUDS/DeepTutor — Chat / Quiz / Research / Visualize / Solve / Mastery を単一 agent loop で扱う educational workspace</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">エージェント</span><span class="tag">HKU</span></div>
+  <div class="src">出典: GitHub HKUDS/DeepTutor（日次 Trending +829 stars、34,627 stars）</div>
+  <p class="sum">香港大学 HKUDS 研究室のオープンソース。単なるチャットボットではなく "agent-native learning workspace" として、Chat / Quiz / Research / Visualize / Solve / Mastery Path を "モードを跨いだ単一 agent loop" で処理。Knowledge Center は LlamaIndex / PageIndex / GraphRAG / LightRAG の複数 RAG エンジンを切替可能、Partners（persona + memory + IM channel を持つ永続 AI コンパニオン）、Co-Writer（選択範囲を意識した Markdown 編集）、L1 traces / L2 summaries / L3 synthesis の 3 層メモリ、EduHub と ClawHub からインストール可能な Skills エコシステムを内蔵。subagent / Claude Code / Codex / Gemini とのライブコーディング連携、MCP server 対応、multi-user isolated workspace が特徴で、"個人 tutor ではなく教育 AI インフラ" を志向。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> RAG エンジンを "1 つに絞る" のではなく "LlamaIndex / GraphRAG / LightRAG など 4 種を切替可能" にする設計は、"タスク種別で最適な retrieval が変わる" 前提の実装として現時点で最も現実的な折衷案。応用エッセンスは、"agent の memory + skills + RAG + persona を 1 つの workspace 概念にまとめる" 抽象で、これは "chatbot 一個" から "永続 workspace" への UX パラダイム転換を体現する。教育以外でも "顧客サポート" "社内ヘルプデスク" などに再利用可能な構造。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <p class="sum">本日は実行環境の egress ポリシー制約により、Zenn / note / Publickey が <em>(取得失敗)</em> となったため、日本語ソース由来の新規項目はスキップした。前日以前の号で扱った項目（Pepabo Tech Portal の新卒研修記事、Publickey の AWS DevOps Agent 記事等）は重複除外ルールに従い再掲していない。</p>
+</div>
+
+<footer>
+  <p>掲載: 11 件（ハイライト + 記事 10）。「事実 → 技術的意味 → 読み手への示唆」順で構成し、直近 3 日 (2026-08-08〜2026-08-10) の公開項目とヘッドライン・URL を照合し、既出項目（cloudflare/wallets, kitesurf, cloudflare-os, agents-week-in-review, code-graph-rag, muse-glimmer, NVIDIA NOOA, Uber Payments Platform, arxiv:2608.06329, Anthropic Fable 5 biology, Kimi K3 in Copilot, Claude Code 2.1.224, LangChain Managed Deep Agents, ChatGPT Voice, Cloudflare Precursor, Cloudflare Workers AI billing, US DoE Genesis, GitHub npm supply-chain, _for-sale DNS, arxiv:2608.06153 等）は除外した。</p>
+  <p>基準時刻: 2026-08-11 JST。本日性のアンカーは cloudflare/computer v0.2.0 リリース（本日）と Claude Code 2.1.227（前日）。それに伴う "coding agent の 1 段上の運用層" の同時多発トレンド（Orca, Paperclip, LoopX, TencentDB Agent Memory, semantica）を GitHub Trending 週次から拾い、"1 週間以内 の アーキテクチャ系" 例外枠で扱った。</p>
+  <p>収集元: GitHub Trending (daily / weekly) / GitHub リポジトリ README / Claude Code Changelog / cloudflare/computer リリースノート。※本日は egress 制約により Hacker News / Anthropic News / OpenAI Blog / DeepMind Blog / Pragmatic Engineer / Martin Fowler / AWS Architecture / High Scalability / ThoughtWorks Radar / Netflix / Uber / Stripe / InfoQ / arXiv / Changelog / Zenn / note / Publickey / MarkTechPost / Simon Willison / TechCrunch / huggingface.co / blog.cloudflare.com / github.blog / claude.com/blog / developers.cloudflare.com は <em>(取得失敗)</em> のため、GitHub 上で確定できたソースのみ採用しています。</p>
+</footer>
+</body>
+</html>
