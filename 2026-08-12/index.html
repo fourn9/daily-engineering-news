@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/reader.css">
+<script src="../assets/reader.js" defer></script>
+<title>2026年08月12日(水) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+  --alert-bg:#fef2f2;--alert-border:#ef4444;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+    --alert-bg:#2a1414;--alert-border:#dc2626;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+</style>
+</head>
+<body>
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年08月12日(水)</div>
+</header>
+
+<section class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p>今日のテーマは「<strong>"エージェント時代の新しいレイヤ"を各社が別方向から埋めに来た日</strong>」。Macro（Rust + SolidJS、"会社を computable にする" ための team-level 記憶を持つ統合ワークスペース、SolidJS/Rust、2 年間の自社ドッグフーディング後に OSS 化）、NVIDIA-NeMo/Switchyard（Rust 製 LLM プロキシで OpenAI/Anthropic/OpenAI Responses の 3 プロトコルを相互翻訳、Claude Code を OSS モデルに向ける）、Reasonix v2（TS → Go リライト、単一バイナリ、"prefix-cache stability を invariant として設計" した DeepSeek 特化コーディングエージェント）が同時に上位トレンド入り。加えて Anthropic ではなく Rod Johnson（Spring 創設者）による JVM/Kotlin agent framework <strong>embabel-agent</strong> が GOAP プランナーで OODA loop を回す設計を提示。個別 LLM 選定 → "エージェント記憶 / プロトコル翻訳 / 実行環境" のインフラ層それぞれで、GAFA でも Cloudflare でもない主体からのオープン実装が並び始めた 1 日。</p>
+</section>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/macro-inc/macro" target="_blank" rel="noopener">macro-inc/macro — 「会社を computable にする」ための Rust + SolidJS 統合ワークスペース、team-level 記憶とエージェントを 1 st-class 化</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span><span class="tag">エージェント運用</span></div>
+  <div class="src">出典: GitHub macro-inc/macro（日次 Trending +325 stars、1,632 stars、Rust + SolidJS、公式サイト macro.com）</div>
+  <p class="sum">email + messages + docs + tasks + agents + calls + CRM を単一の高速インタフェースに統合し、workspace のすべてが <code>@link</code> と bidirectional graph で相互参照される、"team の operating system" を志向するプラットフォーム。前のスタートアップを ~20 名まで伸ばした結果 "各チームが各ツールを持ち、会社は MCP と Zapier で辛うじて繋がって computable ではなくなった" という具体的な失敗経験からの再設計で、2 年間 15 名で自社ドッグフード。設計上重要なのは (1) 各 block（Chat / Docs / Email / CRM 等）は best-in-class を目指して個別実装しつつ、backend は共有で cross-reference が bidirectional graph に native 保存される、(2) agent memory はチャット履歴ではなく、毎晩 cron で email / messages / tasks / docs / calls を横断合成した team-level memory を markdown で保持、(3) MCP surface で内部 UI と 100% 近い機能をカバーし、外部 agent (Claude Code / Codex) も同等操作可能。iOS ネイティブ、CRDT + Cloudflare Durable Objects でリアルタイム共同編集。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> Notion / Slack / Linear / HubSpot / Superhuman を横断で束ねる "スーパーアプリ" 系は Coda や Fibery が既にあるが、Macro の差別化は「agent を 1 st-class の共同編集者としてバイディレクショナルグラフに乗せる」設計にある。特に "毎晩 memory を synthesize して markdown で持つ" は、agent の "何を覚えているか" を人間が読める場所に置くという発想で、これは chat 履歴ベースの memory (ChatGPT / Claude) や embedding ベースの memory (Mem0) とは別系統。応用エッセンスは「agent-native な workspace は、既存 SaaS の "後付け AI" ではなく "backend の graph 統一 + 夜間 memory 合成" という 2 点をやっているか」で判断できる、という設計指針。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/embabel/embabel-agent" target="_blank" rel="noopener">embabel/embabel-agent — Spring 創設者 Rod Johnson による JVM/Kotlin agent framework、GOAP プランナーで OODA loop を回す</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span><span class="tag">JVM/Kotlin</span></div>
+  <div class="src">出典: GitHub embabel/embabel-agent（Kotlin、Apache-2.0、Maven Central 公開、docs.embabel.com）</div>
+  <p class="sum">"Spring の生みの親" である Rod Johnson が主導する JVM 上の agentic flow フレームワーク。中核概念は Actions / Goals / Conditions / Domain model / Plan の 5 つ。プランは開発者が書くのではなく非-LLM の AI アルゴリズム（デフォルトはゲーム AI 由来の Goal Oriented Action Planning = GOAP、Utility AI もサポート）が動的に生成し、アクション実行後に毎回 replan する OODA loop 構造をとる。実行モードは 3 段: (1) Focused（コードが特定 agent を明示呼出）、(2) Closed（intent 分類から適切な agent を platform が選ぶ）、(3) Open（platform が既存のすべての goal / action を組み合わせて未プログラムの経路も探索）。annotation ベース (<code>@Agent</code>/<code>@Goal</code>/<code>@Action</code>) と Kotlin DSL の 2 通りで記述可能、Spring と統合され AOP・トランザクション・DI をそのまま活用できる。domain model 経由の strong typing で prompt と手書きコードが magic map なしに繋がる。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 現在の agent framework は LangChain (Python) / Vercel AI SDK (TS) / Mastra (TS) など Python/JS が圧倒的多数で、JVM 側は Spring AI と LangChain4j が二強。Embabel の位置づけは「Spring AI の "LLM を呼びやすくする" レイヤより 1 段上に、"何をすべきかを planner に決めさせる" を置く」もの。GOAP は F.E.A.R. で有名になった有限状態機械の上位互換で、"事前条件と事後条件を宣言すれば、既知アクションを未プログラムの順序で組み合わせる" のがエッセンス。JVM 資産（トランザクション、Spring Security、既存の Domain Model）を捨てずに agent 化する道が欲しい既存エンタープライズ、特に金融/保険/物流ドメインで実務に効く選択肢。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/NVIDIA-NeMo/Switchyard" target="_blank" rel="noopener">NVIDIA-NeMo/Switchyard — OpenAI/Anthropic/OpenAI Responses の 3 API を Rust で相互翻訳する LLM プロキシ、routing 戦略も pluggable</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">📐設計論</span><span class="tag">NVIDIA</span></div>
+  <div class="src">出典: GitHub NVIDIA-NeMo/Switchyard（Rust、Apache-2.0、pre-alpha、日次 Trending +370 stars）</div>
+  <p class="sum">NVIDIA NeMo チームが公開した LLM トラフィック用 Rust プロキシ + ライブラリ。3 つの API 形式 (OpenAI Chat / Anthropic Messages / OpenAI Responses) を相互翻訳し、Claude Code や Codex のような「特定 API しか話さないコーディングエージェント」を、vLLM / NVIDIA NIM / Ollama / 任意の OpenAI 互換エンドポイントに向けるためのブリッジ。routing 戦略は 4 種を pluggable に提供: (1) LLM Classifier（内容から weak/strong tier を分類）、(2) Stage Router（tool 結果や error などの会話中の signal で決定）、(3) Escalation Router（毎ターンをまず weak で走らせ、judge が strong 送信を判定）、(4) Random（A/B テスト用の固定分割）。3 種の使い方: <code>switchyard launch claude/codex/openclaw</code> のランチャ、<code>switchyard-server</code> のスタンドアロンプロキシ、<code>switchyard-libsy</code> クレートで既存 Rust アプリに埋め込み。Prometheus メトリクス標準対応。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 昨日号の Cloudflare/computer が "agent に実行環境を渡す" 層なら、Switchyard は "agent を任意の LLM 提供者に繋ぐ" 層。同種プロダクトに LiteLLM / OpenRouter / Portkey があるが、これらは主に "Python でモデルを差し替える" 用途で、Switchyard は明確に "Claude Code のような特定 API しか話さないバイナリ" を対象にしている点、および routing を "LLM に分類させる" だけでなく "会話中の signal で判定" や "escalation" と抽象化した点が新しい。応用エッセンスは、「エージェントプロキシは pass-through ではなく、"どのモデルにいつルーティングするか" を 1 st-class の関心事として扱う設計に移りつつある」で、コスト最適化 + 品質担保の両立を "エージェント側ではなくプロキシ側で" 決める方向は自社実装でも直接転用可能。</div>
+</div>
+
+<h2>🤖 AI / エージェント / コーディングエージェント</h2>
+
+<div class="art">
+  <h3><a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">Claude Code 2.1.228 — インタラクティブ session 停止、Git Bash 検出、cross-session messaging 初期化、Remote Control resume の情報漏洩を一掃</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Claude Code</span><span class="tag">続報</span></div>
+  <div class="src">出典: Claude Code Changelog（2.1.228: 2026-08-11、前日号の 2.1.227 に連続する patch）</div>
+  <p class="sum">昨日の 2.1.227 に続く連続 patch。本 release で解消された長時間運用の隅ケースは (1) インタラクティブ session が突然停止する既知バグ、(2) Windows 上での Git Bash 検出、(3) <code>/tui</code> でのモデル reversion、(4) cross-session messaging (SendMessage / ListAgents) の初期化不整合、(5) <strong>Remote Control resume で他 session のデータが漏れる問題</strong>、(6) 前日号で導入された self-hosted runner の起動失敗、(7) session cleanup が memory フォルダごと削除してしまう問題、(8) plugin cache の不整合。さらに synced skills をハードニングし、cross-session messages 表示を改善。前日 2.1.227 が feature flag と slash-command menu を是正した流れで、2.1.226 以降からのアップグレードが実運用で強く推奨される。特に <strong>(5) の Remote Control resume 情報漏洩は複数ユーザ環境で影響大</strong>で、Team/Enterprise 契約は速やかな更新対象。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> Claude Code 2.1.x 系は 8/4 の 2.1.221 以降、ほぼ毎日パッチが出ており、"self-hosted / cross-session / Remote Control" という自動化・複数エージェント運用系の隅ケースを重点的に潰しているフェーズ。前日号でも触れた Orca / Paperclip 的な「1 台の環境で複数 Claude Code セッションを並列運用」構成では、cross-session messaging (SendMessage) の信頼性と Remote Control の分離が前提条件になる。特に "session cleanup が memory を消す" は Skills / memory を CI で永続化する運用に直接効く事故モードで、修正の意味が大きい。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank" rel="noopener">DeepSeek-Reasonix v2 — TS → Go リライトの単一バイナリ、"prefix-cache stability" を invariant として設計したコーディングエージェント</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Coding Agent</span><span class="tag">Go</span></div>
+  <div class="src">出典: GitHub esengine/DeepSeek-Reasonix（Go、MIT、週次 Trending +3,517 stars、34,178 stars、npm/brew 配布）</div>
+  <p class="sum">元 TypeScript の Reasonix 0.x（現在は maintenance mode）から Go への完全リライト。設計思想の核は「prefix-cache stability は "後付けの機能" ではなく loop 全体を貫く invariant」というもので、公開ケーススタディでは 2026-05-01 の 1 日で 435M input tokens を <strong>99.82% cache hit 率</strong>で処理し、no-cache 想定の 61 ドルが 12 ドルに収まった実測データが載っている。これを支えるのが 4 つの柱: (1) startup で小さな安定した env サマリを注入、(2) stale な tool 出力を summary compaction 前に snip/prune、(3) 内蔵 tool schema contract を regression review 用に文書化、(4) 単一 Go バイナリ (CGO_ENABLED=0) で 6 ターゲットへクロスコンパイル可能。4 つの入口 (TUI / desktop / VS Code 拡張 / ACP プロトコル経由の任意エディタ) が同じローカル engine に繋がる。DeepSeek 特化と明示的に位置付け、"任意モデル対応" を捨てて "1 プロバイダに深く合わせる" 選択。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> Claude Code / Cursor / Codex は "モデル差し替えが可能" を売りにするが、その代償として prefix cache 契約を保証しづらい。Reasonix の "DeepSeek 専用でよいから、cacheable な bytes を byte-stable に保つ" 発想は、実務コストで数倍差になるトレードオフを "垂直統合で回収する" 側の解答。ACP (Agent Client Protocol) 対応は、Zed が推進中の "エディタと agent runtime の間の標準プロトコル" で、Reasonix v2 は "1 つのローカル engine を CLI / desktop / editor から共有" する ACP model の実例。応用エッセンスは、"どのモデルにも中立" と "特定モデルに合わせて最適化" は同じ関数の異なる解で、後者を選んだ場合の勝ち筋 (byte-stable prefix / 内部 tool の版数管理) が具体的に何を意味するかの参考実装。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/cactus-compute/needle" target="_blank" rel="noopener">Needle 2 — 45M パラメタ / 14MB バイナリ / 28MB RAM でツール呼び出しと構造化抽出、CQ2-bit + Simple Attention Network</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">エッジ LLM</span><span class="tag">🔬論文</span></div>
+  <div class="src">出典: GitHub cactus-compute/needle（Python、日次 Trending +346 stars、4,120 stars）、arXiv:2607.18363（アーキテクチャ論文）</div>
+  <p class="sum">スマホ / ウェアラブル / スマートホーム / ロボット向けの 45M パラメタモデルで、モデル自体が単一 14MB バイナリに畳み込まれ、フルセッションの実行メモリが約 28MB。同社の Simple Attention Network (SAN) を基盤に CQ2-bit（Cactus 独自 2-bit 量子化）で圧縮し、独自エンジンにベイクイン。ベンチマークでは FunctionGemma 270M / LFM2.5 230M / Apple FM に対し <strong>5〜70x 小さいサイズ / f16 対 2-bit</strong> で勝ち負けを分ける水準。SAN の設計要素は (a) FFN の代わりに Hadamard MLP（重みなしで n log n 時間の直交変換）、(b) GQA アテンション、(c) engram key-value memory、(d) multi-lane hyper-connections、(e) 4 residual stream の RMS 正規化＋Sinkhorn による doubly-stochastic ルーティング。振る舞いは "全てを function call として解く": どんな入力もツール呼出か "空配列 <code>[]</code>"（=呼べる tool なしの明示的な拒否）、reasoning は unconstrained だが call 自体は byte-level grammar で JSON 破綻がゼロ、confidence 出力で act/escalate を閾値制御。tool retrieval headで大規模カタログの top 5 のみ提示、256 token sliding window + KV sink pinning でメモリ上限を確定。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> "エッジで動く LLM" の従来のスコープは "会話ができる小さいモデル" だったが、Needle の割り切りは "会話は捨てる、代わりに tool call と構造化抽出だけを保証する" 方向。応用エッセンスは、"モバイル / IoT で LLM を使う" を "LLM をチャットにする" ではなく "LLM を意図パーサ + 引数抽出器にする" と定義し直せば、モデルサイズは 2 桁下げても実務で使えるという設計判断。特に "空配列 <code>[]</code>" を「呼べる tool がないときの明示的な返答形式」に組み込んだのは、hallucination 抑制の実装として直接転用できる。デバイス側で完結する tool 呼出は、privacy 要件があるヘルスケア / 金融アプリ、あるいは connectivity 前提を置けないロボットで直に効く。</div>
+</div>
+
+<h2>🛠 開発ツール / OSS / Skill</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/virgiliojr94/book-to-skill" target="_blank" rel="noopener">virgiliojr94/book-to-skill — 技術書 PDF/EPUB を Claude Code / Copilot CLI / Amp の Skill に変換、"Discovery Loop Tax" を 24〜51 倍削減</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">Claude Code Skill</span><span class="tag">Agent Skills 標準</span></div>
+  <div class="src">出典: GitHub virgiliojr94/book-to-skill（Python、MIT、週次 Trending +4,155 stars、20,813 stars）</div>
+  <p class="sum">"買って一度読んで、3 ヶ月後には第 7 章の存在すら忘れている技術書" を、agent がオンデマンドで読める Skill に変換する CLI。<code>/book-to-skill ./book.pdf</code> でファイル / フォルダ / glob を指定すると、SKILL.md（コア mental model + 章インデックス, 約 4K token）、<code>chapters/ch01-*.md</code>（章別、各 ~1K token、呼び出し時のみロード）、glossary.md、patterns.md、cheatsheet.md を生成する。<code>/my-book replication</code> のように呼ぶと agent が該当章だけを読んで実内容から回答するので、"PDF に丸ごと放り込む" 場合の <strong>24〜51 倍のトークン削減</strong>（実書で測定）。対応形式は PDF / EPUB / DOCX / MD / HTML / RTF / MOBI で、GitHub Copilot CLI (<code>~/.copilot/skills/</code>)、Amp (<code>~/.agents/skills/</code>)、Claude Code (<code>~/.claude/skills/</code>) が同じ <code>SKILL.md</code> 形式を読める Agent Skills 標準に準拠。書籍以外の使い道として社内 runbook、ブランドガイドライン、RFC、論文クラスタも同じ変換パスに乗る。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> "PDF を毎回 agent に読ませる" のは、agent が ToC を再フェッチし backtrack し全体を再処理する "Discovery Loop Tax" を毎ターン払うことになる。book-to-skill の勝ち筋は「その構造化コストを変換時に 1 回だけ払い、以後の query は答えに比例したトークンで済む」という時間的分離。応用エッセンスは、"社内ドキュメントは RAG に入れる or vector DB に入れる" だけでなく、"agent の Skill に事前変換する" という第 3 の選択肢があり、章別チャンク + 事前グロッサリ + patterns/cheatsheet の 5 種のファイルを標準化する型が既にオープン標準として存在する、という点。オンボーディングドキュメントや ADR を Skill 化するときの実装テンプレートとして直接参考にできる。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/zhaoxuya520/reverse-skill" target="_blank" rel="noopener">zhaoxuya520/reverse-skill — 41 の routing rule + 163 regression case で AI agent を CTF / リバースエンジニアリング / 脆弱性調査に案内するスキルルータ</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">セキュリティ</span><span class="tag">Claude Code Skill</span></div>
+  <div class="src">出典: GitHub zhaoxuya520/reverse-skill（PowerShell + Python、MIT、週次 Trending +6,730 stars、24,418 stars）</div>
+  <p class="sum">"AI agent が APK / ELF / JS 難読化 / PCAP / CTF ターゲットに遭遇したとき、どのツール（jadx / apktool / Frida / IDA / BurpSuite 等）をどの順で使うかを毎回悩んでいる" 状態を解決する Skill パッケージ。中心にあるのは 41 本の routing rule (R0-R40) と、それを守っているかを検証する 163 ケースの regression benchmark、42 の core skill モジュール、Windows + Ubuntu の cross-platform CI。フローは固定型で <code>User task → RULES.md → MASTER-ROUTING (PRIMARY) → case-init / scope.md (auth + network profile; ACT は準備完了まで禁止) → シナリオスキル → tools / MCP / scripts → timeline + Evidence → Finding → Path → report + field-journal</code>。Claude Code / Codex / Cursor / OpenCode のいずれからでも動く "client-neutral" 構成で、認可・ネットワークプロファイルを ACT 前に強制させる ops contract が組み込まれている。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> セキュリティ調査は "ツール選択の分岐が深いドメイン" で、agent は往々にして「とりあえず strings」「とりあえず jadx」のような近道を取り、証拠チェーンが再現不能になる。reverse-skill が Trending 上位に来ているのは、その意思決定を "41 の明示的なルール" として書き下し、しかも 163 ケースの regression benchmark で崩れないことを CI で担保している点にある。応用エッセンスは、"熟練者の判断ツリー" を暗黙知として放置せず、Skill として明文化し、regression suite で守ることで、agent の "何となく" を減らせる、というアプローチ全般に効く。前日号の addyosmani/agent-skills が "Beyoncé Rule" (CI で守らないルールは存在しない) を掲げていたのと同型で、"skill を CI で守る" が新しい実装標準になりつつある兆し。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <p class="sum">本日は実行環境の egress ポリシー制約により、Zenn / note / Publickey / tech.pepabo.com / engineering.linecorp.com が <em>(取得失敗)</em> となったため、日本語ソース由来の新規項目はスキップした。前日以前の号で扱った項目（Pepabo Tech Portal の新卒研修記事、Publickey の AWS DevOps Agent 記事等）は重複除外ルールに従い再掲していない。</p>
+</div>
+
+<footer>
+  <p>掲載: 9 件（ハイライト + 記事 8）。「事実 → 技術的意味 → 読み手への示唆」順で構成し、直近 4 日 (2026-08-08〜2026-08-11) の公開項目とヘッドライン・URL を照合し、既出項目（cloudflare/computer, orca, paperclip, loopx, TencentDB-Agent-Memory, semantica, pdf-inspector, airllm, diagram-design, agent-skills, DeepTutor, code-graph-rag, muse-glimmer, NVIDIA NOOA, Uber Payments Platform, cloudflare/wallets, kitesurf, cloudflare-os, agents-week-in-review, Anthropic Fable 5 biology, Kimi K3 in Copilot, Claude Code 2.1.224/2.1.227, LangChain Managed Deep Agents, ChatGPT Voice, Cloudflare Precursor, Cloudflare Workers AI billing, US DoE Genesis, GitHub npm supply-chain, _for-sale DNS, arxiv:2608.06153/2608.06329/2608.00335, Simon Willison OpenAI timeline, Self-hosted Claude Code, Mixture-of-Kittens, MCP 2026-07-28 spec, WeatherNext cyclones, Qwen3.8-Max, DeepMind multi-agent safety, Next.js 16.3, Netflix In-House LLM Serving, Uber Zone-Failure OpenSearch, google/skills, PrimeIntellect prime-agent, Pepabo 新卒研修, AWS DevOps Agent 等）は除外した。</p>
+  <p>基準時刻: 2026-08-12 JST。本日性のアンカーは Claude Code 2.1.228 リリース（2026-08-11）と、日次 Trending に本日新規で上がった macro-inc/macro, NVIDIA-NeMo/Switchyard, cactus-compute/needle, embabel-agent, DeepSeek-Reasonix v2, book-to-skill, reverse-skill。RUNBOOK の "1 週間以内のアーキテクチャ系" 例外枠を macro / Switchyard / embabel に適用した。</p>
+  <p>収集元: GitHub Trending (daily / weekly) / GitHub リポジトリ README / Claude Code Changelog。※本日は egress 制約により Hacker News / Anthropic News / OpenAI Blog / DeepMind Blog / Pragmatic Engineer / Martin Fowler / AWS Architecture / High Scalability / ThoughtWorks Radar / Netflix / Uber / Stripe / InfoQ / arXiv / Changelog / Zenn / note / Publickey / MarkTechPost / Simon Willison / TechCrunch / huggingface.co / blog.cloudflare.com / github.blog / claude.com/blog / developers.cloudflare.com / tech.pepabo.com / engineering.linecorp.com は <em>(取得失敗)</em> のため、GitHub 上で確定できたソースのみ採用しています。</p>
+</footer>
+</body>
+</html>
