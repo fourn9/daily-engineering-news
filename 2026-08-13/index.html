@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/reader.css">
+<script src="../assets/reader.js" defer></script>
+<title>2026年08月13日(木) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+  --alert-bg:#fef2f2;--alert-border:#ef4444;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+    --alert-bg:#2a1414;--alert-border:#dc2626;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+</style>
+</head>
+<body>
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年08月13日(木)</div>
+</header>
+
+<section class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p>本日のテーマは「<strong>大手 LLM プロバイダが "秒間トークン" と "調達電力" の 2 軸で serving の壁を殴りに来た日</strong>」。OpenAI は今日、GPT-5.6 Sol を Cerebras 上で走らせる <strong>Ultrafast 層</strong> をプレビュー公開（最大 <strong>14 倍速 / 750 tok/s</strong>）、"インシデント対応のように状況が刻々と変わるループ" を実用秒数で回すという用途を明示。Anthropic は 3 日前に SpaceX Colossus 1 の <strong>300MW / 220,000 NVIDIA GPU</strong> を確保、Claude Code Pro/Max/Team の 5 時間レート上限を 2 倍化しピーク時削減を撤廃、Opus API 上限も引き上げ。もう 1 本の底流として、arXiv <em>Stealing Reasoning Traces</em> が「Claude Opus 4.8 / GPT-5.6 Sol / Gemini 1.5 Flash の encrypted CoT ブロックは、同一プロバイダ内で <strong>弱いモデルで復号可能</strong>」という設計上の欠陥を実証し、既に 315,320 ブロックから 367 件の PII / 182 件の credential を抽出済み。「速く動かす」「大きく動かす」の裏で、"暗号化された reasoning が銀の弾丸ではない" が同日に降ってきた 1 日。</p>
+</section>
+
+<h2>🤖 AI / LLM プラットフォーム</h2>
+
+<div class="art">
+  <h3><a href="https://openai.com/index/previewing-ultrafast/" target="_blank" rel="noopener">OpenAI Ultrafast — GPT-5.6 Sol を Cerebras で最大 14 倍速 / 750 tok/s で走らせる新 tier をプレビュー公開</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🔥話題</span><span class="tag">OpenAI</span></div>
+  <div class="src">出典: OpenAI News（2026-08-13）</div>
+  <p class="sum">同一モデル・同一品質のまま推論スループットだけ引き上げる新 API サービス階層。基盤は Cerebras の wafer-scale ハードで、標準処理比 <strong>最大 14×</strong>、実測 <strong>750 output tokens/sec</strong>。従来「リアルタイム性が要る = 小さいモデルか特化モデルに落とす」だった構図を変え、"1 秒あたりのタスク量" を稼ぐ方向で殴る。用途例として <strong>インシデント対応</strong>（証跡が変わり続ける中でログ・トレース・会話を並列に読み下し次アクションを提案）、コーディング、コマース、金融リサーチ、カスタマーサポートを列挙。当面は限定プレビュー、キャパシティ拡大に応じて段階公開。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> Cerebras は 900,000 コアの CS-3 系ウェハスケール AI アクセラレータを持つ推論スタートアップで、GPU クラスタと違いモデル全体を 1 枚のシリコン上に載せて decoding のメモリ帯域律速を回避する構造。従来 GPT-5.6 Sol は "遅いが賢い" tier で、reasoning depth を落とさずに秒間トークンを稼ぐ方法は "small モデルにする / speculative decoding" の 2 択が主流だった。<strong>Ultrafast はここに "同じモデルを別ハードで動かす"</strong> を第 3 の選択肢として持ち込み、reasoning agent の "考える時間を確保しつつ人間の待ち秒数を下げる" が同時に成立する新しい設計余地を開く。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank" rel="noopener">Anthropic × SpaceX Colossus 1 — 300MW / 220K GPU を確保、Claude Code の 5 時間上限を 2 倍化しピーク時削減を撤廃</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Anthropic</span><span class="tag">キャパシティ</span></div>
+  <div class="src">出典: Anthropic News（2026-08-10、直近号未掲載）</div>
+  <p class="sum">SpaceX Colossus 1 データセンターの <strong>全 compute キャパシティ</strong>を Anthropic が使う契約。1 ヶ月以内に <strong>300MW / 220,000 NVIDIA GPU</strong> が追加され、副次的合意として "gigawatt 級の <strong>orbital AI compute</strong> の共同開発" にも関心を表明。この余剰を原資に、Pro/Max/Team/シート型 Enterprise の <strong>Claude Code 5 時間レート上限を 2 倍化</strong>、Pro/Max のピーク時削減を撤廃、Opus モデル API のレート上限も引き上げ。Amazon 提携によりアジア・欧州リージョンの推論も併行拡大。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> Ultrafast (OpenAI) が "同じモデルを別ハードで速くする" 側からの回答なら、Anthropic は "調達済み電力とアクセラレータの絶対量" 側から Claude Code の usage limit 事故を潰す方針。Team / Enterprise 契約者にとって "5 時間ウィンドウで実行が止まる" が最大の運用リスクだった局面が、レート 2 倍化と off-peak 削減撤廃で緩む。SpaceX 提携の orbital compute は "地上の電源制約と地熱冷却制約を軌道上で回避する" 構想で、ハイパースケーラの電力争奪 (Amazon 5GW、Google/Broadcom 数 GW) が現物電力の枯渇局面に達しつつあることを示唆する。</div>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+  <h3><a href="https://netflixtechblog.com/genrec-towards-llm-native-recommendation-at-netflix-f20be6f643e3" target="_blank" rel="noopener">Netflix GenRec — 特徴量エンジニアリング捨て "自然言語入力 + カタログ埋め込み head + prefill-only 推論" で LLM ネイティブなランカに再設計</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">Netflix</span><span class="tag">LLM 応用</span></div>
+  <div class="src">出典: Netflix TechBlog（2026-07 公開、当該分野の当月最重要記事として arXiv 2608.10257 論文版と併走）</div>
+  <p class="sum">Netflix のレコメンドランカを、数千の手作業特徴量ではなく "ユーザ履歴・アイテムメタデータ・要求コンテキストを自然言語で流し込む" LLM ネイティブ設計に置き換えた実装レポート。設計上重要なのは 3 点: (1) <strong>catalog-aware scoring head</strong> — Netflix カタログ各アイテムに学習済み埋め込みを持たせ、モデル hidden 表現との内積 / 小 MLP で score を出すことで <strong>カタログ外推薦を構造的に排除</strong>、(2) <strong>prefill-only 推論</strong> — 1 パスで prompt を処理しカタログ全アイテムに score を出す形式で自己回帰 decoding を回避、既存 vLLM 上に prefill だけで載せる、(3) <strong>2 段学習</strong> — Phase 1 で OSS LLM を Netflix データに適応、Phase 2 でランキング目的で post-train。大規模 A/B で長短双方の online 指標を統計的に改善しつつ、Phase 2 のラベル・シグナル量は僅少。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> "LLM で推薦" 系の従来アプローチは (a) generative なアイテム ID を出させる、(b) LLM を feature 抽出器にして下流の GBDT/NN で ranking、の 2 型が主流。GenRec の勝ち筋は「LLM を <strong>スコアリング関数そのもの</strong>にしつつ、出力空間はカタログ埋め込みで constrain し hallucination を構造的に潰す」設計にある。特に <strong>prefill-only mode</strong> の判断は重要で、"生成しないなら KV cache を作らず、seq len に対して線形で catalog 全体を一度に scoring できる" という LLM serving の未開拓なコスト帯を実務で活用した実例。応用エッセンスは、"LLM を使う = 出力を tokens として生成する" という暗黙前提を外し、prompt→scoring head の閉じた回路として捉え直すこと。Netflix 規模でなくても、検索や広告など catalog constraint がある領域には直接転用可能。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://blog.cloudflare.com/certificate-transparency-monitoring-ga/" target="_blank" rel="noopener">Cloudflare Certificate Transparency Monitoring GA — Cloudflare 自身が発行した cert を alert から filter し 650K ドメインに標準提供</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">セキュリティ</span><span class="tag">Cloudflare</span></div>
+  <div class="src">出典: Cloudflare Blog（2026-08-13）</div>
+  <p class="sum">2019 年から public beta だった CT Monitoring が全プラン無料の GA へ。既に <strong>650,000+ ドメイン</strong>で有効化されている状態を「本気で運用する」ためのアップデートで、最大の変更は <strong>Cloudflare が本人のために発行した cert（Universal SSL 更新、Advanced Certificate Manager、backup cert 等）を通知前に自動除外</strong>する点。届く alert は "自分が発行を指示していない cert" だけになり、ノイズ問題が消える。メール件名に対象ホスト名、本文に cert 詳細、ダッシュボードへの直リンク付き。全 tier で設定 UI 統一。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> Certificate Transparency は "認証局が発行した TLS 証明書がすべて公開ログに書き込まれる" 仕組みで、mis-issue や乗っ取りを早期検知するインフラだが、実運用では 1 ドメインあたり数十件/日の "自社正規発行" が混入し、CT alert が "毎日届く不要通知" になっていたのが最大の運用課題だった。Cloudflare のように <strong>マネージド CA と CT monitor を同時に持つ主体</strong>が "自分が発行したものは差し引く" ができるのはアーキ的なアドバンテージで、他 CDN/DNS 事業者では困難。応用エッセンスは、"監視系プロダクトは "何を出すか" より "何を出さないか" の filter 品質で差がつく" という点で、observability や SIEM 側でも同型の設計判断に効く。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.uber.com/us/en/blog/running-cost-efficient-export-workloads/" target="_blank" rel="noopener">Uber Engineering — Running Cost-Efficient Export Workloads at Uber</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">Uber</span><span class="tag">データ基盤</span></div>
+  <div class="src">出典: Uber Blog（2026-08-12、実行環境の egress 制約により本文詳細は未取得。タイトルと公開日のみ確認）</div>
+  <p class="sum">Uber データプラットフォームチームが 2026-08-12 に公開した "export workloads を低コストで運用する" 実装エッセイ。Uber は Hadoop / Hudi / Parquet / Hive / Presto / Spark を軸に <strong>数百 PB 規模</strong>の分析データを扱っており、他社への export やダウンストリーム連携が絶えず走る環境で、これらのバッチを "遅くせずに安くする" ための施策をまとめたポスト。ストレージ ・ 計算 ・ IO ・ ネットワークの 4 軸のうちどこを削ったかは本日確認できていないが、直近 Uber は Hive→Spark SQL 移行 (4x)、Hive federation (10PB+ / 16K データセット)、GitFarm など基盤刷新の連続で、その延長線上の記事。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> "export workloads" は自社データを <strong>顧客・パートナー・規制当局に定期送出する処理群</strong>で、ETL の中で「単価は低いが本数と契約が多く、SLA が硬く、削減の効果が地味に大きい」ゾーン。Netflix / Uber / Stripe クラスでは 1 % のコスト削減が数百万ドル単位になるため、"目立たないバッチのチューニング" が四半期の EBITDA 数字に効く典型例。egress 制約下でも Uber Engineering の本記事は当日更新の一次資料として抑えておきたい。詳細は明日以降に補足取得を予定。</div>
+</div>
+
+<h2>🛠 開発ツール / エージェント</h2>
+
+<div class="art">
+  <h3><a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">Claude Code 2.1.229 → 2.1.231 — MCP OAuth の Slack 互換修正、Remote Control resume 情報漏洩の後片付け、Vertex/Bedrock streaming の keepalive を追加</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Claude Code</span><span class="tag">続報</span></div>
+  <div class="src">出典: Claude Code Changelog（2.1.229: 2026-08-12、2.1.231: 2026-08-13）</div>
+  <p class="sum">昨日の 2.1.228 に続く 2 連続 patch。<strong>2.1.229 (8/12)</strong> の主要点: (1) <code>claude remote-control --continue</code> ドキュメント化、(2) self-hosted runner で <strong>server-supplied Claude Code hook</strong> をサポートし managed 環境と挙動を揃える、(3) gateway streaming に <strong>SSE keepalive</strong> を追加し Vertex / Bedrock 上流の "長考中の idle timeout 切断" を撲滅、(4) <strong>plugin marketplace の command source</strong> をセッション毎に動的解決、(5) <code>ListAgents</code> が Remote Control を <code>offline</code> と cloud セッションを <code>cloud</code> でラベル、(6) 長 response 途中の非表示・二重表示、tool call の非文字列値クラッシュ、狭端末での RangeError、Windows 拡張長 (<code>\?\</code>) / UNC path、attribution header 無効時の auto mode、127.0.0.1 な OAuth 認可サーバとの相互運用、Claude Code Review が PR にレビュー投稿しない、IDE diagnostics の UI 数秒停止、file-watcher ハンドルリーク等を纏めて修正。<strong>2.1.231 (8/13)</strong> は「事前登録型 OAuth クライアント (Slack など) を持つ MCP サーバで redirect URI 不一致で sign-in が失敗する」問題を単独修正。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 2.1.229 の中で運用に直接効くのは (a) <strong>SSE keepalive</strong> — Vertex / Bedrock 経由で長時間 reasoning を回すと "上流がだんまり" を切断とみなす事故モードがあり、Claude Code の自動 CI / 夜間バッチ運用で頻発していた症状の根治、(b) <strong>server-supplied Claude Code hook</strong> — GitHub Actions runner 上で hook を上書き可能にし、managed 環境と self-hosted の "hook が動く / 動かない" 挙動差を埋める、の 2 点。<strong>2.1.231</strong> の Slack MCP 事故は、Slack が事前登録 OAuth クライアント方式（redirect URI が固定）を採るため、Claude Code 側が動的 URI を組んで送ると authorization server が拒否するもので、Slack MCP を導入している Team/Enterprise は要更新。8/8 の 2.1.221 以降ほぼ毎日 patch という状況が続いているため、self-hosted runner・plugin marketplace・Remote Control のいずれかを使う組織は "アップデートを 2 日以内に取り込む" 運用が現実的なライン。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/kepano/obsidian-skills" target="_blank" rel="noopener">kepano/obsidian-skills — Obsidian の Markdown / Bases / JSON Canvas / CLI を Agent Skills 標準に落とした、Obsidian 公式 co-founder による Skill 集</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🛠OSS</span><span class="tag">Agent Skills 標準</span></div>
+  <div class="src">出典: GitHub kepano/obsidian-skills（日次 Trending +411 stars、45,600 stars）</div>
+  <p class="sum">Obsidian の co-founder Steph Ango (kepano) が公開した、Obsidian vault を AI agent から扱うための Skill パッケージ。同梱は 5 種: (1) <strong>obsidian-markdown</strong>（wikilink / embed / callout / properties を含む Obsidian Flavored Markdown の生成・編集）、(2) <strong>obsidian-bases</strong>（Bases ファイルの view / filter / formula / summary）、(3) <strong>json-canvas</strong>（node / edge / group / connection）、(4) <strong>obsidian-cli</strong>（vault 操作、plugin/theme 開発）、(5) <strong>defuddle</strong>（Web ページから clean markdown 抽出でトークン節約）。Agent Skills 標準準拠なので Claude Code / Codex / OpenCode で同じ <code>SKILL.md</code> が動き、marketplace / npm / 手動のいずれの導入経路にも対応。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> Obsidian は <strong>ローカルファイル + プレーンテキスト</strong>を核とする PKM で、API を持たず "ファイルを直に触る" が公式インタフェース。本 Skill 集は「vault の open format 群を agent が誤操作なく編集するための constraint と CLI 呼び出しの雛形」を Skill として書き下したもので、Notion や Coda のような API 前提サービスと違い <strong>"アプリを起動せず vault ディレクトリを触る"</strong> だけで完結する。応用エッセンスは、"ローカルファイル前提のツール (Obsidian / Emacs org-mode / Zettlr 等) の Skill 化" が、SaaS API 依存の agent 統合とは別レイヤの選択肢になったこと。特に kepano 本人が書いた Skill であることで "Obsidian が公式に AI agent 統合を支援する" というエコシステム上の意思表明の意味合いも大きい。</div>
+</div>
+
+<h2>🔬 論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2608.09867" target="_blank" rel="noopener">Stealing Reasoning Traces from Proprietary LLM APIs — Anthropic/OpenAI/Google の暗号化 CoT を "同一プロバイダ内の弱いモデル" で復号できる設計欠陥</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">⚠セキュリティ</span><span class="tag">🔥話題</span></div>
+  <div class="src">出典: arXiv:2608.09867（2026-08）</div>
+  <p class="sum">主要 LLM プロバイダは "モデルの chain-of-thought" を IP 保護と情報漏洩防止のため <strong>encrypted block</strong> でクライアントに返し、次リクエストで pass-back させる方式を採っている。本論文は「これらの encrypted block が <strong>同一プロバイダ内の異なるセッション・ユーザ・モデル間で互換</strong>」というアーキ上の欠陥を指摘。実証攻撃として、<strong>Anthropic では Claude Haiku 4.5 が Opus 4.8 の CoT を復号、OpenAI では GPT-5.6 Luna が Sol の CoT を復号、Google では Gemini Robotics 1.6 が Gemini 1.5 Flash の CoT を復号</strong>できることを示す。応用: (1) スケーラブルな model distillation jailbreak、(2) 公開レポから収集した <strong>315,320 ブロックから 367 件の PII・182 件の credential を実際に抽出</strong>、(3) 最終出力が拒否しても CoT に危険情報が残る、(4) 暗号化ブロックに隠した invisible prompt injection で公開 agentic rollout を汚染。責任開示済み。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 各社が "reasoning を隠す" ために採った encrypted CoT は、"クライアントに reasoning を持たせないと会話が続かない" 制約を "暗号化して不透明にすれば OK" と解釈した設計。本論文が示すのは <strong>"復号権を弱いモデルにも与えている"</strong> という構造欠陥で、「同一プロバイダ内なら encrypted block は透過ハンドル」という前提を突く。対策方向は "セッション/ユーザ単位のバインディング暗号鍵" だが、これはキャッシュ性と会話ステートレスの両方を壊すため設計上のトレードオフが大きい。読み手への示唆: <strong>reasoning content を頼りにしたガードレール (final answer は拒否するが内部で機密を推論している系)</strong> は、encrypted CoT が漏れる前提で作り直す必要がある。特に PII / credential を agent に触らせる社内 workflow で影響が直撃するので、ログ設計・prompt 設計を早期に見直す価値がある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2608.10669" target="_blank" rel="noopener">REDAgentBench — LLM エージェント用の "実行可能" な赤チーム、1,661 ケースを 5 サービス面で isolated sandbox に流し実害を receipt で判定</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">エージェント評価</span><span class="tag">セキュリティ</span></div>
+  <div class="src">出典: arXiv:2608.10669（2026-08）</div>
+  <p class="sum">LLM エージェント安全評価が "attack success rate という単一スカラー" に潰されている現状に対し、<strong>攻撃を実際に isolated service sandbox で走らせ、service receipt と最終状態変化から実害を検証する</strong> 枠組み。明示的な safety constraint と "agent-system 側の脆弱性" から攻撃を導出し、autonomous LLM pipeline で <strong>1,661 の実行可能ケース</strong>にコンパイル。カバレッジは <strong>15 種の介入戦略 × 11 種の脆弱性型 × 28 種の制約 × 5 種のサービス面</strong>。既存評価が exposure / execution / observation / adjudication を一緒くたにして "違反の有無" と "証拠の可視性" を混同していた問題を、"receipt が残るか" で切り分ける。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 従来の agent red-teaming (AgentDojo / InjecAgent など) は "モデルが攻撃 prompt にどう応じるか" を測るテキスト評価で、"実際にサービス API を叩いて副作用を出したか" を検証しないため、"応答は危ない見た目だが実行は空回りしていた" ケースが false positive として混ざっていた。REDAgentBench の要点は「攻撃者コスト＝人間の熟練 red team、防御者コスト＝実 API を模したサンドボックス、判定＝レシート」という <strong>実行トリアージへの移行</strong>。応用エッセンスは、社内で agent 評価パイプを組む際「攻撃 prompt を投げて応答を見る」を "サンドボックス化した実 API に投げて副作用を回収" のスキームに置き換えるべきで、これは同日号の Stealing Reasoning Traces のような "モデル内部漏洩" と別軸で <strong>agent の実行面のガードレール</strong>を評価する不可欠な半分。</div>
+</div>
+
+<h2>🧠 応用 AI / プロダクト</h2>
+
+<div class="art">
+  <h3><a href="https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/" target="_blank" rel="noopener">Google DeepMind SL2T — 手話→テキストを Pixel 11 の Gboard と Live Transcribe に搭載、ASL→English で消費者向けに初着地</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Google DeepMind</span><span class="tag">アクセシビリティ</span></div>
+  <div class="src">出典: DeepMind Blog（2026-08-12）</div>
+  <p class="sum">DeepMind が Pixel 11 の Gboard / Live Transcribe に <strong>手話→テキスト（SL2T）</strong>モデルを搭載。ASL→English を初リリースとし、Deaf ユーザがカメラに向かって手話するだけで <strong>Web 検索・メッセージ下書き・Gemini への query</strong> をキーボード無しに実行可能。学習は <strong>50 以上の手話言語 / 10 万時間超</strong>の signing データ（うち約 1/4 が ASL）。技術構成は「端末側で映像→<strong>幾何座標ワイヤフレーム</strong>への変換を行うオンデバイス前処理」＋「Google 側サーバでの翻訳」の二段構成。設計プロセスに AI Sign Language Advisory Committee（NAD / WFD / DPAN / RIT NTID）が関与しコミュニティ主導での検証を経ている。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 手話認識は "連続する 3D pose 系列 → 自然言語" のタスクで、ジェスチャ単体ではなく <strong>時空間文法 (facial marker / spatial referencing)</strong> を含む点が音声認識より難しい。SL2T の設計判断で注目すべきは (1) <strong>端末上で raw 映像を wireframe 化してからサーバに送る</strong> — Deaf コミュニティのプライバシー要件と帯域コストを同時に緩和、(2) advisory committee を製品開発の early phase から巻き込みデータ収集・評価軸を共設計、の 2 点。応用エッセンスは、"アクセシビリティ AI は事後の adapter ではなく、モデルアーキ側で "誰の何のためのモデルか" を組み込むほうが精度と社会受容の双方で有利" という設計指針。国内では NHK 手話 CG などの類似取り組みがあるが、"消費者スマホの標準機能" に載せた例は SL2T が初。</div>
+</div>
+
+<footer>
+  <p>掲載: 10 件（ハイライト + 記事 9）。「事実 → 技術的な意味 → 読み手への示唆」順で構成し、直近 6 日 (2026-08-07〜2026-08-12) の公開項目とヘッドライン・URL を照合し、既出項目（cloudflare/computer, orca, paperclip, loopx, TencentDB-Agent-Memory, semantica, pdf-inspector, airllm, diagram-design, agent-skills, DeepTutor, code-graph-rag, muse-glimmer, NVIDIA NOOA, Uber Payments Platform, cloudflare/wallets, kitesurf, cloudflare-os, agents-week-in-review, Fable 5 biology, Kimi K3 in Copilot, Claude Code 2.1.221〜2.1.228, LangChain Managed Deep Agents, ChatGPT Voice, Cloudflare Precursor, Cloudflare Workers AI unified billing, US DoE Genesis, GitHub npm supply-chain, _for-sale DNS, arxiv:2608.06153/2608.06329/2608.00335, Simon Willison OpenAI timeline, Self-hosted Claude Code, Mixture-of-Kittens, MCP 2026-07-28 spec, WeatherNext cyclones, Qwen3.8-Max, DeepMind multi-agent safety, Next.js 16.3, Netflix In-House LLM Serving, Uber Zone-Failure OpenSearch, google/skills, PrimeIntellect prime-agent, Pepabo 新卒研修, AWS DevOps Agent, macro-inc/macro, NVIDIA-NeMo/Switchyard, cactus-compute/needle, embabel-agent, DeepSeek-Reasonix v2, book-to-skill, reverse-skill 等）は除外した。</p>
+  <p>基準時刻: 2026-08-13 JST。本日性の主アンカーは <strong>OpenAI Ultrafast (Sol) プレビュー公開 (8/13)</strong>、<strong>Claude Code 2.1.231 (8/13)</strong>、<strong>Cloudflare CT Monitoring GA (8/13)</strong>、<strong>DeepMind SL2T (8/12)</strong>、<strong>Uber Cost-Efficient Export Workloads (8/12)</strong>、および Anthropic × SpaceX (8/10) の直近号未掲載枠。arXiv 論文は前号 <em>arXiv:2608.06329</em> と別番号系列で新規に採用。GitHub Trending は既出の macro / Switchyard / needle / diagram-design / semantica / anthropics-skills / cactus-needle を除外し、新規に浮上した kepano/obsidian-skills を採用。Netflix GenRec は前号既出の "In-House LLM Serving" と別記事で、RUNBOOK の "1 週間以内のアーキテクチャ良質記事は採用可" 例外枠を適用。</p>
+  <p>収集元: GitHub Trending (daily / weekly) / GitHub リポジトリ README / Claude Code Changelog / OpenAI News / Anthropic News / Cloudflare Blog / Netflix TechBlog / Uber Engineering / DeepMind Blog / arXiv abs ページ（いずれも WebSearch snippets 経由）。※本日も実行環境の egress 制約により Hacker News / Anthropic News (直接) / OpenAI News (直接) / DeepMind Blog (直接) / Martin Fowler / AWS Architecture / High Scalability / ThoughtWorks / Netflix (直接) / Uber (直接) / Stripe / InfoQ / arXiv (直接) / Changelog / Zenn / note / Publickey / Pragmatic Engineer / github.blog / claude.com / blog.cloudflare.com (直接) / developers.cloudflare.com / tech.pepabo.com / engineering.linecorp.com への直接 <code>web_fetch</code> は <em>(取得失敗)</em>。これらの一次資料は WebSearch 経由の抜粋で内容を照合しています。</p>
+</footer>
+</body>
+</html>
