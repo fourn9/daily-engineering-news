@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/reader.css">
+<script src="../assets/reader.js" defer></script>
+<title>2026年08月15日(土) のブリーフ｜🔨 エンジニアリング・モーニングブリーフ</title>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#2563eb;
+  --border:#e5e7eb;--tag-bg:#f3f4f6;
+  --sup-bg:#f4f7fb;--sup-border:#3b82f6;
+  --hi-bg:#fff7e0;--hi-border:#f59e0b;
+  --alert-bg:#fef2f2;--alert-border:#ef4444;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1012;--fg:#e6e6e6;--muted:#9aa3ad;--accent:#7ab2ff;
+    --border:#272a2f;--tag-bg:#1c1f24;
+    --sup-bg:#13181f;--sup-border:#5fa0ff;
+    --hi-bg:#2a2210;--hi-border:#d97706;
+    --alert-bg:#2a1414;--alert-border:#dc2626;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0 auto;padding:18px 16px 60px;max-width:760px;
+  background:var(--bg);color:var(--fg);
+  font-family:-apple-system,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-wrap:anywhere;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-block;color:var(--muted);margin-bottom:10px;font-size:.88rem}
+header{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:1.35rem;margin:0;line-height:1.4}
+.date{color:var(--muted);margin-top:4px;font-size:.92rem}
+h2{font-size:1.13rem;margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.hi{background:var(--hi-bg);border-left:4px solid var(--hi-border);padding:14px 16px;border-radius:6px;margin:6px 0 18px}
+.hi h2{margin-top:0;border:none;padding:0;font-size:1.1rem}
+.hi p{margin:8px 0 0}
+.art{margin:0 0 22px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.art:last-child{border-bottom:none}
+.art h3{font-size:1.04rem;margin:0 0 4px;line-height:1.45}
+.tags{margin:4px 0 6px}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--muted);padding:1px 8px;border-radius:4px;margin-right:4px;font-size:.78rem}
+.src{color:var(--muted);font-size:.82rem;margin:2px 0 6px}
+.sum{margin:8px 0 6px}
+.sup{background:var(--sup-bg);border-left:4px solid var(--sup-border);padding:10px 14px;border-radius:6px;margin:8px 0 0;font-size:.93rem}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+</style>
+</head>
+<body>
+<a class="back" href="../">← 過去ブリーフ一覧に戻る</a>
+<header>
+  <h1>🔨 エンジニアリング・モーニングブリーフ</h1>
+  <div class="date">2026年08月15日(土)</div>
+</header>
+
+<section class="hi">
+  <h2>🎯 今日のハイライト</h2>
+  <p>本日の主題は「<strong>Claude Code が "1 セッションで完結する agent" から "複数 agent が並列に会話する mesh" へ設計変更した週末</strong>」。昨日 (8/14) の <strong>auto-mode 既定化</strong>から一晩で Anthropic は <strong>v2.1.230→232</strong> を連投し、<strong>subagent forking を既定 ON</strong> (会話と prompt cache を継承) + <strong>クロスセッションのメッセージング</strong> (別セッションから /accept-hold-refuse で受信) + <strong>GitLab を plugin marketplace の一級 host に</strong>、そして <strong>worktree 隔離の Bash / 書込みまで拡張</strong>と、CLI 全体を "並列 agent と mesh 化する前提" に組み替えた。同時に GitHub Trending 上位は <strong>ego-lite (agent がログイン state を継承するブラウザ)</strong>、<strong>CLI-Anything (GUI ソフトを CLI 経由で agent-native 化)</strong>、<strong>cordis (DeepSeek Harness の plugin kernel)</strong> と <strong>"agent の外側 = プロトコル層"</strong> のリファレンス実装が横一列に並び、"個々の agent の中身より、agent 同士と外界を繋ぐ配線" が今週の設計上の主戦場になったことを示す。ハイライトは Claude Code 側の "mesh 化" と、Trending の "protocol layer OSS" を対で読むこと。</p>
+</section>
+
+<h2>🛠 Claude Code / エージェント運用</h2>
+
+<div class="art">
+  <h3><a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">Claude Code v2.1.230→232 — subagent forking 既定 ON・セッション間メッセージング・GitLab plugin marketplace が同一週にまとめ投入</a></h3>
+  <div class="tags"><span class="tag">🔥話題</span><span class="tag">Claude Code</span><span class="tag">仕様変更</span></div>
+  <div class="src">出典: Anthropic Claude Code Docs Changelog（v2.1.230 / v2.1.231 / v2.1.232、2026-08-14〜08-15）</div>
+  <p class="sum">昨日の auto-mode 既定化 (8/14) の翌日に Anthropic は <strong>3 リリースで CLI を並列 agent 前提に組み替え</strong>。主なもの: (1) <strong>subagent forking が既定 ON</strong> ─ 派生 agent が親の <strong>会話履歴と prompt cache を継承</strong>し、"数珠繋ぎの並列 agent" を context の断絶なしに走らせられる、(2) <strong>クロスセッションメッセージング</strong> ─ 別の Claude Code セッションから話しかけると受信ダイアログ (accept / hold / refuse) が出る、<code>/config</code> に "Dialog expiry" と "Messages from your other sessions" 行が追加、(3) <strong>GitLab plugin marketplace</strong> ─ <code>gitlab.com</code> の bare URL (nested subgroup 込み) が github.com URL と同等に clone 可能、clone auth 失敗ヒントも実際の git host 名で出る、(4) <strong>Worktree 隔離の強化</strong> ─ subagent が <code>git -C</code> / <code>--git-dir</code> / <code>GIT_DIR</code> で共有 checkout を触れなくなり、Bash とファイル編集の隔離が全セッション型に適用、(5) <strong>Linux 側 memory cgroup 対応</strong> ─ <code>CLAUDE_CODE_TOOL_MEMORY_LIMIT</code> で暴走 build がセッションを止めない、(6) <strong>GitLab トークン (glrt-, gloas-, glptt-, glagent- 等)</strong> の secret redaction 追加、(7) 長時間 thinking 中でも <strong>SSE keepalive ping</strong> を Vertex / Bedrock upstream に送って idle-timeout 切断を防止、(8) fullscreen streaming で会話全体の re-normalize を廃止し長セッションの応答性改善、など計 <strong>49 変更</strong>。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> Claude Code は 2.1.221〜228 で "1 CLI 内の tool permissioning" を仕上げ、昨日 8/14 の auto-mode 既定化で "コマンド単位の許諾" を classifier に譲った。次に来たのが今回の "セッション同士を繋ぐ" レイヤで、要点は <strong>agent の粒度が "1 対話 = 1 セッション" から "session mesh" に</strong>移ったこと。cross-session messaging は "別ターミナルの Claude に頼み事を投げる" (== <strong>agent-to-agent A2A の同社内実装</strong>) で、subagent forking の cache 継承と組み合わせると "並列 agent が同じ context を共有しつつ独立に走る" 開発フローが素で組める。GitLab plugin marketplace 一級対応は、Enterprise 移行時の "GitHub 一択" 前提を崩す実務的な調整。読み手の示唆: (a) subagent 既定 ON によって <strong>context / cache のコストが暗黙に増える</strong>ため、社内で "1 タスク = 1 セッション" のコスト前提を再測定するタイミング、(b) cross-session messaging は<strong>知らずに別セッションから干渉される</strong>攻撃面 (prompt injection の bridge) が広がる — Dialog expiry と Messages from your other sessions を早めに社内ポリシーで既定 "hold" に、(c) worktree 隔離が Bash と file edit まで拡張されたので、社内のカスタム "全部通し" MCP tool は仕組み上の再点検が必要。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://claude.com/blog/claude-tag-proactive-replies" target="_blank" rel="noopener">Claude Tag — Slack 上の Claude が "呼ばれなくても勝手に返す" proactive replies を追加、full channel context + standing instructions で"入るタイミング"を判断</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">Slack</span><span class="tag">Anthropic</span></div>
+  <div class="src">出典: Anthropic News「Claude adds smarter Slack collaboration」（2026-08-14）</div>
+  <p class="sum">Slack 向け Claude インテグレーション <strong>Claude Tag</strong> が更新され、これまでの "@Claude で明示的に呼ぶ" に加えて <strong>proactive replies</strong> (呼ばれずに割り込む) が本日 (8/14) 無料で提供。判断の材料は 3 点: (1) <strong>Slack チャンネル全体のコンテキスト</strong>を読む、(2) <strong>Claude の memory</strong>を参照、(3) 事前に設定した <strong>standing instructions</strong> ("こういうときは入って、こういうときは黙って")。応答速度と精度も同時改善。位置付けは "Slack bot" ではなく "常時 Slack を読んでいる同僚 agent" 側。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> Slack の bot 統合はこれまで <strong>明示呼び出し (@bot) 前提</strong>で、"どのタイミングで割り込むべきか" の判断は全て人間側にあった。Claude Tag の proactive replies はここを <strong>チャンネル文脈 + memory + standing instructions の 3 点で bot 側に委譲</strong>する設計で、"常時聞いていて、自分が有用だと判断したら発話する" (== virtual teammate) モデルに一歩踏み込んだもの。読み手の示唆: (a) チャンネル全メッセージが Anthropic 側の推論に流れる前提が拡大するため、社内 Slack の <strong>proactive 有効チャンネル境界</strong>を IT ポリシーとして明示する必要がある、(b) standing instructions は事実上 "永続 system prompt" — 誰がどのチャンネルにどう書けるか (== <strong>prompt injection の facility</strong>) の owner 管理が必要、(c) 昨日の Claude Code auto-mode 既定化と同じ "人間の許諾 → agent の判断" 移譲の流れが Slack にも同期して着地した点を運用側で押さえる。</div>
+</div>
+
+<h2>📐 アーキテクチャ / 設計</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/cordiverse/cordis" target="_blank" rel="noopener">cordiverse/cordis — "Meta-Framework of Spatiotemporal Composability" が DeepSeek Harness の plugin kernel に採用、Koishi bot で 4 年の実運用を経て "agent の外側 OS 層" として再登場</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">🛠OSS</span><span class="tag">エージェント基盤</span></div>
+  <div class="src">出典: GitHub cordiverse/cordis（Trending Today +616 stars、累計 3,994 stars）/ floatboat.ai 解説記事</div>
+  <p class="sum">TypeScript 製の <strong>Meta-Framework of Spatiotemporal Composability</strong>。中核の主張は「software component は <strong>空間 (どの plugin が active か) と時間 (いつ mount / unmount するか) の両方で composable</strong>であるべき」で、これを <strong>effect tracking + coeffect resolution + hot module replacement + reconciliation-based loader</strong> として実装する。Cordis 自身は 2022 年に始まり、Discord/Telegram/LINE 横断のクロスプラットフォーム chatbot フレーム <strong>Koishi</strong> の kernel として 4 年間本番運用されていた基盤。今週 (2026-08-13) 公開の <strong>DeepSeek Harness Developer Preview</strong> がこの Cordis v4 を plugin kernel に採用したことで、"chatbot 用の低レベル部品" から "<strong>agent OS の plugin layer</strong>" として再ラベルされ、GitHub Trending に急浮上 (今日 +616 stars)。API はまだ stable ではなく、predicted に変更あり得ると明記。MIT。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> "agent OS の plugin layer" は Google Skills、Anthropic の subagent、Cloudflare Agent SDK、holaOS (昨日) など各社がそれぞれ実装しているが、いずれも "自社 CLI の内側部品"。Cordis の面白さは (i) <strong>chatbot 由来の 4 年運用</strong>で "plugin の再入 / hot reload / 依存の DAG 解決" という現代 agent が抱える問題を先に解いていたこと、(ii) それを <strong>meta-framework = OS 外側から差し込める形</strong>で切り出していること、(iii) DeepSeek Harness という <strong>2026 年ベンチマークで benchmark 用ハーネスが逆に OSS 化する</strong> 新しい流れに乗ったこと。用語補足: <em>spatiotemporal composability</em> は "同じ機能を空間 (どの plugin 集合か) と時間 (いつ有効化するか) の 2 軸で組み替えられる" 性質で、"実行中に plugin を差し替えても状態を失わない" という要件のことを指す。応用エッセンスは、社内で複数の agent framework (Claude Code + Codex + 内製) を並走させる場合、<strong>各 CLI 内側で plugin を書くのではなく、外側の meta-framework (Cordis 相当) を先に決めて plugin を移植可能な単位で切る</strong>と、フレームワーク乗り換えコストが劇的に下がる。同日の Claude Code cross-session messaging と併読すると、"agent 内部設計 → agent 間プロトコル → agent OS 層" の 3 層が独立に商用化されつつある。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://www.infoq.com/news/2026/08/cloudflare-cdnjs-migration/" target="_blank" rel="noopener">Cloudflare cdnjs、Developer Platform 全体 (Workers / R2 / KV / Workflows / Queues / Durable Objects / Containers) への移行を完了 — 9B req/day、98.6% cache hit の dogfooding 事例を InfoQ が 8/14 に整理</a></h3>
+  <div class="tags"><span class="tag">📐設計論</span><span class="tag">クラウド</span></div>
+  <div class="src">出典: InfoQ「Cloudflare Migrates JavaScript CDN Serving 9B Requests a Day」（2026-08-14）</div>
+  <p class="sum">Cloudflare が JS / CSS ライブラリ CDN の cdnjs を、自社 Developer Platform 上に完全移行済 (現行 GA)。アーキテクチャは <strong>Workers (serving) + R2 (source of truth) + KV (metadata / SRI hash / version) + Workflows / Queues / Durable Objects / Containers</strong> の組み合わせで、Workers Cache が前段。数字は <strong>9B req/day / ピーク 108K req/s / 330+ データセンタ / 98.6% cache hit</strong>、影響範囲は "全 Web サイトの約 12%" が使用。設計上のトピック 3 点: (1) <strong>R2 が単一 source of truth</strong> ─ KV に載らなかった source maps / 大 bundle / font pack を扱えるように、(2) <strong>DigitalOcean Spaces にライブ mirror</strong> ─ 単なる DR ではなく "R2 が失敗したら serving Worker が読みに行く live fallback"、キャッシュ→R2→DigitalOcean の 3 段チェーン、(3) URL / SRI hash / package 内容を一切変えずに移行し切り、後方互換を維持。Cloudflare 側の位置付けは "Developer Platform の dogfooding at scale"。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> "全部自社 primitive で書き直す" 系の事例で見るべきは <strong>failover と移行手順</strong>で、この cdnjs はその両方が教科書的に整理されている。特に <strong>DigitalOcean Spaces を "外部 vendor に置いた live fallback"</strong> にする設計は、"single vendor 最適化と blast radius 制御" のトレードオフを "全乗せしつつ、ホット・スタンバイだけ他社に外す" という具体例で回答したもの (自社 primitive の障害と自社 platform 全体の障害を切り離せる)。位置付け: (i) DR (Disaster Recovery) は "冷たいバックアップ"、live fallback は "常時パスに入る二重化" で、後者は運用コストがかかる代わりに切替時間ゼロ。(ii) <strong>URL / SRI hash 不変移行</strong>は SRI (Subresource Integrity) を採用している下流サイトの完全性検証を壊さないための実務条件で、SRI は "指定した hash と一致しないと script を実行しない" ブラウザ機能。応用エッセンスは、社内で "自社 platform に大規模サービスを載せ替える" ときに (a) <strong>外部 vendor に live fallback を残す</strong>、(b) 下流に露出している identifier (URL / hash / etag) を <strong>移行前後で bit-identical に保つ</strong>、この 2 点は自社規模でも移植価値が高い。</div>
+</div>
+
+<h2>🌟 GitHub Trending / エージェント基盤 OSS</h2>
+
+<div class="art">
+  <h3><a href="https://github.com/citrolabs/ego-lite" target="_blank" rel="noopener">citrolabs/ego-lite — "ログイン state を継承したまま agent に渡すブラウザ"、Claude Code / Codex から並列 Space で web 自動化 (Trending Today +546)</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🛠OSS</span><span class="tag">エージェント基盤</span></div>
+  <div class="src">出典: GitHub citrolabs/ego-lite（Trending Today +546 stars、累計 10,871 stars、MIT / macOS 先行）</div>
+  <p class="sum">"agent 向けに最速の web 自動化ブラウザ" を掲げる OSS。設計上のヘッドラインは <strong>3 点</strong>: (1) 自分がログインしている Cookie / Session を agent 側に <strong>そのまま継承</strong>させ、GitHub / Jira / 社内管理画面等をパスワード or API key なしで叩ける (== <strong>login state pass-through</strong>)、(2) <strong>Spaces</strong>: 1 ブラウザ内の並列 workspace で、各 Space が独立 agent タスクを保持、"Claude Code が 10 Space でリード拡充・Codex が 5 Space で競合スクレイピング" が衝突なしに走る、(3) 連携層 <strong>ego-browser</strong> が Claude Code / Codex / Cursor / 自作 CLI に統一 JS tool (snapshot / fill / click / wait / navigate / capture) を露出し、agent は 1 回で JS スニペットを流し込むだけ。macOS 先行、Windows / Linux は roadmap。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 現状の agent-x-Web の主流は Playwright / Puppeteer 系の "clean profile で立ち上げて手動で login させる" か、Anthropic Computer Use 系の "画像 + マウスで OS を操作する" のどちらか。ego-lite は <strong>"人間が既にログイン済みのブラウザプロファイルを、agent と共有する"</strong> という第 3 の道で、"社内サービスに OAuth 設定不要のまま agent が入れる" 実運用の摩擦を大きく減らす。反面、副作用は "agent が誤って本人アカウントで書き込む" リスク — この点を <strong>Space 単位の隔離</strong>で分離しているのが設計要諦。読み手の示唆: (a) 社内で "1 人のブラウザから複数 agent が同時に社内 SaaS を叩く" 運用は <strong>ログ帰属と rate limit</strong>の再設計が必要、(b) ego-lite 型 UX を採用する場合、"どの Space から何ができるか" の permission gate を各 SaaS 側で書けるか (== <strong>agent-aware ACL</strong>) が今後の SaaS ベンダー競争軸に。同日の Claude Code cross-session messaging と併せ、"agent 間の暗黙のブリッジ点" が session / browser 両側で増えたのが本日の設計傾向。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/HKUDS/CLI-Anything" target="_blank" rel="noopener">HKUDS/CLI-Anything — "全てのソフトを agent-native に" GUI アプリを CLI 経由で agent 操作可能にする plugin + hub、Claude Code plugin 同梱 (Trending +100)</a></h3>
+  <div class="tags"><span class="tag">🆕新リリース</span><span class="tag">🛠OSS</span><span class="tag">エージェント基盤</span></div>
+  <div class="src">出典: GitHub HKUDS/CLI-Anything（Trending Today +100 stars、累計 47,286 stars、香港大 Data Intelligence Lab）</div>
+  <p class="sum">香港大 Data Intelligence Lab (HKUDS) が公開した agent-native CLI 生成器。仕組みは 3 段: (1) 既存 GUI アプリの<strong>アーキ解析</strong>、(2) GUI 機能を鏡写した <strong>CLI 設計</strong>、(3) 状態管理・undo/redo・REPL・JSON 出力を含む <strong>stateful CLI の実装</strong>。生成された CLI は <strong>API / GUI 再構築 / 複雑な wrapper 一切不要</strong>で agent に操作させられる、というのがヘッドライン。同 repo は Claude Code 用 plugin (<code>cli-anything-plugin</code>) を同梱し、公開カタログ (clianything.cc) に "pre-built agent-native CLI" が並ぶ。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> agent が現世の GUI ソフトを触るには (i) 画像 + マウス操作 (Anthropic Computer Use / OpenAI Operator)、(ii) native API / MCP server 経由、(iii) 独自の RPA、の 3 択が今の主流。CLI-Anything は <strong>"agent が使う interface として CLI を第一級にし、既存 GUI をそこに落とす"</strong> 4 番目のアプローチ。ポイントは "REPL / JSON 出力 / undo-redo / full test coverage" の 4 点を要求している点で、これは <strong>agent が誤操作しても復帰できる ACID 相当の CLI 契約</strong>を先に固めているということ。応用エッセンスは、社内ツールを "agent に触らせる" 前に、<strong>MCP server を書くより先に "冪等な CLI + JSON 出力 + undo 可能な state"</strong> の 3 点を先に決めておくと、後で MCP でも A2A でも下位互換が効くこと。同日の ego-lite (login state pass-through) と併せ、"agent の interface 層を 3 種類 (Browser / CLI / API) 揃える" 動きが今週の trending の底流。</div>
+</div>
+
+<div class="art">
+  <h3><a href="https://github.com/sqliteai/waste" target="_blank" rel="noopener">sqliteai/waste — Kimi K3 (2.78T パラメタ) を 64GB MacBook で走らせる C 製 inference engine、NVMe から expert を streaming する MoE 特化ラン</a></h3>
+  <div class="tags"><span class="tag">🛠OSS</span><span class="tag">ローカル推論</span><span class="tag">MoE</span></div>
+  <div class="src">出典: GitHub sqliteai/waste（HN 話題継続、Trending 済み、MarcoBambini Substack 解説）</div>
+  <p class="sum">"Weight-Aware Streaming Tensor Engine" (略 <strong>WASTE</strong>) の名でリリースされた <strong>依存ゼロ・組込み可能な C 製推論エンジン</strong>。目的は Moonshot AI の <strong>Kimi K3 (2.78T)</strong> を消費者ハードで走らせること。設計要諦: (1) モデル本体 (~27GB) は RAM に residing、(2) <strong>MoE の 1 トークンあたり活性 expert (全体の ~4%) だけを NVMe から streaming</strong>、(3) 残りの RAM を <strong>expert cache (bounded)</strong> として使う、(4) expert は 3-bit / 本体は 4-bit + 8-bit 量子化、(5) 全 layer / 全 expert を "蒸留も pruning もせず" 保持。実測 <strong>64GB MacBook Pro M5 Pro で 0.49-0.54 tok/s</strong>、ストレージ約 1TB を消費。ViT (27 層) による <strong>multimodal 入力</strong>と <strong>OpenAI 互換 HTTP サーバ</strong>も同梱、macOS/Linux/Windows 対応、BLAS/CUDA/ONNX/Python 依存なし。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> MoE (Mixture of Experts) は "毎トークン全部のパラメタは使わない、担当 expert だけ活性化する" 系のモデルで、これを <strong>NVMe streaming に切り出せる可能性</strong>は理論上前から言われていたが、"消費者 SSD の帯域で GPT-4 級 MoE が走る" 実測は本作が最も広く共有された事例のひとつ。用語補足: <em>expert cache</em> は "直近使った expert 集合を RAM に留める LRU 相当" で、活性 expert の再使用局所性 (== 会話が続くとルーティングが安定する現象) に賭ける設計。0.5 tok/s は "対話には遅い" 水準だが、意義は速度ではなく <strong>"trillion-scale MoE のフル weight が個人の Mac に載る"</strong> という設計の存在証明。応用エッセンスは、(a) <strong>MoE モデルは "実質サイズ = 本体 + 活性 expert 平均"</strong> でメモリ計画すべきというプランニング指針が確定した、(b) 社内 offline / 機密環境で "全 weight を可搬デバイスに載せる" 要件がある場合、<strong>MoE アーキ + NVMe streaming</strong>が量子化以上に効くケースが出始めた点。</div>
+</div>
+
+<h2>🔬 論文 / 研究</h2>
+
+<div class="art">
+  <h3><a href="https://arxiv.org/abs/2604.08224" target="_blank" rel="noopener">Externalization in LLM Agents — memory / skills / protocols / harness の 4 層で "モデル内側にあった機能を外側に切り出す" 設計論の systems-level フレーム (Unified Review)</a></h3>
+  <div class="tags"><span class="tag">🔬論文</span><span class="tag">📐設計論</span><span class="tag">エージェント基盤</span></div>
+  <div class="src">出典: arXiv:2604.08224（Chenyu Zhou ほか、2026-04 公開・以降 update、systems-level review）</div>
+  <p class="sum">初期の LLM agent は "モデル内側に知識・記憶・スキルを閉じ込めて解く" だったが、実務は "モデル外側に <strong>memory 層 / reusable skill / interaction protocol / harness</strong> を並べ、モデルはそれらを orchestrate する" 方向へ移った、という観察を <strong>4 層の外部化 (externalization)</strong> フレームで統一 review した論文。要点: (i) <strong>Memory</strong> は "時間軸で state を外部化する層" (vector store, working memory, episodic recall)、(ii) <strong>Skills</strong> は "手続き知識を再利用可能な形に外部化" (Anthropic の Skills / OpenAI GPT Store 的アプローチ)、(iii) <strong>Protocols</strong> は "agent 間・agent-tool 間の interaction 構造を外部化" (MCP / A2A / OpenAPI 契約)、(iv) <strong>Harness engineering</strong> は "これら 3 つを governed execution として束ねる統合層" (== Claude Code / Codex / DeepSeek Harness などの CLI 側)。結論として "モデルサイズを増やす" より "4 層の外部化を洗練する" ほうが実用 agent の伸びしろが大きい、と主張。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 本論文の意義は "MCP / Skills / harness engineering / long-term memory を <strong>1 枚の設計図に載せた最初の unified review</strong>" である点。特に読み手の関心領域と接続する 3 点: (a) <strong>harness engineering という用語を正当に定義</strong>している (Claude Code や Cursor CLI のような "外側の runtime + policy 層" が独立した工学領域として明示された)、(b) <strong>MCP は "Protocols 層" の 1 実装</strong>という位置付けで、A2A や OpenAPI 契約もここに合流する、(c) memory と skill の分離が実務では曖昧になりがちだが、"時間軸に State を伸ばす vs 手続きを再利用する" と役割で切ることを提唱。応用エッセンスは、社内 agent 導入時に "モデル選定" を 1 議題にしがちだが、実際は <strong>Memory / Skills / Protocols / Harness の 4 層で "誰が何を owner に持つか"</strong> を先に決めるほうが総合コストが下がるという設計指針。本日の Claude Code cross-session messaging (Harness 層 の拡張)、Cordis (Protocols 層 の外部化)、CLI-Anything (Skills 層のバックエンド化) は、それぞれ本論文の 4 層のうち別の層を動かしており、今週の trending を "この論文のどの層が動いているか" で読むと構図が整理される。</div>
+</div>
+
+<h2>🇯🇵 日本語コミュニティ動向</h2>
+
+<div class="art">
+  <h3><a href="https://note.com/yasuhitoo/n/na771734f2bbe" target="_blank" rel="noopener">国内 AI エージェント動向 (2026/8/15 号) — "モデル精度競争" から "権限設計・監査ログ・例外提示・使用ルール判定" の縦割り実装競争へ (Yasuhito Morimoto)</a></h3>
+  <div class="tags"><span class="tag">🇯🇵国内</span><span class="tag">📐設計論</span><span class="tag">エージェント運用</span></div>
+  <div class="src">出典: note.com/yasuhitoo「国内AIエージェント動向(2026/8/15号)」（2026-08-15 公開）</div>
+  <p class="sum">日本の AI エージェント市場の隔週レビュー最新号。要旨は「競争軸は <strong>単一モデルの回答精度 → "どの業務データに、誰の権限で、どこまで完結して繋げるか"</strong> に既に移った」。実装が縦割りで進んでいる領域として <strong>営業・薬事解析・カスタマーサポート・コード移行・インシデント対応・経理・EC</strong> を列挙。共通の設計パターンは 4 つに収れんしつつある: <strong>(1) 権限 pass-through</strong> (GAIA)、<strong>(2) 監査ログ</strong>、<strong>(3) 例外提示</strong> (kozokaAI)、<strong>(4) 使用ルール判定</strong> (TOKIUM)。導入企業側が個別に検証すべき軸として <strong>自動書き込み範囲・承認ゲート・失敗時リトライ・監査ログ・定量 KPI</strong> の 5 点を挙げる。将来的な勝ち筋は "モデル性能" ではなく "<strong>安全な権限設計 + 既存システム連携 + 導入後の改善サイクル</strong>" を回せるベンダーに移る、と結論。</p>
+  <div class="sup">💡 <strong>背景補足:</strong> 本記事の重要性は "国内 AI エージェント市場を <strong>vertical 単位で並べて設計パターン化した最新のスナップショット</strong>" である点。国内特有の観察は 3 点: (a) 業務ドメイン (経理・薬事) 毎に <strong>権限 pass-through をどう表現するか</strong>が業界ごとに違う (SAP や電子帳簿保存法との整合)、(b) 監査ログは "コンプライアンス要件" ではなく "AI の説明責任" として設計軸になり始めた、(c) 例外提示 (kozokaAI 型) は "自動処理は 80% 通し、20% を人間に返す" ハイブリッド運用の共通言語になっている。海外の Claude Code auto-mode の "classifier に許諾を移譲" とちょうど対を成す議論で、日本側は "許諾は人に、記録は agent に" 側に寄っている。応用エッセンスは、社内で AI エージェント PoC を進めるチームが、モデル選定より先に <strong>権限 pass-through の実装方式・監査ログのスキーマ・例外提示 UX の 3 点</strong>を "ベンダーに丸投げできない自社決定事項" として先に固めるべきという実務的指針。同日の Claude Code cross-session messaging と読み合わせると、"agent 間の権限伝播" は国内も海外も 2026 秋の重要議題。</div>
+</div>
+
+<footer>
+  <p>掲載: 9 件（ハイライト + 記事 8）。既出リスト (前日 8/14 号) との重複: なし。前日のアンカー (Claude Code auto-mode 既定化、GLM-5.3、Grok 4.6 in Copilot、Anthropic August 2026 Risk Report、Frontier Red Team turf war 論文、OpenAI Daybreak Red / GPT-5.6-Cyber、arXiv:2608.10530、holaboss-ai/holaOS) は本号では原則除外し、Claude Code は "その翌日に来た v2.1.230→232 (subagent forking 既定 ON / cross-session messaging / GitLab plugin marketplace)" として本日固有の続報を採用。GitHub Trending は既出の cathrynlavery/diagram-design、cactus-compute/needle、github/spec-kit、holaboss-ai/holaOS 系を除外し、本日新規の cordiverse/cordis (DeepSeek Harness 経由で再注目)、citrolabs/ego-lite、HKUDS/CLI-Anything、sqliteai/waste を採用。</p>
+  <p>収集元: GitHub Trending / Anthropic Claude Code Docs Changelog (v2.1.230-232) / Anthropic News (Claude Tag Slack proactive) / InfoQ (Cloudflare cdnjs 移行) / arXiv abs ページ (Externalization in LLM Agents) / note.com (国内 AI エージェント動向) / floatboat.ai (Cordis 解説) / MarcoBambini Substack (WASTE 解説) / releasebot.io (Claude Code changelog aggregator)。※本日も実行環境の egress 制約により Hacker News / anthropic.com (直接) / openai.com (直接) / deepmind.google (直接) / Netflix (直接) / Uber (直接) / Stripe (直接) / Cloudflare (直接) / Zenn (直接) / note (直接) / Publickey (直接) / InfoQ (直接) / Martin Fowler / AWS Architecture / High Scalability / ThoughtWorks / Changelog / Pragmatic Engineer / arxiv.org (直接) / github.blog (直接) / code.claude.com (直接) への直接 <code>web_fetch</code> は <em>(取得失敗)</em>。これらは WebSearch snippets 経由で照合しています。</p>
+</footer>
+</body>
+</html>
